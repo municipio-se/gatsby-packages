@@ -1,0 +1,16 @@
+# Node
+node_modules
+
+# Yarn
+package-lock.json
+yarn-error.log
+
+# Gatsby
+.cache
+public
+
+# Environment
+.env.local.toml
+
+# Publish only
+pkg/README.md

@@ -1,0 +1,3 @@
+[submodule "examples/frontend"]
+  path = examples/frontend
+  url = git@github.com:municipio-se/gatsby-starter-basic.git
