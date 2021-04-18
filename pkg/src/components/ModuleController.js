@@ -4,7 +4,6 @@ import React from "react";
 import * as moduleComponents from "./modularity-modules";
 
 export default function ModuleController({ moduleType, module }) {
-  console.log(moduleType);
   const { processContent } = useHTMLProcessor();
   switch (moduleType) {
     case "mod-contacts":
