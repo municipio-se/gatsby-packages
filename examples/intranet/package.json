@@ -1,0 +1,21 @@
+{
+  "name": "@municipio/gatsby-starter-intranet",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Gatsby starter for Municipio intranet",
+  "scripts": {
+    "build": "yarn wp-generate-schema-fragments && NODE_OPTIONS='-r esm' gatsby build",
+    "clean": "NODE_OPTIONS='-r esm' gatsby clean && yarn wp-generate-schema-fragments",
+    "develop": "NODE_OPTIONS='-r esm' gatsby develop",
+    "serve": "NODE_OPTIONS='-r esm' gatsby serve",
+    "start": "NODE_OPTIONS='-r esm' gatsby develop",
+    "wp-generate-schema-fragments": "node scripts/wp-generate-schema-fragments"
+  },
+  "dependencies": {
+    "@municipio/gatsby-theme-intranet": "*",
+    "gatsby": "^3.3.0",
+    "gatsby-plugin-remove-serviceworker": "^1.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
