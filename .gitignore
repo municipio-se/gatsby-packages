@@ -11,6 +11,3 @@ public
 
 # Environment
 .env.local.toml
-
-# Publish only
-pkg/README.md
