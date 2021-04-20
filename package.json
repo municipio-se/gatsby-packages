@@ -9,7 +9,7 @@
   },
   "scripts": {
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "format": "prettier --write '**/*.{js,json,md,yml}'"
+    "format": "prettier --write '**/*.{js,jsx,json,md,mdx,yml,html,css}'"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",

@@ -14,7 +14,7 @@ module.exports = ({
           fragmentsDir,
           wp,
           postCss,
-          compileES6Packages
+          compileES6Packages,
         },
       },
     ],
