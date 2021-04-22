@@ -33,6 +33,7 @@ export default {
     warning: "#ffab00",
     info: "#0065ff",
     error: "#de350b",
+    danger: "#de350b",
     blue: {
       default: 204,
       tint: {

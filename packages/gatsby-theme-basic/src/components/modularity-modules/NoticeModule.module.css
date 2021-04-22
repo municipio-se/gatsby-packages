@@ -1,6 +1,6 @@
 .heading {
   display: flex;
-  gap: 0.25em;
+  gap: 1ch;
   align-items: center;
 }
 
