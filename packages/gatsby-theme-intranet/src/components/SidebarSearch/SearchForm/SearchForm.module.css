@@ -1,0 +1,10 @@
+.component {
+}
+
+.component input[type="search"] {
+  --search-form-background: var(--form-search-background);
+}
+
+.component input[type="search"] ::-webkit-search-cancel-button {
+  /* background: url(../../../../../static/icons/close-circle--filled.svg) no-repeat 50% 50%; */
+}

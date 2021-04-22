@@ -1,18 +1,18 @@
 import { H, Section } from "@jfrk/react-heading-levels";
-import React, { useContext, useEffect, useRef } from "react";
 import cx from "classnames";
+import React, { useContext, useEffect, useRef } from "react";
 
-import { useMenu } from "../hooks/menus";
-import { useTool } from "../hooks/tools";
-// import { Bookmarks, Tools } from "../components/DnDMenu";
+import { SiteLayoutContext } from "../@whitespace/gatsby-theme-wordpress-basic/components/SiteLayout";
 import Header from "../components/Header/Header";
 import {
   TopNavigation,
   TreeNavigation,
   HelpMenu,
 } from "../components/Navigation";
-// import { SearchForm } from "../components/SidebarSearch";
-import { SiteLayoutContext } from "../@whitespace/gatsby-theme-wordpress-basic/components/SiteLayout";
+import { SearchForm } from "../components/SidebarSearch";
+import { useMenu } from "../hooks/menus";
+import { useTool } from "../hooks/tools";
+// import { Bookmarks, Tools } from "../components/DnDMenu";
 
 import * as styles from "./Sidebar.module.css";
 
@@ -108,7 +108,7 @@ export default function Sidebar({ ...restProps }) {
     >
       <Header />
       <div className={styles.content}>
-        {/* <SearchForm placeholderText="Sök på intranätet" modifierClass /> */}
+        <SearchForm placeholderText="Sök på intranätet" modifierClass />
         <Section>
           {mainMenu?.length > 0 && <TopNavigation items={mainMenu} />}
           {/* <TreeNavigation /> */}

@@ -2,9 +2,6 @@
 }
 
 .component {
-}
-
-.header {
   padding-top: 12px;
   padding-bottom: 12px;
   padding-left: var(--gap-medium);
@@ -13,33 +10,33 @@
   height: var(--sidebar-header-height);
 }
 
-.header--sticky {
+.sticky {
   position: sticky;
   top: 0;
   z-index: 1;
 }
 
-.header__wrapper {
+.wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.header__logo {
+.logo {
   max-width: 108px;
 }
 
-.header__dropdown-trigger {
+.dropdownTrigger {
   display: flex;
   align-items: center;
   position: relative;
-
-  /* & > * {
-    pointer-events: none;
-  } */
 }
 
-.header__dropdown-icon {
+.dropdownTrigger > * {
+  pointer-events: none;
+}
+
+.dropdownIcon {
   padding: 0;
   z-index: 1;
   margin-left: var(--space-8);
@@ -47,7 +44,7 @@
   --button-text-color: var(--sidebar-icon);
 }
 
-.header__dropdown {
+.dropdown {
   display: none;
   background: var(--sidebar-background);
   border: 1px solid var(--color-divider);
@@ -64,33 +61,32 @@
     0px 6.6501px 5.32008px rgba(0, 0, 0, 0.0282725),
     0px 2.76726px 2.21381px rgba(0, 0, 0, 0.0196802);
 
-  /* @include mq("medium", true) {
+  @media (--medium) {
     left: initial;
     right: 3.75rem;
-  } */
+  }
 }
 
-.header__dropdown-list {
+.dropdownList {
   list-style: none;
   padding: 0;
 }
 
-.header__dropdown-list-item {
+.dropdownListItem {
   padding: var(--space-4) 0;
-
-  /* &:not(:last-child) {
-    border-bottom: 1px solid var(--color-divider);
-  } */
 }
 
-.header__dropdown-link {
+.dropdownListItem:not(:last-child) {
+  border-bottom: 1px solid var(--color-divider);
+}
+
+.dropdownLink {
   display: block;
   --background: transparent;
   display: flex;
   align-items: center;
   text-decoration: none;
   color: var(--sidebar-link);
-
   background: var(--background);
   padding: var(--space-8) var(--space-16);
   color: var(--sidebar-link);
@@ -98,17 +94,17 @@
   line-height: 1.5;
   display: flex;
   border-radius: 3px;
-
-  /* &:hover {
-    --background: var(--sidebar-hover);
-  } */
 }
 
-.header__dropdown-link[aria-current] {
+.dropdownLink:hover {
+  --background: var(--sidebar-hover);
+}
+
+.dropdownLink[aria-current] {
   --background: var(--color-active);
   color: var(--color-active-foreground);
 }
 
-.header__dropdown--open {
+.dropdownOpen {
   display: block;
 }
