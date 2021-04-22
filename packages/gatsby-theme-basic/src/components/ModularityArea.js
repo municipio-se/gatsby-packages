@@ -18,6 +18,8 @@ export function ModularityArea({
     >
       {!!modules &&
         modules.map(({ hidden, node: module, columnWidth }) => {
+          // TODO: implement columnWidth
+          void columnWidth;
           if (hidden || !module) {
             return null;
           }

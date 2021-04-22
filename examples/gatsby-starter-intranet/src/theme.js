@@ -125,6 +125,11 @@ export default {
     link: "#282a30",
     hover: "#e3e6eb",
     icon: "#404450",
+    z: {
+      default: 101,
+      overlay: 100,
+    },
+    headerHeight: "56px",
   },
   menuIcon: "#4a4d59",
   toolbar: {
@@ -141,13 +146,6 @@ export default {
   logo: {
     foreground: "#b0bfc9",
     background: "#ebeff1",
-  },
-  sidebar: {
-    z: {
-      default: 101,
-      overlay: 100,
-    },
-    headerHeight: "56px",
   },
   mainMaxWidth: "64rem",
   gap: {
