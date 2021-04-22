@@ -1,21 +1,7 @@
-# From /example/backend/.prettierignore
-/example/backend/**/composer.lock
-/example/backend/**/package-lock.json
-/example/backend/wp-content/*
-!/example/backend/wp-content/plugins
-/example/backend/wp-content/plugins/*
-!/example/backend/wp-content/themes
-/example/backend/wp-content/themes/municipio
-/example/backend/wp-content/uploads/*
-/example/backend/vendor
-/example/backend/wp
-/example/backend/**/dist
-/example/backend/**/tmp
-/example/backend/**/*.min.*
-/example/backend/**/*.min-*
-/example/backend/**/acf-fields
+# Submodules
+/examples/gatsby-starter-basic
 
-# From /example/frontend/.prettierignore
-/example/frontend/.cache
-/example/frontend/public
-/example/frontend/shared/wp-fragment-types.json
+# From /example/gatsby-starter-intranet/.prettierignore
+/examples/gatsby-starter-intranet/.cache
+/examples/gatsby-starter-intranet/public
+/examples/gatsby-starter-intranet/shared/wp-fragment-types.json
