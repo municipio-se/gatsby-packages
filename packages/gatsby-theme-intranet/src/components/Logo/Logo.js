@@ -21,7 +21,7 @@ export default function Logo({
       <Link
         to={linkTo}
         className={clsx(styles.link)}
-        fallbackElement="span"
+        // fallbackElement="span"
         aria-label={ariaLabel}
         {...linkRestProps}
       >
