@@ -19,9 +19,9 @@ export const query = graphql`
         # ... on WP_ModImage {
         #   ...WP_ModImage
         # }
-        # ... on WP_ModNotice {
-        #   ...WP_ModNotice
-        # }
+        ... on WP_ModNotice {
+          ...WP_ModNotice
+        }
         # ... on WP_ModPosts {
         #   ...WP_ModPosts
         # }

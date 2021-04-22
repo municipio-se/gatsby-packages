@@ -1,0 +1,12 @@
+.heading {
+  display: flex;
+  gap: 0.25em;
+  align-items: center;
+}
+
+.icon {
+  flex: none;
+}
+
+.title {
+}

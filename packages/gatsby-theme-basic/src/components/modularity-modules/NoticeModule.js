@@ -1,47 +1,41 @@
-import { H } from "@jfrk/react-heading-levels";
-import { Button, Icon } from "@whitespace/components/src";
-import { useHTMLProcessor } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/html-processor";
+import { H, Section } from "@jfrk/react-heading-levels";
+import { Icon } from "@whitespace/components/src";
 import clsx from "clsx";
 import React from "react";
+
+import Box from "../Box";
 
 import * as defaultStyles from "./NoticeModule.module.css";
 
 export default function NoticeModule({
   styles = defaultStyles,
   className,
-  headline,
-  description,
-  type,
-  link,
-  hideIcon = false,
+  module: {
+    noticeSettings: { noticeText, noticeType },
+  },
+  title,
   ...restProps
 }) {
-  const { processContent } = useHTMLProcessor();
-  description = processContent(description);
+  const MaybeSection = title ? Section : React.Fragment;
 
   return (
-    <div className={clsx(styles.component, className)} {...restProps}>
-      <div>
-        <div>
-          {!hideIcon && <Icon name={type} />}
-          {headline && <H>{headline}</H>}
-        </div>
-        {description && <div>{description}</div>}
-      </div>
-      {link && (
-        <Button
-          title={"More information"}
-          link={link}
-          buttonModifier="light"
-          iconBefore={true}
-          iconBeforeSize="20px"
-          iconAfterSize="12px"
-          iconAfter={true}
-          iconBeforeName="info"
-          iconAfterName="arrow-right-1"
-          iconModifier="secondary"
-        />
+    <Box
+      className={clsx(styles.component, className)}
+      css={{
+        "--box-background": `var(--color-${noticeType})`,
+        "--box-color": "var(--color-foreground-inverse)",
+      }}
+      {...restProps}
+    >
+      {title ? (
+        <H className={styles.heading}>
+          <Icon name={noticeType} className={styles.icon} />
+          <span className={styles.title}>{title}</span>
+        </H>
+      ) : (
+        <Icon name={noticeType} className={styles.icon} />
       )}
-    </div>
+      <MaybeSection>{noticeText}</MaybeSection>
+    </Box>
   );
 }

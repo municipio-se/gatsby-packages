@@ -88,14 +88,6 @@ export default function ModuleController({ module }) {
           }
         />
       );
-    case "mod-notice":
-      return (
-        <moduleComponents.NoticeModule
-          headline={!module.hideTitle && module.title}
-          description={module.noticeSettings.noticeText}
-          type={module.noticeSettings.noticeType}
-        />
-      );
     case "mod-posts":
       return (
         <moduleComponents.PostsModule
