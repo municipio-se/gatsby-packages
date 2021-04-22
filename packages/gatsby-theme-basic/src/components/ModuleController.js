@@ -1,4 +1,3 @@
-import { useHTMLProcessor } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/html-processor";
 import { camelCase, upperFirst } from "lodash/fp";
 import React from "react";
 
@@ -12,7 +11,6 @@ function fromContentTypeToComponentName(contentTypeName) {
 }
 
 export default function ModuleController({ module }) {
-  const { processContent } = useHTMLProcessor();
   const moduleType = module?.contentType?.node?.name;
   switch (moduleType) {
     case "mod-contacts":
@@ -56,38 +54,6 @@ export default function ModuleController({ module }) {
     //       formFields={module.form.formFields}
     //     />
     //   );
-    case "mod-image":
-      if (
-        !module.image ||
-        !module.image.modImageImage ||
-        !module.image.modImageImage.mediaDetails
-      ) {
-        return null;
-      }
-      return (
-        <moduleComponents.ImageModule
-          title={!module.hideTitle && module.title}
-          linkTo={module.image.modImageLinkUrl}
-          caption={
-            module.image.modImageCaption
-              ? module.image.modImageCaption
-              : processContent(module.image.modImageImage?.caption)
-          }
-          credit={module.image.modImageImage?.photograph?.name}
-          base64={module.image.modImageImage?.base64}
-          src={module.image.modImageImage?.src}
-          srcSet={module.image.modImageImage?.srcSet}
-          srcWebp={module.image.modImageImage?.src}
-          srcSetWebp={module.image.modImageImage?.srcSetWebp}
-          width={module.image.modImageImage?.mediaDetails?.width}
-          height={module.image.modImageImage?.mediaDetails?.height}
-          alt={module.image.modImageImage.altText}
-          aspectRatio={
-            module.image.modImageImage.mediaDetails.width /
-            module.image.modImageImage.mediaDetails.height
-          }
-        />
-      );
     case "mod-posts":
       return (
         <moduleComponents.PostsModule
