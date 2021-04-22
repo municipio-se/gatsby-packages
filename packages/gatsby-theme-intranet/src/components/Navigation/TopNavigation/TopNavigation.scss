@@ -1,0 +1,114 @@
+.top-navigation {
+  margin-bottom: var(--gap-min);
+}
+
+.top-navigation__list {
+  padding-left: 0;
+  list-style: none;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.top-navigation__item {
+  margin-right: calc(var(--space-8) * -1);
+  margin-left: calc(var(--space-8) * -1);
+}
+
+.top-navigation__link {
+  --background: transparent;
+
+  background: var(--background);
+  padding-top: var(--space-8);
+  padding-left: var(--space-16);
+  padding-right: var(--space-16);
+  padding-bottom: var(--space-8);
+  color: var(--sidebar-link);
+  font-weight: 500;
+  text-decoration: none;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  border-radius: 3px;
+  transition: background 100ms ease-in-out;
+
+  &:hover,
+  &:focus {
+    --background: var(--sidebar-hover);
+  }
+  &:active {
+    background: var(--color-active);
+    color: var(--color-active-foreground);
+    .top-navigation__icon.top-navigation__icon {
+      &--home {
+        --icon-bg-color: var(--color-blue-tint-1);
+        --icon-color: var(--color-foreground-inverse);
+      }
+
+      &--news {
+        --icon-bg-color: var(--color-green-tint-1);
+        --icon-color: var(--color-foreground-inverse);
+      }
+
+      &--calendar {
+        --icon-bg-color: var(--color-orange-tint-1);
+        --icon-color: var(--color-foreground-inverse);
+      }
+
+      &--people {
+        --icon-bg-color: var(--color-pink-tint-1);
+        --icon-color: var(--color-foreground-inverse);
+      }
+    }
+  }
+}
+
+.top-navigation__icon.top-navigation__icon {
+  margin-right: var(--space-8);
+
+  &--house {
+    --icon-bg-color: var(--color-blue-tint-4);
+    --icon-color: var(--color-blue-tint-1);
+  }
+
+  &--newspaper {
+    --icon-bg-color: var(--color-green-tint-4);
+    --icon-color: var(--color-green-tint-1);
+  }
+
+  &--calendar {
+    --icon-bg-color: var(--color-orange-tint-4);
+    --icon-color: var(--color-orange-tint-1);
+  }
+
+  &--people {
+    --icon-bg-color: var(--color-pink-tint-4);
+    --icon-color: var(--color-pink-tint-1);
+  }
+}
+
+.top-navigation__link[aria-current] {
+  background: var(--color-active);
+  color: var(--color-active-foreground);
+}
+
+.top-navigation__link[aria-current] .top-navigation__icon.top-navigation__icon {
+  &--house {
+    --icon-bg-color: var(--color-blue-tint-1);
+    --icon-color: var(--color-foreground-inverse);
+  }
+
+  &--newspaper {
+    --icon-bg-color: var(--color-green-tint-1);
+    --icon-color: var(--color-foreground-inverse);
+  }
+
+  &--calendar {
+    --icon-bg-color: var(--color-orange-tint-1);
+    --icon-color: var(--color-foreground-inverse);
+  }
+
+  &--people {
+    --icon-bg-color: var(--color-pink-tint-1);
+    --icon-color: var(--color-foreground-inverse);
+  }
+}
