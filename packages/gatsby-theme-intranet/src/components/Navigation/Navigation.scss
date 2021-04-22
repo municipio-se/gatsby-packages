@@ -1,0 +1,115 @@
+.navigation {
+  margin-bottom: var(--gap-max);
+}
+.navigation__list {
+  padding-left: 0;
+  list-style: none;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.navigation__list-item {
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
+  pointer-events: none;
+}
+
+.navigation__list-item .navigation__list-item {
+  padding-left: var(--space-12);
+  font-weight: 400;
+}
+
+.navigation__list-item-level0 {
+  font-weight: var(--weight-500);
+}
+
+@mixin col-x-list {
+  @for $i from 1 through 10 {
+    .navigation__list-item-level#{$i} {
+      padding-left: calc(#{$i}rem);
+    }
+  }
+}
+@include col-x-list;
+
+.navigation__list-link {
+  --background: transparent;
+
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--sidebar-link);
+  pointer-events: all;
+
+  background: var(--background);
+  padding-top: var(--space-4);
+  padding-right: var(--space-8);
+  padding-bottom: var(--space-4);
+  padding-left: var(--space-8);
+  color: var(--sidebar-link);
+  text-decoration: none;
+  line-height: 1.5;
+  display: flex;
+  border-radius: 3px;
+
+  &:hover {
+    --background: var(--sidebar-hover);
+  }
+}
+
+.navigation__list-link--is-active[aria-current] {
+  --background: var(--color-active);
+  color: var(--color-active-foreground);
+}
+
+// // Todo: Wrap in "on mouse" with whatinput so that the bg color of a focused and active item is not higlighted
+// .navigation__list-link--is-active.navigation__list-link--is-focused:not([aria-current]) {
+//   --background: transparent;
+//   color: var(--sidebar-link);
+// }
+
+.navigation__list-link--has-children {
+  &::before {
+    font-size: 0.5em;
+    content: "►";
+    display: block;
+    margin-right: var(--space-4);
+  }
+}
+
+.navigation__list-link--is-open {
+  &::before {
+    content: "▼";
+  }
+}
+
+.navigation__list-link--is-focused {
+  --background: var(--sidebar-hover);
+}
+
+.navigation__label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1;
+  margin-top: var(--space-8);
+  margin-bottom: var(--space-8);
+  font-family: var(--base-font-family);
+}
+
+.navigation__button {
+  --button-bg-color: var(--sidebar-hover);
+  color: var(--color-foreground);
+  margin-top: var(--space-4);
+}
+
+// HELP MENU
+.navigation--help {
+  margin-top: auto;
+  margin-bottom: var(--gap-medium);
+}
+
+// TREE MENU
+.navigation--tree .navigation__list-item {
+  margin-left: 0rem;
+  margin-right: 0rem;
+}
