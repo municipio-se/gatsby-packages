@@ -2,7 +2,52 @@
 }
 
 .component {
-  width: 300px;
-  height: 300px;
-  background: red;
+  width: 85vw;
+  height: 100vh;
+  border-right: 1px solid var(--color-divider);
+  position: fixed;
+  display: none;
+  align-self: flex-start;
+  flex-direction: column;
+  top: 0;
+  height: 100vh;
+  overflow: auto;
+  background: var(--sidebar-background);
+  left: 0;
+  bottom: 0;
+  z-index: var(--sidebar-z);
+  user-select: none;
+  font-size: 1rem;
+
+  @media (--medium) {
+    display: flex;
+    position: sticky;
+    display: block;
+    width: 100%;
+    max-width: 17.5rem;
+    font-size: 0.875rem;
+  }
+
+  @media print {
+    display: none;
+  }
+}
+
+.isOpen {
+  @media (--medium) {
+    display: block;
+  }
+}
+
+.content {
+  --gap: var(--gap-min);
+  display: flex;
+  height: calc(100% - var(--sidebar-header-height));
+  flex-direction: column;
+  padding-left: var(--gap);
+  padding-right: var(--gap);
+
+  @media (--medium) {
+    --gap: var(--gap-medium);
+  }
 }
