@@ -17,28 +17,26 @@ export function TopNavigation({
       {...restProps}
     >
       <ul className={cx("top-navigation__list")}>
-        <IconProvider getIconSrc={(name) => `/icons/${name}.svg`}>
-          {items.map(({ url, target, icon, label }, index) => {
-            return (
-              <li key={index} className={cx("top-navigation__item")}>
-                <Link
-                  className={cx("top-navigation__link")}
-                  to={url}
-                  target={target}
-                >
-                  <Icon
-                    name={icon}
-                    className={cx("top-navigation__icon", `--${icon}`)}
-                    size="1.5rem"
-                  />
-                  <div className={cx("top-navigation__text")}>
-                    <span className={cx("top-navigation__label")}>{label}</span>
-                  </div>
-                </Link>
-              </li>
-            );
-          })}
-        </IconProvider>
+        {items.map(({ url, target, icon, label }, index) => {
+          return (
+            <li key={index} className={cx("top-navigation__item")}>
+              <Link
+                className={cx("top-navigation__link")}
+                to={url}
+                target={target}
+              >
+                <Icon
+                  name={icon}
+                  className={cx("top-navigation__icon", `--${icon}`)}
+                  size="1.5rem"
+                />
+                <div className={cx("top-navigation__text")}>
+                  <span className={cx("top-navigation__label")}>{label}</span>
+                </div>
+              </Link>
+            </li>
+          );
+        })}
       </ul>
     </nav>
   );
