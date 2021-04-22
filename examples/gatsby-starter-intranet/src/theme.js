@@ -169,4 +169,12 @@ export default {
     56: "3.5rem",
     64: "4rem",
   },
+  box: {
+    background: "gainsboro",
+    // border: "",
+    // borderRadius: "",
+    // color: "",
+    // fontSize: "",
+    padding: "1rem",
+  },
 };

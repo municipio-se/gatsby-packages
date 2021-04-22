@@ -12,20 +12,16 @@ export function ModularityArea({
   ...restProps
 }) {
   return (
-    <div className={clsx(styles.component, className)}>
+    <div
+      className={clsx(styles.component, styles[`area-${area}`], className)}
+      {...restProps}
+    >
       {!!modules &&
         modules.map(({ hidden, node: module, columnWidth }) => {
           if (hidden || !module) {
             return null;
           }
-          return (
-            <div key={module.id}>
-              <ModuleController
-                moduleType={module?.contentType?.node?.name}
-                module={module}
-              />
-            </div>
-          );
+          return <ModuleController module={module} key={module.id} />;
         })}
     </div>
   );

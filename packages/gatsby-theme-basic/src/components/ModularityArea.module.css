@@ -1,0 +1,4 @@
+.component {
+  display: grid;
+  gap: var(--modularity-area-gap, 2rem);
+}

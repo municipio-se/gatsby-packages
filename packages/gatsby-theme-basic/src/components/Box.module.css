@@ -1,0 +1,22 @@
+.component {
+  background: var(--box-background, transparent);
+  border: var(--box-border, 0);
+  border-radius: var(--box-border-radius, 0);
+  color: var(--box-color, inherit);
+  font-size: var(--box-font-size, inherit);
+  padding: var(--box-padding, 0);
+}
+
+.component:before {
+  content: "";
+  display: block;
+  margin-top: -10rem;
+  margin-bottom: 10rem;
+}
+
+.component:after {
+  content: "";
+  display: block;
+  margin-top: 10rem;
+  margin-bottom: -10rem;
+}
