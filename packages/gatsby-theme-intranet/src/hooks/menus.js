@@ -1,6 +1,6 @@
-import { useStaticQuery, graphql } from "gatsby";
 import usePages from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/pages";
 import { getPage } from "@whitespace/gatsby-theme-wordpress-basic/src/utils/pageTree";
+import { useStaticQuery, graphql } from "gatsby";
 
 export default function useMenus() {
   let pages = usePages();

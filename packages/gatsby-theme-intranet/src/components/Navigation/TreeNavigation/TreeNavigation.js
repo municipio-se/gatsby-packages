@@ -1,15 +1,14 @@
 import { H } from "@jfrk/react-heading-levels";
-import cx from "classnames";
-import { navigate } from "gatsby";
 import { usePageContext } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/page-context";
 import usePages from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/pages";
-import React from "react";
-import TreeMenu from "react-simple-tree-menu";
-
 import {
   getAncestors,
   getTreeStructure,
 } from "@whitespace/gatsby-theme-wordpress-basic/src/utils/pageTree";
+import cx from "classnames";
+import { navigate } from "gatsby";
+import React from "react";
+import TreeMenu from "react-simple-tree-menu";
 
 import TreeNavigationItem from "./TreeNavigationItem";
 

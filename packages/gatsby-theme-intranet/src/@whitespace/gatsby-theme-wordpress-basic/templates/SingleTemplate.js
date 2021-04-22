@@ -1,4 +1,5 @@
 import { H, Section } from "@jfrk/react-heading-levels";
+import { ModularityArea } from "@municipio/gatsby-theme-basic/src/components/ModularityArea";
 import {
   Image,
   Time,
@@ -8,7 +9,6 @@ import { useHTMLProcessor } from "@whitespace/gatsby-theme-wordpress-basic/src/h
 import { usePageContext } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/page-context";
 import React, { useEffect } from "react";
 
-import { ModularityArea } from "@municipio/gatsby-theme-basic/src/components/ModularityArea";
 
 export default function SingleTemplate({ pageContext }) {
   const {

@@ -1,10 +1,10 @@
 import { H, Section } from "@jfrk/react-heading-levels";
+import { Icon } from "@whitespace/components/src";
 import { useHTMLProcessor } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/html-processor";
 import clsx from "clsx";
 import Img from "gatsby-image";
 import React from "react";
 
-import { Icon } from "@whitespace/components/src";
 
 import * as defaultStyles from "./ContactCardModule.module.css";
 

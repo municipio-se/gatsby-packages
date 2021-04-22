@@ -1,6 +1,6 @@
+import { PageContextProvider } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/page-context";
 import cx from "classnames";
 // import useLocation from "gatsby-theme-municipio/src/hooks/location";
-import { PageContextProvider } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/page-context";
 // import usePrevious from "gatsby-theme-municipio/src/hooks/previous";
 import React, { createContext, useState, useEffect } from "react";
 

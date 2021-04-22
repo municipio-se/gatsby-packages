@@ -1,7 +1,7 @@
 import { Icon } from "@whitespace/components/src";
 import { Link } from "@whitespace/components/src/components/Link";
-import React from "react";
 import cx from "classnames";
+import React from "react";
 
 // import "./TopNavigation.scss";
 

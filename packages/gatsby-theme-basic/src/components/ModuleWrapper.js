@@ -1,6 +1,6 @@
 import { H, Section } from "@jfrk/react-heading-levels";
 import clsx from "clsx";
-import PropTypes from "proptypes";
+import PropTypes from "prop-types";
 import React from "react";
 
 import * as defaultStyles from "./ModuleWrapper.module.css";

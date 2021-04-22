@@ -1,10 +1,10 @@
+import { Icon } from "@whitespace/components/src";
 import { Image } from "@whitespace/gatsby-theme-wordpress-basic/src/components";
 import { useHTMLProcessor } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/html-processor";
 import clsx from "clsx";
 import Carousel from "nuka-carousel";
 import React, { useState } from "react";
 
-import { Icon } from "@whitespace/components/src";
 import SectionHeader from "../SectionHeader";
 
 import * as defaultStyles from "./GalleryModule.module.css";

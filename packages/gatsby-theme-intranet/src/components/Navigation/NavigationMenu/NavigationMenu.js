@@ -1,7 +1,7 @@
 import { H } from "@jfrk/react-heading-levels";
 import { Link } from "@whitespace/components/src/components/Link";
-import React from "react";
 import cx from "classnames";
+import React from "react";
 
 // import "../Navigation.scss";
 
