@@ -13,6 +13,14 @@
 }
 
 .link {
-  display: block;
+  display: grid;
+  align-items: center;
   height: 100%;
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+.text {
+  font-size: 1.5rem;
+  font-weight: bold;
 }

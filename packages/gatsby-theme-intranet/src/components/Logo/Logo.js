@@ -1,12 +1,11 @@
 import { Link } from "@whitespace/components/src";
 import clsx from "clsx";
-import React, { useRef } from "react";
+import React from "react";
 
 import * as styles from "./Logo.module.css";
-import RiksarkivetLogo from "./RiksarkivetLogo";
 
 export default function Logo({
-  color = "currentColor",
+  // color = "currentColor",
   // align = "left",
   className,
   linkTo,
@@ -14,10 +13,8 @@ export default function Logo({
   "aria-label": ariaLabel,
   ...restProps
 }) {
-  let ref = useRef(null);
-
   return (
-    <div className={clsx(styles.component, className)} ref={ref} {...restProps}>
+    <div className={clsx(styles.component, className)} {...restProps}>
       <Link
         to={linkTo}
         className={clsx(styles.link)}
@@ -25,7 +22,7 @@ export default function Logo({
         aria-label={ariaLabel}
         {...linkRestProps}
       >
-        <RiksarkivetLogo color={color} />
+        <span className={styles.text}>Municipio</span>
       </Link>
     </div>
   );
