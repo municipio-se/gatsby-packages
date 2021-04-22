@@ -6,7 +6,10 @@ import usePages from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/pages";
 import React from "react";
 import TreeMenu from "react-simple-tree-menu";
 
-import { getAncestors, getTreeStructure } from "@whitespace/gatsby-theme-wordpress-basic/src/utils/pageTree";
+import {
+  getAncestors,
+  getTreeStructure,
+} from "@whitespace/gatsby-theme-wordpress-basic/src/utils/pageTree";
 
 import TreeNavigationItem from "./TreeNavigationItem";
 
