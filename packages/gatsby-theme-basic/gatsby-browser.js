@@ -3,6 +3,8 @@ import React from "react";
 
 import theme from "./src/theme";
 
+import "./src/index.css";
+
 export const wrapRootElement = ({ element }) => {
   return (
     <ThemeProvider theme={theme}>
