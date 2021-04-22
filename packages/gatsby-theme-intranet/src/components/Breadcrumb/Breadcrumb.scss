@@ -1,0 +1,35 @@
+@import "../../../foundation/tools";
+
+.breadcrumb {
+  color: var(--color-foreground);
+}
+
+.breadcrumb__list {
+  margin: 0;
+  padding: 0;
+}
+
+.breadcrumb__item {
+  display: inline;
+}
+.breadcrumb__item:last-child {
+  opacity: 0.7;
+}
+
+.breadcrumb__item:not(:last-child)::after {
+  content: " / ";
+  color: var(--color-foreground);
+}
+
+.breadcrumb__link {
+  text-decoration: none;
+  color: var(--color-foreground);
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.breadcrumb__link[aria-current] {
+  color: var(--color-surface);
+}
