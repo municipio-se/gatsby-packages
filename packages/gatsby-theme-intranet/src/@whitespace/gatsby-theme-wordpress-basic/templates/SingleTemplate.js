@@ -9,7 +9,6 @@ import { useHTMLProcessor } from "@whitespace/gatsby-theme-wordpress-basic/src/h
 import { usePageContext } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/page-context";
 import React, { useEffect } from "react";
 
-
 export default function SingleTemplate({ pageContext }) {
   const {
     contentNode: {

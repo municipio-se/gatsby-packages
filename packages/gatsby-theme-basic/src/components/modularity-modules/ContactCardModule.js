@@ -5,7 +5,6 @@ import clsx from "clsx";
 import Img from "gatsby-image";
 import React from "react";
 
-
 import * as defaultStyles from "./ContactCardModule.module.css";
 
 const SOCIAL_MEDIA_NAMES = {
