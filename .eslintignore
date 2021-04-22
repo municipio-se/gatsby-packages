@@ -1,0 +1,7 @@
+# Submodules
+/examples/gatsby-starter-basic
+
+# From /example/gatsby-starter-intranet/.prettierignore
+/examples/gatsby-starter-intranet/.cache
+/examples/gatsby-starter-intranet/public
+/examples/gatsby-starter-intranet/shared/wp-fragment-types.json
