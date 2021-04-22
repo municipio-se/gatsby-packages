@@ -2412,10 +2412,10 @@
     "@webassemblyjs/ast" "1.11.0"
     "@xtuc/long" "4.2.2"
 
-"@whitespace/components@^0.3.0":
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/@whitespace/components/-/components-0.3.0.tgz#730334a04aaf26ad5409fe249f3770ca20ea65fe"
-  integrity sha512-QB3MFGlWllYmttIBv/43oTppBiVv54yXLc2BPTxVXpla2lcRx8eJfo/3hN8fd7gEj8uZ2a//4tm8Z9PrQnOACA==
+"@whitespace/components@^0.4.1":
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/@whitespace/components/-/components-0.4.1.tgz#26b6df74d1b2a48ef08f9f3f3d73734c014c2ba6"
+  integrity sha512-7g7XwQOhLvK3ve5tu4kMh7ZSu0qqsU3rx9HWNUB3qOgXUembu1xEoMG86f/yLW7TiWKOQlsFsIlw2kIpffL19g==
   dependencies:
     clsx "^1.1.1"
     prop-types "^15.7.2"
