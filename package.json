@@ -8,8 +8,9 @@
     ]
   },
   "scripts": {
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "format": "prettier --write '**/*.{js,jsx,json,md,mdx,yml,html,css}'"
+    "lint": "eslint '**/*.{js,jsx}'",
+    "format": "prettier --write '**/*.{js,jsx,json,md,mdx,yml,html,css}'",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
