@@ -1,12 +1,16 @@
 import { useHTMLProcessor } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/html-processor";
+import { camelCase, upperFirst } from "lodash/fp";
 import React from "react";
 
-// import { sortModuleItemsByPostType } from "../../utils/sort";
 import ExpandableList from "../ExpandableList";
-// import { fallbackImage } from "../hooks/image-settings";
 
+import * as postsModuleComponents from "./posts-modules";
 import PostsModuleDefault from "./PostsModuleDefault";
 import PostsModuleIndex from "./PostsModuleIndex";
+
+function fromDisplayModeToComponentName(displayMode) {
+  return displayMode && upperFirst(camelCase(displayMode)) + "PostsModule";
+}
 
 function normalizeItems({ dataSource, posts }) {
   const { processPageContent, stripHTML } = useHTMLProcessor();
@@ -74,13 +78,25 @@ function normalizeItems({ dataSource, posts }) {
   }
 }
 
-export default function PostsModule({
-  title,
-  dataDisplay: { postsDisplayAs, postsFields, postsHighlight },
-  dataSource,
-  posts,
-  // ...restProps
-}) {
+export default function PostsModule({ module, ...restProps }) {
+  const normalizedItems = normalizeItems(module);
+  const {
+    dataDisplay: { postsDisplayAs },
+  } = module;
+  let componentName = fromDisplayModeToComponentName(postsDisplayAs);
+  let Component =
+    // eslint-disable-next-line import/namespace
+    (componentName && postsModuleComponents[componentName]) ||
+    // eslint-disable-next-line import/namespace
+    postsModuleComponents.DefaultPostsModule;
+  return (
+    <Component
+      module={module}
+      normalizedItems={normalizedItems}
+      {...restProps}
+    />
+  );
+
   switch (postsDisplayAs) {
     case "index":
       return (
