@@ -46,13 +46,6 @@ export default function ModuleController({ module }) {
     //       formFields={module.form.formFields}
     //     />
     //   );
-    case "mod-posts":
-      return (
-        <moduleComponents.PostsModule
-          {...module}
-          title={!module.hideTitle && module.title}
-        />
-      );
     case "mod-table":
       return (
         <moduleComponents.TableModule
