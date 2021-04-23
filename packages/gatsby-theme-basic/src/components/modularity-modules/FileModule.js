@@ -3,9 +3,20 @@ import clsx from "clsx";
 import formatFileSize from "filesize";
 import React from "react";
 
-import SectionHeader from "../SectionHeader";
+import ModuleWrapper from "../ModuleWrapper";
 
 import * as defaultStyles from "./FileModule.module.css";
+
+function getFileExtension(url) {
+  try {
+    let { pathname } = new URL(url);
+    url = pathname;
+  } catch {
+    // Do nothing
+  }
+  let [, extension] = url?.match?.(/\.([^.]+)$/) || [];
+  return extension;
+}
 
 export default function FileModule({
   styles = defaultStyles,
@@ -15,26 +26,37 @@ export default function FileModule({
   ...restProps
 }) {
   return (
-    <div className={clsx(styles.component, className)} {...restProps}>
-      <SectionHeader title={title} />
-      <ul>
+    <ModuleWrapper
+      title={title}
+      {...restProps}
+      className={clsx(styles.component, className)}
+    >
+      <ul className={clsx(styles.list)}>
         {files.map((item, index) => {
           if (!item.file) {
             return null;
           }
-          const mimeType = item.file.mimeType.split("/")[1].toUpperCase();
+          const fileType = getFileExtension(item.file.mediaItemUrl);
           const fileSize = formatFileSize(item.file.fileSize, {
             locale: "se",
             round: 0,
+            base: 10,
           });
-          const title = `${item.file.title} (${mimeType}, ${fileSize})`;
+          const title = `${item.file.title} (${fileType}, ${fileSize})`;
           return (
-            <li key={index}>
-              <Link to={item.file.mediaItemUrl}>{title}</Link>
+            <li key={index} className={clsx(styles.item)}>
+              <Link
+                to={item.file.mediaItemUrl}
+                download={true}
+                type={item.file.mimeType}
+                className={clsx(styles.link)}
+              >
+                {title}
+              </Link>
             </li>
           );
         })}
       </ul>
-    </div>
+    </ModuleWrapper>
   );
 }
