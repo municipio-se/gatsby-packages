@@ -1,37 +1,28 @@
-import { Icon } from "@whitespace/components/src";
-import { Link } from "@whitespace/components/src/components/Link";
-import cx from "classnames";
+import { Icon, Link } from "@whitespace/components/src";
+import clsx from "clsx";
 import React from "react";
 
-// import "./TopNavigation.scss";
+import * as styles from "./TopNavigation.module.css";
 
-export function TopNavigation({
-  namespace = "top-navigation",
-  items,
-  ...restProps
-}) {
+export function TopNavigation({ items, ...restProps }) {
   return (
     <nav
-      className={cx("top-navigation", "hidden-print")}
+      className={clsx(styles.component, "hidden-print")}
       aria-label="primär"
       {...restProps}
     >
-      <ul className={cx("top-navigation__list")}>
+      <ul className={clsx(styles.list)}>
         {items.map(({ url, target, icon, label }, index) => {
           return (
-            <li key={index} className={cx("top-navigation__item")}>
-              <Link
-                className={cx("top-navigation__link")}
-                to={url}
-                target={target}
-              >
+            <li key={index} className={clsx(styles.item)}>
+              <Link className={clsx(styles.link)} to={url} target={target}>
                 <Icon
                   name={icon}
-                  className={cx("top-navigation__icon", `--${icon}`)}
+                  className={clsx(styles.icon, `--${icon}`)}
                   size="1.5rem"
                 />
-                <div className={cx("top-navigation__text")}>
-                  <span className={cx("top-navigation__label")}>{label}</span>
+                <div className={clsx(styles.text)}>
+                  <span className={clsx(styles.label)}>{label}</span>
                 </div>
               </Link>
             </li>

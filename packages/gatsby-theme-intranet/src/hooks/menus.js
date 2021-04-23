@@ -61,7 +61,7 @@ export default function useMenus() {
 }
 
 export function getMenu(menus, location) {
-  const menu = menus.find((menu) => menu.locations === location);
+  const menu = menus.find((menu) => menu?.locations?.indexOf(location) >= 0);
 
   return menu || [];
 }

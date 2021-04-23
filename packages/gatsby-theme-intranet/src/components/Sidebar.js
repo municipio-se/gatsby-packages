@@ -94,11 +94,12 @@ export default function Sidebar({ ...restProps }) {
     };
   }, [siteContext]);
 
-  let { items: mainMenu } = useMenu("main-menu");
-  let { items: helpMenu } = useMenu("help-menu");
+  let { items: mainMenu } = useMenu("MAIN_MENU");
+  let { items: helpMenu } = useMenu("HELP_MENU");
   let tools = useTool();
 
-  console.log(mainMenu);
+  console.log("mainMenu", mainMenu);
+  console.log("helpMenu", helpMenu);
 
   return (
     <aside
