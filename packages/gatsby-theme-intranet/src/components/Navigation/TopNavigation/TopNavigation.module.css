@@ -1,0 +1,101 @@
+.component {
+  margin-bottom: var(--gap-min);
+}
+
+.list {
+  padding-left: 0;
+  list-style: none;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.item {
+  margin-right: calc(var(--space-8) * -1);
+  margin-left: calc(var(--space-8) * -1);
+}
+
+.link {
+  --background: transparent;
+
+  background: var(--background);
+  padding-top: var(--space-8);
+  padding-left: var(--space-16);
+  padding-right: var(--space-16);
+  padding-bottom: var(--space-8);
+  color: var(--sidebar-link);
+  font-weight: 500;
+  text-decoration: none;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  border-radius: 3px;
+  transition: background 100ms ease-in-out;
+}
+
+link:hover,
+link:focus {
+  --background: var(--sidebar-hover);
+}
+
+link:active {
+  background: var(--color-active);
+  color: var(--color-active-foreground);
+}
+
+link:active .icon.icon--home {
+  --icon-bg-color: var(--color-blue-tint-1);
+  --icon-color: var(--color-foreground-inverse);
+}
+link:active .icon.icon--news {
+  --icon-bg-color: var(--color-green-tint-1);
+  --icon-color: var(--color-foreground-inverse);
+}
+link:active .icon.icon--calendar {
+  --icon-bg-color: var(--color-orange-tint-1);
+  --icon-color: var(--color-foreground-inverse);
+}
+link:active .icon.icon--people {
+  --icon-bg-color: var(--color-pink-tint-1);
+  --icon-color: var(--color-foreground-inverse);
+}
+
+.icon.icon {
+  margin-right: var(--space-8);
+}
+.icon.icon--house {
+  --icon-bg-color: var(--color-blue-tint-4);
+  --icon-color: var(--color-blue-tint-1);
+}
+.icon.icon--newspaper {
+  --icon-bg-color: var(--color-green-tint-4);
+  --icon-color: var(--color-green-tint-1);
+}
+.icon.icon--calendar {
+  --icon-bg-color: var(--color-orange-tint-4);
+  --icon-color: var(--color-orange-tint-1);
+}
+.icon.icon--people {
+  --icon-bg-color: var(--color-pink-tint-4);
+  --icon-color: var(--color-pink-tint-1);
+}
+
+.link[aria-current] {
+  background: var(--color-active);
+  color: var(--color-active-foreground);
+}
+.link[aria-current] .icon.icon--house {
+  --icon-bg-color: var(--color-blue-tint-1);
+  --icon-color: var(--color-foreground-inverse);
+}
+.link[aria-current] .icon.icon--newspaper {
+  --icon-bg-color: var(--color-green-tint-1);
+  --icon-color: var(--color-foreground-inverse);
+}
+.link[aria-current] .icon.icon--calendar {
+  --icon-bg-color: var(--color-orange-tint-1);
+  --icon-color: var(--color-foreground-inverse);
+}
+.link[aria-current] .icon.icon--people {
+  --icon-bg-color: var(--color-pink-tint-1);
+  --icon-color: var(--color-foreground-inverse);
+}
