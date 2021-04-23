@@ -52,7 +52,10 @@
 .menu,
 .bookmark,
 .tools {
+  --button-color: var(--color-foreground);
+  --button-background: var(--sidebar-hover);
   --button-outline-color: var(--color-divider);
   line-height: 0;
   font-weight: 400;
+  margin: 0 5px;
 }

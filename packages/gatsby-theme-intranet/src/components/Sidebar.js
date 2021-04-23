@@ -98,8 +98,8 @@ export default function Sidebar({ ...restProps }) {
   let { items: helpMenu } = useMenu("HELP_MENU");
   let tools = useTool();
 
-  console.log("mainMenu", mainMenu);
-  console.log("helpMenu", helpMenu);
+  // console.log("mainMenu", mainMenu);
+  // console.log("helpMenu", helpMenu);
 
   return (
     <aside

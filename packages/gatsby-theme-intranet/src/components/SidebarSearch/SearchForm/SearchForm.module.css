@@ -1,8 +1,14 @@
 .component {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: var(--sidebar-hover);
+  position: relative;
 }
 
 .component input[type="search"] {
   --search-form-background: var(--form-search-background);
+  padding: 0.5rem;
+  width: 100%;
 }
 
 .component input[type="search"] ::-webkit-search-cancel-button {
@@ -13,4 +19,8 @@
 }
 
 .icon {
+  position: absolute;
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
 }

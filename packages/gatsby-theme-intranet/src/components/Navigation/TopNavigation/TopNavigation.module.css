@@ -10,12 +10,13 @@
 }
 
 .item {
-  margin-right: calc(var(--space-8) * -1);
-  margin-left: calc(var(--space-8) * -1);
+  /* margin-right: calc(var(--space-8) * -1);
+  margin-left: calc(var(--space-8) * -1); */
+  margin-bottom: 1px;
 }
 
 .link {
-  --background: transparent;
+  --background: var(--sidebar-hover);
 
   background: var(--background);
   padding-top: var(--space-8);
@@ -28,33 +29,32 @@
   line-height: 1.5;
   display: flex;
   align-items: center;
-  border-radius: 3px;
-  transition: background 100ms ease-in-out;
+  transition: background 50ms ease;
 }
 
-link:hover,
-link:focus {
+.link:hover,
+.link:focus {
   --background: var(--sidebar-hover);
 }
 
-link:active {
+.link:active {
   background: var(--color-active);
   color: var(--color-active-foreground);
 }
 
-link:active .icon.icon--home {
+.link:active .icon.icon--home {
   --icon-bg-color: var(--color-blue-tint-1);
   --icon-color: var(--color-foreground-inverse);
 }
-link:active .icon.icon--news {
+.link:active .icon.icon--news {
   --icon-bg-color: var(--color-green-tint-1);
   --icon-color: var(--color-foreground-inverse);
 }
-link:active .icon.icon--calendar {
+.link:active .icon.icon--calendar {
   --icon-bg-color: var(--color-orange-tint-1);
   --icon-color: var(--color-foreground-inverse);
 }
-link:active .icon.icon--people {
+.link:active .icon.icon--people {
   --icon-bg-color: var(--color-pink-tint-1);
   --icon-color: var(--color-foreground-inverse);
 }

@@ -18,7 +18,7 @@ export function TopNavigation({ items, ...restProps }) {
               <Link className={clsx(styles.link)} to={url} target={target}>
                 <Icon
                   name={icon}
-                  className={clsx(styles.icon, `--${icon}`)}
+                  className={clsx(styles.icon, `${styles.icon}--${icon}`)}
                   size="1.5rem"
                 />
                 <div className={clsx(styles.text)}>
