@@ -5,7 +5,7 @@ import React from "react";
 
 import ModuleWrapper from "../ModuleWrapper";
 
-import * as defaultStyles from "./FileModule.module.css";
+import * as defaultStyles from "./FileslistModule.module.css";
 
 function getFileExtension(url) {
   try {
@@ -18,13 +18,18 @@ function getFileExtension(url) {
   return extension;
 }
 
-export default function FileModule({
+export default function FileslistModule({
   styles = defaultStyles,
   className,
-  files,
+  module: {
+    files: { fileList },
+  },
   title,
   ...restProps
 }) {
+  if (!fileList?.length) {
+    return null;
+  }
   return (
     <ModuleWrapper
       title={title}
@@ -32,7 +37,7 @@ export default function FileModule({
       className={clsx(styles.component, className)}
     >
       <ul className={clsx(styles.list)}>
-        {files.map((item, index) => {
+        {fileList.map((item, index) => {
           if (!item.file) {
             return null;
           }

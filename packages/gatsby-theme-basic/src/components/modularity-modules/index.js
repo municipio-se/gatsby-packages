@@ -1,6 +1,6 @@
 export { default as ContactCardModule } from "./ContactCardModule";
 export { default as FallbackModule } from "./FallbackModule";
-export { default as FileModule } from "./FileModule";
+export { default as FileslistModule } from "./FileslistModule";
 export { default as FormModule } from "./FormModule";
 export { default as GalleryModule } from "./GalleryModule";
 export { default as ImageModule } from "./ImageModule";

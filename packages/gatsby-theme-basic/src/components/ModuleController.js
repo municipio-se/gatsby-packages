@@ -30,14 +30,6 @@ export default function ModuleController({ module }) {
           title={!module.hideTitle && module.title}
         />
       );
-    case "mod-fileslist":
-      return (
-        <moduleComponents.FileModule
-          key={module.id}
-          files={module.files.fileList}
-          title={!module.hideTitle && module.title}
-        />
-      );
     // case "mod-form":
     //   return (
     //     <FormModule
