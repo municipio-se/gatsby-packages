@@ -51,7 +51,7 @@
   border-radius: 4px;
   padding: var(--space-4) var(--space-8);
   width: 200px;
-  position: fixed;
+  position: absolute;
   bottom: auto;
   left: 7.5rem;
   box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.07),
@@ -63,7 +63,7 @@
 
   @media (--medium) {
     left: initial;
-    right: 3.75rem;
+    right: 1.5rem;
   }
 }
 
