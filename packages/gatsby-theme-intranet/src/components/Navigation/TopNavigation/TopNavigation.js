@@ -5,7 +5,6 @@ import React from "react";
 import * as styles from "./TopNavigation.module.css";
 
 export function TopNavigation({ items, ...restProps }) {
-  console.log(items);
   return (
     <nav
       className={clsx(styles.component, "hidden-print")}
