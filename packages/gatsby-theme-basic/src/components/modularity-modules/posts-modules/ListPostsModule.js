@@ -20,7 +20,6 @@ export default function ListPostsModule({
   const {
     dataDisplay: { postsFields },
   } = module;
-  console.log({ module, normalizedItems });
   let showDate = postsFields?.includes("date");
   return (
     <ModuleWrapper
