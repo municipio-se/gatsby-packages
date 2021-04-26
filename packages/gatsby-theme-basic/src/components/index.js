@@ -13,6 +13,9 @@ export { default as Excerpt } from "./Excerpt";
 export { default as ExpandableList } from "./ExpandableList";
 // export * from "./ExpandableList";
 
+export { default as Grid } from "./Grid";
+// export * from "./Grid";
+
 export { default as ModuleController } from "./ModuleController";
 // export * from "./ModuleController";
 
