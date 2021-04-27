@@ -5,13 +5,14 @@
   align-items: center;
   justify-content: space-between;
   user-select: none;
+}
 
-  @media (--medium) {
+@media (min-width: 48rem) {
+  .component {
     padding-left: var(--gap-max);
     padding-right: var(--gap-max);
   }
 }
-
 .content {
   display: flex;
   align-items: center;
@@ -33,8 +34,9 @@
 .menu {
   display: inline-flex;
   border: 1px solid var(--button-outline-color);
-
-  @media (--medium) {
+}
+@media (min-width: 48rem) {
+  .menu {
     display: none;
   }
 }

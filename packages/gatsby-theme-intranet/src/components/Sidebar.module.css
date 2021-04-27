@@ -18,8 +18,10 @@
   z-index: var(--sidebar-z);
   user-select: none;
   font-size: 1rem;
+}
 
-  @media (--medium) {
+@media (min-width: 48rem) {
+  .component {
     display: flex;
     position: sticky;
     display: block;
@@ -27,14 +29,16 @@
     max-width: 17.5rem;
     font-size: 0.875rem;
   }
+}
 
-  @media print {
+@media print {
+  .component {
     display: none;
   }
 }
 
-.isOpen {
-  @media (--medium) {
+@media (min-width: 48rem) {
+  .isOpen {
     display: block;
   }
 }
@@ -46,8 +50,10 @@
   flex-direction: column;
   padding-left: var(--gap);
   padding-right: var(--gap);
+}
 
-  @media (--medium) {
+@media (min-width: 48rem) {
+  .content {
     --gap: var(--gap-medium);
   }
 }
