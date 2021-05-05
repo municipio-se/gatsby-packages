@@ -19,7 +19,7 @@ export default function IndexPostsModule({
   ...restProps
 }) {
   const {
-    dataDisplay: { postsFields },
+    modPostsDataDisplay: { postsFields },
   } = module;
   let showDate = postsFields?.includes("date");
 

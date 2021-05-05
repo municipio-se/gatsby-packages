@@ -7,7 +7,7 @@ export default function DefaultPostsModule({ module }) {
   return (
     <details>
       <summary>
-        <code>{`Unimplemented display mode for posts module: "${module?.dataDisplay?.postsDisplayAs}"`}</code>
+        <code>{`Unimplemented display mode for posts module: "${module?.modPostsDataDisplay?.postsDisplayAs}"`}</code>
       </summary>
       <pre>
         <code>{JSON.stringify(module, null, 2)}</code>

@@ -12,33 +12,36 @@ function fromDisplayModeToComponentName(displayMode) {
   return displayMode && upperFirst(camelCase(displayMode)) + "PostsModule";
 }
 
-function normalizeItems({ dataSource, posts }) {
+function normalizeItems({ modPostsDataSource, posts }) {
   const { processPageContent, stripHTML } = useHTMLProcessor();
-  switch (dataSource.postsDataSource) {
+  switch (modPostsDataSource.postsDataSource) {
     case "input":
-      return (dataSource.data || []).map(({ postContentMedia, ...item }) => {
-        let { content: processedContent } = processPageContent(
-          item.postContent,
-          { postContentMedia },
-        );
-        return {
-          title: item.postTitle,
-          contentType: { name: dataSource.postsDataSource },
-          url: item.permalink,
-          excerpt: stripHTML(item.postContent),
-          content: processedContent,
-          image: item.image && {
-            ...item.image,
-            alt: item.image.altText,
-            src: item.image.src,
-            aspectRatio: item.image.width / item.image.height,
-          },
-        };
-      });
+      return (modPostsDataSource.data || []).map(
+        ({ postContentMedia, ...item }) => {
+          let {
+            content: processedContent,
+          } = processPageContent(item.postContent, { postContentMedia });
+          return {
+            title: item.postTitle,
+            contentType: { name: modPostsDataSource.postsDataSource },
+            url: item.permalink,
+            excerpt: stripHTML(item.postContent),
+            content: processedContent,
+            image: item.image && {
+              ...item.image,
+              alt: item.image.altText,
+              src: item.image.src,
+              aspectRatio: item.image.width / item.image.height,
+            },
+          };
+        },
+      );
     default: {
       let itemsArr = (posts && posts.nodes) || [];
       let itemsToSlice =
-        dataSource.postsCount >= 0 ? dataSource.postsCount : itemsArr.length;
+        modPostsDataSource.postsCount >= 0
+          ? modPostsDataSource.postsCount
+          : itemsArr.length;
 
       let items = itemsArr
         .filter(Boolean)
@@ -81,7 +84,7 @@ function normalizeItems({ dataSource, posts }) {
 export default function PostsModule({ module, ...restProps }) {
   const normalizedItems = normalizeItems(module);
   const {
-    dataDisplay: { postsDisplayAs },
+    modPostsDataDisplay: { postsDisplayAs },
   } = module;
   let componentName = fromDisplayModeToComponentName(postsDisplayAs);
   let Component =
