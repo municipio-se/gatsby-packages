@@ -5,8 +5,6 @@ import React from "react";
 import ExpandableList from "../ExpandableList";
 
 import * as postsModuleComponents from "./posts-modules";
-import PostsModuleDefault from "./PostsModuleDefault";
-import PostsModuleIndex from "./PostsModuleIndex";
 
 function fromDisplayModeToComponentName(displayMode) {
   return displayMode && upperFirst(camelCase(displayMode)) + "PostsModule";
