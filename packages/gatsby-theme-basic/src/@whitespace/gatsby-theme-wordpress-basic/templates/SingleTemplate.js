@@ -5,8 +5,7 @@ import {
   WPBlocks,
 } from "@whitespace/gatsby-theme-wordpress-basic/src/components";
 import { useHTMLProcessor } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/html-processor";
-import { usePageContext } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/page-context";
-import React, { useEffect } from "react";
+import React from "react";
 
 import { ModularityArea } from "../../../components/ModularityArea";
 
@@ -23,11 +22,6 @@ export default function SingleTemplate({ pageContext }) {
     },
     // isPreview,
   } = pageContext;
-
-  const [, setPageContext] = usePageContext();
-  useEffect(() => {
-    setPageContext(pageContext);
-  }, [pageContext]);
 
   const { processPageContent } = useHTMLProcessor();
   let { preamble, content } = processPageContent(contentHTML, { contentMedia });
