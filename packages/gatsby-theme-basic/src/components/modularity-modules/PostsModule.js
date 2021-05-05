@@ -2,6 +2,7 @@ import { useHTMLProcessor } from "@whitespace/gatsby-theme-wordpress-basic/src/h
 import { camelCase, upperFirst } from "lodash/fp";
 import React from "react";
 
+import getMostRelevantDate from "../../utils/getMostRelevantDate";
 import ExpandableList from "../ExpandableList";
 
 import * as postsModuleComponents from "./posts-modules";
@@ -51,7 +52,10 @@ function normalizeItems({ modPostsDataSource, posts }) {
           return {
             ...item,
             title: item.title,
-            date: item.date,
+            date:
+              (item.archiveDatesGmt &&
+                getMostRelevantDate(item.archiveDatesGmt)) ||
+              item.dateGmt,
             url: item.uri,
             excerpt: item.description
               ? item.description
