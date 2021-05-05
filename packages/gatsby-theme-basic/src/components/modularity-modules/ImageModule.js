@@ -10,7 +10,10 @@ export default function ImageModule({
   styles = defaultStyles,
   className,
   title,
-  module: {
+  module = {},
+  ...restProps
+}) {
+  const {
     image: {
       modImageImage: {
         altText,
@@ -24,9 +27,7 @@ export default function ImageModule({
       modImageLinkUrl,
       modImageCaption,
     } = {},
-  } = {},
-  ...restProps
-}) {
+  } = module;
   return (
     <ModuleWrapper
       title={title}

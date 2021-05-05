@@ -13,11 +13,14 @@ export default function ModuleWrapper({
   title,
   ...restProps
 }) {
+  // TODO: implement columnWidth
+  // const { columnWidth } = useModularityModule()
+
   const MaybeSection = title ? Section : React.Fragment;
 
   return (
     <Component className={clsx(styles.component, className)} {...restProps}>
-      {!!title && <H>{title}</H>}
+      {!!title && (typeof title === "function" ? title({ H }) : <H>{title}</H>)}
       <MaybeSection>{children}</MaybeSection>
     </Component>
   );
@@ -27,6 +30,7 @@ ModuleWrapper.propTypes = {
   as: PropTypes.string,
   children: PropTypes.node,
   className: PropTypes.string,
+  module: PropTypes.object,
   styles: PropTypes.objectOf(PropTypes.string),
-  title: PropTypes.node,
+  title: PropTypes.oneOf([PropTypes.node, PropTypes.func]),
 };

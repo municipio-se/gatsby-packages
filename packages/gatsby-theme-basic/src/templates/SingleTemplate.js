@@ -35,7 +35,7 @@ export default function SingleTemplate({ pageContext }) {
         {!!featuredImage?.node && <Image {...featuredImage.node} />}
         {!!preamble && <div>{preamble}</div>}
         {content}
-        <ModularityArea area="content-area" {...contentArea} />
+        <ModularityArea area={contentArea} />
       </Section>
     </article>
   );

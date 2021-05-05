@@ -1,6 +1,9 @@
 import clsx from "clsx";
 import React from "react";
 
+import modularityAreaContext from "../modularityAreaContext";
+import modularityModuleContext from "../modularityModuleContext";
+
 import * as defaultStyles from "./ModularityArea.module.css";
 import ModuleController from "./ModuleController";
 
@@ -8,23 +11,27 @@ export function ModularityArea({
   styles = defaultStyles,
   className,
   area,
-  modules,
   ...restProps
 }) {
+  const { modules } = area;
   return (
-    <div
-      className={clsx(styles.component, styles[`area-${area}`], className)}
-      {...restProps}
-    >
-      {!!modules &&
-        modules.map(({ hidden, node: module, columnWidth }) => {
-          // TODO: implement columnWidth
-          void columnWidth;
-          if (hidden || !module) {
-            return null;
-          }
-          return <ModuleController module={module} key={module.id} />;
-        })}
-    </div>
+    <modularityAreaContext.Provider value={area}>
+      <div className={clsx(styles.component, className)} {...restProps}>
+        {!!modules &&
+          modules.map(({ hidden, module, columnWidth, ...rest }, index) => {
+            if (hidden || !module) {
+              return null;
+            }
+            return (
+              <modularityModuleContext.Provider
+                value={{ hidden, module, columnWidth, ...rest }}
+                key={index}
+              >
+                <ModuleController module={module} />
+              </modularityModuleContext.Provider>
+            );
+          })}
+      </div>
+    </modularityAreaContext.Provider>
   );
 }

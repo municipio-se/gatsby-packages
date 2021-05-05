@@ -21,12 +21,12 @@ function getFileExtension(url) {
 export default function FileslistModule({
   styles = defaultStyles,
   className,
-  module: {
-    files: { fileList },
-  },
   title,
   ...restProps
 }) {
+  const {
+    files: { fileList },
+  } = module;
   if (!fileList?.length) {
     return null;
   }

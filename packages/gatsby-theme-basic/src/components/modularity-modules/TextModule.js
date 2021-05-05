@@ -1,10 +1,9 @@
-// import { css } from "@emotion/react";
-import { H, Section } from "@jfrk/react-heading-levels";
 import { useHTMLProcessor } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/html-processor";
 import clsx from "clsx";
 import React from "react";
 
 import Box from "../Box";
+import ModuleWrapper from "../ModuleWrapper";
 
 import * as defaultStyles from "./TextModule.module.css";
 
@@ -36,15 +35,13 @@ export default function TextModule({
   // const Wrapper = hideBoxFrame ? "div" : Box;
 
   return (
-    <Box
-      className={clsx(styles.component, className)}
-      // css={css`
-      //   font-size: var(--font-size-${textSize});
-      // `}
+    <ModuleWrapper
+      as={Box}
+      title={title}
       {...restProps}
+      className={clsx(styles.component, className)}
     >
-      {title && <H>{title}</H>}
-      <Section>{processedContent}</Section>
-    </Box>
+      {processedContent}
+    </ModuleWrapper>
   );
 }
