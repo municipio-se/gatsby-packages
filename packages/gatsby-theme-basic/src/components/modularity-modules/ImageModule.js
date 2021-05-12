@@ -20,6 +20,7 @@ export default function ImageModule({
         altText,
         base64,
         caption,
+        credit,
         height,
         src,
         srcSet,
@@ -45,6 +46,7 @@ export default function ImageModule({
         base64={base64}
         caption={processedCaption}
         className={clsx(styles.image)}
+        credit={credit}
         height={height}
         linkTo={modImageLinkUrl}
         src={src}
