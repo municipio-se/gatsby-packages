@@ -10,7 +10,7 @@ export const query = graphql`
         name
       }
     }
-    noticeSettings {
+    modNoticeOptions {
       noticeText
       noticeType
     }

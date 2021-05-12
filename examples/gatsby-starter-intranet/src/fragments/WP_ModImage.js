@@ -10,26 +10,12 @@ export const query = graphql`
         name
       }
     }
-    image {
+    modImageOptions {
       modImageLink
       modImageLinkUrl
       modImageCaption
       modImageImage {
-        base64: base64Uri
-        src: sourceUrl(size: LARGE)
-        srcSet: srcSet(size: LARGE)
-        srcWebp: sourceUrl(size: LARGE)
-        srcSetWebp: srcSet(size: LARGE)
-        title
-        caption
-        # photograph {
-        #   name
-        # }
-        altText
-        mediaDetails {
-          height
-          width
-        }
+        ...WP_ImageLarge
       }
     }
   }

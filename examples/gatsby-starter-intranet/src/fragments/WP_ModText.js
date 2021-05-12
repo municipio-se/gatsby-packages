@@ -14,7 +14,7 @@ export const query = graphql`
     contentMedia {
       ...WP_ImageMedium
     }
-    # textOptions {
+    # modTextOptions {
     #   fontSize
     #   hideBoxFrame
     # }
