@@ -27,10 +27,10 @@ export default function ModuleWrapper({
 }
 
 ModuleWrapper.propTypes = {
-  as: PropTypes.string,
+  as: PropTypes.elementType,
   children: PropTypes.node,
   className: PropTypes.string,
   module: PropTypes.object,
   styles: PropTypes.objectOf(PropTypes.string),
-  title: PropTypes.oneOf([PropTypes.node, PropTypes.func]),
+  title: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
 };
