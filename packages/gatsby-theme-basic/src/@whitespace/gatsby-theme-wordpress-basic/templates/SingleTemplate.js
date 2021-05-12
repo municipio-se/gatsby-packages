@@ -7,7 +7,7 @@ import {
 import { useHTMLProcessor } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/html-processor";
 import React from "react";
 
-import { ModularityArea } from "../../../components/ModularityArea";
+import { ModularityArea } from "../../../components";
 
 export default function SingleTemplate({ pageContext }) {
   const {

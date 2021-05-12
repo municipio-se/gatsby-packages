@@ -7,7 +7,7 @@ import modularityModuleContext from "../modularityModuleContext";
 import * as defaultStyles from "./ModularityArea.module.css";
 import ModuleController from "./ModuleController";
 
-export function ModularityArea({
+export default function ModularityArea({
   styles = defaultStyles,
   className,
   area,

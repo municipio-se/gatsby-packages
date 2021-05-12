@@ -16,6 +16,9 @@ export { default as ExpandableList } from "./ExpandableList";
 export { default as Grid } from "./Grid";
 // export * from "./Grid";
 
+export { default as ModularityArea } from "./ModularityArea";
+// export * from "./ModularityArea";
+
 export { default as ModuleController } from "./ModuleController";
 // export * from "./ModuleController";
 
