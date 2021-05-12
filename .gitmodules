@@ -1,3 +1,6 @@
 [submodule "examples/gatsby-starter-basic"]
 	path = examples/gatsby-starter-basic
 	url = git@github.com:municipio-se/gatsby-starter-basic.git
+[submodule "examples/gatsby-starter-intranet"]
+	path = examples/gatsby-starter-intranet
+	url = git@github.com:municipio-se/gatsby-starter-intranet.git
