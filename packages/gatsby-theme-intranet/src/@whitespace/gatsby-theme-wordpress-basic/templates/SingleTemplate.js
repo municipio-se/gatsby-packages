@@ -50,7 +50,7 @@ export default function SingleTemplate({ pageContext }) {
           <>
             {!!preamble && <div>{preamble}</div>}
             {content}
-            <ModularityArea area="content-area" {...contentArea} />
+            <ModularityArea area={contentArea} />
           </>
         )}
       </Section>
