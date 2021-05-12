@@ -17,9 +17,10 @@ function normalizeItems({ modPostsDataSource, posts }) {
     case "input":
       return (modPostsDataSource.data || []).map(
         ({ postContentMedia, ...item }) => {
-          let {
-            content: processedContent,
-          } = processPageContent(item.postContent, { postContentMedia });
+          let { content: processedContent } = processPageContent(
+            item.postContent,
+            { postContentMedia },
+          );
           return {
             title: item.postTitle,
             contentType: { name: modPostsDataSource.postsDataSource },
