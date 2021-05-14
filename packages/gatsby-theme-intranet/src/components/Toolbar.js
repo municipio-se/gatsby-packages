@@ -1,10 +1,10 @@
 import { Icon, Button } from "@whitespace/components/src";
+import PageBreadcrumbs from "@whitespace/gatsby-theme-wordpress-basic/src/components/PageBreadcrumbs";
 import { usePageContext } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/page-context";
 import clsx from "clsx";
 import React, { useContext } from "react";
 
 import { SiteLayoutContext } from "../@whitespace/gatsby-theme-wordpress-basic/components/SiteLayout";
-import Breadcrumb from "../components/Breadcrumb/BreadcrumbContainer";
 
 import * as styles from "./Toolbar.module.css";
 
@@ -36,7 +36,7 @@ export default function Toolbar({ ...restProps }) {
           isTitleHidden={true}
           aria-expanded={siteContext.menuOpen}
         /> */}
-        {!isFrontPage && <Breadcrumb />}
+        {!isFrontPage && <PageBreadcrumbs />}
       </div>
       <div className={clsx(styles.content)}>
         <Button
