@@ -36,14 +36,8 @@ export default function useMenus() {
   `).wp.menus.nodes.map((menu) => ({
     ...menu,
     items: menu.menuItems.nodes.map((menuItem) => {
-      let {
-        connectedObject,
-        cssClasses,
-        label,
-        description,
-        url,
-        target,
-      } = menuItem;
+      let { connectedObject, cssClasses, label, description, url, target } =
+        menuItem;
       let { contentType: { node: { name: type = "custom" } = {} } = {}, id } =
         connectedObject || {};
       let content = type === "page" ? getPage(pages, id) : {};

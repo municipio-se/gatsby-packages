@@ -21,10 +21,8 @@ const axios = Axios.create({
 });
 
 function FormModuleStatus({ successMessage, failureMessage, ...restProps }) {
-  const {
-    status: { success, failure } = {},
-    isSubmitting,
-  } = useFormikContext();
+  const { status: { success, failure } = {}, isSubmitting } =
+    useFormikContext();
   if (isSubmitting) {
     return null;
   }
