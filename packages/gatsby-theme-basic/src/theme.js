@@ -1,3 +1,3 @@
-export default {
-  button: {},
-};
+export default theme;
+
+var theme = {};
