@@ -1,5 +1,5 @@
 import { H } from "@jfrk/react-heading-levels";
-import { Link } from "@whitespace/components/src/components/Link";
+import { Link } from "@whitespace/components";
 import cx from "classnames";
 import React from "react";
 
