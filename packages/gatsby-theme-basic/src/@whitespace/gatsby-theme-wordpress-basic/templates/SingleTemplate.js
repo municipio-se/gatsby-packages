@@ -3,15 +3,20 @@ import {
   Image,
   Time,
   WPBlocks,
+  BoxNavigation
 } from "@whitespace/gatsby-theme-wordpress-basic/src/components";
 import { useHTMLProcessor } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/html-processor";
 import React from "react";
 
 import { ModularityArea } from "../../../components";
+import { usePageChildren, usePageSiblings } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/boxNavigation";
+
+import * as styles from "@whitespace/gatsby-theme-wordpress-basic/src/templates/SingleTemplate.module.css";
 
 export default function SingleTemplate({ pageContext }) {
   const {
     contentNode: {
+      id,
       title,
       dateGmt,
       featuredImage,
@@ -26,9 +31,13 @@ export default function SingleTemplate({ pageContext }) {
   const { processPageContent } = useHTMLProcessor();
   let { preamble, content } = processPageContent(contentHTML, { contentMedia });
 
+  const pageChildren = usePageChildren(id);
+  const pageSiblings = usePageSiblings(id);
+
   return (
     <article>
       <H>{title}</H>
+      <BoxNavigation className={styles.childPages} items={pageChildren} />
       <Section>
         <div>
           Published: <Time date={dateGmt} />
@@ -48,6 +57,7 @@ export default function SingleTemplate({ pageContext }) {
             <ModularityArea area={contentArea} />
           </>
         )}
+        <BoxNavigation className={styles.siblingPages} title="Relaterat innehåll" items={pageSiblings} />
       </Section>
     </article>
   );
