@@ -1,6 +1,6 @@
 // import { Icon, RoundIcon } from "gatsby-theme-municipio/src/components/Icon";
 // import { FluidImage } from "gatsby-theme-municipio/src/components/Image";
-import { Icon } from "@whitespace/components/src";
+import { Icon } from "@whitespace/components";
 import { Image } from "@whitespace/gatsby-theme-wordpress-basic/src/components";
 import clsx from "clsx";
 import React from "react";

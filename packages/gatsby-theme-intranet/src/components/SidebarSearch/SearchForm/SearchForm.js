@@ -1,4 +1,4 @@
-import { Icon } from "@whitespace/components/src";
+import { Icon } from "@whitespace/components";
 import cslx from "classnames";
 import { navigate } from "gatsby";
 import qs from "query-string";

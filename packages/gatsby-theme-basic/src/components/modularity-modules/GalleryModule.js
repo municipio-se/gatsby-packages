@@ -1,4 +1,4 @@
-import { Icon } from "@whitespace/components/src";
+import { Icon } from "@whitespace/components";
 import { Image } from "@whitespace/gatsby-theme-wordpress-basic/src/components";
 import { useHTMLProcessor } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/html-processor";
 import clsx from "clsx";

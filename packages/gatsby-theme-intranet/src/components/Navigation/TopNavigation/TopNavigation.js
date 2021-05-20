@@ -1,4 +1,4 @@
-import { Icon, Link } from "@whitespace/components/src";
+import { Icon, Link } from "@whitespace/components";
 import clsx from "clsx";
 import React from "react";
 

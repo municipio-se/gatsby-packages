@@ -1,4 +1,4 @@
-import { Icon, Button } from "@whitespace/components/src";
+import { Icon, Button } from "@whitespace/components";
 import PageBreadcrumbs from "@whitespace/gatsby-theme-wordpress-basic/src/components/PageBreadcrumbs";
 import { usePageContext } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/page-context";
 import clsx from "clsx";

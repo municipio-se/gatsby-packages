@@ -1,4 +1,4 @@
-import { Icon } from "@whitespace/components/src";
+import { Icon } from "@whitespace/components";
 import cx from "classnames";
 import React from "react";
 
