@@ -1,9 +1,13 @@
+import { Article } from "@whitespace/gatsby-theme-wordpress-basic/src/components";
+import {
+  usePageChildren,
+  usePageSiblings,
+  useIsFullWidthPage,
+  useIsFrontPage,
+} from "@whitespace/gatsby-theme-wordpress-basic/src/hooks";
 import { useHTMLProcessor } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/html-processor";
 import * as styles from "@whitespace/gatsby-theme-wordpress-basic/src/templates/SingleTemplate.module.css";
 import React from "react";
-
-import { usePageChildren, usePageSiblings, useIsFullWidthPage, useIsFrontPage } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks";
-import {Article} from "@whitespace/gatsby-theme-wordpress-basic/src/components";
 
 import { ModularityArea } from "../../../components";
 
@@ -20,10 +24,10 @@ export default function SingleTemplate({ pageContext }) {
       blocksJSON,
       contentArea,
       contentType: {
-        node: { name: postType }
+        node: { name: postType },
       },
       managedBy: { managedBy },
-      tags: { nodes: tags } = {}
+      tags: { nodes: tags } = {},
     },
     // isPreview,
   } = pageContext;
@@ -35,7 +39,7 @@ export default function SingleTemplate({ pageContext }) {
     featuredImage: !!(featuredImage && featuredImage.node) && {
       ...featuredImage.node,
       width: "1025",
-      height: "288"
+      height: "288",
     },
     pageChildren: usePageChildren(id),
     pageSiblings: usePageSiblings(id),
@@ -49,13 +53,12 @@ export default function SingleTemplate({ pageContext }) {
     content: content,
     lastUpdated: modifiedGmt,
     managedBy: managedBy,
-    taxonomies: (postType == "post" && !!tags ) && [...tags]
-  }
-
+    taxonomies: postType == "post" && !!tags && [...tags],
+  };
 
   return (
-    <Article {...articleProps} >
+    <Article {...articleProps}>
       <ModularityArea area={contentArea} />
     </Article>
-  )
+  );
 }
