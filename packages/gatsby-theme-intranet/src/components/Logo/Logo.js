@@ -1,16 +1,27 @@
-import { Link } from "@whitespace/components/src";
+import { Link } from "@whitespace/components";
+import withComponentDefaults from "@whitespace/components/dist/withComponentDefaults";
 import clsx from "clsx";
 import React from "react";
 
-import * as styles from "./Logo.module.css";
+import * as defaultStyles from "./Logo.module.css";
 
-export default function Logo({
+function DefaultLogo({ ...restProps }) {
+  return <span {...restProps}>Municipio</span>;
+}
+
+export default withComponentDefaults(Logo);
+
+function Logo({
   // color = "currentColor",
   // align = "left",
+  styles = defaultStyles,
   className,
   linkTo,
   linkProps: { ...linkRestProps } = {},
   "aria-label": ariaLabel,
+  components: { Logo = DefaultLogo } = {
+    Logo: DefaultLogo,
+  },
   ...restProps
 }) {
   return (
@@ -22,7 +33,7 @@ export default function Logo({
         aria-label={ariaLabel}
         {...linkRestProps}
       >
-        <span className={styles.text}>Municipio</span>
+        <Logo className={styles.text} />
       </Link>
     </div>
   );
