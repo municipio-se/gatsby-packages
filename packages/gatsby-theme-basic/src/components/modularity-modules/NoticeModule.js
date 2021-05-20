@@ -11,7 +11,7 @@ export default function NoticeModule({
   styles = defaultStyles,
   className,
   module: {
-    noticeSettings: { noticeText, noticeType },
+    modNoticeOptions: { noticeText, noticeType },
   },
   title,
   ...restProps

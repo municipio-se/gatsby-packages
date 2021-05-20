@@ -18,7 +18,7 @@ export default function ListPostsModule({
   ...restProps
 }) {
   const {
-    dataDisplay: { postsFields },
+    modPostsDataDisplay: { postsFields },
   } = module;
   let showDate = postsFields?.includes("date");
   return (

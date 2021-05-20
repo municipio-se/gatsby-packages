@@ -11,7 +11,7 @@ function fromDisplayModeToComponentName(displayMode) {
   return displayMode && upperFirst(camelCase(displayMode)) + "PostsModule";
 }
 
-function normalizeItems({ modPostsDataSource, posts }) {
+function normalizeItems({ modPostsDataSource, contentNodes }) {
   const { processPageContent, stripHTML } = useHTMLProcessor();
   switch (modPostsDataSource.postsDataSource) {
     case "input":
@@ -37,7 +37,7 @@ function normalizeItems({ modPostsDataSource, posts }) {
         },
       );
     default: {
-      let itemsArr = (posts && posts.nodes) || [];
+      let itemsArr = contentNodes?.nodes || [];
       let itemsToSlice =
         modPostsDataSource.postsCount >= 0
           ? modPostsDataSource.postsCount
