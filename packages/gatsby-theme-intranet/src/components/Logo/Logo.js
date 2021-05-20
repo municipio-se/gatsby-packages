@@ -9,7 +9,7 @@ function DefaultLogo({ ...restProps }) {
   return <span {...restProps}>Municipio</span>;
 }
 
-export default withComponentDefaults(Logo);
+export default withComponentDefaults(Logo, "logo");
 
 function Logo({
   // color = "currentColor",
