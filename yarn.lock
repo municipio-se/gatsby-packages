@@ -2479,10 +2479,10 @@
     use-persisted-state "^0.3.3"
     use-ssr "^1.0.24"
 
-"@whitespace/gatsby-theme-wordpress-basic@^0.4.0":
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/@whitespace/gatsby-theme-wordpress-basic/-/gatsby-theme-wordpress-basic-0.4.0.tgz#210cee8e29cc74639243e90e8a24ba685f91f97c"
-  integrity sha512-rUyr/SQ+0qGQXNJqUQz/BHAEf4fUQOliEAyzHHmR1OhJGQ3sJBAANQH50729ZzHCXrxDtOlWsO5gileFUg5d7w==
+"@whitespace/gatsby-theme-wordpress-basic@^0.4.1":
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/@whitespace/gatsby-theme-wordpress-basic/-/gatsby-theme-wordpress-basic-0.4.1.tgz#d488c8cbe59e34c8138279bcdf7368bdb5688f52"
+  integrity sha512-g+lt8xWoydv5qmtJ7h1W+QAZkA05XrjlqWzhD+9XnxC6cg9BnS6bfirDk+EriqnXHJOPzpQEpysHrRZbEdB26w==
   dependencies:
     "@apollo/react-hooks" "^4.0.0"
     "@emotion/react" "^11.1.5"
