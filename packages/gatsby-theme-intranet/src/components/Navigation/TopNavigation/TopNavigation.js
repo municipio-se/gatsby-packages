@@ -16,11 +16,13 @@ export function TopNavigation({ items, ...restProps }) {
           return (
             <li key={index} className={clsx(styles.item)}>
               <Link className={clsx(styles.link)} to={url} target={target}>
-                {/* <Icon
-                  name={icon}
-                  className={clsx(styles.icon, `${styles.icon}--${icon}`)}
-                  size="1.5rem"
-                /> */}
+                <span className={clsx(styles.iconWrapper, !!icon == false && `${styles.transparent}`)}>
+                  <Icon
+                    name={icon}
+                    className={clsx(styles.icon, icon && `${styles.icon}--${icon}`)}
+                    size="1.5rem"
+                  />
+                </span>
                 <div className={clsx(styles.text)}>
                   <span className={clsx(styles.label)}>{label}</span>
                 </div>

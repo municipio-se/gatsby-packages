@@ -22,86 +22,70 @@
 }
 
 .link {
-  --background: var(--sidebar-hover);
-
-  background: var(--background);
+  background: var(--sidebar-top-navigation-background, #000);
+  color: var(--sidebar-top-navigation-color, #fff);
   padding-top: var(--space-8);
   padding-left: var(--space-16);
   padding-right: var(--space-16);
   padding-bottom: var(--space-8);
-  color: var(--sidebar-link);
   font-weight: 500;
   text-decoration: none;
   line-height: 1.5;
   display: flex;
   align-items: center;
   transition: background 50ms ease;
+  border-radius: 3px;
 }
 
 .link:hover,
 .link:focus {
-  --background: var(--sidebar-hover);
+  background: var(--sidebar-top-navigation-background-hover, #333);
+  color: var(--sidebar-top-navigation-color-hover, #999);
+  text-decoration: none;
+}
+.link:hover .iconWrapper,
+.link:focus .iconWrapper {
+  --icon-color: var(--sidebar-top-navigation-icon-color-hover, --color-foreground-inverse);
+  background: var(--sidebar-top-navigation-icon-background-hover, --color-blue-tint-1);
 }
 
 .link:active {
-  background: var(--color-active);
-  color: var(--color-active-foreground);
+  background: var(--sidebar-top-navigation-background-active, #333);
+  color: var(--sidebar-top-navigation-color-active, #000);
+  font-weight: inherit;
+}
+.link:active .iconWrapper {
+  --icon-color: var(--sidebar-top-navigation-icon-color-active, --color-foreground-inverse);
+  background: var(--sidebar-top-navigation-icon-background-active, --color-blue-tint-1);
 }
 
-.link:active .icon.icon--home {
-  --icon-bg-color: var(--color-blue-tint-1);
-  --icon-color: var(--color-foreground-inverse);
+.iconWrapper {
+  --icon-color: var(--sidebar-top-navigation-icon-color, --color-foreground-inverse);
+  background: var(--sidebar-top-navigation-icon-background, --color-blue-tint-4);
+  border-radius: 100%;
+  margin-right: var(--space-8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  flex: none;
 }
-.link:active .icon.icon--news {
-  --icon-bg-color: var(--color-green-tint-1);
-  --icon-color: var(--color-foreground-inverse);
-}
-.link:active .icon.icon--calendar {
-  --icon-bg-color: var(--color-orange-tint-1);
-  --icon-color: var(--color-foreground-inverse);
-}
-.link:active .icon.icon--people {
-  --icon-bg-color: var(--color-pink-tint-1);
-  --icon-color: var(--color-foreground-inverse);
+.transparent {
+  background: transparent;
 }
 
 .icon.icon {
-  margin-right: var(--space-8);
-}
-.icon.icon--house {
-  --icon-bg-color: var(--color-blue-tint-4);
-  --icon-color: var(--color-blue-tint-1);
-}
-.icon.icon--newspaper {
-  --icon-bg-color: var(--color-green-tint-4);
-  --icon-color: var(--color-green-tint-1);
-}
-.icon.icon--calendar {
-  --icon-bg-color: var(--color-orange-tint-4);
-  --icon-color: var(--color-orange-tint-1);
-}
-.icon.icon--people {
-  --icon-bg-color: var(--color-pink-tint-4);
-  --icon-color: var(--color-pink-tint-1);
+  --icon-size: 1rem;
 }
 
 .link[aria-current] {
-  background: var(--color-active);
-  color: var(--color-active-foreground);
+  background: var(--sidebar-top-navigation-background-current, #f00);
+  color: var(--sidebar-top-navigation-color-current, #00f);
+  font-weight: 500;
+  text-decoration: none;
 }
-.link[aria-current] .icon.icon--house {
-  --icon-bg-color: var(--color-blue-tint-1);
-  --icon-color: var(--color-foreground-inverse);
-}
-.link[aria-current] .icon.icon--newspaper {
-  --icon-bg-color: var(--color-green-tint-1);
-  --icon-color: var(--color-foreground-inverse);
-}
-.link[aria-current] .icon.icon--calendar {
-  --icon-bg-color: var(--color-orange-tint-1);
-  --icon-color: var(--color-foreground-inverse);
-}
-.link[aria-current] .icon.icon--people {
-  --icon-bg-color: var(--color-pink-tint-1);
-  --icon-color: var(--color-foreground-inverse);
+.link[aria-current] .iconWrapper {
+  --icon-color: var(--sidebar-top-navigation-icon-color-current, --color-foreground-inverse);
+  background: var(--sidebar-top-navigation-icon-background-current, --color-blue-tint-1);
 }
