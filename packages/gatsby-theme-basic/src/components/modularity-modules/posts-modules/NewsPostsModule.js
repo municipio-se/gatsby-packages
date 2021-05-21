@@ -5,9 +5,9 @@ import Card from "../../Card";
 import Grid from "../../Grid";
 import ModuleWrapper from "../../ModuleWrapper";
 
-import * as defaultStyles from "./IndexPostsModule.module.css";
+import * as defaultStyles from "./NewsPostsModule.module.css";
 
-export default function IndexPostsModule({
+export default function NewsPostsModule({
   styles = defaultStyles,
   className,
   components: { Item = Card } = { Item: Card },
