@@ -6,7 +6,6 @@ import {
   useIsFrontPage,
 } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks";
 import { useHTMLProcessor } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/html-processor";
-import * as styles from "@whitespace/gatsby-theme-wordpress-basic/src/templates/SingleTemplate.module.css";
 import React from "react";
 
 import { ModularityArea } from "../../../components";
