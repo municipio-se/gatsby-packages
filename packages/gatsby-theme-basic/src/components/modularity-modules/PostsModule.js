@@ -3,7 +3,6 @@ import { camelCase, upperFirst } from "lodash/fp";
 import React from "react";
 
 import getMostRelevantDate from "../../utils/getMostRelevantDate";
-import ExpandableList from "../ExpandableList";
 
 import * as postsModuleComponents from "./posts-modules";
 
@@ -75,10 +74,6 @@ function normalizeItems({ modPostsDataSource, contentNodes }) {
           };
         });
 
-      // if (dataSource.postsDataPostType !== null) {
-      //   return sortModuleItemsByPostType(items, dataSource.postsDataPostType);
-      // }
-
       return items;
     }
   }
@@ -102,65 +97,4 @@ export default function PostsModule({ module, ...restProps }) {
       {...restProps}
     />
   );
-
-  switch (postsDisplayAs) {
-    case "index":
-      return (
-        <PostsModuleIndex
-          title={title}
-          dataSource={dataSource}
-          items={normalizeItems({ dataSource, posts }).map((item) => {
-            return {
-              ...item,
-              content: item.content,
-            };
-          })}
-        />
-      );
-    case "expandable-list":
-      return (
-        <ExpandableList
-          sectionHeader={{
-            content: {
-              title: title,
-              withBorder: dataSource.archiveLink,
-              link: dataSource.archiveLink
-                ? {
-                    url: dataSource.postsDataPostType.url,
-                    text: dataSource.postsDataPostType.labels.allItems,
-                  }
-                : null,
-            },
-            noMarginBottom: !dataSource.archiveLink && true,
-          }}
-          items={normalizeItems({ dataSource, posts }).map((item) => ({
-            ...item,
-          }))}
-        />
-      );
-
-    case "horizontal":
-      return (
-        <PostsModuleDefault
-          title={title}
-          dataSource={dataSource}
-          items={normalizeItems({ dataSource, posts })}
-          postsFields={postsFields}
-          cardClassName={
-            "c-card--horizontal" + (postsHighlight ? " c-card--highlight" : "")
-          }
-        />
-      );
-
-    default:
-      return (
-        <PostsModuleDefault
-          title={title}
-          dataSource={dataSource}
-          items={normalizeItems({ dataSource, posts })}
-          postsFields={postsFields}
-          wrapperClassName="c-card-group--half"
-        />
-      );
-  }
 }
