@@ -1,16 +1,11 @@
-import { H, Section } from "@jfrk/react-heading-levels";
-import {
-  Image,
-  Time,
-  WPBlocks,
-  BoxNavigation,
-} from "@whitespace/gatsby-theme-wordpress-basic/src/components";
+import { Article } from "@whitespace/gatsby-theme-wordpress-basic/src/components";
 import {
   usePageChildren,
   usePageSiblings,
-} from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/boxNavigation";
+  useIsFullWidthPage,
+  useIsFrontPage,
+} from "@whitespace/gatsby-theme-wordpress-basic/src/hooks";
 import { useHTMLProcessor } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/html-processor";
-import * as styles from "@whitespace/gatsby-theme-wordpress-basic/src/templates/SingleTemplate.module.css";
 import React from "react";
 
 import { ModularityArea } from "../../../components";
@@ -21,11 +16,17 @@ export default function SingleTemplate({ pageContext }) {
       id,
       title,
       dateGmt,
+      modifiedGmt,
       featuredImage,
       content: contentHTML,
       contentMedia,
       blocksJSON,
       contentArea,
+      contentType: {
+        node: { name: postType },
+      },
+      managedBy: { managedBy },
+      tags: { nodes: tags } = {},
     },
     // isPreview,
   } = pageContext;
@@ -33,38 +34,30 @@ export default function SingleTemplate({ pageContext }) {
   const { processPageContent } = useHTMLProcessor();
   let { preamble, content } = processPageContent(contentHTML, { contentMedia });
 
-  const pageChildren = usePageChildren(id);
-  const pageSiblings = usePageSiblings(id);
+  const articleProps = {
+    featuredImage: !!(featuredImage && featuredImage.node) && {
+      ...featuredImage.node,
+      width: "1025",
+      height: "288",
+    },
+    pageChildren: usePageChildren(id),
+    pageSiblings: usePageSiblings(id),
+    isFullWidthPage: useIsFullWidthPage(id, postType),
+    hideTitle: useIsFrontPage(id),
+    title: title,
+    publishedDate: postType == "post" && dateGmt,
+    blocksJSON: blocksJSON,
+    contentMedia: contentMedia,
+    preamble: !!preamble && preamble,
+    content: content,
+    lastUpdated: !useIsFrontPage(id) && modifiedGmt,
+    managedBy: !useIsFrontPage(id) && managedBy,
+    taxonomies: postType == "post" && !!tags && [...tags],
+  };
 
   return (
-    <article>
-      <H>{title}</H>
-      <BoxNavigation className={styles.childPages} items={pageChildren} />
-      <Section>
-        <div>
-          Published: <Time date={dateGmt} />
-        </div>
-        {!!(featuredImage && featuredImage.node) && (
-          <Image {...featuredImage.node} />
-        )}
-        {blocksJSON ? (
-          <WPBlocks
-            blocks={JSON.parse(blocksJSON)}
-            contentMedia={contentMedia}
-          />
-        ) : (
-          <>
-            {!!preamble && <div>{preamble}</div>}
-            {content}
-            <ModularityArea area={contentArea} />
-          </>
-        )}
-        <BoxNavigation
-          className={styles.siblingPages}
-          title="Relaterat innehåll"
-          items={pageSiblings}
-        />
-      </Section>
-    </article>
+    <Article {...articleProps}>
+      <ModularityArea area={contentArea} />
+    </Article>
   );
 }
