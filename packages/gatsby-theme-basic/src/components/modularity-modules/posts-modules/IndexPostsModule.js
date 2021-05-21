@@ -5,6 +5,7 @@ import {
 import clsx from "clsx";
 import React from "react";
 
+import Card from "../../Card";
 import Grid from "../../Grid";
 import ModuleWrapper from "../../ModuleWrapper";
 
@@ -13,6 +14,7 @@ import * as defaultStyles from "./IndexPostsModule.module.css";
 export default function IndexPostsModule({
   styles = defaultStyles,
   className,
+  components: { Item = Card } = { Item: Card },
   title,
   module,
   normalizedItems,
@@ -33,17 +35,13 @@ export default function IndexPostsModule({
         {normalizedItems.map((item, index) => {
           return (
             // TODO: Add <Card>
-            <div key={index} className={clsx(styles.item)}>
-              <Link to={item.url} className={clsx(styles.link)}>
-                <span>{item.title}</span>
-              </Link>{" "}
-              {!!showDate && (
-                <Time
-                  date={item.dateGmt}
-                  format={{ year: "numeric", month: "numeric", day: "numeric" }}
-                />
-              )}
-            </div>
+            <Item
+              key={index}
+              className={clsx(styles.item)}
+              url={item.url}
+              title={item.title}
+              date={!!showDate && item.dateGmt}
+            />
           );
         })}
       </Grid>
