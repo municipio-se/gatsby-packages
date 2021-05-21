@@ -6,7 +6,6 @@ import React from "react";
 
 import * as defaultStyles from "../Navigation.module.css";
 
-
 export function NavigationMenu({
   className,
   styles = defaultStyles,
@@ -19,10 +18,19 @@ export function NavigationMenu({
   ...restProps
 }) {
   const WrapperComponent = isMenu ? "nav" : "div";
-  const componentModifer = isTreeMenu ? styles.componentTree : isHelpMenu ? styles.componentHelp : "";
+  const componentModifer = isTreeMenu
+    ? styles.componentTree
+    : isHelpMenu
+    ? styles.componentHelp
+    : "";
   return (
     <WrapperComponent
-      className={clsx(styles.component, componentModifer, utilities.hiddenPrint, className)}
+      className={clsx(
+        styles.component,
+        componentModifer,
+        utilities.hiddenPrint,
+        className,
+      )}
       {...restProps}
     >
       <H className={clsx(styles.label)}>{title}</H>
