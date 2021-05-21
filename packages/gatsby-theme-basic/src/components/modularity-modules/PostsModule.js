@@ -12,15 +12,14 @@ function fromDisplayModeToComponentName(displayMode) {
 }
 
 function normalizeItems({ modPostsDataSource, contentNodes }) {
-  const { processPageContent, stripHTML } = useHTMLProcessor();
+  const { processContent, stripHTML } = useHTMLProcessor();
   switch (modPostsDataSource.postsDataSource) {
     case "input":
       return (modPostsDataSource.data || []).map(
         ({ postContentMedia, ...item }) => {
-          let { content: processedContent } = processPageContent(
-            item.postContent,
-            { postContentMedia },
-          );
+          let processedContent = processContent(item.postContent, {
+            contentMedia: postContentMedia,
+          });
           return {
             title: item.postTitle,
             contentType: { name: modPostsDataSource.postsDataSource },
@@ -36,6 +35,7 @@ function normalizeItems({ modPostsDataSource, contentNodes }) {
           };
         },
       );
+
     default: {
       let itemsArr = contentNodes?.nodes || [];
       let itemsToSlice =
@@ -47,7 +47,7 @@ function normalizeItems({ modPostsDataSource, contentNodes }) {
         .filter(Boolean)
         .slice(0, itemsToSlice)
         .map(({ contentMedia, ...item }) => {
-          let { content: processedContent } = processPageContent(item.content, {
+          let processedContent = processContent(item.content, {
             contentMedia,
           });
           return {
