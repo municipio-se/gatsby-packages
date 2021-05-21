@@ -24,8 +24,8 @@
 }
 
 .link {
-  background: var(--sidebar-top-navigation-background, #000);
-  color: var(--sidebar-top-navigation-color, #fff);
+  background: var(--navigation-background, #000);
+  color: var(--navigation-color, #fff);
   padding-top: var(--space-8);
   padding-left: var(--space-16);
   padding-right: var(--space-16);
@@ -41,45 +41,45 @@
 
 .link:hover,
 .link:focus {
-  background: var(--sidebar-top-navigation-background-hover, #333);
-  color: var(--sidebar-top-navigation-color-hover, #999);
+  background: var(--navigation-background-hover, #333);
+  color: var(--navigation-color-hover, #999);
   text-decoration: none;
 }
 .link:hover .iconWrapper:not(.transparent),
 .link:focus .iconWrapper:not(.transparent) {
   --icon-color: var(
-    --sidebar-top-navigation-icon-color-hover,
+    --navigation-icon-color-hover,
     --color-foreground-inverse
   );
   background: var(
-    --sidebar-top-navigation-icon-background-hover,
+    --navigation-icon-background-hover,
     --color-blue-tint-1
   );
 }
 
 .link:active {
-  background: var(--sidebar-top-navigation-background-active, #333);
-  color: var(--sidebar-top-navigation-color-active, #000);
+  background: var(--navigation-background-active, #333);
+  color: var(--navigation-color-active, #000);
   font-weight: inherit;
 }
 .link:active .iconWrapper:not(.transparent) {
   --icon-color: var(
-    --sidebar-top-navigation-icon-color-active,
+    --navigation-icon-color-active,
     --color-foreground-inverse
   );
   background: var(
-    --sidebar-top-navigation-icon-background-active,
+    --navigation-icon-background-active,
     --color-blue-tint-1
   );
 }
 
 .iconWrapper {
   --icon-color: var(
-    --sidebar-top-navigation-icon-color,
+    --navigation-icon-color,
     --color-foreground-inverse
   );
   background: var(
-    --sidebar-top-navigation-icon-background,
+    --navigation-icon-background,
     --color-blue-tint-4
   );
   border-radius: 100%;
@@ -100,18 +100,18 @@
 }
 
 .link[aria-current] {
-  background: var(--sidebar-top-navigation-background-current, #f00);
-  color: var(--sidebar-top-navigation-color-current, #00f);
+  background: var(--navigation-background-current, #f00);
+  color: var(--navigation-color-current, #00f);
   font-weight: 500;
   text-decoration: none;
 }
 .link[aria-current] .iconWrapper:not(.transparent) {
   --icon-color: var(
-    --sidebar-top-navigation-icon-color-current,
+    --navigation-icon-color-current,
     --color-foreground-inverse
   );
   background: var(
-    --sidebar-top-navigation-icon-background-current,
+    --navigation-icon-background-current,
     --color-blue-tint-1
   );
 }

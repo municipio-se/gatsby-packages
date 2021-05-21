@@ -13,6 +13,7 @@
   margin-left: -0.5rem;
   margin-right: -0.5rem;
   pointer-events: none;
+  margin-bottom: 0.25rem;
 }
 
 .list-item.list-item {
@@ -20,69 +21,96 @@
   font-weight: 400;
 }
 
-/* .list-item-level0 {
-  font-weight: var(--weight-500);
-} */
-
-/* @mixin col-x-list {
-  @for $i from 1 through 10 {
-    .list-item-level#{$i} {
-      padding-left: calc(#{$i}rem);
-    }
-  }
+.list-item-level {
 }
-@include col-x-list; */
+
+.list-item-level-zero {
+  font-weight: var(--weight-500);
+  margin-left: 0;
+}
+
+.list-item-level-one {
+  margin-left: 1rem;
+}
+
+.list-item-level-two {
+  margin-left: 2rem;
+}
+
+.list-item-level-three {
+  margin-left: 3rem;
+}
+
+.list-item-level-four {
+  margin-left: 5rem;
+}
+
+.list-item-level-five {
+  margin-left: 6rem;
+}
+
+.list-item-level-six {
+  margin-left: 7rem;
+}
+
+
 
 .list-link {
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: var(--sidebar-link);
+  color: var(--navigation-color);
   pointer-events: all;
 
-  background: var(--navigation-link-background, transparent);
+  background: var(--navigation-background, transparent);
   padding-top: 0.25rem;
   padding-right: 0.5rem;
   padding-bottom: 0.25rem;
   padding-left: 0.5rem;
-  color: var(--sidebar-link);
   text-decoration: none;
   line-height: 1.5;
   display: flex;
   border-radius: 3px;
 }
 
-.list-link::hover {
-  --navigation-link-background: var(--sidebar-hover);
+.list-link:hover {
+  background: var(--navigation-background-hover);
+  color: var(--navigation-color-hover);
+  text-decoration: none;
 }
 
-.list-link--is-active[aria-current] {
-  --navigation-link-background: var(--color-active);
-  color: var(--color-active-foreground);
+.list-link[aria-expanded="true"] {
+  background: var(--navigation-background-expanded);
+  color: var(--navigation-color-expanded);
+}
+
+.list-link[aria-current] {
+  background: var(--navigation-background-current);
+  color: var(--navigation-color-current);
+  font-weight: 400;
+  text-decoration: none;
 }
 
 /*
 // Todo: Wrap in "on mouse" with whatinput so that the bg color of a focused and active item is not higlighted
 // .list-link--is-active.list-link--is-focused:not([aria-current]) {
-//   --navigation-link-background: transparent;
-//   color: var(--sidebar-link);
+//    background: transparent;
+//   color: var(--navigation-color);
 // }
 */
 
-.list-link--has-children::before {
+.list-link--has-children:before {
   font-size: 0.5em;
   content: "►";
   display: block;
   margin-right: 0.25rem;
 }
 
-.list-link--is-open::before {
+.list-link--is-open:before {
   content: "▼";
 }
 
-.list-link--is-focused {
-  --navigation-link-background: var(--sidebar-hover);
-}
+
 
 .label {
   font-size: 0.75rem;
@@ -93,8 +121,7 @@
 }
 
 .button {
-  --button-bg-color: var(--sidebar-hover);
-  color: var(--color-foreground);
+  color: pink;
   margin-top: 0.25rem;
 }
 
@@ -110,6 +137,5 @@
 
 /* TREE MENU */
 .component--tree .list-item {
-  margin-left: 0rem;
-  margin-right: 0rem;
+  padding-left: 0;
 }

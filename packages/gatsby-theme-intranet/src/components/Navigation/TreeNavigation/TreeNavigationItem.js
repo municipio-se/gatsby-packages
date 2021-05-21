@@ -1,9 +1,12 @@
 import { Link } from "@whitespace/components";
-import cx from "classnames";
+import clsx from "clsx";
 import React from "react";
+
+import * as defaultStyles from "../Navigation.module.css";
 
 export default function TreeNavigationItem({
   active,
+  styles = defaultStyles,
   focused,
   hasNodes = false,
   id,
@@ -29,20 +32,22 @@ export default function TreeNavigationItem({
     restProps["aria-expanded"] = isOpen;
   }
 
+  const levels = ["Zero", "One", "Two", "Three", "Four", "Five", "Six"]
+
   return (
     <li
-      className={cx(
-        "navigation__list-item",
-        `navigation__list-item-level${level}`,
+      className={clsx(
+        styles.listItem,
+        styles[`listItemLevel${levels[level]}`]
       )}
     >
       <Link
-        className={cx(
-          "navigation__list-link",
-          hasNodes && "navigation__list-link--has-children",
-          isOpen && "navigation__list-link--is-open",
-          focused && "navigation__list-link--is-focused",
-          active && "navigation__list-link--is-active",
+        className={clsx(
+          styles.listLink,
+          hasNodes && styles.listLinkHasChildren,
+          isOpen && styles.listLinkIsOpen,
+          focused && styles.listLinkIsFocused,
+          active && styles.listLinkIsActive
         )}
         onClick={(e) => {
           hasNodes && toggleNode && toggleNode();
@@ -50,7 +55,7 @@ export default function TreeNavigationItem({
           e.stopPropagation();
         }}
         tabIndex="-1"
-        to={url}
+        to={uri}
         {...restProps}
       >
         {label}

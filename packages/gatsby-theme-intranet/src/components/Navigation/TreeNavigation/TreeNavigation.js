@@ -1,18 +1,25 @@
 import { H } from "@jfrk/react-heading-levels";
-import { usePageContext } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/page-context";
-import usePages from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/pages";
+import { utilities  } from "@whitespace/gatsby-theme-wordpress-basic/src/foundation";
+import { usePageContext, usePages } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks";
 import {
   getAncestors,
   getTreeStructure,
 } from "@whitespace/gatsby-theme-wordpress-basic/src/utils/pageTree";
-import cx from "classnames";
+import clsx from "clsx";
 import { navigate } from "gatsby";
 import React from "react";
 import TreeMenu from "react-simple-tree-menu";
 
+import * as defaultStyles from "../Navigation.module.css";
+
 import TreeNavigationItem from "./TreeNavigationItem";
 
-export default function TreeNavigation({ ...restProps }) {
+
+
+export default function TreeNavigation({
+  styles = defaultStyles,
+  ...restProps
+}) {
   let allPages = usePages();
   const treeData = getTreeStructure(allPages);
 
@@ -52,11 +59,11 @@ export default function TreeNavigation({ ...restProps }) {
     >
       {({ items }) => (
         <nav
-          className={cx("navigation", "navigation--tree", "hidden-print")}
+          className={clsx(styles.component, styles.componentTree, utilities.hiddenPrint)}
           aria-label="Innehåll"
         >
-          <H className={cx("navigation__label")}>Innehåll</H>
-          <ul className={cx("navigation__list")}>
+          <H className={clsx(styles.label)}>Innehåll</H>
+          <ul className={clsx(styles.list)}>
             {items.map((props, index) => {
               return <TreeNavigationItem key={index} {...props} />;
             })}
