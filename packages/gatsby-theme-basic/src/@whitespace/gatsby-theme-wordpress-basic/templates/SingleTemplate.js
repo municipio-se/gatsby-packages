@@ -51,8 +51,8 @@ export default function SingleTemplate({ pageContext }) {
     contentMedia: contentMedia,
     preamble: !!preamble && preamble,
     content: content,
-    lastUpdated: modifiedGmt,
-    managedBy: managedBy,
+    lastUpdated: !useIsFrontPage(id) && modifiedGmt,
+    managedBy: !useIsFrontPage(id) && managedBy,
     taxonomies: postType == "post" && !!tags && [...tags],
   };
 
