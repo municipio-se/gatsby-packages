@@ -45,7 +45,7 @@ export default function SingleTemplate({ pageContext }) {
     isFullWidthPage: useIsFullWidthPage(id, postType),
     hideTitle: useIsFrontPage(id),
     title: title,
-    publishedDate: postType == "post" && dateGmt,
+    publishedDate: !useIsFrontPage(id) && dateGmt,
     blocksJSON: blocksJSON,
     contentMedia: contentMedia,
     preamble: !!preamble && preamble,
