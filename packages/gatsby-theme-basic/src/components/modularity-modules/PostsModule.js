@@ -3,7 +3,6 @@ import { camelCase, upperFirst } from "lodash/fp";
 import React from "react";
 
 import getMostRelevantDate from "../../utils/getMostRelevantDate";
-import ExpandableList from "../ExpandableList";
 
 import * as postsModuleComponents from "./posts-modules";
 
@@ -12,15 +11,14 @@ function fromDisplayModeToComponentName(displayMode) {
 }
 
 function normalizeItems({ modPostsDataSource, contentNodes }) {
-  const { processPageContent, stripHTML } = useHTMLProcessor();
+  const { processContent, stripHTML } = useHTMLProcessor();
   switch (modPostsDataSource.postsDataSource) {
     case "input":
       return (modPostsDataSource.data || []).map(
         ({ postContentMedia, ...item }) => {
-          let { content: processedContent } = processPageContent(
-            item.postContent,
-            { postContentMedia },
-          );
+          let processedContent = processContent(item.postContent, {
+            contentMedia: postContentMedia,
+          });
           return {
             title: item.postTitle,
             contentType: { name: modPostsDataSource.postsDataSource },
@@ -36,6 +34,7 @@ function normalizeItems({ modPostsDataSource, contentNodes }) {
           };
         },
       );
+
     default: {
       let itemsArr = contentNodes?.nodes || [];
       let itemsToSlice =
@@ -47,7 +46,7 @@ function normalizeItems({ modPostsDataSource, contentNodes }) {
         .filter(Boolean)
         .slice(0, itemsToSlice)
         .map(({ contentMedia, ...item }) => {
-          let { content: processedContent } = processPageContent(item.content, {
+          let processedContent = processContent(item.content, {
             contentMedia,
           });
           return {
@@ -75,10 +74,6 @@ function normalizeItems({ modPostsDataSource, contentNodes }) {
           };
         });
 
-      // if (dataSource.postsDataPostType !== null) {
-      //   return sortModuleItemsByPostType(items, dataSource.postsDataPostType);
-      // }
-
       return items;
     }
   }
@@ -102,65 +97,4 @@ export default function PostsModule({ module, ...restProps }) {
       {...restProps}
     />
   );
-
-  switch (postsDisplayAs) {
-    case "index":
-      return (
-        <PostsModuleIndex
-          title={title}
-          dataSource={dataSource}
-          items={normalizeItems({ dataSource, posts }).map((item) => {
-            return {
-              ...item,
-              content: item.content,
-            };
-          })}
-        />
-      );
-    case "expandable-list":
-      return (
-        <ExpandableList
-          sectionHeader={{
-            content: {
-              title: title,
-              withBorder: dataSource.archiveLink,
-              link: dataSource.archiveLink
-                ? {
-                    url: dataSource.postsDataPostType.url,
-                    text: dataSource.postsDataPostType.labels.allItems,
-                  }
-                : null,
-            },
-            noMarginBottom: !dataSource.archiveLink && true,
-          }}
-          items={normalizeItems({ dataSource, posts }).map((item) => ({
-            ...item,
-          }))}
-        />
-      );
-
-    case "horizontal":
-      return (
-        <PostsModuleDefault
-          title={title}
-          dataSource={dataSource}
-          items={normalizeItems({ dataSource, posts })}
-          postsFields={postsFields}
-          cardClassName={
-            "c-card--horizontal" + (postsHighlight ? " c-card--highlight" : "")
-          }
-        />
-      );
-
-    default:
-      return (
-        <PostsModuleDefault
-          title={title}
-          dataSource={dataSource}
-          items={normalizeItems({ dataSource, posts })}
-          postsFields={postsFields}
-          wrapperClassName="c-card-group--half"
-        />
-      );
-  }
 }

@@ -1833,83 +1833,6 @@
   resolved "https://registry.yarnpkg.com/@mikaelkristiansson/domready/-/domready-1.0.11.tgz#6a4b5891dccb6402ff4e944de843036ee1ffd4f5"
   integrity sha512-nEBLOa0JgtqahmPrnJZ18epLiFBzxhdKgo4uhN3TaBFRmM30pEVrS9FAEV4tg92d8PTdU+dYQx2lnpPyFMgMcg==
 
-"@municipio/gatsby-theme-basic@^0.4.1":
-  version "0.4.2"
-  resolved "https://registry.yarnpkg.com/@municipio/gatsby-theme-basic/-/gatsby-theme-basic-0.4.2.tgz#7600cdd01df1eb5bf5d5ce9d7e09cba0957404c2"
-  integrity sha512-40Cf62SIt8JQEdpMpeGWDozuFCLsWBe+lrguZY+zz8zM1vl6JB8Nv8pe8YvelsQSI4TVCoYwbwFI1HXs4zzQtQ==
-  dependencies:
-    "@whitespace/gatsby-theme-wordpress-basic" "^0.3.3"
-    autoprefixer "^10.2.5"
-    axios "^0.21.1"
-    classnames "^2.3.1"
-    filesize "^6.3.0"
-    formik "^2.2.6"
-    gatsby-plugin-compile-es6-packages "^2.1.0"
-    immer "^9.0.2"
-    yup "^0.32.9"
-
-"@municipio/gatsby-theme-intranet@^0.4.1":
-  version "0.4.2"
-  resolved "https://registry.yarnpkg.com/@municipio/gatsby-theme-intranet/-/gatsby-theme-intranet-0.4.2.tgz#47ef5ff5f6612abe124f418db62c0f6b416a4fd1"
-  integrity sha512-1CB3WDIcfG7WAl0JKZO/7i16es4rXLN4F/SzNS5uSj0Gr/ohRENJor4U3JDFZR9V4pVyZY9esJ5lIRo5YUwQ5Q==
-  dependencies:
-    "@apollo/react-hooks" "^4.0.0"
-    "@emotion/react" "^11.1.5"
-    "@emotion/styled" "^11.3.0"
-    "@jfrk/react-heading-levels" "^1.0.0"
-    "@jfrk/react-id" "^1.0.0"
-    "@municipio/gatsby-theme-basic" "^0.4.1"
-    apollo-boost "^0.4.9"
-    autoprefixer "^10.2.5"
-    classnames "^2.3.1"
-    clsx "^1.1.1"
-    decurry "^2.0.1"
-    esm "^3.2.25"
-    filesize "^6.2.2"
-    formik "^2.2.6"
-    gatsby-image "^2.5.0"
-    gatsby-plugin-canonical-urls "^3.3.0"
-    gatsby-plugin-compile-es6-packages "^2.1.0"
-    gatsby-plugin-csp "^1.1.3"
-    gatsby-plugin-emotion "^6.3.0"
-    gatsby-plugin-fragments "^1.1.1"
-    gatsby-plugin-manifest "^3.3.0"
-    gatsby-plugin-meta-redirect "^1.1.1"
-    gatsby-plugin-netlify "^3.3.0"
-    gatsby-plugin-offline "^4.3.0"
-    gatsby-plugin-postcss "^4.3.0"
-    gatsby-plugin-react-helmet "^4.3.0"
-    gatsby-plugin-robots-txt "^1.5.5"
-    gatsby-plugin-sass "^4.3.0"
-    gatsby-plugin-sharp "^3.3.0"
-    gatsby-plugin-sitemap "^3.3.0"
-    gatsby-source-filesystem "^3.3.0"
-    gatsby-source-graphql "^3.3.0"
-    gatsby-transformer-sharp "^3.3.0"
-    hast-util-to-string "^1.0.4"
-    immer "^9.0.1"
-    javascript-time-ago "^2.3.4"
-    lodash "^4.17.21"
-    node-sass-json-importer "^4.3.0"
-    nuka-carousel "^4.7.7"
-    prop-types "^15.7.2"
-    react-accessible-dropdown-menu-hook "^2.2.0"
-    react-error-boundary "^3.1.1"
-    react-helmet "^6.1.0"
-    react-simple-tree-menu "^1.1.18"
-    react-spinners "^0.10.6"
-    rehype-dom-parse "^3.0.0"
-    rehype-parse "^7.0.1"
-    rehype-react "^6.2.0"
-    sass "^1.32.8"
-    tagged-template-noop "^2.1.1"
-    toml "^3.0.0"
-    traverse "^0.6.6"
-    url-polyfill "^1.1.12"
-    use-persisted-state "^0.3.3"
-    use-ssr "^1.0.24"
-    yup "^0.32.9"
-
 "@nodelib/fs.scandir@2.1.4":
   version "2.1.4"
   resolved "https://registry.yarnpkg.com/@nodelib/fs.scandir/-/fs.scandir-2.1.4.tgz#d4b3549a5db5de2683e0c1071ab4f140904bbf69"
@@ -2556,10 +2479,10 @@
     use-persisted-state "^0.3.3"
     use-ssr "^1.0.24"
 
-"@whitespace/gatsby-theme-wordpress-basic@^0.3.3", "@whitespace/gatsby-theme-wordpress-basic@^0.3.9":
-  version "0.3.9"
-  resolved "https://registry.yarnpkg.com/@whitespace/gatsby-theme-wordpress-basic/-/gatsby-theme-wordpress-basic-0.3.9.tgz#aa79bc8b8c937d2c0bf26b7cfdc7d3c6d1c75cc1"
-  integrity sha512-m+SbI9dEA5a5CtzVgem7dCTLoaPTNBbm7hCB/oU/7b7XfYLMNn4NmDbOPBxD6NJ2P51nWnkZsuQI8R9SnOv73g==
+"@whitespace/gatsby-theme-wordpress-basic@^0.4.0":
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/@whitespace/gatsby-theme-wordpress-basic/-/gatsby-theme-wordpress-basic-0.4.0.tgz#210cee8e29cc74639243e90e8a24ba685f91f97c"
+  integrity sha512-rUyr/SQ+0qGQXNJqUQz/BHAEf4fUQOliEAyzHHmR1OhJGQ3sJBAANQH50729ZzHCXrxDtOlWsO5gileFUg5d7w==
   dependencies:
     "@apollo/react-hooks" "^4.0.0"
     "@emotion/react" "^11.1.5"

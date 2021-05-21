@@ -1,9 +1,6 @@
 export { default as Card } from "./Card";
 // export * from "./Card";
 
-export { default as CardIndex } from "./CardIndex";
-// export * from "./CardIndex";
-
 export { default as CardList } from "./CardList";
 // export * from "./CardList";
 

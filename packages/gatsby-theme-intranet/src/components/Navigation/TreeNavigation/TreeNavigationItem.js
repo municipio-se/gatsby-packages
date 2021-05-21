@@ -1,5 +1,5 @@
+import { Link } from "@whitespace/components";
 import cx from "classnames";
-import { Link } from "gatsby";
 import React from "react";
 
 export default function TreeNavigationItem({

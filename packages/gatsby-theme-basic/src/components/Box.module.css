@@ -1,10 +1,10 @@
 .component {
-  background: var(--box-background, transparent);
+  background: var(--box-background, lightgray);
   border: var(--box-border, 0);
-  border-radius: var(--box-border-radius, 0);
+  border-radius: var(--box-border-radius, 0.25rem);
   color: var(--box-color, inherit);
   font-size: var(--box-font-size, inherit);
-  padding: var(--box-padding, 0);
+  padding: var(--box-padding, 1rem);
 }
 
 .component:before {

@@ -25,7 +25,7 @@ export default function SingleTemplate({ pageContext }) {
       contentType: {
         node: { name: postType },
       },
-      managedBy: { managedBy },
+      managedBy: { managedBy } = {},
       tags: { nodes: tags } = {},
     },
     // isPreview,

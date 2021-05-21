@@ -1,7 +1,5 @@
-import {
-  Link,
-  Time,
-} from "@whitespace/gatsby-theme-wordpress-basic/src/components";
+import { Button } from "@whitespace/components";
+import { Time } from "@whitespace/gatsby-theme-wordpress-basic/src/components";
 import clsx from "clsx";
 import React from "react";
 
@@ -12,15 +10,16 @@ import * as defaultStyles from "./ListPostsModule.module.css";
 export default function ListPostsModule({
   styles = defaultStyles,
   className,
+  comnponents: { ItemLink = Button } = { ItemLink: Button },
   title,
-  module,
+  // module,
   normalizedItems,
   ...restProps
 }) {
-  const {
-    modPostsDataDisplay: { postsFields },
-  } = module;
-  let showDate = postsFields?.includes("date");
+  // const {
+  //   modPostsDataDisplay: { postsFields },
+  // } = module;
+  // let showDate = postsFields?.includes("date");
   return (
     <ModuleWrapper
       title={title}
@@ -31,15 +30,15 @@ export default function ListPostsModule({
         {normalizedItems.map((item, index) => {
           return (
             <li key={index} className={clsx(styles.item)}>
-              <Link to={item.url} className={clsx(styles.link)}>
+              <ItemLink to={item.url} className={clsx(styles.link)}>
                 <span>{item.title}</span>
-              </Link>{" "}
-              {!!showDate && (
+              </ItemLink>{" "}
+              {/* {!!showDate && (
                 <Time
                   date={item.dateGmt}
                   format={{ year: "numeric", month: "numeric", day: "numeric" }}
                 />
-              )}
+              )} */}
             </li>
           );
         })}
