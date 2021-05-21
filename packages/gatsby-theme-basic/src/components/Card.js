@@ -1,16 +1,14 @@
-// import { Link } from "gatsby";
 import { H } from "@jfrk/react-heading-levels";
+import { Link } from "@whitespace/components";
 import {
   Image,
-  Link,
   Time,
 } from "@whitespace/gatsby-theme-wordpress-basic/src/components";
 import clsx from "clsx";
 import React from "react";
 
+import Box from "./Box";
 import * as defaultStyles from "./Card.module.css";
-import Excerpt from "./Excerpt";
-import RoundIcon from "./RoundIcon";
 
 export default function Card({
   styles = defaultStyles,
@@ -18,15 +16,32 @@ export default function Card({
   title,
   date,
   url,
-  excerpt,
-  content,
+  description,
+  // content,
   image,
-  category,
-  categoryIconName,
+  // category,
   ...restProps
 }) {
   return (
-    <article className={clsx(styles.component, className)} {...restProps}>
+    <Box
+      as="article"
+      className={clsx(styles.component, className)}
+      {...restProps}
+    >
+      {image && (
+        <Image
+          base64={image.base64}
+          src={image.src}
+          srcSet={image.srcSet}
+          srcWebp={image.srcWebp}
+          srcSetWebp={image.srcSetWebp}
+          aspectRatio={image.aspectRatio}
+          width={image.width}
+          height={image.height}
+          alt={image.altText}
+          className={clsx(styles.image)}
+        />
+      )}
       <div className={clsx(styles.content)}>
         {title && (
           <div className={clsx(styles.title)}>
@@ -52,7 +67,7 @@ export default function Card({
                 }}
               />
             )}
-            {category && (
+            {/* {category && (
               <div className={clsx(styles.category)}>
                 <RoundIcon
                   name={categoryIconName}
@@ -62,26 +77,11 @@ export default function Card({
                 />
                 {category}
               </div>
-            )}
+            )} */}
           </div>
         )}
-        {excerpt && <Excerpt className={clsx(styles.body)} text={excerpt} />}
-        {content && <div className={clsx(styles.body)}>{content}</div>}
+        {description}
       </div>
-      {image && (
-        <Image
-          base64={image.base64}
-          src={image.src}
-          srcSet={image.srcSet}
-          srcWebp={image.srcWebp}
-          srcSetWebp={image.srcSetWebp}
-          aspectRatio={image.aspectRatio}
-          width={image.width}
-          height={image.height}
-          alt={image.altText}
-          className={clsx(styles.image)}
-        />
-      )}
-    </article>
+    </Box>
   );
 }

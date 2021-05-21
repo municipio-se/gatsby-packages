@@ -130,14 +130,14 @@ export default function Sidebar({ ...restProps }) {
               nothingToShowLabel="noSelectedToolsLabel"
             />
           )} */}
-          {/* {helpMenu?.length > 0 && (
+          {helpMenu?.length > 0 && (
             <HelpMenu
               title="Hjälp"
               items={helpMenu}
               aria-label="Hjälpmeny"
-              modifier="--help"
+              isHelpMenu={true}
             />
-          )} */}
+          )}
         </Section>
       </div>
     </aside>

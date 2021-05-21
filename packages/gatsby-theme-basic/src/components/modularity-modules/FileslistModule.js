@@ -1,4 +1,4 @@
-import { Link } from "@whitespace/gatsby-theme-wordpress-basic/src/components";
+import { Link } from "@whitespace/components";
 import clsx from "clsx";
 import formatFileSize from "filesize";
 import React from "react";

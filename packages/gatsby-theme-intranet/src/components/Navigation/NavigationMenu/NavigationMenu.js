@@ -1,38 +1,51 @@
 import { H } from "@jfrk/react-heading-levels";
 import { Link } from "@whitespace/components";
-import cx from "classnames";
+import { utilities } from "@whitespace/gatsby-theme-wordpress-basic/src/foundation";
+import clsx from "clsx";
 import React from "react";
 
-// import "../Navigation.scss";
+import * as defaultStyles from "../Navigation.module.css";
 
 export function NavigationMenu({
-  namespace = "navigation",
+  className,
+  styles = defaultStyles,
   title,
   items,
   isMenu = true,
+  isHelpMenu = false,
+  isTreeMenu = false,
   children,
-  modifier,
   ...restProps
 }) {
   const WrapperComponent = isMenu ? "nav" : "div";
+  const componentModifer = isTreeMenu
+    ? styles.componentTree
+    : isHelpMenu
+    ? styles.componentHelp
+    : "";
   return (
     <WrapperComponent
-      className={cx("navigation", modifier, "hidden-print")}
+      className={clsx(
+        styles.component,
+        componentModifer,
+        utilities.hiddenPrint,
+        className,
+      )}
       {...restProps}
     >
-      <H className={cx("navigation__label")}>{title}</H>
+      <H className={clsx(styles.label)}>{title}</H>
       {items && items.length > 0 && (
-        <ul className={cx("navigation__list")}>
+        <ul className={clsx(styles.list)}>
           {items
             .filter((item) => ("showInMenu" in item ? item.showInMenu : item))
             .map((item, index) => {
               return (
-                <li className={cx("navigation__list-item")} key={index}>
+                <li className={clsx(styles.listItem)} key={index}>
                   <Link
-                    className={cx(
-                      "navigation__list-link",
-                      item.hasChildren && "navigation__list-link--has-children",
-                      item.isOpen && "navigation__list-link--is-open",
+                    className={clsx(
+                      styles.listLink,
+                      item.hasChildren && styles.listLinkHasChildren,
+                      item.isOpen && styles.listLinkIsOpen,
                     )}
                     to={item.url}
                   >

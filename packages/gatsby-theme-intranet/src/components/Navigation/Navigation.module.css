@@ -1,0 +1,115 @@
+.component {
+  margin-bottom: var(--gap-max, 2rem);
+}
+
+.list {
+  padding-left: 0;
+  list-style: none;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.list-item {
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
+  pointer-events: none;
+}
+
+.list-item.list-item {
+  padding-left: 0.75rem;
+  font-weight: 400;
+}
+
+/* .list-item-level0 {
+  font-weight: var(--weight-500);
+} */
+
+/* @mixin col-x-list {
+  @for $i from 1 through 10 {
+    .list-item-level#{$i} {
+      padding-left: calc(#{$i}rem);
+    }
+  }
+}
+@include col-x-list; */
+
+.list-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--sidebar-link);
+  pointer-events: all;
+
+  background: var(--navigation-link-background, transparent);
+  padding-top: 0.25rem;
+  padding-right: 0.5rem;
+  padding-bottom: 0.25rem;
+  padding-left: 0.5rem;
+  color: var(--sidebar-link);
+  text-decoration: none;
+  line-height: 1.5;
+  display: flex;
+  border-radius: 3px;
+}
+
+.list-link::hover {
+  --navigation-link-background: var(--sidebar-hover);
+}
+
+.list-link--is-active[aria-current] {
+  --navigation-link-background: var(--color-active);
+  color: var(--color-active-foreground);
+}
+
+/*
+// Todo: Wrap in "on mouse" with whatinput so that the bg color of a focused and active item is not higlighted
+// .list-link--is-active.list-link--is-focused:not([aria-current]) {
+//   --navigation-link-background: transparent;
+//   color: var(--sidebar-link);
+// }
+*/
+
+.list-link--has-children::before {
+  font-size: 0.5em;
+  content: "►";
+  display: block;
+  margin-right: 0.25rem;
+}
+
+.list-link--is-open::before {
+  content: "▼";
+}
+
+.list-link--is-focused {
+  --navigation-link-background: var(--sidebar-hover);
+}
+
+.label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.button {
+  --button-bg-color: var(--sidebar-hover);
+  color: var(--color-foreground);
+  margin-top: 0.25rem;
+}
+
+/* HELP MENU */
+.component--help {
+  margin-top: auto;
+  margin-bottom: var(--gap-medium, 1.5rem);
+}
+
+.component--help .list-item {
+  padding-left: 0;
+}
+
+/* TREE MENU */
+.component--tree .list-item {
+  margin-left: 0rem;
+  margin-right: 0rem;
+}
