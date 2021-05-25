@@ -20,6 +20,7 @@ export default function IndexPostsModule({
     modPostsDataDisplay: { postsFields },
   } = module;
   let showDate = postsFields?.includes("date");
+  let showImage = postsFields?.includes("image");
 
   return (
     <ModuleWrapper
@@ -36,6 +37,7 @@ export default function IndexPostsModule({
               url={item.url}
               title={item.title}
               date={!!showDate && item.dateGmt}
+              image={!!showImage && item.image}
             />
           );
         })}

@@ -1,5 +1,13 @@
 .component {
   position: relative;
+  overflow: hidden;
+}
+
+.image {
+  margin-right: calc(var(--box-padding) * -1);
+  margin-left: calc(var(--box-padding) * -1);
+  position: relative;
+  top: calc(var(--box-padding) * -1);
 }
 
 .titleHeadingLink:after {

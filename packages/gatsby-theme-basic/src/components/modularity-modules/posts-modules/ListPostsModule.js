@@ -1,5 +1,4 @@
 import { Button } from "@whitespace/components";
-import { Time } from "@whitespace/gatsby-theme-wordpress-basic/src/components";
 import clsx from "clsx";
 import React from "react";
 

@@ -1,10 +1,30 @@
 import { css } from "@emotion/react";
+import { useComponentSize } from "@whitespace/gatsby-hooks";
 import clsx from "clsx";
-import React, { Children } from "react";
+import React, { Children, Fragment, useMemo, useRef } from "react";
 
 import * as defaultStyles from "./Grid.module.css";
 
+function useComputedCSSGridColumns(ref, deps) {
+  const { width } = useComponentSize(ref);
+  return useMemo(() => {
+    if (
+      typeof window === "undefined" ||
+      !window.getComputedStyle ||
+      !ref.current
+    ) {
+      return;
+    }
+    let { gridTemplateColumns } = window.getComputedStyle(ref.current);
+    return gridTemplateColumns.split(/\s+/g).map((width) => ({
+      width: parseFloat(width),
+    }));
+  }, [width, ...deps]);
+}
+
 export default function Grid({
+  as: Wrapper = "ul",
+  components: { ItemWrapper = null } = { ItemWrapper: null },
   styles = defaultStyles,
   className,
   children,
@@ -12,8 +32,19 @@ export default function Grid({
   gap,
   ...restProps
 }) {
+  const ref = useRef();
+  const columns = useComputedCSSGridColumns(ref, [
+    columnMinWidth,
+    gap,
+    className,
+    JSON.stringify(styles),
+  ]);
+  if (ItemWrapper == null) {
+    ItemWrapper = Wrapper === "ul" || Wrapper === "ol" ? "li" : Fragment;
+  }
   return (
-    <ul
+    <Wrapper
+      ref={ref}
       className={clsx(styles.component, styles.list, className)}
       css={css({
         "--grid-column-min-width": columnMinWidth,
@@ -21,9 +52,12 @@ export default function Grid({
       })}
       {...restProps}
     >
-      {Children.map(children, (child, index) => {
-        return <li key={index}>{child}</li>;
-      })}
-    </ul>
+      {Children.map(
+        typeof children === "function" ? children({ columns }) : children,
+        (child, index) => {
+          return <ItemWrapper key={index}>{child}</ItemWrapper>;
+        },
+      )}
+    </Wrapper>
   );
 }
