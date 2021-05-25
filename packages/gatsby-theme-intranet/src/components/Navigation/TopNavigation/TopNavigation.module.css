@@ -1,5 +1,7 @@
 .component {
   margin-bottom: var(--gap-min);
+  width: calc(100% + 2rem);
+  margin-left: -1rem;
 }
 
 .list {
@@ -43,8 +45,8 @@
   color: var(--sidebar-top-navigation-color-hover, #999);
   text-decoration: none;
 }
-.link:hover .iconWrapper,
-.link:focus .iconWrapper {
+.link:hover .iconWrapper:not(.transparent),
+.link:focus .iconWrapper:not(.transparent) {
   --icon-color: var(
     --sidebar-top-navigation-icon-color-hover,
     --color-foreground-inverse
@@ -60,7 +62,7 @@
   color: var(--sidebar-top-navigation-color-active, #000);
   font-weight: inherit;
 }
-.link:active .iconWrapper {
+.link:active .iconWrapper:not(.transparent) {
   --icon-color: var(
     --sidebar-top-navigation-icon-color-active,
     --color-foreground-inverse
@@ -103,7 +105,7 @@
   font-weight: 500;
   text-decoration: none;
 }
-.link[aria-current] .iconWrapper {
+.link[aria-current] .iconWrapper:not(.transparent) {
   --icon-color: var(
     --sidebar-top-navigation-icon-color-current,
     --color-foreground-inverse
