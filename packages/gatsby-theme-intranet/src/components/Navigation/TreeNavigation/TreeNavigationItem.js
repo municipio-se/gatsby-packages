@@ -32,14 +32,11 @@ export default function TreeNavigationItem({
     restProps["aria-expanded"] = isOpen;
   }
 
-  const levels = ["Zero", "One", "Two", "Three", "Four", "Five", "Six"]
+  const levels = ["Zero", "One", "Two", "Three", "Four", "Five", "Six"];
 
   return (
     <li
-      className={clsx(
-        styles.listItem,
-        styles[`listItemLevel${levels[level]}`]
-      )}
+      className={clsx(styles.listItem, styles[`listItemLevel${levels[level]}`])}
     >
       <Link
         className={clsx(
@@ -47,7 +44,7 @@ export default function TreeNavigationItem({
           hasNodes && styles.listLinkHasChildren,
           isOpen && styles.listLinkIsOpen,
           focused && styles.listLinkIsFocused,
-          active && styles.listLinkIsActive
+          active && styles.listLinkIsActive,
         )}
         onClick={(e) => {
           hasNodes && toggleNode && toggleNode();

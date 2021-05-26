@@ -47,14 +47,8 @@
 }
 .link:hover .iconWrapper:not(.transparent),
 .link:focus .iconWrapper:not(.transparent) {
-  --icon-color: var(
-    --navigation-icon-color-hover,
-    --color-foreground-inverse
-  );
-  background: var(
-    --navigation-icon-background-hover,
-    --color-blue-tint-1
-  );
+  --icon-color: var(--navigation-icon-color-hover, --color-foreground-inverse);
+  background: var(--navigation-icon-background-hover, --color-blue-tint-1);
 }
 
 .link:active {
@@ -63,25 +57,13 @@
   font-weight: inherit;
 }
 .link:active .iconWrapper:not(.transparent) {
-  --icon-color: var(
-    --navigation-icon-color-active,
-    --color-foreground-inverse
-  );
-  background: var(
-    --navigation-icon-background-active,
-    --color-blue-tint-1
-  );
+  --icon-color: var(--navigation-icon-color-active, --color-foreground-inverse);
+  background: var(--navigation-icon-background-active, --color-blue-tint-1);
 }
 
 .iconWrapper {
-  --icon-color: var(
-    --navigation-icon-color,
-    --color-foreground-inverse
-  );
-  background: var(
-    --navigation-icon-background,
-    --color-blue-tint-4
-  );
+  --icon-color: var(--navigation-icon-color, --color-foreground-inverse);
+  background: var(--navigation-icon-background, --color-blue-tint-4);
   border-radius: 100%;
   margin-right: var(--space-8);
   display: flex;
@@ -110,8 +92,5 @@
     --navigation-icon-color-current,
     --color-foreground-inverse
   );
-  background: var(
-    --navigation-icon-background-current,
-    --color-blue-tint-1
-  );
+  background: var(--navigation-icon-background-current, --color-blue-tint-1);
 }

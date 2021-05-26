@@ -53,8 +53,6 @@
   margin-left: 7rem;
 }
 
-
-
 .list-link {
   display: flex;
   align-items: center;
@@ -109,8 +107,6 @@
 .list-link--is-open:before {
   content: "▼";
 }
-
-
 
 .label {
   font-size: 0.75rem;

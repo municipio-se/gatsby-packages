@@ -1,6 +1,9 @@
 import { H } from "@jfrk/react-heading-levels";
-import { utilities  } from "@whitespace/gatsby-theme-wordpress-basic/src/foundation";
-import { usePageContext, usePages } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks";
+import { utilities } from "@whitespace/gatsby-theme-wordpress-basic/src/foundation";
+import {
+  usePageContext,
+  usePages,
+} from "@whitespace/gatsby-theme-wordpress-basic/src/hooks";
 import {
   getAncestors,
   getTreeStructure,
@@ -13,8 +16,6 @@ import TreeMenu from "react-simple-tree-menu";
 import * as defaultStyles from "../Navigation.module.css";
 
 import TreeNavigationItem from "./TreeNavigationItem";
-
-
 
 export default function TreeNavigation({
   styles = defaultStyles,
@@ -59,7 +60,11 @@ export default function TreeNavigation({
     >
       {({ items }) => (
         <nav
-          className={clsx(styles.component, styles.componentTree, utilities.hiddenPrint)}
+          className={clsx(
+            styles.component,
+            styles.componentTree,
+            utilities.hiddenPrint,
+          )}
           aria-label="Innehåll"
         >
           <H className={clsx(styles.label)}>Innehåll</H>
