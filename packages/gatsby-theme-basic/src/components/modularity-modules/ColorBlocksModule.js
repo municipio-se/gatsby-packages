@@ -17,51 +17,46 @@ export default function ColorBlocksModule({
   title,
   ...restProps
 }) {
-
   const {
-    colorBlocks: {
-      blocks: items,
-      display: displaySettings
-    },
+    colorBlocks: { blocks: items, display: displaySettings },
   } = module;
 
   const { processContent, stripHTML } = useHTMLProcessor();
 
-
   return (
     <ModuleWrapper
-    title={title}
-    {...restProps}
-    className={clsx(styles.component, className)}
-  >
-    <Grid className={clsx(styles.list)}>
+      title={title}
+      {...restProps}
+      className={clsx(styles.component, className)}
+    >
+      <Grid className={clsx(styles.list)}>
         {items.map(({ themeColor, post, page, excerpt }, index) => {
           const item = post ? { ...post } : { ...page };
 
-        return (
-          <Item
-            key={index}
-            styles={styles}
-            className={clsx(styles.item)}
-            css={css({
-              "--item-background": `var(--color-theme-${themeColor}-background)`,
-              "--item-foreground": `var(--color-theme-${themeColor}-foreground)`,
-            })}
-            url={item.uri}
-            title={displaySettings.includes('title') && item.title}
-            date={displaySettings.includes('date') && item.dateGmt}
-            dateFormat={
-              {
+          return (
+            <Item
+              key={index}
+              styles={styles}
+              className={clsx(styles.item)}
+              css={css({
+                "--item-background": `var(--color-theme-${themeColor}-background)`,
+                "--item-foreground": `var(--color-theme-${themeColor}-foreground)`,
+              })}
+              url={item.uri}
+              title={displaySettings.includes("title") && item.title}
+              date={displaySettings.includes("date") && item.dateGmt}
+              dateFormat={{
                 year: "numeric",
                 month: "long",
                 day: "numeric",
+              }}
+              description={
+                !!(displaySettings.includes("excerpt") && excerpt) && excerpt
               }
-            }
-            description={!!(displaySettings.includes('excerpt') && excerpt ) && excerpt}
-          />
-        );
-      })}
-    </Grid>
-  </ModuleWrapper>
+            />
+          );
+        })}
+      </Grid>
+    </ModuleWrapper>
   );
 }

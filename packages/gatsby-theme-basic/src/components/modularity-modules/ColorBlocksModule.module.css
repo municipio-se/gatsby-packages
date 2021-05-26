@@ -7,7 +7,6 @@
   align-items: flex-end;
 }
 
-
 .title-heading-link {
   --link-color: var(--item-foreground);
   font-size: 1.25rem;
