@@ -1,0 +1,53 @@
+.component {
+  margin-bottom: var(--gap-min);
+  width: calc(100% + 2rem);
+  margin-left: -1rem;
+}
+
+
+.list {
+  padding-left: 0;
+  list-style: none;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.item {
+  margin-bottom: 3px;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--navigation-default-color, black);
+  background: var(--navigation-default-background, transparent);
+  padding: var(--navigation-default-padding, 0.5rem);
+  text-decoration: var(--navigation-default-text-decoration, none);
+  line-height: 1.5;
+  display: flex;
+  border-radius: var(--navigation-default-border-radius, 3px);
+}
+
+.link:hover {
+  background: var(--navigation-hover-background, grey);
+  color: var(--navigation-hover-color, white);
+  text-decoration: var(--navigation-hover-text-decoration, none);
+}
+
+.link[aria-current] {
+  background: var(--navigation-active-background, blue);
+  color: var(--navigation-active-color, white);
+  text-decoration: var(--navigation-active-text-decoration, none);
+  font-weight: 500;
+}
+
+.label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+

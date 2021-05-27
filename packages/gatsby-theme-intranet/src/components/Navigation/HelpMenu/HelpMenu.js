@@ -4,49 +4,37 @@ import { utilities } from "@whitespace/gatsby-theme-wordpress-basic/src/foundati
 import clsx from "clsx";
 import React from "react";
 
-import * as defaultStyles from "../Navigation.module.css";
+import * as defaultStyles from "./HelpMenu.module.css";
 
-export function NavigationMenu({
+export function HelpMenu({
   className,
   styles = defaultStyles,
   title,
   items,
-  isMenu = true,
-  isHelpMenu = false,
-  isTreeMenu = false,
   children,
   ...restProps
 }) {
-  const WrapperComponent = isMenu ? "nav" : "div";
-  const componentModifer = isTreeMenu
-    ? styles.componentTree
-    : isHelpMenu
-    ? styles.componentHelp
-    : "";
+
   return (
-    <WrapperComponent
+    <>
+      <H className={clsx(styles.label)}>{title}</H>
+      <nav
       className={clsx(
         styles.component,
-        componentModifer,
         utilities.hiddenPrint,
         className,
       )}
       {...restProps}
     >
-      <H className={clsx(styles.label)}>{title}</H>
       {items && items.length > 0 && (
         <ul className={clsx(styles.list)}>
           {items
             .filter((item) => ("showInMenu" in item ? item.showInMenu : item))
             .map((item, index) => {
               return (
-                <li className={clsx(styles.listItem)} key={index}>
+                <li className={clsx(styles.item)} key={index}>
                   <Link
-                    className={clsx(
-                      styles.listLink,
-                      item.hasChildren && styles.listLinkHasChildren,
-                      item.isOpen && styles.listLinkIsOpen,
-                    )}
+                    className={clsx(styles.link)}
                     to={item.url}
                   >
                     {item.label}
@@ -57,6 +45,7 @@ export function NavigationMenu({
         </ul>
       )}
       {children}
-    </WrapperComponent>
+      </nav>
+    </>
   );
 }

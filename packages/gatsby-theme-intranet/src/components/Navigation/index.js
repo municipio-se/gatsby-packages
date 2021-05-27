@@ -1,4 +1,3 @@
-export { NavigationMenu } from "./NavigationMenu";
-export { NavigationMenu as HelpMenu } from "./NavigationMenu";
+export { HelpMenu } from "./HelpMenu";
 export { TopNavigation } from "./TopNavigation";
 export { TreeNavigation } from "./TreeNavigation";
