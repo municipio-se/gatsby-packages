@@ -12,9 +12,7 @@
 }
 
 .item {
-  /* margin-right: calc(var(--space-8) * -1);
-  margin-left: calc(var(--space-8) * -1); */
-  margin-bottom: 1px;
+  margin-bottom: 3px;
 }
 
 .label {
@@ -24,62 +22,60 @@
 }
 
 .link {
-  background: var(--sidebar-top-navigation-background, #000);
-  color: var(--sidebar-top-navigation-color, #fff);
-  padding-top: var(--space-8);
-  padding-left: var(--space-16);
-  padding-right: var(--space-16);
-  padding-bottom: var(--space-8);
+  background: var(--navigation-default-background, #000);
+  color: var(--navigation-default-color, #fff);
+  padding: var(--navigation-default-padding, var(--space-8) var(--space-16));
   font-weight: 500;
-  text-decoration: none;
+  text-decoration: var(--navigation-default-text-decoration, none);
   line-height: 1.5;
   display: flex;
   align-items: center;
   transition: background 50ms ease;
-  border-radius: 3px;
+  border-radius: var(--navigation-border-radius, 3px);
 }
 
 .link:hover,
 .link:focus {
-  background: var(--sidebar-top-navigation-background-hover, #333);
-  color: var(--sidebar-top-navigation-color-hover, #999);
-  text-decoration: none;
+  background: var(--navigation-hover-background, #333);
+  color: var(--navigation-hover-color, #999);
+  text-decoration: var(--navigation-hover-text-decoration, none);
+
 }
 .link:hover .iconWrapper:not(.transparent),
 .link:focus .iconWrapper:not(.transparent) {
   --icon-color: var(
-    --sidebar-top-navigation-icon-color-hover,
+    --navigation-hover-icon-color,
     --color-foreground-inverse
   );
   background: var(
-    --sidebar-top-navigation-icon-background-hover,
+    --navigation-hover-icon-background,
     --color-blue-tint-1
   );
 }
 
 .link:active {
-  background: var(--sidebar-top-navigation-background-active, #333);
-  color: var(--sidebar-top-navigation-color-active, #000);
+  background: var(--navigation-active-background, #333);
+  color: var(--navigation-active-color, #000);
   font-weight: inherit;
 }
 .link:active .iconWrapper:not(.transparent) {
   --icon-color: var(
-    --sidebar-top-navigation-icon-color-active,
+    --navigation-icon-active-color,
     --color-foreground-inverse
   );
   background: var(
-    --sidebar-top-navigation-icon-background-active,
+    --navigation-icon-active-background,
     --color-blue-tint-1
   );
 }
 
 .iconWrapper {
   --icon-color: var(
-    --sidebar-top-navigation-icon-color,
+    --navigation-default-icon-color,
     --color-foreground-inverse
   );
   background: var(
-    --sidebar-top-navigation-icon-background,
+    --navigation-default-icon-background,
     --color-blue-tint-4
   );
   border-radius: 100%;
@@ -100,18 +96,19 @@
 }
 
 .link[aria-current] {
-  background: var(--sidebar-top-navigation-background-current, #f00);
-  color: var(--sidebar-top-navigation-color-current, #00f);
+  background: var(--navigation-current-background, #f00);
+  color: var(--navigation-current-color, #00f);
   font-weight: 500;
-  text-decoration: none;
+  text-decoration: var(--navigation-active-text-decoration, none);
+
 }
 .link[aria-current] .iconWrapper:not(.transparent) {
   --icon-color: var(
-    --sidebar-top-navigation-icon-color-current,
+    --navigation-current-icon-color,
     --color-foreground-inverse
   );
   background: var(
-    --sidebar-top-navigation-icon-background-current,
+    --navigation-current-icon-background,
     --color-blue-tint-1
   );
 }

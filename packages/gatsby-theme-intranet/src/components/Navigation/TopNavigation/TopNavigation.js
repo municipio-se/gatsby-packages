@@ -13,7 +13,6 @@ export function TopNavigation({ items, ...restProps }) {
     >
       <ul className={clsx(styles.list)}>
         {items.map(({ url, target, icon, label }, index) => {
-          console.log(label, icon);
           return (
             <li key={index} className={clsx(styles.item)}>
               <Link className={clsx(styles.link)} to={url} target={target}>
