@@ -119,12 +119,7 @@ export default function Sidebar({ ...restProps }) {
               showLessLabel="hideBookmarksLabel"
             />
           )} */}
-          {tools?.length > 0 && (
-            <Tools
-              items={tools}
-              title="Verktyg"
-            />
-          )} 
+          {tools?.length > 0 && <Tools items={tools} title="Verktyg" />}
           {helpMenu?.length > 0 && (
             <HelpMenu
               title="Hjälp"

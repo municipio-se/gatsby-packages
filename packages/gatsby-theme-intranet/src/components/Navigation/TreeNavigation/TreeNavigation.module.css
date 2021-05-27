@@ -44,8 +44,6 @@
   background: var(--tree-menu-item-background, transparent);
 }
 
-
-
 .row {
   grid-area: row;
   display: grid;
@@ -65,7 +63,6 @@
 .row:focus-within .link:before {
   box-shadow: var(--tree-menu-row-focus-box-shadow, 0 0 0 3px blue inset);
 }
-
 
 .toggle {
   display: flex;
@@ -92,8 +89,7 @@
   --link-focus-box-shadow: none;
 }
 
-
-.link:before{
+.link:before {
   background: transparent;
   position: absolute;
   content: "";
@@ -109,13 +105,15 @@
 
 .link:hover {
   --link-hover-color: var(--tree-menu-link-hover-color, white);
-  --link-hover-text-decoration: var(--tree-menu-link-hover-text-decoration, none);
+  --link-hover-text-decoration: var(
+    --tree-menu-link-hover-text-decoration,
+    none
+  );
 }
-
 
 .link:hover + .toggle,
 .current > .row .link:hover + .toggle,
-.link[aria-expanded="true"]:not([aria-current]):hover + .toggle  {
+.link[aria-expanded="true"]:not([aria-current]):hover + .toggle {
   --tree-menu-icon-color: var(--tree-menu-link-hover-color, white);
 }
 
@@ -140,10 +138,9 @@
 .current > .row {
   background: var(--tree-menu-link-active-background, blue);
   color: var(--tree-menu-link-active-color, white);
-  --link-current-text-decoration: var(--tree-menu-current-text-decoration, none);
+  --link-current-text-decoration: var(
+    --tree-menu-current-text-decoration,
+    none
+  );
   --link-current-font-weight: var(--tree-menu-current-font-weight, 500);
 }
-
-
-
-

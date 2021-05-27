@@ -5,9 +5,7 @@ import React, { useContext, useState } from "react";
 import * as styles from "./DnDMenu.module.css";
 import { DnDContainerContext } from "./DnDMenuContainer";
 
-
 export default function DnDMenuDisplayView({ ...restProps }) {
-
   const [DnDContext] = useContext(DnDContainerContext);
 
   const {

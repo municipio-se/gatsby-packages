@@ -11,7 +11,6 @@ import {
 import * as styles from "./DnDMenu.module.css";
 import { DnDContainerContext } from "./DnDMenuContainer";
 
-
 export default function DnDMenuEditView({ ...restProps }) {
   const [DnDContext, setDnDContext] = useContext(DnDContainerContext);
 
@@ -23,7 +22,6 @@ export default function DnDMenuEditView({ ...restProps }) {
   };
 
   const getList = (id) => DnDContext[DnDLists[id]];
-
 
   return (
     <DragDropContext

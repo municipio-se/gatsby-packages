@@ -14,7 +14,6 @@
   margin-bottom: 0;
   width: calc(100% + 2rem);
   margin-left: -1rem;
-
 }
 
 .item {
@@ -50,7 +49,6 @@
   font-size: 0.75rem;
 } */
 
-
 .toggle-button {
   padding-left: 0;
   cursor: pointer;
@@ -71,7 +69,8 @@
   content: "▼";
 }
 
-.label, .toggle-button  {
+.label,
+.toggle-button {
   font-size: 0.75rem;
   font-weight: 600;
   line-height: 1;
@@ -135,4 +134,3 @@
 .edit .link-label--not-filled {
   opacity: 0.6;
 } */
-

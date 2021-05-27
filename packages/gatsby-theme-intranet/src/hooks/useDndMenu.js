@@ -2,7 +2,6 @@ import { Icon } from "@whitespace/components";
 import clsx from "clsx";
 import React from "react";
 
-
 /**
  * a little function to help us with reordering the result
  */

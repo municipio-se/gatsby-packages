@@ -7,8 +7,6 @@ import * as defaultStyles from "./DnDMenu.module.css";
 import DnDMenuDisplayView from "./DnDMenuDisplayView";
 // import DnDMenuEditView from "./DnDMenuEditView";
 
-
-
 export function DnDMenuContainer({
   items = [],
   title,
@@ -51,10 +49,13 @@ export function DnDMenuContainer({
 
   return (
     <DnDContainerContext.Provider value={[DnDContext, setDnDContext]}>
-        <div className={clsx(styles.component, utilities.hiddenPrint)} {...restProps}>
-          <div className={clsx(styles.header)}>
-            <H className={clsx(styles.label)}>{title}</H>
-            {/* {DnDContext.itemsToShow?.length > 0 && (
+      <div
+        className={clsx(styles.component, utilities.hiddenPrint)}
+        {...restProps}
+      >
+        <div className={clsx(styles.header)}>
+          <H className={clsx(styles.label)}>{title}</H>
+          {/* {DnDContext.itemsToShow?.length > 0 && (
               <span
                 className={clsx("__toggle", "--view")}
                 role="button"
@@ -63,19 +64,18 @@ export function DnDMenuContainer({
                 { currentView === "display" ? "Redigera": "Visa" }
               </span>
             )} */}
-          </div>
-          {DnDContext.itemsToShow?.length > 0 && (
-            // <>
-            //   {currentView === "display" ? (
-            //     <DnDMenuDisplayView />
-            //   ) : (
-            //     <DnDMenuEditView />
-            //   )}
-            // </>
-            <DnDMenuDisplayView />
-
-          )}
         </div>
+        {DnDContext.itemsToShow?.length > 0 && (
+          // <>
+          //   {currentView === "display" ? (
+          //     <DnDMenuDisplayView />
+          //   ) : (
+          //     <DnDMenuEditView />
+          //   )}
+          // </>
+          <DnDMenuDisplayView />
+        )}
+      </div>
     </DnDContainerContext.Provider>
   );
 }
