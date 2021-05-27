@@ -18,6 +18,11 @@ export default function Card({
   url,
   description,
   // content,
+  dateFormat = {
+    year: "numeric",
+    month: "numeric",
+    day: "numeric",
+  },
   image,
   // category,
   ...restProps
@@ -56,31 +61,25 @@ export default function Card({
                 )}
               </H>
             </div>
-            {date && (
-              <Time
-                className={clsx(styles.date)}
-                date={date}
-                format={{
-                  year: "numeric",
-                  month: "numeric",
-                  day: "numeric",
-                }}
-              />
-            )}
-            {/* {category && (
-              <div className={clsx(styles.category)}>
-                <RoundIcon
-                  name={categoryIconName}
-                  size="1rem"
-                  color="var(--color-light)"
-                  bgColor="var(--color-tertiary)"
-                />
-                {category}
-              </div>
-            )} */}
           </div>
         )}
-        {description}
+        {date && (
+          <Time className={clsx(styles.date)} date={date} format={dateFormat} />
+        )}
+        {/* {category && (
+          <div className={clsx(styles.category)}>
+            <RoundIcon
+              name={categoryIconName}
+              size="1rem"
+              color="var(--color-light)"
+              bgColor="var(--color-tertiary)"
+            />
+            {category}
+          </div>
+        )} */}
+        {description && (
+          <div className={clsx(styles.description)}>{description}</div>
+        )}
       </div>
     </Box>
   );
