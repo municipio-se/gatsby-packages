@@ -14,37 +14,29 @@ export function HelpMenu({
   children,
   ...restProps
 }) {
-
   return (
     <>
       <H className={clsx(styles.label)}>{title}</H>
       <nav
-      className={clsx(
-        styles.component,
-        utilities.hiddenPrint,
-        className,
-      )}
-      {...restProps}
-    >
-      {items && items.length > 0 && (
-        <ul className={clsx(styles.list)}>
-          {items
-            .filter((item) => ("showInMenu" in item ? item.showInMenu : item))
-            .map((item, index) => {
-              return (
-                <li className={clsx(styles.item)} key={index}>
-                  <Link
-                    className={clsx(styles.link)}
-                    to={item.url}
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              );
-            })}
-        </ul>
-      )}
-      {children}
+        className={clsx(styles.component, utilities.hiddenPrint, className)}
+        {...restProps}
+      >
+        {items && items.length > 0 && (
+          <ul className={clsx(styles.list)}>
+            {items
+              .filter((item) => ("showInMenu" in item ? item.showInMenu : item))
+              .map((item, index) => {
+                return (
+                  <li className={clsx(styles.item)} key={index}>
+                    <Link className={clsx(styles.link)} to={item.url}>
+                      {item.label}
+                    </Link>
+                  </li>
+                );
+              })}
+          </ul>
+        )}
+        {children}
       </nav>
     </>
   );

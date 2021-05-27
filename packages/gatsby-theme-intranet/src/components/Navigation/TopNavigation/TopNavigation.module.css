@@ -39,18 +39,11 @@
   background: var(--navigation-hover-background, #333);
   color: var(--navigation-hover-color, #999);
   text-decoration: var(--navigation-hover-text-decoration, none);
-
 }
 .link:hover .iconWrapper:not(.transparent),
 .link:focus .iconWrapper:not(.transparent) {
-  --icon-color: var(
-    --navigation-hover-icon-color,
-    --color-foreground-inverse
-  );
-  background: var(
-    --navigation-hover-icon-background,
-    --color-blue-tint-1
-  );
+  --icon-color: var(--navigation-hover-icon-color, --color-foreground-inverse);
+  background: var(--navigation-hover-icon-background, --color-blue-tint-1);
 }
 
 .link:active {
@@ -59,14 +52,8 @@
   font-weight: inherit;
 }
 .link:active .iconWrapper:not(.transparent) {
-  --icon-color: var(
-    --navigation-icon-active-color,
-    --color-foreground-inverse
-  );
-  background: var(
-    --navigation-icon-active-background,
-    --color-blue-tint-1
-  );
+  --icon-color: var(--navigation-icon-active-color, --color-foreground-inverse);
+  background: var(--navigation-icon-active-background, --color-blue-tint-1);
 }
 
 .iconWrapper {
@@ -74,10 +61,7 @@
     --navigation-default-icon-color,
     --color-foreground-inverse
   );
-  background: var(
-    --navigation-default-icon-background,
-    --color-blue-tint-4
-  );
+  background: var(--navigation-default-icon-background, --color-blue-tint-4);
   border-radius: 100%;
   margin-right: var(--space-8);
   display: flex;
@@ -100,15 +84,11 @@
   color: var(--navigation-current-color, #00f);
   font-weight: 500;
   text-decoration: var(--navigation-active-text-decoration, none);
-
 }
 .link[aria-current] .iconWrapper:not(.transparent) {
   --icon-color: var(
     --navigation-current-icon-color,
     --color-foreground-inverse
   );
-  background: var(
-    --navigation-current-icon-background,
-    --color-blue-tint-1
-  );
+  background: var(--navigation-current-icon-background, --color-blue-tint-1);
 }

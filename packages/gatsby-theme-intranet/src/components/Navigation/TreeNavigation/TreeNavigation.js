@@ -8,7 +8,7 @@ import React from "react";
 
 import * as styles from "./TreeNavigation.module.css";
 
-export default function TreeNavigation({title, ...restProps }) {
+export default function TreeNavigation({ title, ...restProps }) {
   let allPages = usePages();
   const treeData = getTreeStructure(allPages);
 
@@ -17,8 +17,11 @@ export default function TreeNavigation({title, ...restProps }) {
   return (
     <div {...restProps}>
       <H className={clsx(styles.label)}>{title}</H>
-      <TreeMenu items={treeData} location={location} className={clsx(styles.component)} />
+      <TreeMenu
+        items={treeData}
+        location={location}
+        className={clsx(styles.component)}
+      />
     </div>
   );
-
 }
