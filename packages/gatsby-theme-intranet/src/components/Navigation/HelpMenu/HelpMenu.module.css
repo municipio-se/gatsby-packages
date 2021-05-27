@@ -1,4 +1,9 @@
 .component {
+  margin-top: auto;
+  margin-bottom: var(--gap-medium, 1.5rem);
+}
+
+.navigation {
   margin-bottom: var(--gap-min);
   width: calc(100% + 2rem);
   margin-left: -1rem;

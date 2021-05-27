@@ -16,11 +16,11 @@ export function HelpMenu({
 }) {
 
   return (
-    <>
+    <div className={clsx(styles.component)} {...restProps}>
       <H className={clsx(styles.label)}>{title}</H>
       <nav
       className={clsx(
-        styles.component,
+        styles.navigation,
         utilities.hiddenPrint,
         className,
       )}
@@ -46,6 +46,6 @@ export function HelpMenu({
       )}
       {children}
       </nav>
-    </>
+    </div>
   );
 }
