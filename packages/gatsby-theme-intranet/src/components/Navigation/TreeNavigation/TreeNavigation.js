@@ -21,6 +21,7 @@ export default function TreeNavigation({ title, ...restProps }) {
         items={treeData}
         location={location}
         className={clsx(styles.component)}
+        styles={styles}
       />
     </div>
   );

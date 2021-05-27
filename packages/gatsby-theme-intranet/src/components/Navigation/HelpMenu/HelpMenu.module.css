@@ -16,8 +16,8 @@
   margin-bottom: 0;
 }
 
-.item {
-  margin-bottom: 3px;
+.item:not(:last-child) {
+  margin-bottom: 1px;
 }
 
 .link {

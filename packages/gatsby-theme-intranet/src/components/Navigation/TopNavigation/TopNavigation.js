@@ -1,4 +1,5 @@
 import { Icon, Link } from "@whitespace/components";
+import { utilities } from "@whitespace/gatsby-theme-wordpress-basic/src/foundation";
 import clsx from "clsx";
 import React from "react";
 
@@ -7,7 +8,7 @@ import * as styles from "./TopNavigation.module.css";
 export function TopNavigation({ items, ...restProps }) {
   return (
     <nav
-      className={clsx(styles.component, "hidden-print")}
+      className={clsx(styles.component, utilities.hiddenPrint)}
       aria-label="primär"
       {...restProps}
     >
