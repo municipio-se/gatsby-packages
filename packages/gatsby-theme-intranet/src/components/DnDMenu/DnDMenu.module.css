@@ -1,0 +1,138 @@
+.component {
+  margin-bottom: var(--gap-max);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.list {
+  padding-left: 0;
+  list-style: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  width: calc(100% + 2rem);
+  margin-left: -1rem;
+
+}
+
+.item {
+  /* pointer-events: none; */
+}
+
+.item:not(:last-child) .row {
+  margin-bottom: 1px;
+}
+
+.link {
+  /* pointer-events: all; */
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--navigation-default-color, black);
+  background: var(--navigation-default-background, transparent);
+  text-decoration: var(--navigation-default-text-decoration, none);
+  line-height: 1.5;
+  display: flex;
+  border-radius: var(--navigation-default-border-radius, 3px);
+  padding: var(--navigation-default-padding, 0.5rem);
+}
+
+.link:hover {
+  background: var(--navigation-hover-background, grey);
+  color: var(--navigation-hover-color, white);
+  text-decoration: var(--navigation-hover-text-decoration, none);
+}
+
+/* .link--empty {
+  font-style: italic;
+  font-size: 0.75rem;
+} */
+
+
+.toggle-button {
+  padding-left: 0;
+  cursor: pointer;
+}
+
+.toggle-button:before {
+  font-size: 0.666em;
+  content: "►";
+  display: block;
+  margin-right: var(--space-4);
+}
+
+.toggle-button:hover {
+  --background: none;
+}
+
+.toggle-button-is-open:before {
+  content: "▼";
+}
+
+.label, .toggle-button  {
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+/* .toggle-view {
+  color: var(--color-active);
+  cursor: pointer;
+} */
+
+/* .button {
+  --button-bg-color: var(--sidebar-state-hover);
+  color: var(--color-foreground);
+  margin-top: var(--space-4);
+} */
+
+/* EDIT VIEW */
+
+/* 
+.edit li {
+   @extend .dnd-menu__list-item;
+}
+
+.edit .link {
+  justify-content: space-between;
+}
+
+.edit .link-icon {
+  --icon-color: var(--sidebar-icon);
+  pointer-events: none;
+}
+
+.edit .link-icon--inverse {
+  --icon-color: var(--color-foreground-inverse);
+}
+
+.edit-hidden:before {
+  content: "";
+  height: calc(var(--space-4) / 2);
+  display: block;
+  border-radius: var(--space-4);
+  background: var(--color-divider);
+  margin-top: var(--space-16);
+  margin-bottom: var(--space-16);
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
+}
+
+.edit-hidden .link-label {
+  opacity: 0.6;
+}
+
+.edit-hidden .link-label--filled {
+  opacity: 1;
+}
+
+.edit .link-label--not-filled {
+  opacity: 0.6;
+} */
+

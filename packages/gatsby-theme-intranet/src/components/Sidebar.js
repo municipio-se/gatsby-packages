@@ -3,6 +3,7 @@ import clsx from "clsx";
 import React, { useContext, useEffect, useRef } from "react";
 
 import { SiteLayoutContext } from "../@whitespace/gatsby-theme-wordpress-basic/components/SiteLayout";
+import { Tools } from "../components/DnDMenu";
 import Header from "../components/Header/Header";
 import {
   TopNavigation,
@@ -117,16 +118,13 @@ export default function Sidebar({ ...restProps }) {
               showMoreLabel="allBookmarksLabel"
               showLessLabel="hideBookmarksLabel"
             />
-          )}
+          )} */}
           {tools?.length > 0 && (
             <Tools
               items={tools}
-              title="myToolsLabel"
-              showMoreLabel="allToolsLabel"
-              showLessLabel="hideToolsLabel"
-              nothingToShowLabel="noSelectedToolsLabel"
+              title="Verktyg"
             />
-          )} */}
+          )} 
           {helpMenu?.length > 0 && (
             <HelpMenu
               title="Hjälp"
