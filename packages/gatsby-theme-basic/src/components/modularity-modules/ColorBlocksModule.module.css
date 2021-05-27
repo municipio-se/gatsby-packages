@@ -5,6 +5,7 @@
   font-weight: 600;
   display: flex;
   align-items: flex-end;
+  --box-padding: 3rem 2rem 1.5rem 1.5rem;
 }
 
 
