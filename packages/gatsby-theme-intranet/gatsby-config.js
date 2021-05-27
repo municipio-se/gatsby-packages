@@ -1,20 +1,11 @@
-module.exports = ({
-  basePath,
-  fragmentsDir,
-  wp,
-  postCss,
-  compileES6Packages,
-} = {}) => {
+module.exports = ({ basePath, ...restOptions } = {}) => {
   return {
     plugins: [
       {
         resolve: "@municipio/gatsby-theme-basic",
         options: {
           basePath,
-          fragmentsDir,
-          wp,
-          postCss,
-          compileES6Packages,
+          ...restOptions,
         },
       },
     ],

@@ -1,9 +1,7 @@
 module.exports = ({
   basePath,
-  fragmentsDir,
-  wp,
-  postCss,
   compileES6Packages = { modules: [] },
+  ...restOptions
 } = {}) => {
   return {
     plugins: [
@@ -15,9 +13,7 @@ module.exports = ({
         resolve: "@whitespace/gatsby-theme-wordpress-basic",
         options: {
           basePath,
-          fragmentsDir,
-          wp,
-          postCss,
+          ...restOptions,
         },
       },
     ],
