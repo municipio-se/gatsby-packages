@@ -1,5 +1,5 @@
 import { H, Section } from "@jfrk/react-heading-levels";
-import cx from "classnames";
+import clsx from "clsx";
 import React, { useContext, useEffect, useRef } from "react";
 
 import { SiteLayoutContext } from "../@whitespace/gatsby-theme-wordpress-basic/components/SiteLayout";
@@ -98,12 +98,9 @@ export default function Sidebar({ ...restProps }) {
   let { items: helpMenu } = useMenu("HELP_MENU");
   let tools = useTool();
 
-  // console.log("mainMenu", mainMenu);
-  // console.log("helpMenu", helpMenu);
-
   return (
     <aside
-      className={cx(styles.component, menuOpen && styles.isOpen)}
+      className={clsx(styles.component, menuOpen && styles.isOpen)}
       ref={sidebar}
       {...restProps}
     >
