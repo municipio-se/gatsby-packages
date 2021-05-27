@@ -64,11 +64,7 @@ export default function Card({
           </div>
         )}
         {date && (
-          <Time
-            className={clsx(styles.date)}
-            date={date}
-            format={dateFormat}
-          />
+          <Time className={clsx(styles.date)} date={date} format={dateFormat} />
         )}
         {/* {category && (
           <div className={clsx(styles.category)}>
@@ -81,11 +77,9 @@ export default function Card({
             {category}
           </div>
         )} */}
-        {description &&
-          <div className={clsx(styles.description)}>
-            {description}
-          </div>
-        }
+        {description && (
+          <div className={clsx(styles.description)}>{description}</div>
+        )}
       </div>
     </Box>
   );

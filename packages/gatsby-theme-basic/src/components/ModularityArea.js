@@ -10,10 +10,13 @@ import ModuleController from "./ModuleController";
 export default function ModularityArea({
   styles = defaultStyles,
   className,
-  area,
+  area = {},
   ...restProps
 }) {
   const { modules } = area;
+  if (!modules?.length) {
+    return null;
+  }
   return (
     <modularityAreaContext.Provider value={area}>
       <div className={clsx(styles.component, className)} {...restProps}>
