@@ -1,25 +1,24 @@
 import { useLocation } from "@gatsbyjs/reach-router";
 import { H } from "@jfrk/react-heading-levels";
 import { TreeMenu } from "@whitespace/components";
-import { usePageContext } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/page-context";
 import usePages from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/pages";
-import {
-  getAncestors,
-  getTreeStructure,
-} from "@whitespace/gatsby-theme-wordpress-basic/src/utils/pageTree";
-import cx from "classnames";
-import { navigate } from "gatsby";
+import { getTreeStructure } from "@whitespace/gatsby-theme-wordpress-basic/src/utils/pageTree";
+import clsx from "clsx";
 import React from "react";
 
-import TreeNavigationItem from "./TreeNavigationItem";
+import * as styles from "./TreeNavigation.module.css";
 
-export default function TreeNavigation({ ...restProps }) {
+export default function TreeNavigation({title, ...restProps }) {
   let allPages = usePages();
   const treeData = getTreeStructure(allPages);
 
-  console.log(treeData);
-
   const location = useLocation();
 
-  return <TreeMenu items={treeData} location={location} />;
+  return (
+    <div {...restProps}>
+      <H className={clsx(styles.label)}>{title}</H>
+      <TreeMenu items={treeData} location={location} className={clsx(styles.component)} />
+    </div>
+  );
+
 }

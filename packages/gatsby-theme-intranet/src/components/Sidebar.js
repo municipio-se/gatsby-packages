@@ -112,7 +112,7 @@ export default function Sidebar({ ...restProps }) {
         <SearchForm placeholderText="Sök på intranätet" modifierClass />
         <Section>
           {mainMenu?.length > 0 && <TopNavigation items={mainMenu} />}
-          <TreeNavigation />
+          <TreeNavigation title="Innehåll" />
           {/* {bookmarks?.length > 0 && (
             <Bookmarks
               items={bookmarks}
