@@ -4,7 +4,8 @@
   --tree-menu-link-font-weight: 500;
   --tree-menu-item-border-radius: var(--navigation-default-border-radius);
   --tree-menu-row-margin-bottom: 3px;
-  --tree-menu-link-padding: var(--space-8) var(--space-16) var(--space-8) var(--space-8);
+  --tree-menu-link-padding: var(--space-8) var(--space-16) var(--space-8)
+    var(--space-8);
   --tree-menu-link-hover-background: var(--navigation-hover-background);
   --tree-menu-link-hover-color: var(--navigation-hover-color);
   --tree-menu-link-active-background: var(--navigation-active-background);
@@ -15,9 +16,7 @@
   margin-bottom: var(--gap-min);
   width: calc(100% + 2rem);
   margin-left: -1rem;
-
 }
-
 
 .label {
   font-size: 0.75rem;
@@ -26,4 +25,3 @@
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
-

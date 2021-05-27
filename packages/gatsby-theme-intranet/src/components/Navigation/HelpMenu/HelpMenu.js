@@ -14,7 +14,6 @@ export function HelpMenu({
   children,
   ...restProps
 }) {
-
   return (
     <div className={clsx(styles.component)} {...restProps}>
       <H className={clsx(styles.label)}>{title}</H>
