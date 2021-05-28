@@ -2,7 +2,8 @@
   "version": "independent",
   "npmClient": "yarn",
   "publish": {
-    "ignoreChanges": ["examples/**"]
+    "ignoreChanges": ["examples/**"],
+    "message": "chore(release): publish packages"
   },
   "packages": ["packages/*"]
 }
