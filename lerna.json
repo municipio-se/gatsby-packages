@@ -1,9 +1,11 @@
 {
-  "version": "independent",
-  "npmClient": "yarn",
-  "publish": {
-    "ignoreChanges": ["examples/**"],
-    "message": "chore(release): publish packages"
+  "command": {
+    "publish": {
+      "ignoreChanges": ["examples/*"],
+      "message": "chore(release): publish packages"
+    }
   },
-  "packages": ["packages/*"]
+  "npmClient": "yarn",
+  "packages": ["packages/*"],
+  "version": "independent"
 }
