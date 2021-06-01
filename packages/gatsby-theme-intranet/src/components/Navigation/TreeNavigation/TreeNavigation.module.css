@@ -61,7 +61,10 @@
 }
 
 .row:focus-within .link:before {
-  box-shadow: var(--tree-menu-row-focus-box-shadow, 0 0 0 3px blue inset);
+  box-shadow: var(
+    --tree-menu-row-focus-box-shadow,
+    var(--focus-box-shadow, 0 0 0 3px black)
+  );
 }
 
 .toggle {
