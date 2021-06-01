@@ -1,5 +1,18 @@
 # Change Log
 
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## [0.6.7](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-intranet@0.6.6...@municipio/gatsby-theme-intranet@0.6.7) (2021-06-01)
+
+**Note:** Version bump only for package @municipio/gatsby-theme-intranet
+
+
+
+
+
+# Change Log
+
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
