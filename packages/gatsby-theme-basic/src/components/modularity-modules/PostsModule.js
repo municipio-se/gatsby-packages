@@ -11,6 +11,9 @@ function fromDisplayModeToComponentName(displayMode) {
 }
 
 function normalizeItems({ modPostsDataSource, contentNodes }) {
+  if (!modPostsDataSource?.postsDataSource) {
+    return [];
+  }
   const { processContent, stripHTML } = useHTMLProcessor();
   switch (modPostsDataSource.postsDataSource) {
     case "input":
@@ -25,12 +28,7 @@ function normalizeItems({ modPostsDataSource, contentNodes }) {
             url: item.permalink,
             excerpt: stripHTML(item.postContent),
             content: processedContent,
-            image: item.image && {
-              ...item.image,
-              alt: item.image.altText,
-              src: item.image.src,
-              aspectRatio: item.image.width / item.image.height,
-            },
+            image: item.image,
           };
         },
       );
@@ -60,15 +58,7 @@ function normalizeItems({ modPostsDataSource, contentNodes }) {
             excerpt: item.description
               ? item.description
               : stripHTML(item.content),
-            image: item.featuredImage &&
-              item.featuredImage.node && {
-                ...item.featuredImage.node,
-                alt: item.featuredImage.node.altText,
-                src: item.featuredImage.node.src,
-                aspectRatio:
-                  item.featuredImage.node.width /
-                  item.featuredImage.node.height,
-              },
+            image: item.featuredImage?.node,
             content: processedContent,
             element: "div",
           };
@@ -81,9 +71,7 @@ function normalizeItems({ modPostsDataSource, contentNodes }) {
 
 export default function PostsModule({ module, ...restProps }) {
   const normalizedItems = normalizeItems(module);
-  const {
-    modPostsDataDisplay: { postsDisplayAs },
-  } = module;
+  const { modPostsDataDisplay: { postsDisplayAs } = {} } = module;
   let componentName = fromDisplayModeToComponentName(postsDisplayAs);
   let Component =
     // eslint-disable-next-line import/namespace

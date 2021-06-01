@@ -1,23 +1,24 @@
-import { Button } from "@whitespace/components";
 import clsx from "clsx";
 import React from "react";
 
 import ModuleWrapper from "../../ModuleWrapper";
+import RuledList from "../../RuledList";
 
 import * as defaultStyles from "./ListPostsModule.module.css";
+import ListPostsModuleItem from "./ListPostsModuleItem";
 
 export default function ListPostsModule({
   styles = defaultStyles,
   className,
-  comnponents: { ItemLink = Button } = { ItemLink: Button },
+  // comnponents: { ItemLink = Button } = { ItemLink: Button },
   title,
-  // module,
+  module,
   normalizedItems,
   ...restProps
 }) {
-  // const {
-  //   modPostsDataDisplay: { postsFields },
-  // } = module;
+  const {
+    modPostsDataDisplay: { postsFields },
+  } = module;
   // let showDate = postsFields?.includes("date");
   return (
     <ModuleWrapper
@@ -25,23 +26,18 @@ export default function ListPostsModule({
       {...restProps}
       className={clsx(styles.component, className)}
     >
-      <ul className={clsx(styles.list)}>
+      <RuledList className={clsx(styles.list)} ruleTop ruleBottom>
         {normalizedItems.map((item, index) => {
           return (
-            <li key={index} className={clsx(styles.item)}>
-              <ItemLink to={item.url} className={clsx(styles.link)}>
-                <span>{item.title}</span>
-              </ItemLink>{" "}
-              {/* {!!showDate && (
-                <Time
-                  date={item.dateGmt}
-                  format={{ year: "numeric", month: "numeric", day: "numeric" }}
-                />
-              )} */}
-            </li>
+            <ListPostsModuleItem
+              item={item}
+              visibleFields={postsFields || []}
+              className={clsx(styles.item)}
+              key={index}
+            />
           );
         })}
-      </ul>
+      </RuledList>
     </ModuleWrapper>
   );
 }

@@ -1,0 +1,20 @@
+.item {
+  --focus-outset: calc((var(--list-gap, 0) - var(--list-rule-width, 1px)) / 2);
+}
+
+.summary {
+  cursor: pointer;
+}
+
+.summary:hover,
+.summary:focus {
+  text-decoration: var(--expandable-summary-hover-text-decoration, underline);
+}
+
+.summary:focus {
+  outline: none;
+}
+
+.content {
+  padding-top: 0.5rem;
+}

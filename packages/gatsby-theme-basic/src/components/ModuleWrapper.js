@@ -20,7 +20,12 @@ export default function ModuleWrapper({
 
   return (
     <Component className={clsx(styles.component, className)} {...restProps}>
-      {!!title && (typeof title === "function" ? title({ H }) : <H>{title}</H>)}
+      {!!title &&
+        (typeof title === "function" ? (
+          title({ H })
+        ) : (
+          <H className={styles.title}>{title}</H>
+        ))}
       <MaybeSection>{children}</MaybeSection>
     </Component>
   );

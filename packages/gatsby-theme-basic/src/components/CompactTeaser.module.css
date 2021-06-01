@@ -1,0 +1,17 @@
+.component {
+  position: relative;
+  font-size: var(--card-font-size, 0.875rem);
+}
+
+.content {
+  display: grid;
+  gap: 0.125rem;
+}
+
+.meta {
+  color: var(--card-meta-color, #525c63);
+}
+
+.image {
+  align-self: center;
+}

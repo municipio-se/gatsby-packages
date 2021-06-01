@@ -1,0 +1,19 @@
+.component {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 10rem;
+}
+
+.content {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.meta {
+  font-size: 0.875rem;
+  color: var(--card-meta-color, #525c63);
+}
+
+.image {
+  align-self: center;
+}

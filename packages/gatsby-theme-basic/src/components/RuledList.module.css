@@ -1,0 +1,29 @@
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  align-content: start;
+}
+
+.item {
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+.item.ruleTop,
+.item:not(:first-child) {
+  border-top: var(--list-rule-width, 1px) solid var(--list-rule-color, #c9e2ea);
+  padding-top: calc((var(--list-gap, 0) - var(--list-rule-width, 1px)) / 2);
+}
+
+.item:not(:last-child) {
+  padding-bottom: calc((var(--list-gap, 0) - var(--list-rule-width, 1px)) / 2);
+}
+
+.item.ruleBottom {
+  border-bottom: var(--list-rule-width, 1px) solid
+    var(--list-rule-color, #c9e2ea);
+  padding-bottom: calc((var(--list-gap, 0) - var(--list-rule-width, 1px)) / 2);
+}

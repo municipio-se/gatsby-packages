@@ -55,7 +55,11 @@ export default function Grid({
       {Children.map(
         typeof children === "function" ? children({ columns }) : children,
         (child, index) => {
-          return <ItemWrapper key={index}>{child}</ItemWrapper>;
+          return (
+            <ItemWrapper key={index} className={styles.item}>
+              {child}
+            </ItemWrapper>
+          );
         },
       )}
     </Wrapper>
