@@ -1,3 +1,10 @@
 body {
   margin: 0;
 }
+
+*,
+*:before,
+*:after {
+  transition-property: box-shadow;
+  transition-duration: 125ms;
+}
