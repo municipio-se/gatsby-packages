@@ -1,5 +1,21 @@
 # Change Log
 
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+# [0.7.0](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-intranet@0.6.7...@municipio/gatsby-theme-intranet@0.7.0) (2021-06-07)
+
+
+### Features
+
+* **gatsby-theme-intranet:** add authentication ([281171d](https://github.com/municipio-se/gatsby-packages/commit/281171d3b98e18e4c204c9c969dd205387a2bc66))
+
+
+
+
+
+# Change Log
+
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
