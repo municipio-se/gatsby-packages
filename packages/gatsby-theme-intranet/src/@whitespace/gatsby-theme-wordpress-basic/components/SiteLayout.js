@@ -7,6 +7,7 @@ import React, {
   // useEffect
 } from "react";
 
+import AccessWall from "../../../components/AccessWall";
 import Sidebar from "../../../components/Sidebar";
 import Toolbar from "../../../components/Toolbar";
 
@@ -14,6 +15,7 @@ import * as styles from "./SiteLayout.module.css";
 
 export default function SiteLayout({ children }) {
   const [siteContext, setSiteContext] = useState({ menuOpen: false });
+
   // const location = useLocation();
   // const prevLocation = usePrevious(location);
 
@@ -28,15 +30,20 @@ export default function SiteLayout({ children }) {
 
   return (
     <SiteLayoutContext.Provider value={[siteContext, setSiteContext]}>
-      <div
-        className={cx(styles.component, siteContext.menuOpen && "sidebar-open")}
-      >
-        <Sidebar />
-        <main className={styles.main} id="main">
-          <Toolbar />
-          <div className={styles.content}>{children}</div>
-        </main>
-      </div>
+      <AccessWall autoLogin={true}>
+        <div
+          className={cx(
+            styles.component,
+            siteContext.menuOpen && "sidebar-open",
+          )}
+        >
+          <Sidebar />
+          <main className={styles.main} id="main">
+            <Toolbar />
+            <div className={styles.content}>{children}</div>
+          </main>
+        </div>
+      </AccessWall>
     </SiteLayoutContext.Provider>
   );
 }

@@ -3,21 +3,23 @@
 import { Icon } from "@whitespace/components";
 import { Image } from "@whitespace/gatsby-theme-wordpress-basic/src/components";
 import clsx from "clsx";
-import React from "react";
+import React, { useContext } from "react";
 import useDropdownMenu from "react-accessible-dropdown-menu-hook";
 
+import userContext from "../../contexts/userContext";
 import Logo from "../Logo/Logo";
 
 import * as styles from "./Header.module.css";
 
 export default function Header({ image, ...restProps }) {
+  const { logoutURL } = useContext(userContext);
   const dropdownMenu = [
+    // {
+    //   url: "/",
+    //   label: "Dina uppgifter",
+    // },
     {
-      url: "/",
-      label: "Dina uppgifter",
-    },
-    {
-      url: "/",
+      url: logoutURL,
       label: "Logga ut",
     },
   ];
