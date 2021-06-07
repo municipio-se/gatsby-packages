@@ -13,15 +13,15 @@ export default function AccessWall({
   autoLogin,
   children,
   fallback: FallbackComponent = DefaultFallbackComponent,
-  ...restProps
 }) {
-  const { user, login, pending } = useContext(userContext);
+  const { user, login, pending, requireLogin } = useContext(userContext);
   useEffect(() => {
-    if (!pending && !user && autoLogin) {
+    if (requireLogin && !pending && !user && autoLogin) {
       login();
     }
-  }, [autoLogin, !!user, login, pending]);
-  if (!user) {
+  }, [requireLogin, autoLogin, !!user, login, pending]);
+
+  if (requireLogin && !user) {
     return <FallbackComponent />;
   }
   return children;

@@ -10,6 +10,7 @@ export default function UserProvider({
   userInfoURL,
   loginURL,
   logoutURL,
+  requireLogin,
 }) {
   const { Provider } = userContext;
   const [user, setUser] = useState();
@@ -52,7 +53,16 @@ export default function UserProvider({
 
   return (
     <Provider
-      value={{ user, pending, logout, login, userInfoURL, loginURL, logoutURL }}
+      value={{
+        user,
+        pending,
+        logout,
+        login,
+        userInfoURL,
+        loginURL,
+        logoutURL,
+        requireLogin,
+      }}
     >
       {children}
     </Provider>
