@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.8.0](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-intranet@0.7.0...@municipio/gatsby-theme-intranet@0.8.0) (2021-06-07)
+
+
+* feat!: add option to disable login requirement ([3218569](https://github.com/municipio-se/gatsby-packages/commit/3218569f92c080e4329fc2d8c20b0d4565712479))
+
+
+### BREAKING CHANGES
+
+* `requireLogin` defaults to `false`
+
+
+
+
+
 # [0.7.0](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-intranet@0.6.7...@municipio/gatsby-theme-intranet@0.7.0) (2021-06-07)
 
 
