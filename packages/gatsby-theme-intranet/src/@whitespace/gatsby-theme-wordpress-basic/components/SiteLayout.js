@@ -15,6 +15,7 @@ import * as styles from "./SiteLayout.module.css";
 
 export default function SiteLayout({ children }) {
   const [siteContext, setSiteContext] = useState({ menuOpen: false });
+  const {menuOpen} = siteContext;
 
   // const location = useLocation();
   // const prevLocation = usePrevious(location);
@@ -34,7 +35,7 @@ export default function SiteLayout({ children }) {
         <div
           className={cx(
             styles.component,
-            siteContext.menuOpen && "sidebar-open",
+            menuOpen && styles.sidebarIsOpen,
           )}
         >
           <Sidebar />
