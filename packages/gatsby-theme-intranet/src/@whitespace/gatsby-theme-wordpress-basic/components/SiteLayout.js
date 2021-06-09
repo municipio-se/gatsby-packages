@@ -15,7 +15,7 @@ import * as styles from "./SiteLayout.module.css";
 
 export default function SiteLayout({ children }) {
   const [siteContext, setSiteContext] = useState({ menuOpen: false });
-  const {menuOpen} = siteContext;
+  const { menuOpen } = siteContext;
 
   // const location = useLocation();
   // const prevLocation = usePrevious(location);
@@ -32,12 +32,7 @@ export default function SiteLayout({ children }) {
   return (
     <SiteLayoutContext.Provider value={[siteContext, setSiteContext]}>
       <AccessWall autoLogin={true}>
-        <div
-          className={cx(
-            styles.component,
-            menuOpen && styles.sidebarIsOpen,
-          )}
-        >
+        <div className={cx(styles.component, menuOpen && styles.sidebarIsOpen)}>
           <Sidebar />
           <main className={styles.main} id="main">
             <Toolbar />
