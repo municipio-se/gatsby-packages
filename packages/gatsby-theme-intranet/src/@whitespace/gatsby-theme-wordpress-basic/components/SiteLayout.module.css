@@ -7,6 +7,24 @@
   overflow: hidden;
 }
 
+.sidebarIsOpen {
+  @media screen and (max-width: 768px) {
+    overflow: hidden;
+
+    &::after {
+      content: "";
+      display: block;
+      background: rgba(0, 0, 0, 0.9);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: var(--sidebar-z-overlay);
+    }
+  }
+}
+
 .main {
   overflow: scroll;
   height: 100%;
