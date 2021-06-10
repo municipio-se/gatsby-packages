@@ -17,7 +17,7 @@ export default function TextModule({
     modTextOptions: {
       // fontSize = "text-md",
       // hideBoxFrame = false,
-      theme
+      theme,
     } = {},
   },
   moduleType,
