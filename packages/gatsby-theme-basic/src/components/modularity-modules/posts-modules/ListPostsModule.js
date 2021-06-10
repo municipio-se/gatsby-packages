@@ -17,14 +17,14 @@ export default function ListPostsModule({
   ...restProps
 }) {
   const {
-    modPostsDataDisplay: { postsFields },
+    modPostsDataDisplay: { postsFields, theme },
   } = module;
   // let showDate = postsFields?.includes("date");
   return (
     <ModuleWrapper
       title={title}
       {...restProps}
-      className={clsx(styles.component, className)}
+      className={clsx(styles.component, theme, className)}
     >
       <RuledList className={clsx(styles.list)} ruleTop ruleBottom>
         {normalizedItems.map((item, index) => {

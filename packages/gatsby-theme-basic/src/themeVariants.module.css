@@ -1,0 +1,49 @@
+/*Webbfärg Mellanblå*/
+.themeVariant1 {
+  --box-background: #456F87;
+}
+
+/*Webbfärg Beige*/
+.themeVariant2 {
+  --box-background: #F5F5F5;
+}
+
+/*Webbfärg Blå*/
+.themeVariant3 {
+  --box-background: #164A69;
+}
+
+/*Webbfärg Ljusblå*/
+.themeVariant4 {
+  --box-background: #C9E2EA;
+}
+
+/*Webbfärg Greige*/
+.themeVariant5 {
+  --box-background: #DBDED5;
+}
+
+/*Skärmfärg Mellangrön*/
+.themeVariant6 {
+  --box-background: #C5DEC6;
+}
+
+/*Skärmfärg Beige*/
+.themeVariant7 {
+  --box-background: #F0F2F0;
+}
+
+/*Skärmfärg Bakgrund*/
+.themeVariant8 {
+  --box-background: #F7F5F1;
+}
+
+/*Skärmfärg Ljusgrön*/
+.themeVariant9 {
+  --box-background: #E3EADD;
+}
+
+/*Skärmfärg Grönbeige*/
+.themeVariant10 {
+  --box-background: #E8EFEB;
+}

@@ -14,10 +14,11 @@ export default function TextModule({
   module: {
     content,
     contentMedia,
-    // textOptions: {
-    //   // fontSize = "text-md",
-    //   // hideBoxFrame = false,
-    // } = {},
+    modTextOptions: {
+      // fontSize = "text-md",
+      // hideBoxFrame = false,
+      theme
+    } = {},
   },
   moduleType,
   // colorScheme,
@@ -33,13 +34,12 @@ export default function TextModule({
   // const textSize = fontSize.replace(/^text-/, "");
 
   // const Wrapper = hideBoxFrame ? "div" : Box;
-
   return (
     <ModuleWrapper
       as={Box}
       title={title}
       {...restProps}
-      className={clsx(styles.component, className)}
+      className={clsx(styles.component, theme, className)}
     >
       {processedContent}
     </ModuleWrapper>
