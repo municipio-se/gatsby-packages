@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.9.0](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-intranet@0.8.0...@municipio/gatsby-theme-intranet@0.9.0) (2021-06-11)
+
+
+### Features
+
+* **gatsby-theme-intranet:** enable mobile sidebar ([6b4d06c](https://github.com/municipio-se/gatsby-packages/commit/6b4d06c0b45817c9ea4ba6a2491d4a67e76b011a))
+
+
+
+
+
 # [0.8.0](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-intranet@0.7.0...@municipio/gatsby-theme-intranet@0.8.0) (2021-06-07)
 
 
