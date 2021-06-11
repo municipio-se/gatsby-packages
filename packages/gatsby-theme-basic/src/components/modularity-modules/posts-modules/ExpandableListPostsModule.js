@@ -12,20 +12,20 @@ export default function ExpandableListPostsModule({
   styles = defaultStyles,
   className,
   title,
-  // module,
+  module,
   normalizedItems,
   ...restProps
 }) {
-  // const {
-  //   modPostsDataDisplay: { postsFields },
-  // } = module;
+  const {
+    modPostsDataDisplay: { theme },
+  } = module;
   // let showDate = postsFields?.includes("date");
 
   return (
     <ModuleWrapper
       title={title}
       {...restProps}
-      className={clsx(styles.component, className)}
+      className={clsx(styles.component, theme, className)}
     >
       {/* TODO: Replace with real accordion component */}
       <RuledList gap={`2rem`} ruleTop ruleBottom>

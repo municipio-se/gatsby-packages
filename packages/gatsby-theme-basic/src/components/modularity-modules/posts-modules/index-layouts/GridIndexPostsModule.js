@@ -15,14 +15,14 @@ export default function GridIndexPostsModule({
   ...restProps
 }) {
   const {
-    modPostsDataDisplay: { postsFields },
+    modPostsDataDisplay: { postsFields, theme },
   } = module;
 
   return (
     <ModuleWrapper
       title={title}
       {...restProps}
-      className={clsx(styles.component, className)}
+      className={clsx(styles.component, theme, className)}
     >
       <Grid className={clsx(styles.list)}>
         {normalizedItems.map((item, index) => {
