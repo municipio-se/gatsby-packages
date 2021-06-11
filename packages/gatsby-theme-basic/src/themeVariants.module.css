@@ -1,49 +1,69 @@
 /*Webbfärg Mellanblå*/
 .themeVariant1 {
   --box-background: #456f87;
+  --card-background: #456f87;
+  --card-color: inherit;
 }
 
 /*Webbfärg Beige*/
 .themeVariant2 {
   --box-background: #f5f5f5;
+  --card-background: #f5f5f5;
+  --card-color: inherit;
 }
 
 /*Webbfärg Blå*/
 .themeVariant3 {
   --box-background: #164a69;
+  --card-background: #164a69;
+  --card-color: inherit;
 }
 
 /*Webbfärg Ljusblå*/
 .themeVariant4 {
   --box-background: #c9e2ea;
+  --card-background: #c9e2ea;
+  --card-color: inherit;
 }
 
 /*Webbfärg Greige*/
 .themeVariant5 {
   --box-background: #dbded5;
+  --card-background: #dbded5;
+  --card-color: inherit;
 }
 
 /*Skärmfärg Mellangrön*/
 .themeVariant6 {
   --box-background: #c5dec6;
+  --card-background: #c5dec6;
+  --card-color: inherit;
 }
 
 /*Skärmfärg Beige*/
 .themeVariant7 {
   --box-background: #f0f2f0;
+  --card-background: #f0f2f0;
+  --card-color: inherit;
 }
 
 /*Skärmfärg Bakgrund*/
 .themeVariant8 {
   --box-background: #f7f5f1;
+  --card-background: #f7f5f1;
+  --card-color: inherit;
 }
 
 /*Skärmfärg Ljusgrön*/
 .themeVariant9 {
   --box-background: #e3eadd;
+  --card-background: #e3eadd;
+  --card-color: inherit;
 }
 
 /*Skärmfärg Grönbeige*/
 .themeVariant10 {
   --box-background: #e8efeb;
+  --card-background: #e8efeb;
+  --card-color: inherit;
 }
