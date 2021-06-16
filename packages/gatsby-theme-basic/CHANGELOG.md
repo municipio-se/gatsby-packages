@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.8.0](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.7.0...@municipio/gatsby-theme-basic@0.8.0) (2021-06-16)
+
+
+### Features
+
+* Add new full width variant ([b442550](https://github.com/municipio-se/gatsby-packages/commit/b442550b574a16d60bfeaa6bb30a450ec8f6bea2))
+
+
+
+
+
 # [0.7.0](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.6.6...@municipio/gatsby-theme-basic@0.7.0) (2021-06-16)
 
 
