@@ -2,13 +2,10 @@ import clsx from "clsx";
 import PropTypes from "prop-types";
 import React from "react";
 
-
 import ModuleWrapper from "../ModuleWrapper";
 
 import ContactCard from "./ContactCard";
 import * as defaultStyles from "./ContactsModule.module.css";
-
-
 
 export default function ContactsModule({
   styles = defaultStyles,
@@ -18,7 +15,7 @@ export default function ContactsModule({
   ...restProps
 }) {
   const { modContactsOptions: { contacts } = {} } = module;
-  
+
   return (
     <ModuleWrapper
       title={title}
@@ -26,9 +23,8 @@ export default function ContactsModule({
       className={clsx(styles.component, className)}
     >
       {contacts.map((contact, index) => {
-        return <ContactCard contact={contact} key={index} />
-      }
-      )}
+        return <ContactCard contact={contact} key={index} />;
+      })}
     </ModuleWrapper>
   );
 }
