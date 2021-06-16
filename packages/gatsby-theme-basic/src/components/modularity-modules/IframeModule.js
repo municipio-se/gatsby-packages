@@ -20,7 +20,12 @@ export default function IframeModule({
       {...restProps}
       className={clsx(styles.component, className)}
     >
-      <iframe src={iframeUrl} height={iframeHeight} width="100%" frameBorder={0} />
+      <iframe
+        src={iframeUrl}
+        height={iframeHeight}
+        width="100%"
+        frameBorder={0}
+      />
     </ModuleWrapper>
   );
 }
