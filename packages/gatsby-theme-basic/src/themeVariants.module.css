@@ -1,69 +1,77 @@
+.themeVariant1,
+.themeVariant2,
+.themeVariant3,
+.themeVariant4,
+.themeVariant5,
+.themeVariant6,
+.themeVariant7,
+.themeVariant8,
+.themeVariant9,
+.themeVariant10 {
+  --box-background: var(--bg);
+  --box-color: var(--fg);
+  --card-background: var(--bg);
+  --card-color: var(--fg);
+  --card-meta-color: var(--fg);
+  --list-rule-color: var(--bg);
+}
+
 /*Webbfärg Mellanblå*/
 .themeVariant1 {
-  --box-background: #456f87;
-  --card-background: #456f87;
-  --card-color: inherit;
+  --bg: var(--color-brand-color-1);
+  --fg: var(--color-foreground-inverse);
 }
 
 /*Webbfärg Beige*/
 .themeVariant2 {
-  --box-background: #f5f5f5;
-  --card-background: #f5f5f5;
-  --card-color: inherit;
+  --bg: var(--color-brand-color-2);
+  --fg: var(--color-foreground);
 }
 
 /*Webbfärg Blå*/
 .themeVariant3 {
-  --box-background: #164a69;
-  --card-background: #164a69;
-  --card-color: inherit;
+  --bg: var(--color-brand-color-3);
+  --fg: var(--color-foreground-inverse);
 }
 
 /*Webbfärg Ljusblå*/
 .themeVariant4 {
-  --box-background: #c9e2ea;
-  --card-background: #c9e2ea;
-  --card-color: inherit;
+  --bg: var(--color-brand-color-4);
+  --fg: var(--color-foreground);
 }
 
 /*Webbfärg Greige*/
 .themeVariant5 {
-  --box-background: #dbded5;
-  --card-background: #dbded5;
-  --card-color: inherit;
+  --bg: var(--color-brand-color-5);
+  --fg: var(--color-foreground);
 }
 
 /*Skärmfärg Mellangrön*/
 .themeVariant6 {
-  --box-background: #c5dec6;
-  --card-background: #c5dec6;
-  --card-color: inherit;
+  --bg: var(--color-brand-color-6);
+  --fg: var(--color-foreground);
 }
 
 /*Skärmfärg Beige*/
 .themeVariant7 {
-  --box-background: #f0f2f0;
-  --card-background: #f0f2f0;
-  --card-color: inherit;
+  --bg: var(--color-brand-color-7);
+  --fg: var(--color-foreground);
 }
 
 /*Skärmfärg Bakgrund*/
 .themeVariant8 {
-  --box-background: #f7f5f1;
-  --card-background: #f7f5f1;
-  --card-color: inherit;
+  --bg: var(--color-brand-color-8);
+  --fg: var(--color-foreground);
 }
 
 /*Skärmfärg Ljusgrön*/
 .themeVariant9 {
-  --box-background: #e3eadd;
-  --card-background: #e3eadd;
-  --card-color: inherit;
+  --bg: var(--color-brand-color-9);
+  --fg: var(--color-foreground);
 }
 
 /*Skärmfärg Grönbeige*/
 .themeVariant10 {
-  --box-background: #e8efeb;
-  --card-background: #e8efeb;
-  --card-color: inherit;
+  --bg: var(--color-brand-color-10);
+  --fg: var(--color-foreground);
 }
