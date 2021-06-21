@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.8.1](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.8.0...@municipio/gatsby-theme-basic@0.8.1) (2021-06-21)
+
+
+### Bug Fixes
+
+* sidebar styling ([9439711](https://github.com/municipio-se/gatsby-packages/commit/94397111b5cc0baff55f879f5ba397b5eda02618))
+
+
+
 # [0.8.0](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.7.0...@municipio/gatsby-theme-basic@0.8.0) (2021-06-16)
 
 

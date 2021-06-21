@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.10.0](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-intranet@0.9.3...@municipio/gatsby-theme-intranet@0.10.0) (2021-06-21)
+
+
+### Features
+
+* add Inter font ([b7e6830](https://github.com/municipio-se/gatsby-packages/commit/b7e6830c19d1916f9622431c027387f93b535a3c))
+
+
+### Bug Fixes
+
+* sidebar styling ([9439711](https://github.com/municipio-se/gatsby-packages/commit/94397111b5cc0baff55f879f5ba397b5eda02618))
+
+
+
 ## [0.9.3](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-intranet@0.9.2...@municipio/gatsby-theme-intranet@0.9.3) (2021-06-21)
 
 **Note:** Version bump only for package @municipio/gatsby-theme-intranet
