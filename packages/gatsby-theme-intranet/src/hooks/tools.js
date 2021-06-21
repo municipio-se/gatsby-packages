@@ -5,17 +5,10 @@ export default function useTools() {
     useStaticQuery(graphql`
       query Tools {
         wp {
-          sidebar {
-            optionsUserTools {
-              tools {
-                url
-                label
-              }
-            }
-          }
+          ...WP_SidebarSettingsForHook
         }
       }
-    `).wp.sidebar.optionsUserTools?.tools?.map((tool, index) => {
+    `).wp.municipioIntranetSidebarSettings?.tools?.tools?.map((tool, index) => {
       return {
         id: `tool-${index}`,
         label: tool.label,
