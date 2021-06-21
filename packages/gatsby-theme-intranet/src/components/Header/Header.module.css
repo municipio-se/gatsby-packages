@@ -1,18 +1,8 @@
-:global .body {
-}
-
 .component {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  padding-left: var(--gap-medium);
-  padding-right: var(--gap-medium);
-  background: var(--sidebar-background);
-  height: var(--sidebar-header-height);
-}
-
-.sticky {
   position: sticky;
   top: 0;
+  background: var(--sidebar-background, #f5f5f4);
+  padding: 0.75rem var(--sidebar-padding, 1.5rem);
   z-index: 1;
 }
 

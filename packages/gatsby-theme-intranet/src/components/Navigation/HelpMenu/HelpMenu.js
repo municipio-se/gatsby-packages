@@ -15,7 +15,7 @@ export function HelpMenu({
   ...restProps
 }) {
   return (
-    <div className={clsx(styles.component)} {...restProps}>
+    <div className={clsx(styles.component, className)} {...restProps}>
       <H className={clsx(styles.label)}>{title}</H>
       <nav
         className={clsx(styles.navigation, utilities.hiddenPrint, className)}

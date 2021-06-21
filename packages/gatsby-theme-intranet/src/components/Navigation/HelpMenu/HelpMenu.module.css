@@ -1,14 +1,3 @@
-.component {
-  margin-top: auto;
-  margin-bottom: var(--gap-medium, 1.5rem);
-}
-
-.navigation {
-  margin-bottom: var(--gap-min);
-  width: calc(100% + 2rem);
-  margin-left: -1rem;
-}
-
 .list {
   padding-left: 0;
   list-style: none;
@@ -24,17 +13,17 @@
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: var(--navigation-default-color, black);
+  color: var(--navigation-default-color, inherit);
   background: var(--navigation-default-background, transparent);
   padding: var(--navigation-default-padding, 0.5rem);
   text-decoration: var(--navigation-default-text-decoration, none);
-  line-height: 1.5;
-  display: flex;
   border-radius: var(--navigation-default-border-radius, 3px);
+  padding: var(--navigation-default-padding, 0.25rem 0.5rem);
+  margin: 0 -0.5rem;
 }
 
 .link:hover {
-  background: var(--navigation-hover-background, grey);
+  background: var(--navigation-hover-background, #0369a1);
   color: var(--navigation-hover-color, white);
   text-decoration: var(--navigation-hover-text-decoration, none);
 }

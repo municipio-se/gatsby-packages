@@ -2,12 +2,12 @@
 // import { FluidImage } from "gatsby-theme-municipio/src/components/Image";
 import { Icon } from "@whitespace/components";
 import { Image } from "@whitespace/gatsby-theme-wordpress-basic/src/components";
+import HeaderLogo from "@whitespace/gatsby-theme-wordpress-basic/src/components/HeaderLogo";
 import clsx from "clsx";
 import React, { useContext } from "react";
 import useDropdownMenu from "react-accessible-dropdown-menu-hook";
 
 import userContext from "../../contexts/userContext";
-import Logo from "../Logo/Logo";
 
 import * as styles from "./Header.module.css";
 
@@ -33,7 +33,7 @@ export default function Header({ image, ...restProps }) {
   return (
     <header className={clsx(styles.component, styles.sticky)} {...restProps}>
       <div className={clsx(styles.wrapper)}>
-        <Logo className={clsx(styles.logo)} linkTo="/" />
+        <HeaderLogo className={clsx(styles.logo)} linkTo="/" />
         <div
           className={clsx(styles.dropdownTrigger)}
           {...buttonProps}

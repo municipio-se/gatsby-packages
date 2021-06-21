@@ -126,6 +126,7 @@ export default function Sidebar({ ...restProps }) {
               items={helpMenu}
               aria-label="Hjälpmeny"
               isHelpMenu={true}
+              className={styles.last}
             />
           )}
         </Section>

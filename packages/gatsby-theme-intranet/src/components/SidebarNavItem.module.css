@@ -1,0 +1,80 @@
+.component {
+  display: inline-flex;
+  gap: 0.25rem;
+  align-items: center;
+  cursor: pointer;
+  outline: none;
+  color: var(--button-color, black);
+  text-decoration: var(--button-text-decoration, none);
+  font-weight: var(--button-font-weight, medium);
+  padding: var(--button-padding, calc(0.5rem - 1px));
+  border-radius: var(--button-border-radius, 0.5rem);
+  border: var(
+    --button-border,
+    1px solid var(--button-border-color, transparent)
+  );
+  background: var(--button-background, lightgray);
+  box-shadow: var(--button-box-shadow, none);
+  font-size: var(--button-font-size, 1rem);
+  box-sizing: border-box;
+}
+
+/* Hover */
+.component:hover:not(.component.inert, .component:disabled, .component[aria-disabled="true"], :disabled
+    + .component.label) {
+  color: var(--button-hover-color, white);
+  text-decoration: var(--button-hover-text-decoration, none);
+  border: var(
+    --button-hover-border,
+    1px solid var(--button-hover-border-color, transparent)
+  );
+  background: var(--button-hover-background, black);
+  box-shadow: var(--button-hover-box-shadow, none);
+}
+
+/* Disabled */
+.component.inert,
+.component:disabled,
+.component[aria-disabled="true"],
+:disabled + .component.label {
+  cursor: default;
+  color: var(--button-disabled-color, gray);
+  text-decoration: var(--button-disabled-text-decoration, none);
+  border: var(
+    --button-disabled-border,
+    1px solid var(--button-disabled-border-color, transparent)
+  );
+  background: var(--button-disabled-background, lightgray);
+  box-shadow: var(--button-disabled-box-shadow, none);
+}
+
+/* Current */
+.component.current,
+.component[aria-checked="true"],
+.component[aria-pressed="true"],
+.component[aria-current],
+:checked + .component.label {
+  color: var(--button-current-color, white);
+  text-decoration: var(--button-current-text-decoration, none);
+  border: var(
+    --button-current-border,
+    1px solid var(--button-current-border-color, transparent)
+  );
+  background: var(--button-current-background, black);
+  box-shadow: var(--button-current-box-shadow, none);
+}
+
+/* Focus */
+.component:focus,
+:focus + .component.label {
+  outline: none;
+  box-shadow: var(
+    --button-focus-box-shadow,
+    var(--focus-box-shadow, 0 0 0 3px black)
+  );
+}
+
+button.component {
+  font: inherit;
+  -webkit-appearance: none;
+}
