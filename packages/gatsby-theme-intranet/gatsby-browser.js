@@ -2,6 +2,8 @@ import React from "react";
 
 import UserProvider from "./src/components/UserProvider";
 
+import "./src/fonts/index.css";
+
 export const wrapRootElement = (
   { element, props },
   {
