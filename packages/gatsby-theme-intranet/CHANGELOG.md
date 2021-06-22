@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.11.0](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-intranet@0.10.3...@municipio/gatsby-theme-intranet@0.11.0) (2021-06-22)
+
+
+### Features
+
+* support slider modularity area ([4fe73c8](https://github.com/municipio-se/gatsby-packages/commit/4fe73c887171a1973ba6d492d84b86bfef6a247d))
+
+
+
 ### [0.10.3](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-intranet@0.10.2...@municipio/gatsby-theme-intranet@0.10.3) (2021-06-22)
 
 **Note:** Version bump only for package @municipio/gatsby-theme-intranet
