@@ -1,3 +1,5 @@
+import ModularityArea from "@municipio/gatsby-theme-basic/src/components/ModularityArea";
+import { usePageContext } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/page-context";
 import cx from "classnames";
 // import useLocation from "gatsby-theme-municipio/src/hooks/location";
 // import usePrevious from "gatsby-theme-municipio/src/hooks/previous";
@@ -17,6 +19,9 @@ export default function SiteLayout({ children }) {
   const [siteContext, setSiteContext] = useState({ menuOpen: false });
   const { menuOpen } = siteContext;
 
+  const {
+    contentNode: { sliderArea },
+  } = usePageContext();
   // const location = useLocation();
   // const prevLocation = usePrevious(location);
 
@@ -36,6 +41,10 @@ export default function SiteLayout({ children }) {
           <Sidebar />
           <main className={styles.main} id="main">
             <Toolbar />
+            <ModularityArea
+              area={sliderArea}
+              className={cx(styles.sliderArea)}
+            />
             <div className={styles.content}>{children}</div>
           </main>
         </div>

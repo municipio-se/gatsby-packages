@@ -32,6 +32,15 @@
   position: relative;
 }
 
+.sliderArea {
+  --gap: var(--gap-min);
+  max-width: calc(928px + var(--gap) * 2);
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 var(--gap);
+  margin-top: 2rem;
+}
+
 .content {
   --gap: var(--gap-min);
   max-width: var(--main-max-width);

@@ -19,9 +19,9 @@ export default function ModularityArea({
   }
   return (
     <modularityAreaContext.Provider value={area}>
-      <div className={clsx(styles.component, className)} {...restProps}>
-        {!!modules &&
-          modules.map(({ hidden, module, columnWidth, ...rest }, index) => {
+      {!!modules && (
+        <div className={clsx(styles.component, className)} {...restProps}>
+          {modules.map(({ hidden, module, columnWidth, ...rest }, index) => {
             if (hidden || !module) {
               return null;
             }
@@ -34,7 +34,8 @@ export default function ModularityArea({
               </modularityModuleContext.Provider>
             );
           })}
-      </div>
+        </div>
+      )}
     </modularityAreaContext.Provider>
   );
 }
