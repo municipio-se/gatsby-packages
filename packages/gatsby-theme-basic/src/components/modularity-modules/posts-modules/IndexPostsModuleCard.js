@@ -1,5 +1,7 @@
+import { css } from "@emotion/react";
 import { Time } from "@whitespace/gatsby-theme-wordpress-basic/src/components";
 import clsx from "clsx";
+import { kebabCase, mapKeys, transform } from "lodash";
 import PropTypes from "prop-types";
 import React from "react";
 
@@ -35,12 +37,22 @@ export default function IndexPostsModuleCard({
   styles = defaultStyles,
   ...restProps
 }) {
-  const { dateGmt, excerpt, image, title, url } = item;
+  const { dateGmt, excerpt, image, title, url, theme } = item;
   let showDate = visibleFields.includes("date");
   let showImage = visibleFields.includes("image");
 
   return (
-    <Card {...restProps}>
+    <Card
+      css={css({
+        "--card-background": theme
+          ? `var(--brand-color-${kebabCase(theme)})`
+          : null,
+        "--card-color": theme
+          ? `var(--brand-color-${kebabCase(theme)}-text)`
+          : null,
+      })}
+      {...restProps}
+    >
       {showImage && <CardMedia image={image} />}
       <CardContent>
         <CardTitle link={{ url }}>{title}</CardTitle>

@@ -23,12 +23,12 @@ function normalizeItems({ modPostsDataSource, contentNodes }) {
             contentMedia: postContentMedia,
           });
           return {
+            ...item,
             title: item.postTitle,
             contentType: { name: modPostsDataSource.postsDataSource },
             url: item.permalink,
             excerpt: stripHTML(item.postContent),
             content: processedContent,
-            image: item.image,
           };
         },
       );
