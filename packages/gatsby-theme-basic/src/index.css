@@ -1,4 +1,5 @@
 @import url(./themeVariants.module.css);
+@import url(utils/alignElements.module.css);
 
 body {
   margin: 0;
