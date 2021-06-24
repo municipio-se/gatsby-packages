@@ -52,7 +52,7 @@ export default function TextModule({
       })}
       className={clsx(styles.component, className)}
     >
-    <TextContent>{processedContent}</TextContent>
+      <TextContent>{processedContent}</TextContent>
     </ModuleWrapper>
   );
 }
