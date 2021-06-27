@@ -1,4 +1,5 @@
 import { css } from "@emotion/react";
+import TextContent from "@whitespace/gatsby-theme-wordpress-basic/src/components/TextContent";
 import { useHTMLProcessor } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/html-processor";
 import clsx from "clsx";
 import { kebabCase, mapKeys, transform } from "lodash";
@@ -51,7 +52,7 @@ export default function TextModule({
       })}
       className={clsx(styles.component, className)}
     >
-      {processedContent}
+      <TextContent>{processedContent}</TextContent>
     </ModuleWrapper>
   );
 }
