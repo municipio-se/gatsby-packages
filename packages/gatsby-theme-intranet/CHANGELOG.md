@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.11.1](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-intranet@0.11.0...@municipio/gatsby-theme-intranet@0.11.1) (2021-06-27)
+
+
+### Bug Fixes
+
+* add fallback value when fetching sliderArea ([bf83b2a](https://github.com/municipio-se/gatsby-packages/commit/bf83b2a7d5518feb6b931075685ee806613d4ee9))
+
+
+
 ## [0.11.0](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-intranet@0.10.3...@municipio/gatsby-theme-intranet@0.11.0) (2021-06-22)
 
 

@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.9.1](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.9.0...@municipio/gatsby-theme-basic@0.9.1) (2021-06-27)
+
+
+### Bug Fixes
+
+* wrap text module content in TextContent component ([6a99f6d](https://github.com/municipio-se/gatsby-packages/commit/6a99f6df3835e8d27ad6306f1e5aae914fcbcf36))
+
+
+
 ## [0.9.0](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.8.4...@municipio/gatsby-theme-basic@0.9.0) (2021-06-22)
 
 
