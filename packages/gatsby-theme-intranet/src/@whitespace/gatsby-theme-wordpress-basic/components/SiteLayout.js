@@ -19,9 +19,7 @@ export default function SiteLayout({ children }) {
   const [siteContext, setSiteContext] = useState({ menuOpen: false });
   const { menuOpen } = siteContext;
 
-  const {
-    contentNode: { sliderArea },
-  } = usePageContext();
+  const { contentNode: { sliderArea } = {} } = usePageContext();
   // const location = useLocation();
   // const prevLocation = usePrevious(location);
 
