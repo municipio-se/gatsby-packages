@@ -1,6 +1,6 @@
 import { css } from "@emotion/react";
 import clsx from "clsx";
-import { kebabCase} from "lodash";
+import { kebabCase } from "lodash";
 import { difference } from "lodash/fp";
 import PropTypes from "prop-types";
 import React from "react";
