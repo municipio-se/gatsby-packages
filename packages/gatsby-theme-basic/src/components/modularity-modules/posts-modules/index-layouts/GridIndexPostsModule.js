@@ -1,4 +1,6 @@
+import { css } from "@emotion/react";
 import clsx from "clsx";
+import { kebabCase } from "lodash";
 import React from "react";
 
 import Grid from "../../../Grid";
@@ -23,6 +25,17 @@ export default function GridIndexPostsModule({
       title={title}
       {...restProps}
       className={clsx(styles.component, theme, className)}
+      css={css({
+        "--card-background": theme
+          ? `var(--brand-color-${kebabCase(theme)})`
+          : null,
+        "--card-color": theme
+          ? `var(--brand-color-${kebabCase(theme)}-text)`
+          : null,
+        "--card-meta-color": theme
+          ? `var(--brand-color-${kebabCase(theme)}-text)`
+          : null,
+      })}
     >
       <Grid className={clsx(styles.list)}>
         {normalizedItems.map((item, index) => {

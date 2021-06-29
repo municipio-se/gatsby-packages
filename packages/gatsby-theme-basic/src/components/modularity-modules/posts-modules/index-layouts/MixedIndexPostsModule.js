@@ -1,4 +1,6 @@
+import { css } from "@emotion/react";
 import clsx from "clsx";
+import { kebabCase } from "lodash";
 import { difference } from "lodash/fp";
 import PropTypes from "prop-types";
 import React from "react";
@@ -38,6 +40,17 @@ export default function MixedIndexPostsModule({
       title={title}
       {...restProps}
       className={clsx(styles.component, theme, className)}
+      css={css({
+        "--card-background": theme
+          ? `var(--brand-color-${kebabCase(theme)})`
+          : null,
+        "--card-color": theme
+          ? `var(--brand-color-${kebabCase(theme)}-text)`
+          : null,
+        "--card-meta-color": theme
+          ? `var(--brand-color-${kebabCase(theme)}-text)`
+          : null,
+      })}
     >
       <Grid className={clsx(styles.list)}>
         {({ columns = [] }) => {
