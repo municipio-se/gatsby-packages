@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.9.2](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.9.1...@municipio/gatsby-theme-basic@0.9.2) (2021-06-29)
+
+
+### Bug Fixes
+
+* show theme color on index cards ([48623a5](https://github.com/municipio-se/gatsby-packages/commit/48623a5e585a3d4a43f7bb19e0ec0dcae91d0de6))
+
+
+
 ### [0.9.1](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.9.0...@municipio/gatsby-theme-basic@0.9.1) (2021-06-27)
 
 
