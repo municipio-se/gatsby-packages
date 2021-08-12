@@ -4,14 +4,7 @@ export default function useSearchSettings() {
   return useStaticQuery(graphql`
     query SearchSettings {
       wp {
-        search {
-          displaySettings {
-            emptySearchResultMessage
-            searchPlaceholderText
-            searchLabelText
-            searchButtonText
-          }
-        }
+        ...WP_SearchSettingsForHook
       }
     }
   `).wp.search;
