@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.10.0](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.9.3...@municipio/gatsby-theme-basic@0.10.0) (2021-08-12)
+
+
+### Features
+
+* create fragment for search settings ([72dd616](https://github.com/municipio-se/gatsby-packages/commit/72dd616530291873c09c441e4db241c7eac59545))
+
+
+
 ### [0.9.3](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.9.2...@municipio/gatsby-theme-basic@0.9.3) (2021-06-30)
 
 **Note:** Version bump only for package @municipio/gatsby-theme-basic
