@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.11.0](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.10.1...@municipio/gatsby-theme-basic@0.11.0) (2021-08-16)
+
+
+### Features
+
+* support `hideBoxFrame` on text modules ([a21973d](https://github.com/municipio-se/gatsby-packages/commit/a21973d160988e6122d53f46899a5ed67744e984))
+
+
+
 ### [0.10.1](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.10.0...@municipio/gatsby-theme-basic@0.10.1) (2021-08-13)
 
 **Note:** Version bump only for package @municipio/gatsby-theme-basic
