@@ -15,7 +15,7 @@
   "dependencies": {
     "@municipio/gatsby-theme-basic": "^0.10.1",
     "http-proxy-middleware": "^2.0.1",
-    "react-accessible-dropdown-menu-hook": "^2.3.1",
+    "react-accessible-dropdown-menu-hook": "^3.0.0",
     "react-error-boundary": "^3.1.3",
     "react-simple-tree-menu": "^1.1.18"
   },
