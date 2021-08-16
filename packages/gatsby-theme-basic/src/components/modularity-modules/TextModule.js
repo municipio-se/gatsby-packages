@@ -19,7 +19,7 @@ export default function TextModule({
     contentMedia,
     modTextOptions: {
       // fontSize = "text-md",
-      // hideBoxFrame = false,
+      hideBoxFrame = false,
       theme,
     } = {},
   },
@@ -36,10 +36,10 @@ export default function TextModule({
 
   // const textSize = fontSize.replace(/^text-/, "");
 
-  // const Wrapper = hideBoxFrame ? "div" : Box;
+  const Wrapper = hideBoxFrame ? "div" : Box;
   return (
     <ModuleWrapper
-      as={Box}
+      as={Wrapper}
       title={title}
       {...restProps}
       css={css({
