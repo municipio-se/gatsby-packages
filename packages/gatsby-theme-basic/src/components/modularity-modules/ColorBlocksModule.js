@@ -42,34 +42,41 @@ export default function ColorBlocksModule({
 
           return (
             <Item
-            key={index}
-            css={css({
-                 "--card-background": `var(--color-theme-${themeColor}-background)`,
-                 "--card-color": `var(--color-theme-${themeColor}-foreground)`,
-                 "--card-meta-color": `var(--color-theme-${themeColor}-foreground)`,
-               })}
-               className={styles.item}
-            {...restProps}
-          >
-            <CardContent className={styles.content}>
-              {displaySettings.includes("title") && <CardTitle className={styles.titleHeadingLink} link={ item.uri }>{ item.title}</CardTitle>}
-              {displaySettings.includes("date") && (
-                <CardMeta className={styles.meta}>
-                  <Time
-                    date={item.dateGmt}
-                    format={{
-                           year: "numeric",
-                           month: "long",
-                           day: "numeric",
-                         }}
-                  />
-                </CardMeta>
-              )}
-              {displaySettings.includes("excerpt")  && <p className={clsx(styles.excerpt)}>{excerpt}</p>}
-            </CardContent>
-          </Item>
-          
-          
+              key={index}
+              css={css({
+                "--card-background": `var(--color-theme-${themeColor}-background)`,
+                "--card-color": `var(--color-theme-${themeColor}-foreground)`,
+                "--card-meta-color": `var(--color-theme-${themeColor}-foreground)`,
+              })}
+              className={styles.item}
+              {...restProps}
+            >
+              <CardContent className={styles.content}>
+                {displaySettings.includes("title") && (
+                  <CardTitle
+                    className={styles.titleHeadingLink}
+                    link={item.uri}
+                  >
+                    {item.title}
+                  </CardTitle>
+                )}
+                {displaySettings.includes("date") && (
+                  <CardMeta className={styles.meta}>
+                    <Time
+                      date={item.dateGmt}
+                      format={{
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric",
+                      }}
+                    />
+                  </CardMeta>
+                )}
+                {displaySettings.includes("excerpt") && (
+                  <p className={clsx(styles.excerpt)}>{excerpt}</p>
+                )}
+              </CardContent>
+            </Item>
           );
         })}
       </Grid>
