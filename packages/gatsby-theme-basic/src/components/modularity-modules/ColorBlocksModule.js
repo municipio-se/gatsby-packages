@@ -5,6 +5,9 @@ import clsx from "clsx";
 import React from "react";
 
 import Card from "../Card";
+import CardContent from "../CardContent";
+import CardMeta from "../CardMeta";
+import CardTitle from "../CardTitle";
 import Grid from "../Grid";
 import CardContent from "../CardContent";
 import CardMeta from "../CardMeta";
