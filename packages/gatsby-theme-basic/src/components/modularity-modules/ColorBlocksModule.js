@@ -1,10 +1,14 @@
 import { css } from "@emotion/react";
+import { Time } from "@whitespace/gatsby-theme-wordpress-basic/src/components";
 import { useHTMLProcessor } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/html-processor";
 import clsx from "clsx";
 import React from "react";
 
 import Card from "../Card";
 import Grid from "../Grid";
+import CardContent from "../CardContent";
+import CardMeta from "../CardMeta";
+import CardTitle from "../CardTitle";
 import ModuleWrapper from "../ModuleWrapper";
 
 import * as defaultStyles from "./ColorBlocksModule.module.css";
@@ -35,25 +39,34 @@ export default function ColorBlocksModule({
 
           return (
             <Item
-              key={index}
-              styles={styles}
-              className={clsx(styles.item)}
-              css={css({
-                "--item-background": `var(--color-theme-${themeColor}-background)`,
-                "--item-foreground": `var(--color-theme-${themeColor}-foreground)`,
-              })}
-              url={item.uri}
-              title={displaySettings.includes("title") && item.title}
-              date={displaySettings.includes("date") && item.dateGmt}
-              dateFormat={{
-                year: "numeric",
-                month: "long",
-                day: "numeric",
-              }}
-              description={
-                !!(displaySettings.includes("excerpt") && excerpt) && excerpt
-              }
-            />
+            key={index}
+            css={css({
+                 "--card-background": `var(--color-theme-${themeColor}-background)`,
+                 "--card-color": `var(--color-theme-${themeColor}-foreground)`,
+                 "--card-meta-color": `var(--color-theme-${themeColor}-foreground)`,
+               })}
+               className={styles.item}
+            {...restProps}
+          >
+            <CardContent className={styles.content}>
+              {displaySettings.includes("title") && <CardTitle className={styles.titleHeadingLink} link={ item.uri }>{ item.title}</CardTitle>}
+              {displaySettings.includes("date") && (
+                <CardMeta className={styles.meta}>
+                  <Time
+                    date={item.dateGmt}
+                    format={{
+                           year: "numeric",
+                           month: "long",
+                           day: "numeric",
+                         }}
+                  />
+                </CardMeta>
+              )}
+              {displaySettings.includes("excerpt")  && <p className={clsx(styles.excerpt)}>{excerpt}</p>}
+            </CardContent>
+          </Item>
+          
+          
           );
         })}
       </Grid>
