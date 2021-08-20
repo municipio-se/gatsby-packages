@@ -7,5 +7,5 @@ export default function useSearchSettings() {
         ...WP_SearchSettingsForHook
       }
     }
-  `).wp.search;
+  `).wp.acfOptionsSearch;
 }

@@ -16,7 +16,7 @@ export default function BrandColorWrapper({ children }) {
           ...WP_BrandColorsForHook
         }
       }
-    `).wp.themeOptions?.colorScheme?.brandColors || [];
+    `).wp.acfOptionsThemeOptions?.colorScheme?.brandColors || [];
 
   let colors = transform(
     colorItems,

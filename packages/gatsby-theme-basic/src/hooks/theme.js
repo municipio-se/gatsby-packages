@@ -4,7 +4,7 @@ export default function useThemeSettings() {
   // return useStaticQuery(graphql`
   //   query ThemeSettings {
   //     wp {
-  //       themeOptions {
+  //       acfOptionsThemeOptions {
   //         themeLogo {
   //           themeLogo {
   //             sourceUrl
@@ -16,5 +16,5 @@ export default function useThemeSettings() {
   //       }
   //     }
   //   }
-  // `).wp.themeOptions.themeLogo;
+  // `).wp.acfOptionsThemeOptions.themeLogo;
 }
