@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.12.0](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.11.0...@municipio/gatsby-theme-basic@0.12.0) (2021-08-20)
+
+
+### ⚠ BREAKING CHANGES
+
+* **deps:** update all deps
+
+### Miscellaneous Chores
+
+* **deps:** update all deps ([1ad944d](https://github.com/municipio-se/gatsby-packages/commit/1ad944db99e65e760b7d5a786c0894cb501f1190))
+
+
+
 ## [0.11.0](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.10.1...@municipio/gatsby-theme-basic@0.11.0) (2021-08-16)
 
 
