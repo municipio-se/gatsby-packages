@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.13.0](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.12.0...@municipio/gatsby-theme-basic@0.13.0) (2021-08-20)
+
+
+### ⚠ BREAKING CHANGES
+
+* update queries to match new wp schema
+
+### Bug Fixes
+
+* update queries to match new wp schema ([3cc5a20](https://github.com/municipio-se/gatsby-packages/commit/3cc5a200cf9c0d5618e0c1ca949b7fb24a022c9e))
+
+
+
 ## [0.12.0](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.11.0...@municipio/gatsby-theme-basic@0.12.0) (2021-08-20)
 
 
