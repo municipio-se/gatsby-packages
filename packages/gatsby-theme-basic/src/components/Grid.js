@@ -1,6 +1,7 @@
 import { css } from "@emotion/react";
 import { useComponentSize } from "@whitespace/gatsby-hooks";
 import clsx from "clsx";
+import PropTypes from "prop-types";
 import React, { Children, Fragment, useMemo, useRef } from "react";
 
 import * as defaultStyles from "./Grid.module.css";
@@ -22,14 +23,24 @@ function useComputedCSSGridColumns(ref, deps) {
   }, [width, ...deps]);
 }
 
+Grid.propTypes = {
+  as: PropTypes.elementType,
+  children: PropTypes.node,
+  className: PropTypes.string,
+  columnMinWidth: PropTypes.number,
+  components: PropTypes.objectOf(PropTypes.elementType),
+  gap: PropTypes.number,
+  styles: PropTypes.objectOf(PropTypes.string),
+};
+
 export default function Grid({
   as: Wrapper = "ul",
-  components: { ItemWrapper = null } = { ItemWrapper: null },
-  styles = defaultStyles,
-  className,
   children,
+  className,
   columnMinWidth,
+  components: { ItemWrapper = null } = { ItemWrapper: null },
   gap,
+  styles = defaultStyles,
   ...restProps
 }) {
   const ref = useRef();

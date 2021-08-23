@@ -8,16 +8,19 @@ import * as defaultStyles from "./RuledList.module.css";
 RuledList.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
+  gap: PropTypes.number,
+  ruleBottom: PropTypes.bool,
+  ruleTop: PropTypes.bool,
   styles: PropTypes.objectOf(PropTypes.string),
 };
 
 export default function RuledList({
   children,
   className,
-  styles = defaultStyles,
   gap,
-  ruleTop,
   ruleBottom,
+  ruleTop,
+  styles = defaultStyles,
   ...restProps
 }) {
   let childCount = React.Children.count(children);

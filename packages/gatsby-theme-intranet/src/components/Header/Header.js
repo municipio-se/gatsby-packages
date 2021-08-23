@@ -4,12 +4,15 @@ import { Icon } from "@whitespace/components";
 import { Image } from "@whitespace/gatsby-theme-wordpress-basic/src/components";
 import HeaderLogo from "@whitespace/gatsby-theme-wordpress-basic/src/components/HeaderLogo";
 import clsx from "clsx";
+import PropTypes from "prop-types";
 import React, { useContext } from "react";
 import useDropdownMenu from "react-accessible-dropdown-menu-hook";
 
 import userContext from "../../contexts/userContext";
 
 import * as styles from "./Header.module.css";
+
+Header.propTypes = { image: PropTypes.object };
 
 export default function Header({ image, ...restProps }) {
   const { logoutURL } = useContext(userContext);

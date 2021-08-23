@@ -1,6 +1,7 @@
 import { Icon } from "@whitespace/components";
 import cslx from "classnames";
 import { navigate } from "gatsby";
+import PropTypes from "prop-types";
 import qs from "query-string";
 import React, { useState } from "react";
 
@@ -8,7 +9,9 @@ import React, { useState } from "react";
 
 import * as styles from "./SearchForm.module.css";
 
-export function SearchForm({ placeholderText, restprops }) {
+SearchForm.propTypes = { placeholderText: PropTypes.string };
+
+export function SearchForm({ placeholderText, ...restprops }) {
   const [searchInput, setSearchInput] = useState(""); //TODO: Get the current query
 
   // const {

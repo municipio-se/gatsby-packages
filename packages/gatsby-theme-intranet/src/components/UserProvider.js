@@ -3,14 +3,20 @@ import React, { useCallback, useEffect, useState } from "react";
 
 import userContext from "../contexts/userContext";
 
-UserProvider.propTypes = {};
+UserProvider.propTypes = {
+  children: PropTypes.node,
+  loginURL: PropTypes.string.isRequired,
+  logoutURL: PropTypes.string.isRequired,
+  requireLogin: PropTypes.bool,
+  userInfoURL: PropTypes.string.isRequired,
+};
 
 export default function UserProvider({
   children,
-  userInfoURL,
   loginURL,
   logoutURL,
   requireLogin,
+  userInfoURL,
 }) {
   const { Provider } = userContext;
   const [user, setUser] = useState();

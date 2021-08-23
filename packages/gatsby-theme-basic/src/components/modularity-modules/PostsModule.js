@@ -1,10 +1,19 @@
 import { useHTMLProcessor } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/html-processor";
 import { camelCase, upperFirst } from "lodash/fp";
+import PropTypes from "prop-types";
 import React from "react";
 
 import getMostRelevantDate from "../../utils/getMostRelevantDate";
 
 import * as postsModuleComponents from "./posts-modules";
+
+PostsModule.propTypes = {
+  module: PropTypes.shape({
+    modPostsDataDisplay: PropTypes.shape({
+      postsDisplayAs: PropTypes.string,
+    }),
+  }),
+};
 
 function fromDisplayModeToComponentName(displayMode) {
   return displayMode && upperFirst(camelCase(displayMode)) + "PostsModule";

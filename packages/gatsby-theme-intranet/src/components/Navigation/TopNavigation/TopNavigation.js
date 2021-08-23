@@ -1,9 +1,21 @@
 import { Icon, Link } from "@whitespace/components";
 import { utilities } from "@whitespace/gatsby-theme-wordpress-basic/src/foundation";
 import clsx from "clsx";
+import PropTypes from "prop-types";
 import React from "react";
 
 import * as styles from "./TopNavigation.module.css";
+
+TopNavigation.propTypes = {
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      icon: PropTypes.any,
+      label: PropTypes.node,
+      target: PropTypes.any,
+      url: PropTypes.any,
+    }),
+  ),
+};
 
 export function TopNavigation({ items, ...restProps }) {
   return (

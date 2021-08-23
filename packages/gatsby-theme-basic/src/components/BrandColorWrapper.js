@@ -1,12 +1,13 @@
-import { Global, css } from "@emotion/react";
-import clsx from "clsx";
+import { Global } from "@emotion/react";
 import Color from "color";
 import { graphql, useStaticQuery } from "gatsby";
-import { kebabCase, mapKeys, transform } from "lodash";
+import { kebabCase, transform } from "lodash";
 import PropTypes from "prop-types";
 import React from "react";
 
-BrandColorWrapper.propTypes = {};
+BrandColorWrapper.propTypes = {
+  children: PropTypes.node,
+};
 
 export default function BrandColorWrapper({ children }) {
   let colorItems =

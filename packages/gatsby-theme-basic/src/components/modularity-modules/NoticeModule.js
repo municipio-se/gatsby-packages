@@ -1,5 +1,6 @@
 import { Icon } from "@whitespace/components";
 import clsx from "clsx";
+import PropTypes from "prop-types";
 import React from "react";
 
 import Box from "../Box";
@@ -7,12 +8,24 @@ import ModuleWrapper from "../ModuleWrapper";
 
 import * as defaultStyles from "./NoticeModule.module.css";
 
+NoticeModule.propTypes = {
+  className: PropTypes.string,
+  styles: PropTypes.objectOf(PropTypes.string),
+  title: PropTypes.any,
+  module: PropTypes.shape({
+    modNoticeOptions: PropTypes.shape({
+      noticeText: PropTypes.string,
+      noticeType: PropTypes.string.isRequired,
+    }),
+  }),
+};
+
 export default function NoticeModule({
-  styles = defaultStyles,
   className,
   module: {
     modNoticeOptions: { noticeText, noticeType },
   },
+  styles = defaultStyles,
   title,
   ...restProps
 }) {

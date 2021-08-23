@@ -1,5 +1,6 @@
 import { Icon } from "@whitespace/components";
 import clsx from "clsx";
+import PropTypes from "prop-types";
 import React from "react";
 
 /**
@@ -74,6 +75,16 @@ export const handleOnDragEnd = (result, getList, setContext, context) => {
   }
 };
 
+DraggableComponent.propTypes = {
+  Draggable: PropTypes.elementType,
+  item: PropTypes.shape({
+    id: PropTypes.any.isRequired,
+    label: PropTypes.node,
+  }).isRequired,
+  index: PropTypes.any,
+  styles: PropTypes.objectOf(PropTypes.string).isRequired,
+};
+
 /**
  * Draggable Component
  */
@@ -124,13 +135,14 @@ export const DraggableComponent = ({ Draggable, item, index, styles }) => {
  * Styling
  */
 export const getItemStyle = ({ ...props }, draggableStyle) => {
+  void props;
   return {
     userSelect: "none",
     ...draggableStyle,
   };
 };
 
-export const getItemLinkStyle = ({ isDragging, draggingOver, ...props }) => {
+export const getItemLinkStyle = ({ isDragging, draggingOver }) => {
   return {
     background:
       isDragging && draggingOver === "droppableList1" && "var(--color-active)",

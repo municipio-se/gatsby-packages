@@ -2,13 +2,28 @@ import { css } from "@emotion/react";
 import TextContent from "@whitespace/gatsby-theme-wordpress-basic/src/components/TextContent";
 import { useHTMLProcessor } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/html-processor";
 import clsx from "clsx";
-import { kebabCase, mapKeys, transform } from "lodash";
+import { kebabCase } from "lodash";
+import PropTypes from "prop-types";
 import React from "react";
 
 import Box from "../Box";
 import ModuleWrapper from "../ModuleWrapper";
 
 import * as defaultStyles from "./TextModule.module.css";
+
+TextModule.propTypes = {
+  className: PropTypes.string,
+  styles: PropTypes.objectOf(PropTypes.string),
+  title: PropTypes.any,
+  module: PropTypes.shape({
+    content: PropTypes.string,
+    contentMedia: PropTypes.arrayOf(PropTypes.object),
+    modTextOptions: PropTypes.shape({
+      hideBoxFrame: PropTypes.bool,
+      theme: PropTypes.string,
+    }),
+  }),
+};
 
 export default function TextModule({
   styles = defaultStyles,
@@ -23,12 +38,9 @@ export default function TextModule({
       theme,
     } = {},
   },
-  moduleType,
   // colorScheme,
   ...restProps
 }) {
-  void moduleType;
-
   const { processPageContent } = useHTMLProcessor();
   let { content: processedContent } = processPageContent(content, {
     contentMedia,

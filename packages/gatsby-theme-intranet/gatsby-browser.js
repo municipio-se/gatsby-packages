@@ -5,7 +5,7 @@ import UserProvider from "./src/components/UserProvider";
 import "./src/fonts/index.css";
 
 export const wrapRootElement = (
-  { element, props },
+  { element },
   {
     auth: {
       loginURL = "/api/auth/wordpress",

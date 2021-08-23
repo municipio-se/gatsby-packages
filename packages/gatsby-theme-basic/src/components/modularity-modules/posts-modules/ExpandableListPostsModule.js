@@ -1,5 +1,6 @@
 import TextContent from "@whitespace/gatsby-theme-wordpress-basic/src/components/TextContent";
 import clsx from "clsx";
+import PropTypes from "prop-types";
 import React from "react";
 
 import * as focusWithinStyles from "../../../utils/focusWithin.module.css";
@@ -8,12 +9,27 @@ import RuledList from "../../RuledList";
 
 import * as defaultStyles from "./ExpandableListPostsModule.module.css";
 
+ExpandableListPostsModule.propTypes = {
+  className: PropTypes.string,
+  module: PropTypes.shape({
+    modPostsDataDisplay: PropTypes.shape({ theme: PropTypes.string }),
+  }),
+  normalizedItems: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.node,
+      content: PropTypes.node,
+    }),
+  ),
+  styles: PropTypes.objectOf(PropTypes.string),
+  title: PropTypes.any,
+};
+
 export default function ExpandableListPostsModule({
-  styles = defaultStyles,
   className,
-  title,
   module,
   normalizedItems,
+  styles = defaultStyles,
+  title,
   ...restProps
 }) {
   const {

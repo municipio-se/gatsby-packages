@@ -1,14 +1,21 @@
 import clsx from "clsx";
+import PropTypes from "prop-types";
 import React from "react";
 
-import Box from "./Box";
 import * as defaultStyles from "./Card.module.css";
+
+Card.propTypes = {
+  as: PropTypes.elementType,
+  children: PropTypes.node,
+  className: PropTypes.string,
+  styles: PropTypes.objectOf(PropTypes.string),
+};
 
 export default function Card({
   as: Component = "article",
-  styles = defaultStyles,
-  className,
   children,
+  className,
+  styles = defaultStyles,
   ...restProps
 }) {
   return (

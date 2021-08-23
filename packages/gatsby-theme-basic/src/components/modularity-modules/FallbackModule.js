@@ -1,6 +1,15 @@
+import PropTypes from "prop-types";
 import React from "react";
 
 import ModuleWrapper from "../ModuleWrapper";
+
+FallbackModule.propTypes = {
+  module: PropTypes.shape({
+    contentType: PropTypes.shape({
+      node: PropTypes.shape({ name: PropTypes.string }),
+    }),
+  }),
+};
 
 export default function FallbackModule({ module }) {
   // Don’t render this component in production

@@ -1,7 +1,14 @@
 import { camelCase, upperFirst } from "lodash/fp";
+import PropTypes from "prop-types";
 import React from "react";
 
 import * as indexLayoutComponents from "./index-layouts";
+
+IndexPostsModule.propTypes = {
+  module: PropTypes.shape({
+    modPostsDataDisplay: PropTypes.shape({ layout: PropTypes.string }),
+  }),
+};
 
 function fromLayoutToComponentName(layout) {
   return layout && upperFirst(camelCase(layout)) + "IndexPostsModule";

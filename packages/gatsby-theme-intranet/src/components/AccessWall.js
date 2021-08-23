@@ -3,7 +3,11 @@ import React, { useContext, useEffect } from "react";
 
 import userContext from "../contexts/userContext";
 
-AccessWall.propTypes = {};
+AccessWall.propTypes = {
+  autoLogin: PropTypes.bool,
+  children: PropTypes.node,
+  fallback: PropTypes.elementType,
+};
 
 function DefaultFallbackComponent() {
   return "Logging in…";

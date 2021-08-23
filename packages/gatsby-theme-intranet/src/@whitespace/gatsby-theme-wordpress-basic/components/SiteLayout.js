@@ -3,6 +3,7 @@ import { usePageContext } from "@whitespace/gatsby-theme-wordpress-basic/src/hoo
 import cx from "classnames";
 // import useLocation from "gatsby-theme-municipio/src/hooks/location";
 // import usePrevious from "gatsby-theme-municipio/src/hooks/previous";
+import PropTypes from "prop-types";
 import React, {
   createContext,
   useState,
@@ -14,6 +15,8 @@ import Sidebar from "../../../components/Sidebar";
 import Toolbar from "../../../components/Toolbar";
 
 import * as styles from "./SiteLayout.module.css";
+
+SiteLayout.propTypes = { children: PropTypes.node };
 
 export default function SiteLayout({ children }) {
   const [siteContext, setSiteContext] = useState({ menuOpen: false });

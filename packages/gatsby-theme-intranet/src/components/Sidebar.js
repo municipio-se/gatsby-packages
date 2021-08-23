@@ -1,4 +1,4 @@
-import { H, Section } from "@jfrk/react-heading-levels";
+import { Section } from "@jfrk/react-heading-levels";
 import clsx from "clsx";
 import React, { useContext, useEffect, useRef } from "react";
 

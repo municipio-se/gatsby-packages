@@ -7,9 +7,6 @@ export { default as CardList } from "./CardList";
 export { default as Excerpt } from "./Excerpt";
 // export * from "./Excerpt";
 
-export { default as ExpandableList } from "./ExpandableList";
-// export * from "./ExpandableList";
-
 export { default as Grid } from "./Grid";
 // export * from "./Grid";
 

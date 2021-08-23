@@ -4,20 +4,34 @@ import {
   Time,
 } from "@whitespace/gatsby-theme-wordpress-basic/src/components";
 import { useHTMLProcessor } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/html-processor";
+import PropTypes from "prop-types";
 import React from "react";
 
 import { ModularityArea } from "../components";
 
+SingleTemplate.propTypes = {
+  pageContext: PropTypes.shape({
+    contentNode: PropTypes.shape({
+      content: PropTypes.string,
+      contentArea: PropTypes.any,
+      contentMedia: PropTypes.arrayOf(PropTypes.object),
+      dateGmt: PropTypes.any,
+      featuredImage: PropTypes.shape({ node: PropTypes.any }),
+      title: PropTypes.node,
+    }),
+  }),
+};
+
 export default function SingleTemplate({ pageContext }) {
   const {
     contentNode: {
+      content: contentHTML,
+      contentArea,
+      contentMedia,
       // databaseId,
-      title,
       dateGmt,
       featuredImage,
-      content: contentHTML,
-      contentMedia,
-      contentArea,
+      title,
     },
     // isPreview,
   } = pageContext;

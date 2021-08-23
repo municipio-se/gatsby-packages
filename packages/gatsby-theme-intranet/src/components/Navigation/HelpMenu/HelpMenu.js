@@ -2,16 +2,31 @@ import { H } from "@jfrk/react-heading-levels";
 import { Link } from "@whitespace/components";
 import { utilities } from "@whitespace/gatsby-theme-wordpress-basic/src/foundation";
 import clsx from "clsx";
+import PropTypes from "prop-types";
 import React from "react";
 
 import * as defaultStyles from "./HelpMenu.module.css";
 
+HelpMenu.propTypes = {
+  children: PropTypes.node,
+  className: PropTypes.string,
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      showInMenu: PropTypes.bool,
+      url: PropTypes.string,
+      label: PropTypes.node,
+    }),
+  ),
+  styles: PropTypes.objectOf(PropTypes.string),
+  title: PropTypes.node,
+};
+
 export function HelpMenu({
+  children,
   className,
+  items,
   styles = defaultStyles,
   title,
-  items,
-  children,
   ...restProps
 }) {
   return (

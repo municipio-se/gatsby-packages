@@ -1,11 +1,20 @@
 import { H } from "@jfrk/react-heading-levels";
 import { utilities } from "@whitespace/gatsby-theme-wordpress-basic/src/foundation";
 import clsx from "clsx";
+import PropTypes from "prop-types";
 import React, { createContext, useState } from "react";
 
 import * as defaultStyles from "./DnDMenu.module.css";
 import DnDMenuDisplayView from "./DnDMenuDisplayView";
 // import DnDMenuEditView from "./DnDMenuEditView";
+
+DnDMenuContainer.propTypes = {
+  items: PropTypes.array,
+  title: PropTypes.node,
+  styles: PropTypes.obejctOf(PropTypes.string),
+  showMoreLabel: PropTypes.string,
+  showLessLabel: PropTypes.string,
+};
 
 export function DnDMenuContainer({
   items = [],

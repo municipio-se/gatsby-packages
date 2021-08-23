@@ -1,14 +1,14 @@
 import React from "react";
 
-import { NavigationMenu as NavigationMenuComponent } from "./NavigationMenu";
+import { HelpMenu } from "./HelpMenu";
 
 export default {
   title: "Components/Navigation",
-  component: NavigationMenuComponent,
+  component: HelpMenu,
 };
 
 export const NavigationMenu = () => (
-  <NavigationMenuComponent
+  <HelpMenu
     title="Hjälp"
     items={[
       {

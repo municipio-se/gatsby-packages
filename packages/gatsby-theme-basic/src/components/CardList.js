@@ -1,17 +1,19 @@
 import { H } from "@jfrk/react-heading-levels";
 import { Time } from "@whitespace/gatsby-theme-wordpress-basic/src/components";
+import PropTypes from "prop-types";
 import React from "react";
 
 import Excerpt from "./Excerpt";
 
-export default function CardList({
-  className,
-  title,
-  excerpt,
-  date,
-  url,
-  ...restProps
-}) {
+CardList.propTypes = {
+  className: PropTypes.string,
+  title: PropTypes.node,
+  excerpt: PropTypes.any,
+  date: PropTypes.any,
+  url: PropTypes.string,
+};
+
+export default function CardList({ title, excerpt, date, url, ...restProps }) {
   return (
     <article {...restProps}>
       {title && (

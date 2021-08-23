@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React, { createContext, useContext } from "react";
 
 const contexts = {};
@@ -9,7 +10,13 @@ export function getComponentContext(identifier) {
   return contexts[identifier];
 }
 
-export function ComponentProvider({ component, children, props }) {
+ComponentProvider.propTypes = {
+  children: PropTypes.node,
+  component: PropTypes.string.isRequired,
+  props: PropTypes.object,
+};
+
+export function ComponentProvider({ children, component, props }) {
   const { Provider } = getComponentContext(component);
   return <Provider value={props}>{children}</Provider>;
 }

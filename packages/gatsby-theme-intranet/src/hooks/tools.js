@@ -18,6 +18,6 @@ export default function useTools() {
   );
 }
 
-export function useTool(location) {
+export function useTool() {
   return useTools();
 }

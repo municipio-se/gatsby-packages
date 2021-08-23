@@ -7,6 +7,15 @@ import ModuleWrapper from "../ModuleWrapper";
 import ContactCard from "./ContactCard";
 import * as defaultStyles from "./ContactsModule.module.css";
 
+ContactsModule.propTypes = {
+  className: PropTypes.string,
+  title: PropTypes.node,
+  styles: PropTypes.objectOf(PropTypes.string),
+  module: PropTypes.shape({
+    modContactsOptions: PropTypes.shape({ contacts: PropTypes.array }),
+  }),
+};
+
 export default function ContactsModule({
   styles = defaultStyles,
   className,

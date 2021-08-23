@@ -3,9 +3,39 @@ import { Icon } from "@whitespace/components";
 import { useHTMLProcessor } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/html-processor";
 import clsx from "clsx";
 import Img from "gatsby-image";
+import PropTypes from "prop-types";
 import React from "react";
 
 import * as defaultStyles from "./ContactCard.module.css";
+
+ContactCard.propTypes = {
+  className: PropTypes.string,
+  styles: PropTypes.objectOf(PropTypes.string),
+  contact: PropTypes.shape({
+    address: PropTypes.string,
+    administrationUnit: PropTypes.node,
+    email: PropTypes.string,
+    firstName: PropTypes.string,
+    image: PropTypes.any,
+    lastName: PropTypes.string,
+    openingHours: PropTypes.string,
+    other: PropTypes.string,
+    phoneNumbers: PropTypes.arrayOf(
+      PropTypes.shape({
+        type: PropTypes.string.isRequired,
+        number: PropTypes.string.isRequired,
+      }),
+    ),
+    socialMedia: PropTypes.arrayOf(
+      PropTypes.shape({
+        media: PropTypes.string.isRequired,
+        url: PropTypes.string.isRequired,
+      }),
+    ),
+    visitingAddress: PropTypes.string,
+    workTitle: PropTypes.string,
+  }),
+};
 
 const SOCIAL_MEDIA_NAMES = {
   facebook: "Facebook",
@@ -15,9 +45,9 @@ const SOCIAL_MEDIA_NAMES = {
 };
 
 export default function ContactCard({
-  styles = defaultStyles,
   className,
   contact,
+  styles = defaultStyles,
   ...restProps
 }) {
   const { processContent } = useHTMLProcessor();
@@ -28,13 +58,13 @@ export default function ContactCard({
     email,
     firstName,
     image,
-    workTitle,
-    visitingAddress,
-    other,
-    openingHours,
     lastName,
-    socialMedia,
+    openingHours,
+    other,
     phoneNumbers,
+    socialMedia,
+    visitingAddress,
+    workTitle,
   } = contact;
 
   return (
@@ -47,14 +77,7 @@ export default function ContactCard({
       {image && (
         <div>
           <Img
-            fixed={{
-              width: image.width,
-              height: image.height,
-              src: image.src,
-              srcSet: image.srcSet || image.src,
-              srcWebp: image.srcWebp,
-              srcSetWebp: image.srcSetWebp || image.srcWebp,
-            }}
+            fixed={image}
             alt={lastName ? `${firstName} ${lastName}` : firstName}
           />
         </div>

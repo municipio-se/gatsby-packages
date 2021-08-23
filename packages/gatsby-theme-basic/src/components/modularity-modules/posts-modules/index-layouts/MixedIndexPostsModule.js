@@ -13,11 +13,14 @@ import * as defaultStyles from "../IndexPostsModule.module.css";
 import IndexPostsModuleCard from "../IndexPostsModuleCard";
 import ListPostsModuleItem from "../ListPostsModuleItem";
 
-import * as listStyles from "./List.module.css";
-
 MixedIndexPostsModule.propTypes = {
   className: PropTypes.string,
-  module: PropTypes.object,
+  module: PropTypes.shape({
+    modPostsDataDisplay: PropTypes.shape({
+      postsFields: PropTypes.arrayOf(PropTypes.string),
+      theme: PropTypes.string,
+    }),
+  }),
   normalizedItems: PropTypes.arrayOf(PropTypes.object),
   styles: PropTypes.objectOf(PropTypes.string),
   title: PropTypes.string,

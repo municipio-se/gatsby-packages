@@ -1,7 +1,7 @@
 import { css } from "@emotion/react";
 import { Time } from "@whitespace/gatsby-theme-wordpress-basic/src/components";
 import clsx from "clsx";
-import { kebabCase, mapKeys, transform } from "lodash";
+import { kebabCase } from "lodash";
 import PropTypes from "prop-types";
 import React from "react";
 
@@ -16,9 +16,11 @@ import * as defaultStyles from "./IndexPostsModule.module.css";
 IndexPostsModuleCard.propTypes = {
   dateFormat: PropTypes.objectOf(PropTypes.string),
   item: PropTypes.shape({
-    dateGmt: PropTypes.string,
     content: PropTypes.node,
+    dateGmt: PropTypes.string,
+    excerpt: PropTypes.node,
     image: PropTypes.object,
+    theme: PropTypes.string,
     title: PropTypes.node,
     url: PropTypes.string,
   }),

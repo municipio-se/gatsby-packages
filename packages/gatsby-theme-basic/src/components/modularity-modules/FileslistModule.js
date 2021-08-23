@@ -1,11 +1,32 @@
 import { Link } from "@whitespace/components";
 import clsx from "clsx";
 import formatFileSize from "filesize";
+import PropTypes from "prop-types";
 import React from "react";
 
 import ModuleWrapper from "../ModuleWrapper";
 
 import * as defaultStyles from "./FileslistModule.module.css";
+
+FileslistModule.propTypes = {
+  className: PropTypes.string,
+  styles: PropTypes.objectOf(PropTypes.string),
+  title: PropTypes.any,
+  module: PropTypes.shape({
+    files: PropTypes.shape({
+      fileList: PropTypes.arrayOf(
+        PropTypes.shape({
+          file: PropTypes.shape({
+            fileSize: PropTypes.number,
+            mediaItemUrl: PropTypes.string,
+            mimeType: PropTypes.string,
+            title: PropTypes.node,
+          }),
+        }),
+      ),
+    }).isRequired,
+  }).isRequired,
+};
 
 function getFileExtension(url) {
   try {
@@ -19,8 +40,9 @@ function getFileExtension(url) {
 }
 
 export default function FileslistModule({
-  styles = defaultStyles,
   className,
+  module,
+  styles = defaultStyles,
   title,
   ...restProps
 }) {
