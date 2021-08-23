@@ -61,67 +61,69 @@ export default function ContactCard({
         {workTitle && <p itemProp="jobTitle">{workTitle}</p>}
         {administrationUnit && <p itemProp="jobTitle">{administrationUnit}</p>}
       </div>
-      <div>
+      <Section>
         <div>
-          {email && (
+          <div>
+            {email && (
+              <div>
+                <span>E-post</span>
+                <a href={`mailto:${email}`} itemProp="email">
+                  <Icon name="email-bold" />
+                  <span>{email}</span>
+                </a>
+              </div>
+            )}
+            {phoneNumbers &&
+              phoneNumbers.map(({ type, number }, index) => {
+                if (!number) {
+                  return null;
+                }
+                let label = type == "phone" ? "Telefonnummer" : "Mobilnummer";
+                return (
+                  <div key={index}>
+                    <span>{label}</span>
+                    <div itemProp="telephone">
+                      <Icon name={`${type}-bold`} />
+                      <span>{number}</span>
+                    </div>
+                  </div>
+                );
+              })}
+            {socialMedia &&
+              socialMedia.map(({ media, url }, index) => {
+                return (
+                  url && (
+                    <div>
+                      <a href={url} key={index}>
+                        <Icon name={`${media}-bold`} />
+                        <span>{SOCIAL_MEDIA_NAMES[media]}</span>
+                      </a>
+                    </div>
+                  )
+                );
+              })}
+          </div>
+          {address && (
             <div>
-              <span>E-post</span>
-              <a href={`mailto:${email}`} itemProp="email">
-                <Icon name="email-bold" />
-                <span>{email}</span>
-              </a>
+              <H>Adress</H>
+              {processContent(address)}
             </div>
           )}
-          {phoneNumbers &&
-            phoneNumbers.map(({ type, number }, index) => {
-              if (!number) {
-                return null;
-              }
-              let label = type == "phone" ? "Telefonnummer" : "Mobilnummer";
-              return (
-                <div key={index}>
-                  <span>{label}</span>
-                  <div itemProp="telephone">
-                    <Icon name={`${type}-bold`} />
-                    <span>{number}</span>
-                  </div>
-                </div>
-              );
-            })}
-          {socialMedia &&
-            socialMedia.map(({ media, url }, index) => {
-              return (
-                url && (
-                  <div>
-                    <a href={url} key={index}>
-                      <Icon name={`${media}-bold`} />
-                      <span>{SOCIAL_MEDIA_NAMES[media]}</span>
-                    </a>
-                  </div>
-                )
-              );
-            })}
+          {visitingAddress && (
+            <div>
+              <H>Besöksadress</H>
+              {processContent(visitingAddress)}
+            </div>
+          )}
+          {openingHours && (
+            <div>
+              <H>Öppningstider</H>
+              {processContent(openingHours)}
+            </div>
+          )}
+          {other && <div>{processContent(other)}</div>}
         </div>
-        {address && (
-          <div>
-            <H>Adress</H>
-            {processContent(address)}
-          </div>
-        )}
-        {visitingAddress && (
-          <div>
-            <H>Besöksadress</H>
-            {processContent(visitingAddress)}
-          </div>
-        )}
-        {openingHours && (
-          <div>
-            <H>Öppningstider</H>
-            {processContent(openingHours)}
-          </div>
-        )}
-        {other && <div>{processContent(other)}</div>}
-      </div>
+      </Section>
     </address>
   );
 }
