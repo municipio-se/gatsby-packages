@@ -38,7 +38,12 @@ export default function ContactCard({
   } = contact;
 
   return (
-    <address itemScope="" itemType="http://schema.org/Person" {...restProps}>
+    <address
+      itemScope=""
+      itemType="http://schema.org/Person"
+      className={clsx(styles.component, className)}
+      {...restProps}
+    >
       {image && (
         <div>
           <Img
