@@ -1,4 +1,3 @@
-export { default as ColorBlocksModule } from "./ColorBlocksModule";
 export { default as ContactsModule } from "./ContactsModule";
 export { default as FallbackModule } from "./FallbackModule";
 export { default as FileslistModule } from "./FileslistModule";
