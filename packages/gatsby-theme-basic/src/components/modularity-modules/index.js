@@ -5,5 +5,4 @@ export { default as IframeModule } from "./IframeModule";
 export { default as ImageModule } from "./ImageModule";
 export { default as NoticeModule } from "./NoticeModule";
 export { default as PostsModule } from "./PostsModule";
-export { default as TableModule } from "./TableModule";
 export { default as TextModule } from "./TextModule";
