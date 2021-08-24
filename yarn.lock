@@ -3313,10 +3313,10 @@
     use-persisted-state "^0.3.3"
     use-ssr "^1.0.24"
 
-"@whitespace/gatsby-plugin-i18next@^0.2.6":
-  version "0.2.6"
-  resolved "https://registry.yarnpkg.com/@whitespace/gatsby-plugin-i18next/-/gatsby-plugin-i18next-0.2.6.tgz#e54325f05319462333e69d30ac368d9b8a4fe8b5"
-  integrity sha512-UiOd1yH1lVOvT1T1aJEq58pc+Brd4gzYQwmVMbaMvrxK1DY9CNwHcvnU+dToLPDrFFMdY7OqGHLCLPUZ/Po5bQ==
+"@whitespace/gatsby-plugin-i18next@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@whitespace/gatsby-plugin-i18next/-/gatsby-plugin-i18next-0.3.0.tgz#a5c33c4887189021dbeaf76fe3f4fa62c1fa61ae"
+  integrity sha512-IPZFFO8SYJwg45pwsANLnrHaV1jXxan9yDiNu7KFRXBaXDhUK1VWhxhEjCEBtlOKOxP/uGAcOPqXqh2kzVkNng==
   dependencies:
     esm "^3.2.25"
     js-yaml "^4.1.0"
@@ -3330,10 +3330,10 @@
   dependencies:
     prop-types "^15.7.2"
 
-"@whitespace/gatsby-plugin-search@^0.10.1":
-  version "0.10.1"
-  resolved "https://registry.yarnpkg.com/@whitespace/gatsby-plugin-search/-/gatsby-plugin-search-0.10.1.tgz#e1aeedc919c7a108aab128affb89c2e89446fd47"
-  integrity sha512-vZUUpGihMVVnw6mf/BV/fWD95rntq1MhHT99fxSaM801c4FJIP24z/56Mbr+cbXa8Vq0aROv5Lr8ZD7DhR+Nng==
+"@whitespace/gatsby-plugin-search@^0.11.0":
+  version "0.11.0"
+  resolved "https://registry.yarnpkg.com/@whitespace/gatsby-plugin-search/-/gatsby-plugin-search-0.11.0.tgz#37d08b8ffd1fcfc2aff88494d93a1cc3431829a3"
+  integrity sha512-Df8eosJSaSmSi8XzIdYEoprk46o3l7A3S2tjkJuu2fTjSgMt+Gx5844syXUYyMfksJyMLK7jJAIDfL074stqRw==
   dependencies:
     "@jfrk/react-heading-levels" "^1.0.0"
     "@whitespace/gatsby-hooks" "^0.5.0"
@@ -3342,10 +3342,10 @@
     minisearch "^3.0.4"
     react-select "^4.3.1"
 
-"@whitespace/gatsby-theme-wordpress-basic@^0.12.3":
-  version "0.12.3"
-  resolved "https://registry.yarnpkg.com/@whitespace/gatsby-theme-wordpress-basic/-/gatsby-theme-wordpress-basic-0.12.3.tgz#992e67ba29c46011013d1737135be62684e8698b"
-  integrity sha512-qJmPXo0VYVhHJ8eYfnmKZPhE4ra53IaTopErh/QpAXy8Z5jpo2AwxhWYcF0BBAxtE9BTOFoCSTGjcjiprK84Qw==
+"@whitespace/gatsby-theme-wordpress-basic@^0.13.0":
+  version "0.13.0"
+  resolved "https://registry.yarnpkg.com/@whitespace/gatsby-theme-wordpress-basic/-/gatsby-theme-wordpress-basic-0.13.0.tgz#dc7a6a993a9f9e36ac8de8be889aaa86517a499b"
+  integrity sha512-uiroZQhaM5StUyLXuG+aAdI62SzFhdYd3lkkrSYSQ1Lc0ZjNszywFFF2r8HpEaQ32ITdF605L+Ti/GkOfNnNLA==
   dependencies:
     "@apollo/react-hooks" "^4.0.0"
     "@emotion/css" "^11.1.3"
@@ -3355,9 +3355,9 @@
     "@jfrk/react-id" "^1.0.0"
     "@whitespace/components" "^0.12.0"
     "@whitespace/gatsby-hooks" "^0.5.0"
-    "@whitespace/gatsby-plugin-i18next" "^0.2.6"
+    "@whitespace/gatsby-plugin-i18next" "^0.3.0"
     "@whitespace/gatsby-plugin-page-wrapper" "^0.2.6"
-    "@whitespace/gatsby-plugin-search" "^0.10.1"
+    "@whitespace/gatsby-plugin-search" "^0.11.0"
     apollo-boost "^0.4.9"
     apollo-cache-inmemory "^1.6.6"
     clsx "^1.1.1"
@@ -4038,7 +4038,7 @@ atob@^2.1.2:
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
   integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
 
-autoprefixer@^10.2.4, autoprefixer@^10.3.1:
+autoprefixer@^10.2.4:
   version "10.3.1"
   resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-10.3.1.tgz#954214821d3aa06692406c6a0a9e9d401eafbed2"
   integrity sha512-L8AmtKzdiRyYg7BUXJTzigmhbQRCXFKz6SA1Lqo0+AR2FBbQ4aTAPFSDlOutnFkjhiz8my4agGXog1xlMjPJ6A==
@@ -4046,6 +4046,18 @@ autoprefixer@^10.2.4, autoprefixer@^10.3.1:
     browserslist "^4.16.6"
     caniuse-lite "^1.0.30001243"
     colorette "^1.2.2"
+    fraction.js "^4.1.1"
+    normalize-range "^0.1.2"
+    postcss-value-parser "^4.1.0"
+
+autoprefixer@^10.3.2:
+  version "10.3.2"
+  resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-10.3.2.tgz#836e4b4f59eb6876c41012c1c937be74035f3ec8"
+  integrity sha512-RHKq0YCvhxAn9987n0Gl6lkzLd39UKwCkUPMFE0cHhxU0SvcTjBxWG/CtkZ4/HvbqK9U5V8j03nAcGBlX3er/Q==
+  dependencies:
+    browserslist "^4.16.8"
+    caniuse-lite "^1.0.30001251"
+    colorette "^1.3.0"
     fraction.js "^4.1.1"
     normalize-range "^0.1.2"
     postcss-value-parser "^4.1.0"
@@ -4472,7 +4484,7 @@ browserslist@4.14.2:
     escalade "^3.0.2"
     node-releases "^1.1.61"
 
-browserslist@^4.0.0, browserslist@^4.12.0, browserslist@^4.12.2, browserslist@^4.14.5, browserslist@^4.16.0, browserslist@^4.16.3, browserslist@^4.16.6, browserslist@^4.16.7, browserslist@^4.6.4:
+browserslist@^4.0.0, browserslist@^4.12.0, browserslist@^4.12.2, browserslist@^4.14.5, browserslist@^4.16.0, browserslist@^4.16.3, browserslist@^4.16.6, browserslist@^4.16.7, browserslist@^4.16.8, browserslist@^4.6.4:
   version "4.16.8"
   resolved "https://registry.yarnpkg.com/browserslist/-/browserslist-4.16.8.tgz#cb868b0b554f137ba6e33de0ecff2eda403c4fb0"
   integrity sha512-sc2m9ohR/49sWEbPj14ZSSZqp+kbi16aLao42Hmn3Z8FpjuMaq2xCA2l4zl9ITfyzvnvyE0hcg62YkIGKxgaNQ==
