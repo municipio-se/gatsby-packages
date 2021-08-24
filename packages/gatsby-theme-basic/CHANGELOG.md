@@ -3,6 +3,35 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.14.0](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.13.1...@municipio/gatsby-theme-basic@0.14.0) (2021-08-24)
+
+
+### ⚠ BREAKING CHANGES
+
+* **deps:** major version bump of @whitespace/gatsby-theme-wordpress-basic
+* remove old code for table module
+* remove old code for gallery module
+* remove obsolete color blocks module
+
+### Features
+
+* fix heading levels in contact cards ([5168ceb](https://github.com/municipio-se/gatsby-packages/commit/5168ceb3c73f781ccf7f32df5d353aee68a6301e))
+* remove obsolete color blocks module ([7365871](https://github.com/municipio-se/gatsby-packages/commit/7365871cd40c05d5ee99a60f53e5d051733ab719))
+
+
+### Bug Fixes
+
+* ContactCard did not use the style and className props ([37f7940](https://github.com/municipio-se/gatsby-packages/commit/37f7940a4028a840daf1e1a8119a625298dd0761))
+
+
+### Miscellaneous Chores
+
+* **deps:** update all deps ([5a735a3](https://github.com/municipio-se/gatsby-packages/commit/5a735a36d10e806712d29a6abdabf4a98f47ae13))
+* remove old code for gallery module ([4c51c53](https://github.com/municipio-se/gatsby-packages/commit/4c51c5399d9915357d8fbca4fabe50443d9ecef3))
+* remove old code for table module ([df5592d](https://github.com/municipio-se/gatsby-packages/commit/df5592d598a170601ad18290a6167f2dc8006636))
+
+
+
 ### [0.13.1](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.13.0...@municipio/gatsby-theme-basic@0.13.1) (2021-08-20)
 
 **Note:** Version bump only for package @municipio/gatsby-theme-basic
