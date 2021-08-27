@@ -11,7 +11,7 @@ import DnDMenuDisplayView from "./DnDMenuDisplayView";
 DnDMenuContainer.propTypes = {
   items: PropTypes.array,
   title: PropTypes.node,
-  styles: PropTypes.obejctOf(PropTypes.string),
+  styles: PropTypes.objectOf(PropTypes.string),
   showMoreLabel: PropTypes.string,
   showLessLabel: PropTypes.string,
 };
