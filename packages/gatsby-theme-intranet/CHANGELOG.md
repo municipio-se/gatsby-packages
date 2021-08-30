@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.14.0](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-intranet@0.13.0...@municipio/gatsby-theme-intranet@0.14.0) (2021-08-30)
+
+
+### ⚠ BREAKING CHANGES
+
+* **deps:** Major version bump of @whitespace/gatsby-theme-wordpress-basic
+
+### Bug Fixes
+
+* error due to typo ([5da0fbc](https://github.com/municipio-se/gatsby-packages/commit/5da0fbcd8b784f4a59ef3a6c1234d826265f6d1a))
+
+
+### Miscellaneous Chores
+
+* **deps:** update all deps ([f71db9b](https://github.com/municipio-se/gatsby-packages/commit/f71db9ba71bc214f46e1db17c37d43f87e3e9ea7))
+
+
+
 ## [0.13.0](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-intranet@0.12.2...@municipio/gatsby-theme-intranet@0.13.0) (2021-08-24)
 
 **Note:** Version bump only for package @municipio/gatsby-theme-intranet

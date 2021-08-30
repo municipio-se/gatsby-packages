@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.15.0](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.14.0...@municipio/gatsby-theme-basic@0.15.0) (2021-08-30)
+
+
+### ⚠ BREAKING CHANGES
+
+* **deps:** Major version bump of @whitespace/gatsby-theme-wordpress-basic
+
+### Features
+
+* allow search in module contents ([30f21c4](https://github.com/municipio-se/gatsby-packages/commit/30f21c42a8424bc0513246a9f16d9563d8a68f51))
+
+
+### Miscellaneous Chores
+
+* **deps:** update all deps ([f71db9b](https://github.com/municipio-se/gatsby-packages/commit/f71db9ba71bc214f46e1db17c37d43f87e3e9ea7))
+
+
+
 ## [0.14.0](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.13.1...@municipio/gatsby-theme-basic@0.14.0) (2021-08-24)
 
 
