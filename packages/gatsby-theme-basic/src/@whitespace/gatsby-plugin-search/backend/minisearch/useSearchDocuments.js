@@ -34,7 +34,7 @@ function defaultContentNodeFields(source) {
 export default function useSearchDocuments() {
   const data =
     useStaticQuery(graphql`
-      query WPNodesForMiniSearch {
+      query WPNodesForMiniSearch_Municipio {
         pages: graphQlQuery(name: { eq: "WPPagesForMiniSearch" }) {
           data
         }
