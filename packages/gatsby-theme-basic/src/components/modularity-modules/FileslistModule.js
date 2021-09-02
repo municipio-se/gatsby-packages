@@ -3,6 +3,7 @@ import clsx from "clsx";
 import formatFileSize from "filesize";
 import PropTypes from "prop-types";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 import ModuleWrapper from "../ModuleWrapper";
 
@@ -13,7 +14,7 @@ FileslistModule.propTypes = {
   styles: PropTypes.objectOf(PropTypes.string),
   title: PropTypes.any,
   module: PropTypes.shape({
-    files: PropTypes.shape({
+    modFileslistOptions: PropTypes.shape({
       fileList: PropTypes.arrayOf(
         PropTypes.shape({
           file: PropTypes.shape({
@@ -47,8 +48,9 @@ export default function FileslistModule({
   ...restProps
 }) {
   const {
-    files: { fileList },
-  } = module;
+    i18n: { language },
+  } = useTranslation();
+  const fileList = module?.modFileslistOptions?.fileList;
   if (!fileList?.length) {
     return null;
   }
@@ -65,7 +67,7 @@ export default function FileslistModule({
           }
           const fileType = getFileExtension(item.file.mediaItemUrl);
           const fileSize = formatFileSize(item.file.fileSize, {
-            locale: "se",
+            locale: language,
             round: 0,
             base: 10,
           });
