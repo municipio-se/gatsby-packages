@@ -32,23 +32,18 @@ function defaultContentNodeFields(source) {
 }
 
 export default function useSearchDocuments() {
-  const data =
-    useStaticQuery(graphql`
-      query WPNodesForMiniSearch_Municipio {
-        pages: graphQlQuery(name: { eq: "WPPagesForMiniSearch" }) {
-          data
-        }
-        posts: graphQlQuery(name: { eq: "WPPostsForMiniSearch" }) {
-          data
-        }
+  const {
+    graphQlQuery: { data },
+  } = useStaticQuery(graphql`
+    query WPNodesForMiniSearch {
+      graphQlQuery(name: { eq: "WPContentNodesForMiniSearch" }) {
+        data
       }
-    `).graphQlQuery?.data?.contentNodes?.nodes || [];
+    }
+  `);
 
   return [
-    data.pages.nodes.map((source) => ({
-      ...defaultContentNodeFields(source),
-    })),
-    data.posts.nodes.map((source) => ({
+    data.contentNodes.nodes.map((source) => ({
       ...defaultContentNodeFields(source),
       tags: source.tags?.nodes,
     })),
