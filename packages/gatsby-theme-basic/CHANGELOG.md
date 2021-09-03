@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.16.3](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.16.2...@municipio/gatsby-theme-basic@0.16.3) (2021-09-03)
+
+
+### Bug Fixes
+
+* error in fileslist module ([0beed6c](https://github.com/municipio-se/gatsby-packages/commit/0beed6c2fefa62d963f52854f86b160e5bb5a40d))
+
+
+
 ### [0.16.2](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.16.1...@municipio/gatsby-theme-basic@0.16.2) (2021-09-01)
 
 
