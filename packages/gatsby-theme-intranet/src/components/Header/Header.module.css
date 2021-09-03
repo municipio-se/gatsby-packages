@@ -12,7 +12,14 @@
   justify-content: space-between;
 }
 
-.image {
+.icon-wrapper {
+  background: var(--sidebar-icon-wrapper-background, red);
+  border-radius: var(--sidebar-icon-wrapper-border-radius, 100%);
+}
+
+.icon {
+  mask-size: var(--sidebar-icon-wrapper-icon-size, 50%);
+  mask-position: var(--sidebar-icon-wrapper-icon-position, center center);
 }
 
 .logo {
