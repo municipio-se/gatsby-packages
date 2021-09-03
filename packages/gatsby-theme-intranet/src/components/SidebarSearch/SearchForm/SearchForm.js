@@ -9,9 +9,12 @@ import React, { useState } from "react";
 
 import * as styles from "./SearchForm.module.css";
 
-SearchForm.propTypes = { placeholderText: PropTypes.string };
+SearchForm.propTypes = {
+  placeholderText: PropTypes.string,
+  className: PropTypes.string,
+};
 
-export function SearchForm({ placeholderText, ...restprops }) {
+export function SearchForm({ placeholderText, className, ...restprops }) {
   const [searchInput, setSearchInput] = useState(""); //TODO: Get the current query
 
   // const {
@@ -22,7 +25,7 @@ export function SearchForm({ placeholderText, ...restprops }) {
 
   return (
     <form
-      className={cslx(styles.component)}
+      className={cslx(styles.component, className)}
       action={`/sok`}
       method="get"
       role="search"

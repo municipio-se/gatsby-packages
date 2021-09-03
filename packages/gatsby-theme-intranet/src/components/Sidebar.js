@@ -107,7 +107,7 @@ export default function Sidebar({ ...restProps }) {
     >
       <Header />
       <div className={styles.content}>
-        <SearchForm placeholderText="Sök på intranätet" modifierClass />
+        <SearchForm className={clsx(styles.searchForm)} placeholderText="Sök på intranätet" modifierClass />
         <Section>
           {mainMenu?.length > 0 && <TopNavigation items={mainMenu} />}
           <TreeNavigation title="Innehåll" />
