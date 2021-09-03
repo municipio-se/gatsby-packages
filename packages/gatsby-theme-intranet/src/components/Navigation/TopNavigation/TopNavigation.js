@@ -17,7 +17,7 @@ TopNavigation.propTypes = {
   ),
 };
 
-const capitalize = s => s && s[0].toUpperCase() + s.slice(1)
+const capitalize = (s) => s && s[0].toUpperCase() + s.slice(1);
 
 export function TopNavigation({ items, ...restProps }) {
   return (
