@@ -1,7 +1,18 @@
 import { camelCase, upperFirst } from "lodash/fp";
+import PropTypes from "prop-types";
 import React from "react";
 
 import * as moduleComponents from "./modularity-modules";
+
+ModuleController.propTypes = {
+  module: PropTypes.shape({
+    contentType: PropTypes.shape({
+      node: PropTypes.shape({ name: PropTypes.string }),
+    }),
+    hideTitle: PropTypes.bool,
+    title: PropTypes.string,
+  }),
+};
 
 function fromContentTypeToComponentName(contentTypeName) {
   return (
