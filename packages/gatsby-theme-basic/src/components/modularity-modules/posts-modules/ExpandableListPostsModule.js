@@ -1,5 +1,7 @@
+import { css } from "@emotion/react";
 import TextContent from "@whitespace/gatsby-theme-wordpress-basic/src/components/TextContent";
 import clsx from "clsx";
+import { kebabCase } from "lodash";
 import PropTypes from "prop-types";
 import React from "react";
 
@@ -42,6 +44,11 @@ export default function ExpandableListPostsModule({
       title={title}
       {...restProps}
       className={clsx(styles.component, theme, className)}
+      css={css({
+        "--list-rule-color": theme
+          ? `var(--brand-color-${kebabCase(theme)})`
+          : null,
+      })}
     >
       {/* TODO: Replace with real accordion component */}
       <RuledList gap={`2rem`} ruleTop={!title} ruleBottom>

@@ -1,4 +1,6 @@
+import { css } from "@emotion/react";
 import clsx from "clsx";
+import { kebabCase } from "lodash";
 import PropTypes from "prop-types";
 import React from "react";
 
@@ -39,6 +41,11 @@ export default function ListPostsModule({
       title={title}
       {...restProps}
       className={clsx(styles.component, theme, className)}
+      css={css({
+        "--list-rule-color": theme
+          ? `var(--brand-color-${kebabCase(theme)})`
+          : null,
+      })}
     >
       <RuledList className={clsx(styles.list)} ruleTop={!title} ruleBottom>
         {normalizedItems.map((item, index) => {
