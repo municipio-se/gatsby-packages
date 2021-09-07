@@ -1,4 +1,0 @@
-.component {
-  --list-gap: 0.5rem;
-  --focus-outset: calc((var(--list-gap, 0) - var(--list-rule-width, 1px)) / 2);
-}
