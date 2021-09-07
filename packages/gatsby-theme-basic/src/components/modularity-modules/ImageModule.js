@@ -31,7 +31,7 @@ export default function ImageModule({
   const {
     modImageOptions: {
       modImageImage: {
-        altText,
+        alt,
         base64,
         caption,
         credit,
@@ -56,7 +56,7 @@ export default function ImageModule({
       className={clsx(styles.component, className)}
     >
       <Image
-        alt={altText}
+        alt={alt}
         base64={base64}
         caption={processedCaption}
         className={clsx(styles.image)}
