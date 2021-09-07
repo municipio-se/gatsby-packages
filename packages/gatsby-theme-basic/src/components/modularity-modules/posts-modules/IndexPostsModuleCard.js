@@ -43,7 +43,7 @@ export default function IndexPostsModuleCard({
   let showDate = visibleFields.includes("date");
   let showImage = visibleFields.includes("image");
 
-  console.log(styles["${contentType.name}Excerpt"], 'HEJ')
+  console.log(styles["${contentType.name}Excerpt"], "HEJ");
   return (
     <Card
       css={css({
@@ -69,7 +69,11 @@ export default function IndexPostsModuleCard({
             />
           </CardMeta>
         )}
-        <p className={clsx(styles.excerpt, styles[`${contentType.name}Excerpt`])}>{excerpt}</p>
+        <p
+          className={clsx(styles.excerpt, styles[`${contentType.name}Excerpt`])}
+        >
+          {excerpt}
+        </p>
       </CardContent>
     </Card>
   );

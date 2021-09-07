@@ -47,7 +47,8 @@
   top: calc(var(--box-padding) * -1);
 }
 
-.title, .titleLink {
+.title,
+.titleLink {
   font-size: var(--card-title-font-size, 1.25rem);
   margin-bottom: 0;
 }
@@ -58,7 +59,8 @@
   display: grid;
 }
 
-.input::after, .input::before {
+.input::after,
+.input::before {
   content: none;
 }
 
