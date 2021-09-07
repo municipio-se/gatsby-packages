@@ -6,8 +6,9 @@ import React from "react";
 
 import Grid from "../../../Grid";
 import ModuleWrapper from "../../../ModuleWrapper";
-import * as defaultStyles from "./BlockIndexPostsModule.module.css";
 import IndexPostsModuleBlock from "../IndexPostsModuleBlock";
+
+import * as defaultStyles from "./BlockIndexPostsModule.module.css";
 
 BlockIndexPostsModule.propTypes = {
   className: PropTypes.string,

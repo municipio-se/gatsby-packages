@@ -8,9 +8,9 @@ import React from "react";
 import Card from "../../Card";
 import CardContent from "../../CardContent";
 import CardMedia from "../../CardMedia";
-import Excerpt from "../../Excerpt";
 import CardMeta from "../../CardMeta";
 import CardTitle from "../../CardTitle";
+import Excerpt from "../../Excerpt";
 
 import * as defaultStyles from "./IndexPostsModule.module.css";
 
