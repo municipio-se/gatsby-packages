@@ -17,6 +17,8 @@ TopNavigation.propTypes = {
   ),
 };
 
+const capitalize = (s) => s && s[0].toUpperCase() + s.slice(1);
+
 export function TopNavigation({ items, ...restProps }) {
   return (
     <nav
@@ -33,13 +35,14 @@ export function TopNavigation({ items, ...restProps }) {
                   className={clsx(
                     styles.iconWrapper,
                     typeof icon === "undefined" && `${styles.transparent}`,
+                    icon && styles[`iconWrapper${capitalize(icon)}Icon`],
                   )}
                 >
                   <Icon
                     name={icon}
                     className={clsx(
                       styles.icon,
-                      icon && `${styles.icon}--${icon}`,
+                      // icon && `${styles.icon}--${icon}`,
                     )}
                     size="1.5rem"
                   />

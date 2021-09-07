@@ -1,7 +1,6 @@
 .component {
   margin-bottom: var(--gap-min);
-  width: calc(100% + 2rem);
-  margin-left: -1rem;
+  width: 100%;
 }
 
 .list {
@@ -24,7 +23,7 @@
 .link {
   background: var(--navigation-default-background, #000);
   color: var(--navigation-default-color, #fff);
-  padding: var(--navigation-default-padding, 0.5rem);
+  padding: var(--navigation-top-navigation-padding, 0.5rem 1rem);
   font-weight: 500;
   text-decoration: var(--navigation-default-text-decoration, none);
   line-height: 1.5;
@@ -40,23 +39,23 @@
   color: var(--navigation-hover-color, #999);
   text-decoration: var(--navigation-hover-text-decoration, none);
 }
-.link:hover .iconWrapper:not(.transparent),
-.link:focus .iconWrapper:not(.transparent) {
-  --icon-color: var(--navigation-hover-icon-color, --color-foreground-inverse);
-  background: var(--navigation-hover-icon-background, --color-blue-tint-1);
+.link:hover .icon-wrapper:not(.transparent),
+.link:focus .icon-wrapper:not(.transparent) {
+  --icon-color: var(--navigation-hover-icon-color, red);
+  background: var(--navigation-hover-icon-background, blue);
 }
 
 .link:active {
   background: var(--navigation-active-background, #333);
   color: var(--navigation-active-color, #000);
-  font-weight: inherit;
+  /* font-weight: inherit; */
 }
-.link:active .iconWrapper:not(.transparent) {
+.link:active .icon-wrapper:not(.transparent) {
   --icon-color: var(--navigation-icon-active-color, --color-foreground-inverse);
   background: var(--navigation-icon-active-background, --color-blue-tint-1);
 }
 
-.iconWrapper {
+.icon-wrapper {
   --icon-color: var(
     --navigation-default-icon-color,
     --color-foreground-inverse
@@ -71,6 +70,63 @@
   height: 1.5rem;
   flex: none;
 }
+
+.icon-wrapper-house-icon {
+  --navigation-default-icon-background: var(--color-blue-tint-4);
+  --icon-color: var(--color-blue-tint-1);
+  --navigation-current-background: var(--color-blue-tint-4);
+  --navigation-current-color: var(--color-blue-tint-1);
+  --navigation-current-icon-color: #fff;
+  --navigation-current-icon-background: var(--color-blue-tint-1);
+  --navigation-hover-icon-color: #fff;
+  --navigation-hover-icon-background: var(--color-blue-tint-1);
+  --navigation-active-background: var(--color-blue-tint-4);
+  --navigation-icon-active-color: #fff;
+  --navigation-icon-active-background: var(--color-blue-tint-1);
+}
+
+.icon-wrapper-newspaper-icon {
+  --navigation-default-icon-background: var(--color-green-tint-4);
+  --icon-color: var(--color-green-tint-1);
+  --navigation-current-background: var(--color-green-tint-4);
+  --navigation-current-color: var(--color-green-tint-1);
+  --navigation-current-icon-color: #fff;
+  --navigation-current-icon-background: var(--color-green-tint-1);
+  --navigation-hover-icon-color: #fff;
+  --navigation-hover-icon-background: var(--color-green-tint-1);
+  --navigation-active-background: var(--color-green-tint-4);
+  --navigation-icon-active-color: #fff;
+  --navigation-icon-active-background: var(--color-green-tint-1);
+}
+
+.icon-wrapper-calendar-icon {
+  --navigation-default-icon-background: var(--color-orange-tint-4);
+  --icon-color: var(--color-orange-tint-1);
+  --navigation-current-background: var(--color-orange-tint-4);
+  --navigation-current-color: var(--color-orange-tint-1);
+  --navigation-current-icon-color: #fff;
+  --navigation-current-icon-background: var(--color-orange-tint-1);
+  --navigation-hover-icon-color: #fff;
+  --navigation-hover-icon-background: var(--color-orange-tint-1);
+  --navigation-active-background: var(--color-orange-tint-4);
+  --navigation-icon-active-color: #fff;
+  --navigation-icon-active-background: var(--color-orange-tint-1);
+}
+
+.icon-wrapper-people-icon {
+  --navigation-default-icon-background: var(--color-pink-tint-4);
+  --icon-color: var(--color-pink-tint-1);
+  --navigation-current-background: var(--color-pink-tint-4);
+  --navigation-current-color: var(--color-pink-tint-1);
+  --navigation-current-icon-color: #fff;
+  --navigation-current-icon-background: var(--color-pink-tint-1);
+  --navigation-hover-icon-color: #fff;
+  --navigation-hover-icon-background: var(--color-pink-tint-1);
+  --navigation-active-background: var(--color-pink-tint-4);
+  --navigation-icon-active-color: #fff;
+  --navigation-icon-active-background: var(--color-pink-tint-1);
+}
+
 .transparent {
   background: transparent;
 }
@@ -85,7 +141,7 @@
   font-weight: 500;
   text-decoration: var(--navigation-active-text-decoration, none);
 }
-.link[aria-current] .iconWrapper:not(.transparent) {
+.link[aria-current] .icon-wrapper:not(.transparent) {
   --icon-color: var(
     --navigation-current-icon-color,
     --color-foreground-inverse
