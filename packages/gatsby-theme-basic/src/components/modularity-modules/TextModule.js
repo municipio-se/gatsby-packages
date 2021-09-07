@@ -32,11 +32,7 @@ export default function TextModule({
   module: {
     content,
     contentMedia,
-    modTextOptions: {
-      // fontSize = "text-md",
-      hideBoxFrame = false,
-      theme,
-    } = {},
+    modTextOptions: { fontSize = "text-md", hideBoxFrame = false, theme } = {},
   },
   // colorScheme,
   ...restProps
@@ -46,9 +42,10 @@ export default function TextModule({
     contentMedia,
   });
 
-  // const textSize = fontSize.replace(/^text-/, "");
+  const textSize = fontSize.replace(/^text-/, "");
 
   const Wrapper = hideBoxFrame ? "div" : Box;
+
   return (
     <ModuleWrapper
       as={Wrapper}
@@ -61,10 +58,17 @@ export default function TextModule({
         "--box-color": theme
           ? `var(--brand-color-${kebabCase(theme)}-text)`
           : null,
+        "--text-module-content-font-size": `var(--text-module-content-${kebabCase(
+          textSize,
+        )})`,
+        "--text-module-title-font-size": `var(--text-module-title-${kebabCase(
+          textSize,
+        )})`,
       })}
-      className={clsx(styles.component, className)}
+      styles={styles}
+      className={clsx(className)}
     >
-      <TextContent>{processedContent}</TextContent>
+      <TextContent className={styles.content}>{processedContent}</TextContent>
     </ModuleWrapper>
   );
 }

@@ -7,7 +7,7 @@
     var(--module-wrapper-title-margin-bottom, 1rem) +
       var(--module-wrapper-title-rule-position, 0.25rem)
   );
-  font-size: var(--module-wrapper-title, 1.625rem);
+  font-size: var(--module-wrapper-title-font-size, 1.625rem);
   position: relative;
 }
 
