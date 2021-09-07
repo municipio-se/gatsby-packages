@@ -16,19 +16,11 @@ export default function Card({
   as: Component = "article",
   children,
   className,
-  contentType,
   styles = defaultStyles,
   ...restProps
 }) {
   return (
-    <Component
-      className={clsx(
-        styles.component,
-        className,
-        contentType && styles[contentType],
-      )}
-      {...restProps}
-    >
+    <Component className={clsx(styles.component, className)} {...restProps}>
       {children}
     </Component>
   );

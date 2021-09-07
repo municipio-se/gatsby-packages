@@ -5,11 +5,6 @@
   overflow: hidden;
 }
 
-.inputExcerpt {
-  font-weight: var(--card-input-excerpt-font-weight, 500);
-  font-size: var(--card-input-excerpt-font-size, 1rem);
-}
-
 .secondaryList {
   --list-gap: 2rem;
   --focus-outset: calc((var(--list-gap, 0) - var(--list-rule-width, 1px)) / 2);

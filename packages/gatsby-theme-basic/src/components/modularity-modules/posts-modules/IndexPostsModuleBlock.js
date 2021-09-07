@@ -8,12 +8,13 @@ import React from "react";
 import Card from "../../Card";
 import CardContent from "../../CardContent";
 import CardMedia from "../../CardMedia";
+import Excerpt from "../../Excerpt";
 import CardMeta from "../../CardMeta";
 import CardTitle from "../../CardTitle";
 
 import * as defaultStyles from "./IndexPostsModule.module.css";
 
-IndexPostsModuleCard.propTypes = {
+IndexPostsModuleBlock.propTypes = {
   dateFormat: PropTypes.objectOf(PropTypes.string),
   item: PropTypes.shape({
     content: PropTypes.node,
@@ -28,7 +29,7 @@ IndexPostsModuleCard.propTypes = {
   styles: PropTypes.objectOf(PropTypes.string),
 };
 
-export default function IndexPostsModuleCard({
+export default function IndexPostsModuleBlock({
   dateFormat = {
     year: "numeric",
     month: "numeric",
@@ -58,11 +59,11 @@ export default function IndexPostsModuleCard({
       })}
       {...restProps}
     >
-      {showImage && <CardMedia image={image} />}
-      <CardContent>
+      {/* {showImage && <CardMedia image={image} />} */}
+      <CardContent className={clsx(styles.content)}>
         <CardTitle link={{ url }}>{title}</CardTitle>
         {showDate && dateGmt && (
-          <CardMeta>
+          <CardMeta className={clsx(styles.meta)}>
             <Time
               className={clsx(styles.date)}
               date={dateGmt}
@@ -70,7 +71,7 @@ export default function IndexPostsModuleCard({
             />
           </CardMeta>
         )}
-        <p className={clsx(styles.excerpt)}>{excerpt}</p>
+        {<Excerpt text={excerpt} className={clsx(styles.excerpt)} />}
       </CardContent>
     </Card>
   );
