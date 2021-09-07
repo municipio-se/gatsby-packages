@@ -52,6 +52,9 @@ export default function IndexPostsModuleCard({
         "--card-color": theme
           ? `var(--brand-color-${kebabCase(theme)}-text)`
           : null,
+        "--card-meta-color": theme
+          ? `var(--brand-color-${kebabCase(theme)}-text)`
+          : null,
       })}
       contentType={contentType.name}
       {...restProps}
