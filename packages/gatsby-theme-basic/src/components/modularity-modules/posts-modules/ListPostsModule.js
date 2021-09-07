@@ -40,7 +40,7 @@ export default function ListPostsModule({
       {...restProps}
       className={clsx(styles.component, theme, className)}
     >
-      <RuledList className={clsx(styles.list)} ruleTop ruleBottom>
+      <RuledList className={clsx(styles.list)} ruleTop={!title} ruleBottom>
         {normalizedItems.map((item, index) => {
           return (
             <ListPostsModuleItem

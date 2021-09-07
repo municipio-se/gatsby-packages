@@ -44,7 +44,7 @@ export default function ExpandableListPostsModule({
       className={clsx(styles.component, theme, className)}
     >
       {/* TODO: Replace with real accordion component */}
-      <RuledList gap={`2rem`} ruleTop ruleBottom>
+      <RuledList gap={`2rem`} ruleTop={!title} ruleBottom>
         {normalizedItems.map((item, index) => {
           return (
             <details
