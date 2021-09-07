@@ -2,12 +2,13 @@
   margin-bottom: 0;
 }
 
-
 .title {
-  margin-bottom:calc(var(--module-wrapper-title-margin-bottom, 1rem) + var(--module-wrapper-title-rule-position, 0.25rem));
+  margin-bottom: calc(
+    var(--module-wrapper-title-margin-bottom, 1rem) +
+      var(--module-wrapper-title-rule-position, 0.25rem)
+  );
   font-size: var(--module-wrapper-title, 1.625rem);
   position: relative;
-
 }
 
 .title::after {

@@ -1,4 +1,3 @@
-
 .excerpt {
   display: -webkit-box;
   -webkit-line-clamp: 4;
@@ -9,7 +8,6 @@
 .inputExcerpt {
   font-weight: var(--card-input-excerpt-font-weight, 500);
   font-size: var(--card-input-excerpt-font-size, 1rem);
-
 }
 
 .secondaryList {

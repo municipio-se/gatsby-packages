@@ -71,7 +71,11 @@ export default function IndexPostsModuleCard({
             />
           </CardMeta>
         )}
-        <p className={clsx(styles.excerpt, styles[`${contentType.name}Excerpt`])}>{excerpt}</p>
+        <p
+          className={clsx(styles.excerpt, styles[`${contentType.name}Excerpt`])}
+        >
+          {excerpt}
+        </p>
       </CardContent>
     </Card>
   );
