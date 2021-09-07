@@ -60,7 +60,7 @@ export default function IndexPostsModuleCard({
       {showImage && <CardMedia image={image} />}
       <CardContent>
         <CardTitle link={{ url }}>{title}</CardTitle>
-        {showDate && (
+        {showDate && dateGmt && (
           <CardMeta>
             <Time
               className={clsx(styles.date)}
