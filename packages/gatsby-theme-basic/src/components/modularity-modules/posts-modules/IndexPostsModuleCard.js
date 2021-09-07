@@ -43,7 +43,6 @@ export default function IndexPostsModuleCard({
   let showDate = visibleFields.includes("date");
   let showImage = visibleFields.includes("image");
 
-  console.log(styles["${contentType.name}Excerpt"], 'HEJ')
   return (
     <Card
       css={css({
