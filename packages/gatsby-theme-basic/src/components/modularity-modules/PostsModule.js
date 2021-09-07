@@ -59,6 +59,7 @@ function normalizeItems({ modPostsDataSource, contentNodes }) {
           return {
             ...item,
             title: item.title,
+            contentType: { name: item.contentType.node.name },
             date:
               (item.archiveDatesGmt &&
                 getMostRelevantDate(item.archiveDatesGmt)) ||

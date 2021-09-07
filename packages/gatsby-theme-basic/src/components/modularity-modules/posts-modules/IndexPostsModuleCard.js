@@ -39,10 +39,11 @@ export default function IndexPostsModuleCard({
   styles = defaultStyles,
   ...restProps
 }) {
-  const { dateGmt, excerpt, image, title, url, theme } = item;
+  const { dateGmt, excerpt, image, title, url, theme, contentType } = item;
   let showDate = visibleFields.includes("date");
   let showImage = visibleFields.includes("image");
 
+  console.log(styles["${contentType.name}Excerpt"], 'HEJ')
   return (
     <Card
       css={css({
@@ -53,6 +54,7 @@ export default function IndexPostsModuleCard({
           ? `var(--brand-color-${kebabCase(theme)}-text)`
           : null,
       })}
+      contentType={contentType.name}
       {...restProps}
     >
       {showImage && <CardMedia image={image} />}
@@ -67,7 +69,7 @@ export default function IndexPostsModuleCard({
             />
           </CardMeta>
         )}
-        <p className={clsx(styles.excerpt)}>{excerpt}</p>
+        <p className={clsx(styles.excerpt, styles[`${contentType.name}Excerpt`])}>{excerpt}</p>
       </CardContent>
     </Card>
   );
