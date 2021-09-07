@@ -1,6 +1,22 @@
-.component {
+.component p {
+  margin-bottom: 0;
 }
 
+
 .title {
-  margin-bottom: 0.5rem;
+  margin-bottom:calc(var(--module-wrapper-title-margin-bottom, 1rem) + var(--module-wrapper-title-rule-position, 0.25rem));
+  font-size: var(--module-wrapper-title, 1.625rem);
+  position: relative;
+
+}
+
+.title::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: calc(100% + var(--module-wrapper-title-rule-position, 0.25rem));
+  width: var(--module-wrapper-title-rule-width, 100%);
+  height: var(--module-wrapper-title-rule-height, 1px);
+  background-color: var(--module-wrapper-title-rule-color, #c9e2ea);
 }
