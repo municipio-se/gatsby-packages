@@ -2,15 +2,9 @@
 }
 
 .title {
-  font-size: var(
-    --text-module-title-font-size,
-    var(--text-module-title-md, 1.25rem)
-  );
+  font-size: var(--text-module-title-font-size, 1.25rem);
 }
 
 .content {
-  font-size: var(
-    --text-module-content-font-size,
-    var(--text-module-content-md, 0.875rem)
-  );
+  font-size: var(--text-module-content-font-size, 0.875rem);
 }

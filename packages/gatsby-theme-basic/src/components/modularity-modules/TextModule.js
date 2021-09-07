@@ -32,7 +32,7 @@ export default function TextModule({
   module: {
     content,
     contentMedia,
-    modTextOptions: { fontSize = "text-md", hideBoxFrame = false, theme } = {},
+    modTextOptions: { hideBoxFrame = false, theme } = {},
   },
   // colorScheme,
   ...restProps
@@ -41,8 +41,6 @@ export default function TextModule({
   let { content: processedContent } = processPageContent(content, {
     contentMedia,
   });
-
-  const textSize = fontSize.replace(/^text-/, "");
 
   const Wrapper = hideBoxFrame ? "div" : Box;
 
@@ -58,12 +56,6 @@ export default function TextModule({
         "--box-color": theme
           ? `var(--brand-color-${kebabCase(theme)}-text)`
           : null,
-        "--text-module-content-font-size": `var(--text-module-content-${kebabCase(
-          textSize,
-        )})`,
-        "--text-module-title-font-size": `var(--text-module-title-${kebabCase(
-          textSize,
-        )})`,
       })}
       styles={styles}
       className={clsx(className)}
