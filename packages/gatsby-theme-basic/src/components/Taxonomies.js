@@ -13,18 +13,15 @@ Taxonomies.propTypes = {
 
 export default function Taxonomies({
   taxonomies = [],
-  classNames,
+  className,
   styles = defaultStyles,
   ...restProps
 }) {
   return (
-    <ul
-      className={clsx(styles.component, "taxonomies", classNames)}
-      {...restProps}
-    >
+    <ul className={clsx(styles.component, className)} {...restProps}>
       {taxonomies.map((taxonomy, key) => {
         return (
-          <li className={clsx(styles.taxonomy, "taxonomy")} key={key}>
+          <li className={clsx(styles.taxonomy)} key={key}>
             <Link to={taxonomy.url}>{taxonomy.name}</Link>
           </li>
         );

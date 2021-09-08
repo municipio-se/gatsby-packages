@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 import React from "react";
 
 import useTaxonomies from "../../hooks/useTaxonomies";
-
 import getMostRelevantDate from "../../utils/getMostRelevantDate";
 
 import * as postsModuleComponents from "./posts-modules";
