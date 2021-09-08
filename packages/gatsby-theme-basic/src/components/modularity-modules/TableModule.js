@@ -1,8 +1,8 @@
 import { css } from "@emotion/react";
 import clsx from "clsx";
+import { kebabCase } from "lodash";
 import parseEntities from "parse-entities";
 import PropTypes from "prop-types";
-import { kebabCase } from "lodash";
 import React from "react";
 
 import ModuleWrapper from "../ModuleWrapper";
