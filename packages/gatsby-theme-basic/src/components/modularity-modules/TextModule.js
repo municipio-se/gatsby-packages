@@ -47,7 +47,7 @@ export default function TextModule({
   return (
     <ModuleWrapper
       as={Wrapper}
-      title={title}
+      title={title && <div className={clsx(styles.title, "h1")}>{title}</div>}
       {...restProps}
       css={css({
         "--box-background": theme
