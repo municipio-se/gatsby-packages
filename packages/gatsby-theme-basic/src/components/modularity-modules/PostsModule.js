@@ -34,7 +34,6 @@ function normalizeItems({ modPostsDataSource, contentNodes }) {
           return {
             ...item,
             title: item.postTitle,
-            contentType: { name: modPostsDataSource.postsDataSource },
             url: item.permalink,
             excerpt: stripHTML(item.postContent),
             content: processedContent,

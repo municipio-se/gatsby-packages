@@ -8,7 +8,6 @@ Card.propTypes = {
   as: PropTypes.elementType,
   children: PropTypes.node,
   className: PropTypes.string,
-  contentType: PropTypes.string,
   styles: PropTypes.objectOf(PropTypes.string),
 };
 
