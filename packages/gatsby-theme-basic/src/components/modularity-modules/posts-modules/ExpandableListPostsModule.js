@@ -48,6 +48,9 @@ export default function ExpandableListPostsModule({
         "--list-rule-color": theme
           ? `var(--brand-color-${kebabCase(theme)})`
           : null,
+        "--module-wrapper-title-rule-color": theme
+          ? `var(--brand-color-${kebabCase(theme)})`
+          : null,
       })}
     >
       {/* TODO: Replace with real accordion component */}

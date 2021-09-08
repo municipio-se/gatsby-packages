@@ -45,6 +45,9 @@ export default function ListPostsModule({
         "--list-rule-color": theme
           ? `var(--brand-color-${kebabCase(theme)})`
           : null,
+        "--module-wrapper-title-rule-color": theme
+          ? `var(--brand-color-${kebabCase(theme)})`
+          : null,
       })}
     >
       <RuledList className={clsx(styles.list)} ruleTop={!title} ruleBottom>

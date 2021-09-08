@@ -55,6 +55,9 @@ export default function BlockIndexPostsModule({
         "--card-meta-color": theme
           ? `var(--brand-color-${kebabCase(theme)}-text)`
           : null,
+        "--module-wrapper-title-rule-color": theme
+          ? `var(--brand-color-${kebabCase(theme)})`
+          : null,
       })}
     >
       <Grid className={clsx(styles.list)}>

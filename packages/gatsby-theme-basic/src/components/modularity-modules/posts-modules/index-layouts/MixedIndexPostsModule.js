@@ -56,6 +56,9 @@ export default function MixedIndexPostsModule({
         "--list-rule-color": theme
           ? `var(--brand-color-${kebabCase(theme)})`
           : null,
+        "--module-wrapper-title-rule-color": theme
+          ? `var(--brand-color-${kebabCase(theme)})`
+          : null,
       })}
     >
       <Grid className={clsx(styles.list)}>

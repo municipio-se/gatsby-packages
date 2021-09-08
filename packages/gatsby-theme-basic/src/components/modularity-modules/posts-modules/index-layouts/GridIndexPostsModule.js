@@ -43,11 +43,17 @@ export default function GridIndexPostsModule({
         "--card-background": theme
           ? `var(--brand-color-${kebabCase(theme)})`
           : null,
+        "--card-background": theme
+          ? `var(--brand-color-${kebabCase(theme)})`
+          : null,
         "--card-color": theme
           ? `var(--brand-color-${kebabCase(theme)}-text)`
           : null,
         "--card-meta-color": theme
           ? `var(--brand-color-${kebabCase(theme)}-text)`
+          : null,
+        "--module-wrapper-title-rule-color": theme
+          ? `var(--brand-color-${kebabCase(theme)})`
           : null,
       })}
     >
