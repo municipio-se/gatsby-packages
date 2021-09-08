@@ -3,6 +3,8 @@ import { camelCase, upperFirst } from "lodash/fp";
 import PropTypes from "prop-types";
 import React from "react";
 
+import useTaxonomies from "../../hooks/useTaxonomies";
+
 import getMostRelevantDate from "../../utils/getMostRelevantDate";
 
 import * as postsModuleComponents from "./posts-modules";
@@ -55,10 +57,10 @@ function normalizeItems({ modPostsDataSource, contentNodes }) {
           let processedContent = processContent(item.content, {
             contentMedia,
           });
+
           return {
             ...item,
             title: item.title,
-            contentType: { name: item.contentType.node.name },
             date:
               (item.archiveDatesGmt &&
                 getMostRelevantDate(item.archiveDatesGmt)) ||
@@ -70,6 +72,10 @@ function normalizeItems({ modPostsDataSource, contentNodes }) {
             image: item.featuredImage?.node,
             content: processedContent,
             element: "div",
+            taxonomies: useTaxonomies(
+              { ...item.tags?.nodes, ...item.categories?.nodes },
+              item.contentType?.node?.name,
+            ),
           };
         });
 

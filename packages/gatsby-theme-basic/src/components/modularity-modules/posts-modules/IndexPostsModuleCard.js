@@ -10,6 +10,7 @@ import CardContent from "../../CardContent";
 import CardMedia from "../../CardMedia";
 import CardMeta from "../../CardMeta";
 import CardTitle from "../../CardTitle";
+import Taxonomies from "../../Taxonomies";
 
 import * as defaultStyles from "./IndexPostsModule.module.css";
 
@@ -23,6 +24,7 @@ IndexPostsModuleCard.propTypes = {
     theme: PropTypes.string,
     title: PropTypes.node,
     url: PropTypes.string,
+    taxonomies: PropTypes.arrayOf(PropTypes.object),
   }),
   visibleFields: PropTypes.arrayOf(PropTypes.string),
   styles: PropTypes.objectOf(PropTypes.string),
@@ -39,10 +41,9 @@ export default function IndexPostsModuleCard({
   styles = defaultStyles,
   ...restProps
 }) {
-  const { dateGmt, excerpt, image, title, url, theme } = item;
+  const { dateGmt, excerpt, image, title, url, theme, taxonomies } = item;
   let showDate = visibleFields.includes("date");
   let showImage = visibleFields.includes("image");
-
   return (
     <Card
       css={css({
@@ -71,6 +72,9 @@ export default function IndexPostsModuleCard({
           </CardMeta>
         )}
         <p className={clsx(styles.excerpt)}>{excerpt}</p>
+        {taxonomies && taxonomies.length > 0 && (
+          <Taxonomies taxonomies={taxonomies} />
+        )}
       </CardContent>
     </Card>
   );
