@@ -1,0 +1,29 @@
+.component {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  border-collapse: collapse;
+  display: block;
+}
+
+.title {
+  text-align: left;
+}
+
+.head {
+  background: var(--table-background, lightgray);
+  color: var(--table-color, #000000);
+}
+
+.th,
+.td {
+  padding: var(--space-8) var(--space-16);
+}
+
+.headTr {
+  border-bottom: 2px solid var(--table-border-color, lightgray);
+}
+
+.tr {
+  --color-divider: var(--table-border-color, lightgray);
+}
