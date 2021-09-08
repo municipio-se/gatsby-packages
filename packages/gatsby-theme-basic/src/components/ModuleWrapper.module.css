@@ -13,7 +13,7 @@
 
 .title::after {
   content: "";
-  display: block;
+  display: var(--module-wrapper-title-after-display, "block");
   position: absolute;
   left: 0;
   top: calc(100% + var(--module-wrapper-title-rule-position, 0.25rem));
