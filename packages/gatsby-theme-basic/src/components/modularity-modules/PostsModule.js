@@ -4,6 +4,8 @@ import PropTypes from "prop-types";
 import React from "react";
 
 import useTaxonomies from "../../hooks/useTaxonomies";
+import useArchives from "../../hooks/useArchives";
+
 import getMostRelevantDate from "../../utils/getMostRelevantDate";
 
 import * as postsModuleComponents from "./posts-modules";
@@ -85,7 +87,14 @@ function normalizeItems({ modPostsDataSource, contentNodes }) {
 
 export default function PostsModule({ module, ...restProps }) {
   const normalizedItems = normalizeItems(module);
-  const { modPostsDataDisplay: { postsDisplayAs } = {} } = module;
+  const archives = useArchives();
+  const {
+    modPostsDataDisplay: { postsDisplayAs } = {},
+    modPostsDataSource: { postsDataPostType: postType } = {},
+  } = module;
+
+  module.archive = postType ? archives[postType.name] : {};
+
   let componentName = fromDisplayModeToComponentName(postsDisplayAs);
   let Component =
     // eslint-disable-next-line import/namespace

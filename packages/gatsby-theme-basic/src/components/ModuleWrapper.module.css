@@ -2,22 +2,60 @@
   margin-bottom: 0;
 }
 
-.title {
-  margin-bottom: calc(
-    var(--module-wrapper-title-margin-bottom, 1rem) +
-      var(--module-wrapper-title-rule-position, 0.25rem)
-  );
-  font-size: var(--module-wrapper-title-font-size, 1.625rem);
+.header {
+  display: flex;
+  justify-content: space-between;
   position: relative;
+  margin-bottom: calc(
+    var(--module-wrapper-header-margin-bottom, 1rem) +
+      var(--module-wrapper-header-rule-position, 0.25rem)
+  );
 }
 
-.title::after {
+.headerBorder::after {
   content: "";
-  display: var(--module-wrapper-title-after-display, "block");
+  display: var(--module-wrapper-header-after-display, "block");
   position: absolute;
   left: 0;
-  top: calc(100% + var(--module-wrapper-title-rule-position, 0.25rem));
-  width: var(--module-wrapper-title-rule-width, 100%);
-  height: var(--module-wrapper-title-rule-height, 1px);
-  background-color: var(--module-wrapper-title-rule-color, #c9e2ea);
+  top: calc(100% + var(--module-wrapper-header-rule-position, 0.25rem));
+  width: var(--module-wrapper-header-rule-width, 100%);
+  height: var(--module-wrapper-header-rule-height, 1px);
+  background-color: var(--module-wrapper-header-rule-color, #c9e2ea);
+}
+
+.title {
+  font-size: var(--module-wrapper-title-font-size, 1.625rem);
+  margin: 0;
+}
+
+.link {
+  --link-color: var(--module-wrapper-header-link-color, #000000);
+  --link-hover-color: var(--module-wrapper-header-link-hover-color, #000000);
+
+  --link-font-size: var(--module-wrapper-header-link-font-size, 0.875rem);
+  --link-text-decoration: var(
+    --module-wrapper-header-link-text-decoration,
+    none
+  );
+  --link-text-hover-decoration: var(
+    --module-wrapper-header-link-text-hover-decoration,
+    none
+  );
+
+  display: inline-flex;
+  gap: var(--module-wrapper-header-link-gap, 0.5rem);
+  align-items: center;
+  font-weight: var(--module-wrapper-header-link-font-weight, 500);
+}
+
+.icon {
+  background-color: var(--module-wrapper-header-icon-background, lightgray);
+  border-radius: 50%;
+  width: var(--module-wrapper-header-icon-size, 1.5rem);
+  height: var(--module-wrapper-header-icon-size, 1.5rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  --icon-color: var(--module-wrapper-header-icon-color, #000000);
 }

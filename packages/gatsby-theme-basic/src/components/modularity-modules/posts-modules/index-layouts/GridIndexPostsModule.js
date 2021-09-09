@@ -31,12 +31,14 @@ export default function GridIndexPostsModule({
   ...restProps
 }) {
   const {
+    archive,
     modPostsDataDisplay: { postsFields, theme },
   } = module;
 
   return (
     <ModuleWrapper
       title={title}
+      archive={archive}
       {...restProps}
       className={clsx(styles.component, theme, className)}
       css={css({

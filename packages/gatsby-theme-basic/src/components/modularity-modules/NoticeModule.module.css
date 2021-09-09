@@ -20,7 +20,3 @@
 .content {
   font-size: var(--notice-module-content-font-size, 0.875rem);
 }
-
-.title::after {
-  display: none;
-}

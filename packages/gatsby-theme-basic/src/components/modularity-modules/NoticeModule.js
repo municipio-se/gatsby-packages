@@ -32,6 +32,7 @@ export default function NoticeModule({
   return (
     <ModuleWrapper
       as={Box}
+      border={false}
       title={
         title && (
           <div className={styles.hasIcon}>
