@@ -13,7 +13,7 @@ export default function DnDMenuDisplayView({ ...restProps }) {
     itemsToShow,
     showMoreLabel,
     showLessLabel,
-    // nothingToShowLabel,
+    nothingToShowLabel,
   } = DnDContext;
 
   const [displayAllItems, setDisplayAllItems] = useState(false);
@@ -25,13 +25,13 @@ export default function DnDMenuDisplayView({ ...restProps }) {
   return (
     <>
       <ul className={clsx(styles.list)} {...restProps}>
-        {/* {itemsToShow.length == 0 && (
-          <li className={clsx(styles.item")} key={0}>
+        {itemsToShow.length == 0 && (
+          <li className={clsx(styles.item)} key={0}>
             <span className={clsx(styles.link, styles.linkEmpty)}>
               {t(nothingToShowLabel)}
             </span>
           </li>
-        )} */}
+        )}
         {itemsToShow.map((item, index) => {
           return (
             <li className={clsx(styles.item)} key={index}>

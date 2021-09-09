@@ -13,53 +13,13 @@ import {
 import { SearchForm } from "../components/SidebarSearch";
 import { useMenu } from "../hooks/menus";
 import { useTool } from "../hooks/tools";
-// import { Bookmarks, Tools } from "../components/DnDMenu";
 
 import * as styles from "./Sidebar.module.css";
 
 export default function Sidebar({ ...restProps }) {
   const [siteContext, setSiteContext] = useContext(SiteLayoutContext);
   const sidebar = useRef(null);
-  const {
-    menuOpen,
-    // bookmarks = [
-    //   {
-    //     id: "1",
-    //     label: "Ledighet och frånvaro",
-    //     url: "/page-1",
-    //   },
-    //   {
-    //     id: "2",
-    //     label: "Stöd och verktyg",
-    //     url: "/page-2",
-    //   },
-    //   {
-    //     id: "3",
-    //     label: "Tidsredovisning",
-    //     url: "/page-2",
-    //   },
-    //   {
-    //     id: "4",
-    //     label: "Resor",
-    //     url: "/page-2",
-    //   },
-    //   {
-    //     id: "5",
-    //     label: "Nyheter",
-    //     url: "/page-2",
-    //   },
-    //   {
-    //     id: "6",
-    //     label: "Kalendarium",
-    //     url: "/page-5",
-    //   },
-    //   {
-    //     id: "7",
-    //     label: "Hem",
-    //     url: "/page-5",
-    //   },
-    // ],
-  } = siteContext;
+  const { menuOpen, bookmarks } = siteContext;
 
   useEffect(() => {
     function handleCloseMenu() {
@@ -115,14 +75,14 @@ export default function Sidebar({ ...restProps }) {
         <Section>
           {mainMenu?.length > 0 && <TopNavigation items={mainMenu} />}
           <TreeNavigation title="Innehåll" />
-          {/* {bookmarks?.length > 0 && (
-            <Bookmarks
+          {bookmarks?.length > 0 && (
+            <Tools
               items={bookmarks}
               title="myBookmarksLabel"
               showMoreLabel="allBookmarksLabel"
               showLessLabel="hideBookmarksLabel"
             />
-          )} */}
+          )}
           {tools?.length > 0 && <Tools items={tools} title="Verktyg" />}
           {helpMenu?.length > 0 && (
             <HelpMenu

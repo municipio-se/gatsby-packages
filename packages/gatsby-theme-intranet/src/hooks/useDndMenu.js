@@ -75,15 +75,15 @@ export const handleOnDragEnd = (result, getList, setContext, context) => {
   }
 };
 
-DraggableComponent.propTypes = {
-  Draggable: PropTypes.elementType,
-  item: PropTypes.shape({
-    id: PropTypes.any.isRequired,
-    label: PropTypes.node,
-  }).isRequired,
-  index: PropTypes.any,
-  styles: PropTypes.objectOf(PropTypes.string).isRequired,
-};
+// DraggableComponent.propTypes = {
+//   Draggable: PropTypes.elementType,
+//   item: PropTypes.shape({
+//     id: PropTypes.any.isRequired,
+//     label: PropTypes.node,
+//   }).isRequired,
+//   index: PropTypes.any,
+//   styles: PropTypes.objectOf(PropTypes.string).isRequired,
+// };
 
 /**
  * Draggable Component
@@ -98,10 +98,7 @@ export const DraggableComponent = ({ Draggable, item, index, styles }) => {
           {...provided.dragHandleProps}
           style={getItemStyle(snapshot, provided.draggableProps.style)}
         >
-          <div
-            className={clsx("__list-link")}
-            style={getItemLinkStyle(snapshot)}
-          >
+          <div className={clsx(styles.link)} style={getItemLinkStyle(snapshot)}>
             <span
               className={clsx(
                 styles.linkLabel,
