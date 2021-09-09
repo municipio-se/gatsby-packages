@@ -3,9 +3,8 @@ import { camelCase, upperFirst } from "lodash/fp";
 import PropTypes from "prop-types";
 import React from "react";
 
-import useTaxonomies from "../../hooks/useTaxonomies";
 import useArchives from "../../hooks/useArchives";
-
+import useTaxonomies from "../../hooks/useTaxonomies";
 import getMostRelevantDate from "../../utils/getMostRelevantDate";
 
 import * as postsModuleComponents from "./posts-modules";
