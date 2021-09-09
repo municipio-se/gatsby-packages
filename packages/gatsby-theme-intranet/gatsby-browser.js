@@ -11,6 +11,7 @@ export const wrapRootElement = (
       loginURL = "/api/auth/wordpress",
       logoutURL = "/api/auth/wordpress/logout",
       userInfoURL = "/api/user",
+      userSettingsURL = "/api/user-settings",
       requireLogin = false,
     } = {},
   },
@@ -20,6 +21,7 @@ export const wrapRootElement = (
       loginURL={loginURL}
       logoutURL={logoutURL}
       userInfoURL={userInfoURL}
+      userSettingsURL={userSettingsURL}
       requireLogin={requireLogin}
     >
       {element}

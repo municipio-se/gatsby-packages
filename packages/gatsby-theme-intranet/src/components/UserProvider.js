@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 
 import userContext from "../contexts/userContext";
 
@@ -9,6 +9,7 @@ UserProvider.propTypes = {
   logoutURL: PropTypes.string.isRequired,
   requireLogin: PropTypes.bool,
   userInfoURL: PropTypes.string.isRequired,
+  userSettingsURL: PropTypes.string,
 };
 
 export default function UserProvider({
@@ -17,6 +18,7 @@ export default function UserProvider({
   logoutURL,
   requireLogin,
   userInfoURL,
+  userSettingsURL,
 }) {
   const { Provider } = userContext;
   const [user, setUser] = useState();
@@ -57,6 +59,36 @@ export default function UserProvider({
     window.location = redirectURL.href;
   }, [logoutURL]);
 
+  const userSettings = useMemo(() => user?.settings, [JSON.stringify(user)]);
+
+  const setUserSettings = useCallback(
+    async (newValue) => {
+      if (!userSettingsURL || !user) {
+        return;
+      }
+      if (typeof newValue === "function") {
+        newValue = newValue(userSettings);
+      }
+      try {
+        let response = await window.fetch(userSettingsURL, {
+          method: "put",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(newValue),
+        });
+        if (!response.ok) {
+          throw new Error(response.statusText);
+        }
+        setUser({ ...user, settings: newValue });
+      } catch (error) {
+        //
+      }
+    },
+    [userSettingsURL, JSON.stringify(user), JSON.stringify(userSettings)],
+  );
+
   return (
     <Provider
       value={{
@@ -68,6 +100,8 @@ export default function UserProvider({
         loginURL,
         logoutURL,
         requireLogin,
+        userSettings,
+        setUserSettings,
       }}
     >
       {children}
