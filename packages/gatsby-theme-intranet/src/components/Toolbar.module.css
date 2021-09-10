@@ -27,11 +27,35 @@
   z-index: 1;
 }
 
-.menu {
+.button {
   display: inline-flex;
   border: 1px solid var(--button-outline-color);
+  line-height: var(--toolbar-button-font-line-height, 0);
+  font-weight: var(--toolbar-button-font-weight, 400);
+  height: var(--toolbar-button-height, 2.25rem);
+  padding: var(--toolbar-button-padding, 0.5rem 0.75rem);
+  --button-background: var(--toolbar-button-background, #fff);
+  --button-hover-background: var(--toolbar-button-hover-background, red);
+  --button-hover-color: var(--toolbar-button-hover-color, blue);
+  --button-color: var(--color-foreground);
+  --button-outline-color: var(--color-divider);
+}
+
+.button.button {
+  font-size: var(--toolbar-button-font-size, 0.875rem);
+}
+
+.button:not(:last-of-type) {
   margin: 0 var(--gap-min, 1rem) 0 0;
 }
+
+.menu {
+  --icon-size: var(--toolbar-button-icon-size, 1.5rem);
+  /* width: var(--toolbar-menu-button-icon-width, 3rem); */
+  justify-content: center;
+  margin-right: var(--gap-min, 1rem);
+}
+
 @media (min-width: 48rem) {
   .menu {
     display: none;
@@ -40,25 +64,4 @@
 
 .menu > * {
   pointer-events: none;
-}
-
-.menu .icon {
-  --icon-size: 1.25em;
-  width: 1.25em;
-  height: 1em;
-}
-
-.menu,
-.bookmark,
-.tools {
-  --button-color: var(--color-foreground);
-  --button-background: var(--sidebar-hover);
-  --button-outline-color: var(--color-divider);
-  line-height: 0;
-  font-weight: 400;
-}
-
-.bookmark,
-.tools {
-  margin: 0 5px;
 }

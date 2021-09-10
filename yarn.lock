@@ -3368,10 +3368,10 @@
     "@webassemblyjs/ast" "1.11.1"
     "@xtuc/long" "4.2.2"
 
-"@whitespace/components@^0.12.0":
-  version "0.12.0"
-  resolved "https://registry.yarnpkg.com/@whitespace/components/-/components-0.12.0.tgz#d9f8e83c2da54f7475bc1b7c46b6ed7926a0fb2b"
-  integrity sha512-sAZtNaxL5I6dQedVIX9Y9Hb/Lt+lhhnepMENvCiEsKWPr5zbGJ+bx8mmB/qhwvfpRP6BUdti2hy668+6Kn+IrA==
+"@whitespace/components@^0.12.1":
+  version "0.12.1"
+  resolved "https://registry.yarnpkg.com/@whitespace/components/-/components-0.12.1.tgz#ec60161c6c15ecb35f5305c3fde243a311e42959"
+  integrity sha512-wP7y/wvmbU5I4VEAdgztd8q4DnfcLvxjBGTO5wSwNq2ZcVuc6Pv4apWRBI45bOfHoqvRCu/3DDbwhiAWUEOOsg==
   dependencies:
     "@jfrk/react-heading-levels" "^1.0.0"
     clsx "^1.1.1"
@@ -3413,10 +3413,10 @@
   dependencies:
     prop-types "^15.7.2"
 
-"@whitespace/gatsby-plugin-search@^0.11.3":
-  version "0.11.3"
-  resolved "https://registry.yarnpkg.com/@whitespace/gatsby-plugin-search/-/gatsby-plugin-search-0.11.3.tgz#c651e788586a6d27620a218fd8d1fbb6d26337f7"
-  integrity sha512-gEkFrkZL9M+pkt0PZhZS5u+kYTUf9sT8cIzU/nt7MIANOSz1dWvc7KIBBEBDz4GRvuwyUolWkG757v/9BGv6Jg==
+"@whitespace/gatsby-plugin-search@^0.11.4":
+  version "0.11.4"
+  resolved "https://registry.yarnpkg.com/@whitespace/gatsby-plugin-search/-/gatsby-plugin-search-0.11.4.tgz#c85963f517d0b4b684d8ea23eaee91f2fa0ce9ef"
+  integrity sha512-UZ9Hg5ryNmmYfYN4QIRX4VTi3K1OYQCzT2k5evhjGsZOmCtGeG29kE1Cg/VUlTcuL2ioY9nTPKvcKfWX9mRemQ==
   dependencies:
     "@jfrk/react-heading-levels" "^1.0.0"
     "@whitespace/gatsby-hooks" "^0.5.0"
@@ -3425,10 +3425,10 @@
     minisearch "^3.1.0"
     react-select "^4.3.1"
 
-"@whitespace/gatsby-theme-wordpress-basic@^0.16.1":
-  version "0.16.1"
-  resolved "https://registry.yarnpkg.com/@whitespace/gatsby-theme-wordpress-basic/-/gatsby-theme-wordpress-basic-0.16.1.tgz#f331086aa31cfcf1cfc032bb23b23c2282f4cb5d"
-  integrity sha512-gkEhCB8kzsHVrQfVL7QCCsFYVkAapKW7kOeOyAmV82C5kRhVq6z87ijpgcJl7hkm36VPeEYvyatxPQgxPkANiQ==
+"@whitespace/gatsby-theme-wordpress-basic@^0.16.2":
+  version "0.16.2"
+  resolved "https://registry.yarnpkg.com/@whitespace/gatsby-theme-wordpress-basic/-/gatsby-theme-wordpress-basic-0.16.2.tgz#0e304da8260a943046bda5685494de595dda8b80"
+  integrity sha512-XQVh648e/1+QS0o4zwqseW3b+0omDDL1I5yFE4rBJo+EQh2vd6ivatdhT9x+2T2GC2ozkEfaF9rS0Q32mJCmbQ==
   dependencies:
     "@apollo/react-hooks" "^4.0.0"
     "@emotion/css" "^11.1.3"
@@ -3436,11 +3436,11 @@
     "@emotion/styled" "^11.3.0"
     "@jfrk/react-heading-levels" "^1.0.0"
     "@jfrk/react-id" "^1.0.0"
-    "@whitespace/components" "^0.12.0"
+    "@whitespace/components" "^0.12.1"
     "@whitespace/gatsby-hooks" "^0.5.0"
     "@whitespace/gatsby-plugin-i18next" "^0.3.1"
     "@whitespace/gatsby-plugin-page-wrapper" "^0.2.7"
-    "@whitespace/gatsby-plugin-search" "^0.11.3"
+    "@whitespace/gatsby-plugin-search" "^0.11.4"
     apollo-boost "^0.4.9"
     apollo-cache-inmemory "^1.6.6"
     clsx "^1.1.1"
@@ -3471,7 +3471,7 @@
     react-helmet "^6.1.0"
     react-i18next "^11.11.4"
     react-spinners "^0.11.0"
-    rehype-dom-parse "^4.0.0"
+    rehype-dom-parse "^4.0.1"
     rehype-parse "^8.0.3"
     rehype-react "^7.0.1"
     sass "^1.39.0"
@@ -4164,6 +4164,13 @@ axios@^0.21.0, axios@^0.21.1:
   integrity sha512-dKQiRHxGD9PPRIUNIWvZhPTPpl1rf/OxTYKsqKUDjBwYylTvV7SjSHJb9ratfyzM6wCdLCOYLzs73qpg5c4iGA==
   dependencies:
     follow-redirects "^1.10.0"
+
+axios@^0.21.4:
+  version "0.21.4"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.21.4.tgz#c67b90dc0568e5c1cf2b0b858c43ba28e2eda575"
+  integrity sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==
+  dependencies:
+    follow-redirects "^1.14.0"
 
 axobject-query@^2.2.0:
   version "2.2.0"
@@ -7218,6 +7225,11 @@ follow-redirects@^1.0.0, follow-redirects@^1.10.0:
   version "1.14.2"
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.14.2.tgz#cecb825047c00f5e66b142f90fed4f515dec789b"
   integrity sha512-yLR6WaE2lbF0x4K2qE2p9PEXKLDjUjnR/xmjS3wHAYxtlsI9MLLBJUZirAHKzUZDGLxje7w/cXR49WOUo4rbsA==
+
+follow-redirects@^1.14.0:
+  version "1.14.3"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.14.3.tgz#6ada78118d8d24caee595595accdc0ac6abd022e"
+  integrity sha512-3MkHxknWMUtb23apkgz/83fDoe+y+qr0TdgacGIA7bew+QLBo3vdgEN2xEsuXNivpFy4CyDhBBZnNZOtalmenw==
 
 for-each@^0.3.3:
   version "0.3.3"
@@ -13909,10 +13921,10 @@ regjsparser@^0.6.4:
   dependencies:
     jsesc "~0.5.0"
 
-rehype-dom-parse@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/rehype-dom-parse/-/rehype-dom-parse-4.0.0.tgz#0306ea650f926a263016c34b0186bf586ace3353"
-  integrity sha512-dedJ2KdemF4QsprxUjsXI8gTOx069xk4mInrl8rjMxPGd3Ro82vqOLBUQOp0fTkSKYnawd2JeoJqKKPomw7kmg==
+rehype-dom-parse@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/rehype-dom-parse/-/rehype-dom-parse-4.0.1.tgz#8fb5f1c30e911ff013f7d1a46860766d2cea9896"
+  integrity sha512-Ss++isRbZIV5OsNKaeKTEDKt3dOU/qGN1jzQ3j8Z8udBw5fw0mpWuU/wW69jQs4rjkNH066GZvaIGhBeLDvsCw==
   dependencies:
     "@types/hast" "^2.0.0"
     "@types/web" "^0.0.12"

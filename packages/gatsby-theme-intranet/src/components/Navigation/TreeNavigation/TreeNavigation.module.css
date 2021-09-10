@@ -1,25 +1,4 @@
 .component {
-  --tree-menu-item-background: var(--navigation-default-background);
-  --tree-menu-link-color: var(--navigation-default-color);
-  --tree-menu-link-font-weight: 400;
-  --tree-menu-row-margin: 0 -0.5rem;
-  --tree-menu-item-border-radius: var(
-    --navigation-default-border-radius,
-    0.25rem
-  );
-  --tree-menu-link-padding: var(--navigation-default-padding);
-  --tree-menu-link-hover-background: var(
-    --navigation-hover-background,
-    #0369a1
-  );
-  --tree-menu-link-hover-color: var(--navigation-hover-color, white);
-  --tree-menu-link-active-background: var(
-    --navigation-active-background,
-    #0369a1
-  );
-  --tree-menu-link-active-color: var(--navigation-active-color, white);
-  --tree-menu-link-expanded-background: var(--navigation-expanded-background);
-  --tree-menu-link-expanded-color: var(--navigation-expanded-color);
 }
 
 .label {

@@ -16,8 +16,7 @@ export default function Toolbar({ ...restProps }) {
     <div className={clsx(styles.component, styles.sticky)} {...restProps}>
       <div className={clsx(styles.content)}>
         <Button
-          className={clsx(styles.menu)}
-          title={"Meny"}
+          className={clsx(styles.button, styles.menu)}
           onClick={() => {
             setSiteContext({
               ...siteContext,
@@ -29,6 +28,14 @@ export default function Toolbar({ ...restProps }) {
           <Icon name="menu-sidebar" />
         </Button>
         {!isFrontPage && <PageBreadcrumbs />}
+      </div>
+      <div className={clsx(styles.content)}>
+        <Button
+          className={clsx(styles.button, styles.bookmark)}
+          onClick={() => {}}
+        >
+          <Icon name="star-outline" /> Bokmärk
+        </Button>
       </div>
     </div>
   );

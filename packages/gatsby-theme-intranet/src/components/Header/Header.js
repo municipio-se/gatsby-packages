@@ -42,27 +42,29 @@ export default function Header({ image, ...restProps }) {
           {...buttonProps}
           aria-controls="dropdown"
         >
-          {image && image.src ? (
-            <Image
-              base64={image.base64}
-              src={image.src}
-              srcSet={image.srcSet}
-              srcWebp={image.srcWebp}
-              srcSetWebp={image.srcSetWebp}
-              width="28"
-              height="28"
-              alt={image.altText}
-              className={clsx(styles.image)}
-            />
-          ) : (
-            <Icon
-              name="avatar"
-              className={clsx(styles.image)}
-              color="var(--logo-foreground)"
-              // bgColor="var(--logo-background)"
-              size="28px"
-            />
-          )}
+          <div className={clsx(styles.iconWrapper)}>
+            {image && image.src ? (
+              <Image
+                className={clsx(styles.icon)}
+                base64={image.base64}
+                src={image.src}
+                srcSet={image.srcSet}
+                srcWebp={image.srcWebp}
+                srcSetWebp={image.srcSetWebp}
+                width="28"
+                height="28"
+                alt={image.altText}
+              />
+            ) : (
+              <Icon
+                className={clsx(styles.icon)}
+                name="avatar"
+                color="var(--logo-foreground)"
+                // bgColor="var(--logo-background)"
+                size="28px"
+              />
+            )}
+          </div>
           <Icon
             name="chevron-down"
             className={clsx(styles.dropdownIcon, "transparent")}

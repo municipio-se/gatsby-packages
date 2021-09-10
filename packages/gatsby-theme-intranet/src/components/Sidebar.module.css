@@ -46,15 +46,19 @@
   flex-direction: column;
   padding-left: var(--sidebar-padding, 1.5rem);
   padding-right: var(--sidebar-padding, 1.5rem);
-  gap: 2rem;
+  gap: var(--gap, 1rem);
 }
 
 @media (min-width: 48rem) {
   .content {
-    --gap: var(--gap-medium);
+    --gap: var(--gap-min, 1rem);
   }
 }
 
 .last {
   margin-top: auto;
+}
+
+.searchForm {
+  margin: var(--sidebar-search-field-margin, 1rem 0);
 }
