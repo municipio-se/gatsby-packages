@@ -5,16 +5,16 @@ import { kebabCase } from "lodash";
 import PropTypes from "prop-types";
 import React from "react";
 
-import Card from "../../Card";
-import CardContent from "../../CardContent";
-import CardMedia from "../../CardMedia";
-import CardMeta from "../../CardMeta";
-import CardTitle from "../../CardTitle";
-import Taxonomies from "../../Taxonomies";
+import Card from "../../../Card";
+import CardContent from "../../../CardContent";
+import CardMedia from "../../../CardMedia";
+import CardMeta from "../../../CardMeta";
+import CardTitle from "../../../CardTitle";
+import Taxonomies from "../../../Taxonomies";
 
-import * as defaultStyles from "./IndexPostsModule.module.css";
+import * as defaultStyles from "./PostsModuleIndexItem.module.css";
 
-IndexPostsModuleCard.propTypes = {
+PostsModuleIndexItem.propTypes = {
   dateFormat: PropTypes.objectOf(PropTypes.string),
   item: PropTypes.shape({
     content: PropTypes.node,
@@ -30,7 +30,7 @@ IndexPostsModuleCard.propTypes = {
   styles: PropTypes.objectOf(PropTypes.string),
 };
 
-export default function IndexPostsModuleCard({
+export default function PostsModuleIndexItem({
   dateFormat = {
     year: "numeric",
     month: "numeric",

@@ -3,7 +3,6 @@ import { camelCase, upperFirst } from "lodash/fp";
 import PropTypes from "prop-types";
 import React from "react";
 
-import useArchives from "../../hooks/useArchives";
 import useTaxonomies from "../../hooks/useTaxonomies";
 import getMostRelevantDate from "../../utils/getMostRelevantDate";
 
@@ -36,7 +35,7 @@ function normalizeItems({ modPostsDataSource, contentNodes }) {
           return {
             ...item,
             title: item.postTitle,
-            url: item.permalink,
+            url: item.link?.url || item.permalink,
             excerpt: stripHTML(item.postContent),
             content: processedContent,
           };
@@ -86,13 +85,7 @@ function normalizeItems({ modPostsDataSource, contentNodes }) {
 
 export default function PostsModule({ module, ...restProps }) {
   const normalizedItems = normalizeItems(module);
-  const archives = useArchives();
-  const {
-    modPostsDataDisplay: { postsDisplayAs } = {},
-    modPostsDataSource: { postsDataPostType: postType } = {},
-  } = module;
-
-  module.archive = postType ? archives[postType.name] : {};
+  const { modPostsDataDisplay: { postsDisplayAs } = {} } = module;
 
   let componentName = fromDisplayModeToComponentName(postsDisplayAs);
   let Component =

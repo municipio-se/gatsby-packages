@@ -5,16 +5,16 @@ import { kebabCase } from "lodash";
 import PropTypes from "prop-types";
 import React from "react";
 
-import Card from "../../Card";
-import CardContent from "../../CardContent";
-import CardMedia from "../../CardMedia";
-import CardMeta from "../../CardMeta";
-import CardTitle from "../../CardTitle";
-import Excerpt from "../../Excerpt";
+import Card from "../../../Card";
+import CardContent from "../../../CardContent";
+import CardMeta from "../../../CardMeta";
+import CardTitle from "../../../CardTitle";
+import Excerpt from "../../../Excerpt";
 
-import * as defaultStyles from "./IndexPostsModule.module.css";
+import * as defaultStyles from "./PostsModuleBlocksItem.module.css";
 
-IndexPostsModuleBlock.propTypes = {
+PostsModuleBlocksItem.propTypes = {
+  className: PropTypes.string,
   dateFormat: PropTypes.objectOf(PropTypes.string),
   item: PropTypes.shape({
     content: PropTypes.node,
@@ -29,7 +29,8 @@ IndexPostsModuleBlock.propTypes = {
   styles: PropTypes.objectOf(PropTypes.string),
 };
 
-export default function IndexPostsModuleBlock({
+export default function PostsModuleBlocksItem({
+  className,
   dateFormat = {
     year: "numeric",
     month: "numeric",
@@ -40,9 +41,8 @@ export default function IndexPostsModuleBlock({
   styles = defaultStyles,
   ...restProps
 }) {
-  const { dateGmt, excerpt, image, title, url, theme } = item;
+  const { dateGmt, excerpt, title, url, theme } = item;
   let showDate = visibleFields.includes("date");
-  let showImage = visibleFields.includes("image");
 
   return (
     <Card
@@ -57,9 +57,9 @@ export default function IndexPostsModuleBlock({
           ? `var(--brand-color-${kebabCase(theme)}-text)`
           : null,
       })}
+      className={clsx(styles.component, className)}
       {...restProps}
     >
-      {/* {showImage && <CardMedia image={image} />} */}
       <CardContent className={clsx(styles.content)}>
         <CardTitle link={{ url }}>{title}</CardTitle>
         {showDate && dateGmt && (

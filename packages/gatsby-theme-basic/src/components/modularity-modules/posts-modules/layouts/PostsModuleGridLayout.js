@@ -6,26 +6,39 @@ import React from "react";
 
 import Grid from "../../../Grid";
 import ModuleWrapper from "../../../ModuleWrapper";
-import IndexPostsModuleBlock from "../IndexPostsModuleBlock";
+import PostsModuleHeader from "../../../PostsModuleHeader";
 
-import * as defaultStyles from "./BlockIndexPostsModule.module.css";
+import * as defaultStyles from "./PostsModuleGridLayout.module.css";
 
-BlockIndexPostsModule.propTypes = {
+PostsModuleGridLayout.propTypes = {
   className: PropTypes.string,
+  itemComponent: PropTypes.elementType.isRequired,
   module: PropTypes.shape({
     modPostsDataDisplay: PropTypes.shape({
       postsFields: PropTypes.arrayOf(PropTypes.string),
       theme: PropTypes.string,
     }),
-  }),
+    modPostsDataSource: {
+      archiveLink: PropTypes.bool,
+      postsDataPostType: PropTypes.shape({
+        hasArchive: PropTypes.bool,
+        uri: PropTypes.string,
+        labels: PropTypes.shape({
+          allItems: PropTypes.string,
+          menuName: PropTypes.string,
+        }),
+      }),
+    },
+  }).isRequired,
   normalizedItems: PropTypes.arrayOf(PropTypes.object),
   styles: PropTypes.objectOf(PropTypes.string),
   title: PropTypes.any,
 };
 
-export default function BlockIndexPostsModule({
+export default function PostsModuleGridLayout({
   styles = defaultStyles,
   className,
+  itemComponent: Item,
   title,
   module,
   normalizedItems,
@@ -39,12 +52,7 @@ export default function BlockIndexPostsModule({
     <ModuleWrapper
       title={title}
       {...restProps}
-      className={clsx(
-        styles.component,
-        styles.componentBlock,
-        theme,
-        className,
-      )}
+      className={clsx(styles.component, theme, className)}
       css={css({
         "--card-background": theme
           ? `var(--brand-color-${kebabCase(theme)})`
@@ -59,16 +67,18 @@ export default function BlockIndexPostsModule({
           ? `var(--brand-color-${kebabCase(theme)})`
           : null,
       })}
+      components={{
+        ModuleWrapperHeader: PostsModuleHeader,
+      }}
     >
       <Grid className={clsx(styles.list)}>
         {normalizedItems.map((item, index) => {
           return (
-            <IndexPostsModuleBlock
+            <Item
               key={index}
               className={clsx(styles.item)}
               item={item}
               visibleFields={postsFields || []}
-              styles={styles}
             />
           );
         })}
