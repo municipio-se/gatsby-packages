@@ -3,6 +3,7 @@ import clsx from "clsx";
 import PropTypes from "prop-types";
 import React from "react";
 
+import Taxonomies from "../../Taxonomies";
 import Teaser from "../../Teaser";
 import TeaserContent from "../../TeaserContent";
 import TeaserMedia from "../../TeaserMedia";
@@ -20,6 +21,7 @@ ListPostsModuleItem.propTypes = {
     image: PropTypes.object,
     title: PropTypes.node,
     url: PropTypes.string,
+    taxonomies: PropTypes.arrayOf(PropTypes.object),
   }),
   teaserStyles: PropTypes.objectOf(PropTypes.string),
   visibleFields: PropTypes.arrayOf(PropTypes.string),
@@ -39,7 +41,7 @@ export default function ListPostsModuleItem({
   visibleFields,
   ...restProps
 }) {
-  const { dateGmt, excerpt, image, title, url } = item;
+  const { dateGmt, excerpt, image, title, url, taxonomies } = item;
   let showDate = visibleFields.includes("date");
   let showImage = visibleFields.includes("image");
   let showExcerpt = visibleFields.includes("excerpt");
@@ -62,6 +64,9 @@ export default function ListPostsModuleItem({
         )}
         {showExcerpt && excerpt && (
           <p className={clsx(styles.excerpt)}>{excerpt}</p>
+        )}
+        {taxonomies && taxonomies.length > 0 && (
+          <Taxonomies taxonomies={taxonomies} />
         )}
       </TeaserContent>
       {showImage && <TeaserMedia image={image} />}

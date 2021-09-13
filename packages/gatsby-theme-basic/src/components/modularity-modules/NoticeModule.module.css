@@ -1,4 +1,9 @@
-.heading {
+.component {
+  --box-padding: var(--notice-module-padding, 1.125rem 2.75rem);
+  --icon-size: 1.25rem;
+}
+
+.hasIcon {
   display: flex;
   gap: 1ch;
   align-items: center;
@@ -9,4 +14,9 @@
 }
 
 .title {
+  font-size: var(--notice-module-title-font-size, 0.875rem);
+}
+
+.content {
+  font-size: var(--notice-module-content-font-size, 0.875rem);
 }

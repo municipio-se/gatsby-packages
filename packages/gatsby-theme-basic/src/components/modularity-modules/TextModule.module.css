@@ -1,2 +1,10 @@
 .component {
 }
+
+.title {
+  font-size: var(--text-module-title-font-size, 1.25rem);
+}
+
+.content {
+  font-size: var(--text-module-content-font-size, 0.875rem);
+}

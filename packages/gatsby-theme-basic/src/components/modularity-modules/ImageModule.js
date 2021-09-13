@@ -14,8 +14,9 @@ ImageModule.propTypes = {
   title: PropTypes.any,
   module: PropTypes.shape({
     modImageOptions: PropTypes.shape({
-      modImageImage: PropTypes.object,
-      modImageLinkUrl: PropTypes.any,
+      link: PropTypes.shape({
+        url: PropTypes.string,
+      }),
       modImageCaption: PropTypes.any,
     }),
   }),
@@ -31,7 +32,7 @@ export default function ImageModule({
   const {
     modImageOptions: {
       modImageImage: {
-        altText,
+        alt,
         base64,
         caption,
         credit,
@@ -41,7 +42,7 @@ export default function ImageModule({
         srcSetWebp,
         width,
       } = {},
-      modImageLinkUrl,
+      link,
       modImageCaption,
     } = {},
   } = module;
@@ -56,13 +57,13 @@ export default function ImageModule({
       className={clsx(styles.component, className)}
     >
       <Image
-        alt={altText}
+        alt={alt}
         base64={base64}
         caption={processedCaption}
         className={clsx(styles.image)}
         credit={credit}
         height={height}
-        linkTo={modImageLinkUrl}
+        linkTo={link?.url}
         src={src}
         srcSet={srcSet}
         srcSetWebp={srcSetWebp}

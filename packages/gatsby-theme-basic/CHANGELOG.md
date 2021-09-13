@@ -3,6 +3,63 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.17.1](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.17.0...@municipio/gatsby-theme-basic@0.17.1) (2021-09-13)
+
+**Note:** Version bump only for package @municipio/gatsby-theme-basic
+
+
+
+
+
+## [0.17.0](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.16.7...@municipio/gatsby-theme-basic@0.17.0) (2021-09-13)
+
+
+### ⚠ BREAKING CHANGES
+
+* use new field for image module links
+* reimplement posts module layouts and display modes
+
+### Features
+
+* adapt Table module to Municipio and improve styling ([669f3be](https://github.com/municipio-se/gatsby-packages/commit/669f3be2d8eb4056dc90d2f3f7d71a871b8f9c38))
+* add font styling to text module  headlines ([9ded5bb](https://github.com/municipio-se/gatsby-packages/commit/9ded5bb91be73cd80ae7e57c85b953075e86bab7))
+* add grid column gap to grid ([14014d5](https://github.com/municipio-se/gatsby-packages/commit/14014d54a9ad757f1700c087414be0628ebae5d6))
+* add mod table ([f87ea78](https://github.com/municipio-se/gatsby-packages/commit/f87ea78e9d910637f710ec4b00082e7100946d06))
+* add new layout block to post module ([54dccbc](https://github.com/municipio-se/gatsby-packages/commit/54dccbccebe34bdf40b7829eb8c3d40067ee3c7e))
+* add right text color for card meta depending on theme ([412e915](https://github.com/municipio-se/gatsby-packages/commit/412e915f7a7970658efba7f7595a4019f0a9fe2b))
+* add styling for card style grid with manual input ([da83489](https://github.com/municipio-se/gatsby-packages/commit/da83489a24f40388748bf3340a2941adfab7697e))
+* add support for archive link in grid and mixed index layout ([46029d7](https://github.com/municipio-se/gatsby-packages/commit/46029d7d5b5abadb6ec438ce50c8ef3ea9faf221))
+* add support for file list module ([aa2881f](https://github.com/municipio-se/gatsby-packages/commit/aa2881f690a638b5a60068243ec28d45aebfbe88))
+* add support for theme color on title border ([607ef13](https://github.com/municipio-se/gatsby-packages/commit/607ef13eb14f78876c98269b94e574fe9eef758a))
+* add support for theme in ruled list ([9d33852](https://github.com/municipio-se/gatsby-packages/commit/9d33852b3f8d4c4fe7b87f9bcdb47816125b8018))
+* display taxonomies ([00f883a](https://github.com/municipio-se/gatsby-packages/commit/00f883ad6604231b187389b4b10c74c554dca050))
+* only display rule top on style list when there is no title ([ed3f2b5](https://github.com/municipio-se/gatsby-packages/commit/ed3f2b5a20b416375a12fb2c102d7f0ec96c2145))
+* style cards title ([2623ec3](https://github.com/municipio-se/gatsby-packages/commit/2623ec33bd1fa124ae814c9fa6cb6c598deffdda))
+* style text module ([63f559a](https://github.com/municipio-se/gatsby-packages/commit/63f559a0ac41ad4f728254f280c80f5d410eeb06))
+
+
+### Bug Fixes
+
+* add default rows for teaser content ([6180548](https://github.com/municipio-se/gatsby-packages/commit/61805483b0329182fc25890653149fc039a80071))
+* module wrapper styling ([2e4ca86](https://github.com/municipio-se/gatsby-packages/commit/2e4ca867417baff6d948f5469c4f8548478075f6))
+* only show cardmeta when there is a date ([c1bb462](https://github.com/municipio-se/gatsby-packages/commit/c1bb462e8377b6654a9e9a7fa716a02554fe9d63))
+* remove added code for content type ([377c2ef](https://github.com/municipio-se/gatsby-packages/commit/377c2ef50cbcf7e3207c5d5a350eded22425433c))
+* remove custom font size for text module ([37e046f](https://github.com/municipio-se/gatsby-packages/commit/37e046f6d1f0f379f0ef1b0513d7a2f1147a1bbf))
+* remove log ([bab0c0e](https://github.com/municipio-se/gatsby-packages/commit/bab0c0e92a9c46e1f9f50889861ccee05ddb5632))
+* remove support for different text sizes ([bc23802](https://github.com/municipio-se/gatsby-packages/commit/bc2380256d9a836475fe631770d31b721be779f2))
+* remove unused list styling ([817959c](https://github.com/municipio-se/gatsby-packages/commit/817959c7a3d94e8ed879044832c03cd1938a8399))
+* update default variable list gap ([057df8a](https://github.com/municipio-se/gatsby-packages/commit/057df8a2926a637d8df6078a81beb215fdb8c8ec))
+* update prop for alttext ([98f7c42](https://github.com/municipio-se/gatsby-packages/commit/98f7c42456f3249fb56d2022f9f8d6d304f23cb6))
+* update styling for notice module ([fc8020d](https://github.com/municipio-se/gatsby-packages/commit/fc8020d93c84ccce1c6c79ae4d8c52d50efc3fd8))
+
+
+### Code Refactoring
+
+* reimplement posts module layouts and display modes ([4fe87a7](https://github.com/municipio-se/gatsby-packages/commit/4fe87a7559ad1cc913ed9d642b14f782e00e0984))
+* use new field for image module links ([f68a728](https://github.com/municipio-se/gatsby-packages/commit/f68a728f75f0b7e056ae2b8eb39745fe556c29c3))
+
+
+
 ### [0.16.7](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.16.6...@municipio/gatsby-theme-basic@0.16.7) (2021-09-07)
 
 

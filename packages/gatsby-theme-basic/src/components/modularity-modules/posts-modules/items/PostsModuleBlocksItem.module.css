@@ -1,0 +1,19 @@
+.component {
+  --card-title-font-size: var(--card-block-title-font-size, 1.25rem);
+  --card-padding: var(--card-block-padding, 3.5rem 1.5rem 1.5rem 1.5rem);
+  display: grid;
+}
+
+.excerpt {
+  font-weight: var(--card-block-excerpt-font-weight, 500);
+  font-size: var(--card-block-excerpt-font-size, 0.875rem);
+}
+
+.content {
+  align-self: self-end;
+}
+
+.meta {
+  order: 1;
+  --card-meta-font-weight: var(--card-block-meta-font-weight, 500);
+}

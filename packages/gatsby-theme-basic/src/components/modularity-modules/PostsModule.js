@@ -3,6 +3,7 @@ import { camelCase, upperFirst } from "lodash/fp";
 import PropTypes from "prop-types";
 import React from "react";
 
+import useTaxonomies from "../../hooks/useTaxonomies";
 import getMostRelevantDate from "../../utils/getMostRelevantDate";
 
 import * as postsModuleComponents from "./posts-modules";
@@ -34,8 +35,7 @@ function normalizeItems({ modPostsDataSource, contentNodes }) {
           return {
             ...item,
             title: item.postTitle,
-            contentType: { name: modPostsDataSource.postsDataSource },
-            url: item.permalink,
+            url: item.link?.url || item.permalink,
             excerpt: stripHTML(item.postContent),
             content: processedContent,
           };
@@ -56,6 +56,7 @@ function normalizeItems({ modPostsDataSource, contentNodes }) {
           let processedContent = processContent(item.content, {
             contentMedia,
           });
+
           return {
             ...item,
             title: item.title,
@@ -70,6 +71,10 @@ function normalizeItems({ modPostsDataSource, contentNodes }) {
             image: item.featuredImage?.node,
             content: processedContent,
             element: "div",
+            taxonomies: useTaxonomies(
+              { ...item.tags?.nodes, ...item.categories?.nodes },
+              item.contentType?.node?.name,
+            ),
           };
         });
 
@@ -81,6 +86,7 @@ function normalizeItems({ modPostsDataSource, contentNodes }) {
 export default function PostsModule({ module, ...restProps }) {
   const normalizedItems = normalizeItems(module);
   const { modPostsDataDisplay: { postsDisplayAs } = {} } = module;
+
   let componentName = fromDisplayModeToComponentName(postsDisplayAs);
   let Component =
     // eslint-disable-next-line import/namespace

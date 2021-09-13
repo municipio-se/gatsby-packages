@@ -71,7 +71,7 @@ export default function FileslistModule({
             round: 0,
             base: 10,
           });
-          const title = `${item.file.title} (${fileType}, ${fileSize})`;
+          const metaData = `${fileType}, ${fileSize}`;
           return (
             <li key={index} className={clsx(styles.item)}>
               <Link
@@ -80,7 +80,10 @@ export default function FileslistModule({
                 type={item.file.mimeType}
                 className={clsx(styles.link)}
               >
-                {title}
+                <>
+                  <p className={clsx(styles.linkTitle)}>{item.file.title}</p>
+                  <p className={clsx(styles.metaData)}>{metaData}</p>
+                </>
               </Link>
             </li>
           );
