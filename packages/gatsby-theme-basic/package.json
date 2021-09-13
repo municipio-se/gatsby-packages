@@ -13,11 +13,11 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
-    "@whitespace/gatsby-theme-wordpress-basic": "^0.16.2",
+    "@whitespace/gatsby-theme-wordpress-basic": "^0.16.4",
     "autoprefixer": "^10.3.4",
     "axios": "^0.21.4",
     "classnames": "^2.3.1",
-    "filesize": "^8.0.0",
+    "filesize": "^8.0.2",
     "formik": "^2.2.9",
     "yup": "^0.32.9"
   },
