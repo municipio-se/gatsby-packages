@@ -4,7 +4,8 @@
     auto-fill,
     minmax(min(var(--grid-column-min-width, 15rem), 100%), 1fr)
   );
-  gap: var(--grid-gap, 2rem);
+  gap: var(--grid-gap, 1rem);
+  grid-column-gap: var(--grid-column-gap, 2rem);
   margin: 0;
 }
 

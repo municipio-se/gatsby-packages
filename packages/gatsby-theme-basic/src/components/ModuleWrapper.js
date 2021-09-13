@@ -5,10 +5,25 @@ import React from "react";
 
 import * as defaultStyles from "./ModuleWrapper.module.css";
 
+ModuleWrapper.propTypes = {
+  as: PropTypes.elementType,
+  border: PropTypes.bool,
+  children: PropTypes.node,
+  className: PropTypes.string,
+  components: PropTypes.objectOf(PropTypes.elementType),
+  module: PropTypes.object,
+  styles: PropTypes.objectOf(PropTypes.string),
+  title: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
+};
+
 export default function ModuleWrapper({
   as: Component = "div",
   children,
   className,
+  components: { ModuleWrapperHeader = "div", ModuleWrapperTitle = H } = {
+    ModuleWrapperHeader: "div",
+    ModuleWrapperTitle: H,
+  },
   styles = defaultStyles,
   title,
   ...restProps
@@ -20,22 +35,18 @@ export default function ModuleWrapper({
 
   return (
     <Component className={clsx(styles.component, className)} {...restProps}>
-      {!!title &&
-        (typeof title === "function" ? (
-          title({ H })
-        ) : (
-          <H className={styles.title}>{title}</H>
-        ))}
+      {!!title && (
+        <ModuleWrapperHeader className={clsx(styles.header)}>
+          {typeof title === "function" ? (
+            title({ H })
+          ) : (
+            <ModuleWrapperTitle className={styles.title}>
+              {title}
+            </ModuleWrapperTitle>
+          )}
+        </ModuleWrapperHeader>
+      )}
       <MaybeSection>{children}</MaybeSection>
     </Component>
   );
 }
-
-ModuleWrapper.propTypes = {
-  as: PropTypes.elementType,
-  children: PropTypes.node,
-  className: PropTypes.string,
-  module: PropTypes.object,
-  styles: PropTypes.objectOf(PropTypes.string),
-  title: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
-};

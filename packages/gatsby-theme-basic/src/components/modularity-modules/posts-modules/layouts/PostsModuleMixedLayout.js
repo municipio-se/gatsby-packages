@@ -8,13 +8,15 @@ import React from "react";
 import * as teaserStyles from "../../../CompactTeaser.module.css";
 import Grid from "../../../Grid";
 import ModuleWrapper from "../../../ModuleWrapper";
+import PostsModuleHeader from "../../../PostsModuleHeader";
 import RuledList from "../../../RuledList";
-import * as defaultStyles from "../IndexPostsModule.module.css";
-import IndexPostsModuleCard from "../IndexPostsModuleCard";
 import ListPostsModuleItem from "../ListPostsModuleItem";
 
-MixedIndexPostsModule.propTypes = {
+import * as defaultStyles from "./PostsModuleMixedLayout.module.css";
+
+PostsModuleMixedLayout.propTypes = {
   className: PropTypes.string,
+  itemComponent: PropTypes.elementType.isRequired,
   module: PropTypes.shape({
     modPostsDataDisplay: PropTypes.shape({
       postsFields: PropTypes.arrayOf(PropTypes.string),
@@ -26,8 +28,9 @@ MixedIndexPostsModule.propTypes = {
   title: PropTypes.string,
 };
 
-export default function MixedIndexPostsModule({
+export default function PostsModuleMixedLayout({
   className,
+  itemComponent: PrimaryItem,
   module,
   normalizedItems,
   styles = defaultStyles,
@@ -43,6 +46,9 @@ export default function MixedIndexPostsModule({
       title={title}
       {...restProps}
       className={clsx(styles.component, theme, className)}
+      components={{
+        ModuleWrapperHeader: PostsModuleHeader,
+      }}
       css={css({
         "--card-background": theme
           ? `var(--brand-color-${kebabCase(theme)})`
@@ -52,6 +58,12 @@ export default function MixedIndexPostsModule({
           : null,
         "--card-meta-color": theme
           ? `var(--brand-color-${kebabCase(theme)}-text)`
+          : null,
+        "--list-rule-color": theme
+          ? `var(--brand-color-${kebabCase(theme)})`
+          : null,
+        "--module-wrapper-title-rule-color": theme
+          ? `var(--brand-color-${kebabCase(theme)})`
           : null,
       })}
     >
@@ -66,7 +78,7 @@ export default function MixedIndexPostsModule({
           return [
             ...primaryItems.map((item, index) => {
               return (
-                <IndexPostsModuleCard
+                <PrimaryItem
                   key={index}
                   className={clsx(styles.item)}
                   item={item}

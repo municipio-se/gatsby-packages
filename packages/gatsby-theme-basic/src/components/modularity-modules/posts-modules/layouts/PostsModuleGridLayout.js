@@ -6,25 +6,39 @@ import React from "react";
 
 import Grid from "../../../Grid";
 import ModuleWrapper from "../../../ModuleWrapper";
-import * as defaultStyles from "../IndexPostsModule.module.css";
-import IndexPostsModuleCard from "../IndexPostsModuleCard";
+import PostsModuleHeader from "../../../PostsModuleHeader";
 
-GridIndexPostsModule.propTypes = {
+import * as defaultStyles from "./PostsModuleGridLayout.module.css";
+
+PostsModuleGridLayout.propTypes = {
   className: PropTypes.string,
+  itemComponent: PropTypes.elementType.isRequired,
   module: PropTypes.shape({
     modPostsDataDisplay: PropTypes.shape({
       postsFields: PropTypes.arrayOf(PropTypes.string),
       theme: PropTypes.string,
     }),
-  }),
+    modPostsDataSource: {
+      archiveLink: PropTypes.bool,
+      postsDataPostType: PropTypes.shape({
+        hasArchive: PropTypes.bool,
+        uri: PropTypes.string,
+        labels: PropTypes.shape({
+          allItems: PropTypes.string,
+          menuName: PropTypes.string,
+        }),
+      }),
+    },
+  }).isRequired,
   normalizedItems: PropTypes.arrayOf(PropTypes.object),
   styles: PropTypes.objectOf(PropTypes.string),
   title: PropTypes.any,
 };
 
-export default function GridIndexPostsModule({
+export default function PostsModuleGridLayout({
   styles = defaultStyles,
   className,
+  itemComponent: Item,
   title,
   module,
   normalizedItems,
@@ -49,12 +63,18 @@ export default function GridIndexPostsModule({
         "--card-meta-color": theme
           ? `var(--brand-color-${kebabCase(theme)}-text)`
           : null,
+        "--module-wrapper-title-rule-color": theme
+          ? `var(--brand-color-${kebabCase(theme)})`
+          : null,
       })}
+      components={{
+        ModuleWrapperHeader: PostsModuleHeader,
+      }}
     >
       <Grid className={clsx(styles.list)}>
         {normalizedItems.map((item, index) => {
           return (
-            <IndexPostsModuleCard
+            <Item
               key={index}
               className={clsx(styles.item)}
               item={item}

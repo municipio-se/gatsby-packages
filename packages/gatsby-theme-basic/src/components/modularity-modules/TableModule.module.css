@@ -1,0 +1,34 @@
+.component {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  border-collapse: collapse;
+  display: block;
+}
+
+.table {
+  border-collapse: collapse;
+}
+
+.title {
+  text-align: left;
+  margin-bottom: var(--module-wrapper-header-margin-bottom, 0.5rem);
+  font-family: var(--table-title-font-family, inherit);
+  font-size: var(--table-title-font-size, inherit);
+  font-style: var(--table-title-font-style, inherit);
+  font-weight: var(--table-title-font-weight, inherit);
+}
+
+.head {
+  background: var(--table--head-background, #f4f4f5);
+  color: var(--table-head-color, inherit);
+  border-bottom: var(--table-head-border-bottom, 1px solid transparent);
+  border-bottom-color: var(--table-head-border-bottom-color, #d4d4d8);
+}
+
+.th,
+.td {
+  padding: var(--table-cell-padding, 0.25rem 0.75rem);
+  border: var(--table-cell-border, 1px solid transparent);
+  border-color: var(--table-cell-border-color, #d4d4d8);
+}

@@ -32,23 +32,26 @@ export default function NoticeModule({
   return (
     <ModuleWrapper
       as={Box}
+      border={false}
       title={
         title && (
-          <>
+          <div className={styles.hasIcon}>
             <Icon name={noticeType} className={styles.icon} />
-            <span className={styles.title}>{title}</span>
-          </>
+            <span>{title}</span>
+          </div>
         )
       }
-      {...restProps}
-      className={clsx(styles.component, className)}
+      styles={styles}
       css={{
         "--box-background": `var(--color-${noticeType})`,
-        "--box-color": "var(--color-foreground-inverse)",
+        "--box-color": `var(--color-${noticeType}-foreground, #ffffff)`,
       }}
+      {...restProps}
     >
-      {!title && <Icon name={noticeType} className={styles.icon} />}
-      {noticeText}
+      <div className={clsx(styles.content, !title && styles.hasIcon)}>
+        {!title && <Icon name={noticeType} className={styles.icon} />}
+        {noticeText}
+      </div>
     </ModuleWrapper>
   );
 }

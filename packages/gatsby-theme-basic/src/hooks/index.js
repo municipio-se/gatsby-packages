@@ -1,0 +1,10 @@
+export { default as useError404Settings } from "./error404";
+export { default as useFooterBlocks } from "./footer";
+export { default as useID } from "./id";
+export { default as getFallbackImage } from "./image-settings";
+export { default as useSearchSettings } from "./searchSettings";
+export { default as useThemeSettings } from "./theme";
+export { default as useArchives } from "./useArchives";
+export { default as useModularityArea } from "./useModularityArea";
+export { default as useModularityModule } from "./useModularityModule";
+export { default as useTaxonomies } from "./useTaxonomies";

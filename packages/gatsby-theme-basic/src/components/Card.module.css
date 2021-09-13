@@ -38,6 +38,7 @@
 
 .meta {
   color: var(--card-meta-color, #525c63);
+  font-weight: var(--card-meta-font-weight, 400);
 }
 
 .image {
@@ -45,4 +46,10 @@
   margin-left: calc(var(--box-padding) * -1);
   position: relative;
   top: calc(var(--box-padding) * -1);
+}
+
+.title,
+.titleLink {
+  font-size: var(--card-title-font-size, 1.25rem);
+  margin-bottom: 0;
 }

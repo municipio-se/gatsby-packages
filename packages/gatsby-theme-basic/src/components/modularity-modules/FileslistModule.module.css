@@ -1,3 +1,20 @@
+.component {
+  --module-wrapper-title-font-size: var(
+    --fileslist-module-title-font-size,
+    1.625rem
+  );
+
+  --module-wrapper-title-margin-bottom: var(
+    --fileslist-module-title-margin-bottom,
+    0rem
+  );
+
+  --module-wrapper-title-after-display: none;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
 .list {
   margin-top: 0;
   margin-bottom: 0;
@@ -7,12 +24,38 @@
   padding: 0;
 }
 
+.item:first-child {
+  border-top: 1px solid var(--fileslist-module-item-border-color, transparent);
+}
+
 .item {
-  border-radius: var(--fileslist-module-item-border-radius, 0.125rem);
   background: var(--fileslist-module-item-background, #e4e4e7);
+  border-bottom: 1px solid
+    var(--fileslist-module-item-border-color, transparent);
+  border-radius: var(--fileslist-module-item-border-radius, 0.125rem);
+  font-size: var(--fileslist-module-item-font-size, 1.125rem);
 }
 
 .link {
+  --link-color: var(--fileslist-module-link-color, #000000);
+  --link-text-decoration: none;
+  --link-hover-text-decoration: none;
+  padding: var(--fileslist-module-link-padding, 1rem);
   display: block;
-  padding: 1rem;
+}
+
+.link .linkTitle {
+  text-decoration: var(--fileslist-module-link-text-decoration, underline);
+}
+
+.link:hover .linkTitle {
+  text-decoration: var(
+    --fileslist-module-link-hover-text-decoration,
+    underline
+  );
+}
+
+.metaData {
+  color: var(--fileslist-module-meta-data-color, #504949);
+  font-size: var(--fileslist-module-meta-data-font-size, 0.75rem);
 }
