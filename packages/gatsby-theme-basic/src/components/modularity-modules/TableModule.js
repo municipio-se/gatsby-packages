@@ -1,6 +1,4 @@
-import { css } from "@emotion/react";
 import clsx from "clsx";
-import { kebabCase } from "lodash";
 import parseEntities from "parse-entities";
 import PropTypes from "prop-types";
 import React from "react";
@@ -33,41 +31,27 @@ export default function TableModule({
   title,
   ...restProps
 }) {
-  const {
-    modTableOptions: {
-      modTable,
-      modTableCsvDelimiter,
-      modTableCsvFile,
-      modTableDataType: dataType,
-      theme,
-    } = {},
-  } = module;
+  const { modTableOptions: { modTable } = {} } = module;
 
   const tableData = JSON.parse(modTable);
 
   return (
-    <div
-      className={clsx(styles.component, className)}
-      css={css({
-        "--table-background": theme
-          ? `var(--brand-color-${kebabCase(theme)})`
-          : null,
-        "--table-color": theme
-          ? `var(--brand-color-${kebabCase(theme)}-text)`
-          : null,
-        "--table-border-color": theme
-          ? `var(--brand-color-${kebabCase(theme)})`
-          : null,
-      })}
-      {...restProps}
-    >
-      <ModuleWrapper as={"table"} className={clsx(styles.table)} {...restProps}>
-        {title && (
-          <caption className={clsx(styles.title, "h4")}>
-            {parseEntities(title)}
-          </caption>
-        )}
-
+    <div className={clsx(styles.component, className)} {...restProps}>
+      <ModuleWrapper
+        as={"table"}
+        title={title}
+        components={{
+          // eslint-disable-next-line react/display-name, react/prop-types
+          ModuleWrapperHeader: ({ children, className, ...restProps }) => (
+            <caption className={clsx(styles.title, className)} {...restProps}>
+              {children}
+            </caption>
+          ),
+          ModuleWrapperTitle: "span",
+        }}
+        className={clsx(styles.table)}
+        {...restProps}
+      >
         <thead className={clsx(styles.head, "h6")}>
           <tr className={clsx(styles.headTr)}>
             {tableData[0].map((title, index) => {

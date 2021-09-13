@@ -20,7 +20,10 @@ export default function ModuleWrapper({
   as: Component = "div",
   children,
   className,
-  components: { ModuleWrapperHeader = "div" } = { ModuleWrapperHeader: "div" },
+  components: { ModuleWrapperHeader = "div", ModuleWrapperTitle = H } = {
+    ModuleWrapperHeader: "div",
+    ModuleWrapperTitle: H,
+  },
   styles = defaultStyles,
   title,
   ...restProps
@@ -37,7 +40,9 @@ export default function ModuleWrapper({
           {typeof title === "function" ? (
             title({ H })
           ) : (
-            <H className={styles.title}>{title}</H>
+            <ModuleWrapperTitle className={styles.title}>
+              {title}
+            </ModuleWrapperTitle>
           )}
         </ModuleWrapperHeader>
       )}
