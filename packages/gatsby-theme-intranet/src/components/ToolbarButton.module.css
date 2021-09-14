@@ -1,0 +1,88 @@
+button.component {
+  font: inherit;
+  -webkit-appearance: none;
+}
+
+.component,
+button.component {
+  display: inline-flex;
+  gap: 0.25rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: var(--toolbar-button-color, inherit);
+  text-decoration: var(--toolbar-button-text-decoration, none);
+  font-weight: var(--toolbar-button-font-weight, normal);
+  padding: var(--toolbar-button-padding, calc(0.5rem - 1px));
+  border-radius: var(--toolbar-button-border-radius, 0.5rem);
+  border: var(--toolbar-button-border, 1px solid transparent);
+  border-color: var(--toolbar-button-border-color, #d4d4d8);
+  background: var(--toolbar-button-background, #fff);
+  /* filter: brightness(var(--toolbar-button-brightness, 100%)) grayscale(var(--toolbar-button-grayscale, 0%)); */
+  /* transform: scale(var(--toolbar-button-scale, 1)); */
+  box-shadow: var(--toolbar-button-box-shadow, none);
+  font-size: var(--toolbar-button-font-size, 0.875rem);
+  box-sizing: border-box;
+}
+
+/* Hover */
+.component:hover:not(.component.inert, .component:disabled, .component[aria-disabled="true"], :disabled
+    + .component.label) {
+  /* filter: brightness(var(--toolbar-button-hover-brightness, 100%)) grayscale(var(--toolbar-button-hover-grayscale, 0%)); */
+  --toolbar-button-color: var(--toolbar-button-hover-color);
+  --toolbar-button-text-decoration: var(--toolbar-button-hover-text-decoration);
+  --toolbar-button-border: var(--toolbar-button-hover-border);
+  --toolbar-button-border-color: var(--toolbar-button-hover-border-color);
+  --toolbar-button-background: var(--toolbar-button-hover-background);
+  --toolbar-button-box-shadow: var(--toolbar-button-hover-box-shadow);
+}
+
+/* Disabled */
+.component.inert,
+.component:disabled,
+.component[aria-disabled="true"],
+:disabled + .component.label {
+  cursor: default;
+  /* filter: brightness(var(--toolbar-button-inert-brightness, 100%)) grayscale(var(--toolbar-button-inert-grayscale, 0%)); */
+  --toolbar-button-color: var(--toolbar-button-disabled-color);
+  --toolbar-button-text-decoration: var(
+    --toolbar-button-disabled-text-decoration
+  );
+  --toolbar-button-border: var(--toolbar-button-disabled-border);
+  --toolbar-button-border-color: var(--toolbar-button-disabled-border-color);
+  --toolbar-button-background: var(--toolbar-button-disabled-background);
+  --toolbar-button-box-shadow: var(--toolbar-button-disabled-box-shadow);
+}
+
+/* Current */
+.component.current,
+.component[aria-checked="true"],
+.component[aria-pressed="true"],
+.component[aria-current],
+:checked + .component.label {
+  --toolbar-button-color: var(--toolbar-button-current-color);
+  --toolbar-button-text-decoration: var(
+    --toolbar-button-current-text-decoration
+  );
+  --toolbar-button-border: var(--toolbar-button-current-border);
+  --toolbar-button-border-color: var(--toolbar-button-current-border-color);
+  --toolbar-button-background: var(--toolbar-button-current-background);
+  --toolbar-button-box-shadow: var(--toolbar-button-current-box-shadow);
+}
+
+/* Focus */
+.component:focus,
+:focus + .component.label {
+  outline: none;
+  box-shadow: var(
+    --toolbar-button-focus-box-shadow,
+    var(--focus-box-shadow, 0 0 0 3px black)
+  );
+}
+
+.component:active:not(.inert),
+:active + .component.label {
+  /* transform: scale(var(--toolbar-button-pressed-scale)); */
+}

@@ -1,3 +1,21 @@
+/*
+component
+edit
+editVisible
+header
+item
+label
+link
+linkIcon
+linkLabel
+list
+separator
+toggle
+toggleButton
+toggleButtonIsOpen
+toggleView
+*/
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -14,10 +32,6 @@
   pointer-events: none;
 }
 
-.item:not(:last-child) .row {
-  margin-bottom: 1px;
-}
-
 .link,
 .toggleButton {
   --link-color: var(--navigation-default-color, inherit);
@@ -32,11 +46,6 @@
   border-radius: var(--navigation-default-border-radius, 3px);
   padding: var(--navigation-default-padding, 0.25rem 0.5rem);
   margin: 0 -0.5rem;
-}
-
-.linkEmpty {
-  font-style: italic;
-  font-size: 0.75rem;
 }
 
 .toggleButton {
@@ -76,12 +85,6 @@
   cursor: pointer;
 }
 
-.button {
-  --button-bg-color: var(--sidebar-state-hover);
-  color: var(--color-foreground);
-  margin-top: var(--space-4);
-}
-
 /* EDIT VIEW */
 
 .edit li {
@@ -95,10 +98,6 @@
 .edit .linkIcon {
   --icon-color: var(--sidebar-icon);
   pointer-events: none;
-}
-
-.edit .linkIconInverse {
-  --icon-color: var(--color-foreground-inverse);
 }
 
 .editHidden:before {
@@ -123,4 +122,18 @@
 
 .edit .linkLabelNotFilled {
   opacity: 0.6;
+}
+
+.separator {
+  padding-top: var(--space-16);
+  padding-bottom: var(--space-16);
+}
+.separator:before {
+  content: "";
+  height: calc(var(--space-4) / 2);
+  display: block;
+  border-radius: var(--space-4);
+  background: var(--color-divider);
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
 }

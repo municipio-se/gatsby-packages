@@ -6,33 +6,14 @@ import * as styles from "./DnDMenu.module.css";
 import { DnDContainerContext } from "./DnDMenuContainer";
 
 export default function DnDMenuDisplayView({ ...restProps }) {
-  const [DnDContext] = useContext(DnDContainerContext);
-
-  const {
-    itemsToHide,
-    itemsToShow,
-    showMoreLabel,
-    showLessLabel,
-    nothingToShowLabel,
-  } = DnDContext;
+  const { items, visibleItemCount } = useContext(DnDContainerContext);
 
   const [displayAllItems, setDisplayAllItems] = useState(false);
-
-  const toggleItems = () => {
-    setDisplayAllItems(!displayAllItems);
-  };
 
   return (
     <>
       <ul className={clsx(styles.list)} {...restProps}>
-        {itemsToShow.length == 0 && (
-          <li className={clsx(styles.item)} key={0}>
-            <span className={clsx(styles.link, styles.linkEmpty)}>
-              {t(nothingToShowLabel)}
-            </span>
-          </li>
-        )}
-        {itemsToShow.map((item, index) => {
+        {items.slice(0, visibleItemCount).map((item, index) => {
           return (
             <li className={clsx(styles.item)} key={index}>
               <Link className={clsx(styles.link)} to={item.url}>
@@ -42,7 +23,7 @@ export default function DnDMenuDisplayView({ ...restProps }) {
           );
         })}
       </ul>
-      {itemsToHide?.length > 0 && (
+      {items.length > visibleItemCount && (
         <span
           role="button"
           className={clsx(
@@ -50,14 +31,14 @@ export default function DnDMenuDisplayView({ ...restProps }) {
             displayAllItems && styles.toggleButtonIsOpen,
           )}
           aria-pressed={displayAllItems}
-          onClick={toggleItems}
+          onClick={() => setDisplayAllItems((value) => !value)}
         >
-          {!displayAllItems ? showMoreLabel : showLessLabel}
+          {!displayAllItems ? "Show more" : "Show less"}
         </span>
       )}
-      {displayAllItems && itemsToHide?.length > 0 && (
+      {displayAllItems && items.length > visibleItemCount && (
         <ul className={clsx(styles.list)} {...restProps}>
-          {itemsToHide.map((item, index) => {
+          {items.slice(visibleItemCount).map((item, index) => {
             return (
               <li className={clsx(styles.item)} key={index}>
                 <Link className={clsx(styles.link)} to={item.url}>

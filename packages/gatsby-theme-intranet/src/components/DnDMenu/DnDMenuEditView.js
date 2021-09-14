@@ -1,67 +1,51 @@
+import { arrayMoveImmutable } from "array-move";
 import clsx from "clsx";
 import React, { useContext } from "react";
-import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+import { DragDropContext, Droppable } from "react-beautiful-dnd";
 
-import {
-  DraggableComponent,
-  handleOnDragEnd,
-  getListStyle,
-} from "../../hooks/useDndMenu";
+import { DraggableComponent } from "../../hooks/useDndMenu";
 
 import * as styles from "./DnDMenu.module.css";
 import { DnDContainerContext } from "./DnDMenuContainer";
 
 export default function DnDMenuEditView({ ...restProps }) {
-  const [DnDContext, setDnDContext] = useContext(DnDContainerContext);
+  const { items, visibleItemCount, onChange } = useContext(DnDContainerContext);
 
-  const { draggableItemsToShow, draggableItemsToHide } = DnDContext;
-
-  let DnDLists = {
-    droppableList1: "draggableItemsToShow",
-    droppableList2: "draggableItemsToHide",
-  };
-
-  const getList = (id) => DnDContext[DnDLists[id]];
+  let draggableItems = [
+    ...items.slice(0, visibleItemCount),
+    { id: "SEPARATOR" },
+    ...items.slice(visibleItemCount),
+  ];
 
   return (
     <DragDropContext
-      onDragEnd={(result) =>
-        handleOnDragEnd(result, getList, setDnDContext, DnDContext)
-      }
+      onDragEnd={({ source, destination }) => {
+        if (!destination) {
+          return;
+        }
+        let newItems = arrayMoveImmutable(
+          draggableItems,
+          source.index,
+          destination.index,
+        );
+        let result = {
+          items: newItems.filter((item) => item.id !== "SEPARATOR"),
+          visibleItemCount: newItems.findIndex(
+            (item) => item.id === "SEPARATOR",
+          ),
+        };
+        onChange(result);
+      }}
     >
-      <Droppable droppableId="droppableList1">
+      <Droppable droppableId="list">
         {(provided, snapshot) => (
           <ul
             className={clsx(styles.list, styles.edit, styles.editVisible)}
             ref={provided.innerRef}
-            style={getListStyle(snapshot)}
             {...restProps}
           >
-            {draggableItemsToShow.map((item, index) => (
+            {draggableItems.map((item, index) => (
               <DraggableComponent
-                Draggable={Draggable}
-                item={item}
-                index={index}
-                styles={styles}
-                key={item.id}
-              />
-            ))}
-            {provided.placeholder}
-          </ul>
-        )}
-      </Droppable>
-
-      <Droppable droppableId="droppableList2">
-        {(provided, snapshot) => (
-          <ul
-            className={clsx(styles.list, styles.edit, styles.editHidden)}
-            ref={provided.innerRef}
-            style={getListStyle(snapshot)}
-            {...restProps}
-          >
-            {draggableItemsToHide?.map((item, index) => (
-              <DraggableComponent
-                Draggable={Draggable}
                 item={item}
                 index={index}
                 styles={styles}

@@ -1,1 +1,1 @@
-export { DnDMenuContainer as Tools } from "./DnDMenuContainer";
+export { DnDMenuContainer } from "./DnDMenuContainer";

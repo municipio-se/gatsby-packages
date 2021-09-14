@@ -1,25 +1,42 @@
 import { Section } from "@jfrk/react-heading-levels";
+import { usePages } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks";
 import clsx from "clsx";
+import produce from "immer";
 import React, { useContext, useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
 
 import { SiteLayoutContext } from "../@whitespace/gatsby-theme-wordpress-basic/components/SiteLayout";
-import { Tools } from "../components/DnDMenu";
-import Header from "../components/Header/Header";
 import {
   TopNavigation,
   TreeNavigation,
   HelpMenu,
 } from "../components/Navigation";
 import { SearchForm } from "../components/SidebarSearch";
+import userContext from "../contexts/userContext";
 import { useMenu } from "../hooks/menus";
 import { useTool } from "../hooks/tools";
 
+import DnDMenuContainer from "./DnDMenu/DnDMenuContainer";
+import Header from "./Header/Header";
 import * as styles from "./Sidebar.module.css";
 
 export default function Sidebar({ ...restProps }) {
   const [siteContext, setSiteContext] = useContext(SiteLayoutContext);
+  const { userSettings, setUserSettings } = useContext(userContext);
   const sidebar = useRef(null);
-  const { menuOpen, bookmarks } = siteContext;
+  const { menuOpen } = siteContext;
+  let allPages = usePages();
+  const { t } = useTranslation();
+
+  let bookmarks = (userSettings?.bookmarks || [])
+    .map((bookmark) => allPages.find((page) => page.id === bookmark.pageId))
+    .filter(Boolean)
+    .map((page) => ({
+      id: page.id,
+      pageId: page.id,
+      url: page.uri,
+      label: page.title,
+    }));
 
   useEffect(() => {
     function handleCloseMenu() {
@@ -76,14 +93,34 @@ export default function Sidebar({ ...restProps }) {
           {mainMenu?.length > 0 && <TopNavigation items={mainMenu} />}
           <TreeNavigation title="Innehåll" />
           {bookmarks?.length > 0 && (
-            <Tools
+            <DnDMenuContainer
               items={bookmarks}
-              title="myBookmarksLabel"
-              showMoreLabel="allBookmarksLabel"
-              showLessLabel="hideBookmarksLabel"
+              visibleItemCount={userSettings?.visibleBookmarksCount}
+              onChange={({ items, visibleItemCount }) => {
+                setUserSettings(
+                  produce((userSettings = {}) => {
+                    userSettings.bookmarks = items.map((item) => ({
+                      pageId: item.pageId,
+                    }));
+                    userSettings.visibleBookmarksCount = visibleItemCount;
+                    return userSettings;
+                  }),
+                );
+              }}
+              title={t("myBookmarksLabel")}
+              showMoreLabel={t("allBookmarksLabel")}
+              showLessLabel={t("hideBookmarksLabel")}
             />
           )}
-          {tools?.length > 0 && <Tools items={tools} title="Verktyg" />}
+          {tools?.length > 0 && (
+            <DnDMenuContainer
+              items={tools}
+              onChange={(result) => console.log(result)}
+              title={t("myToolsLabel")}
+              showMoreLabel={t("allToolsLabel")}
+              showLessLabel={t("hideToolsLabel")}
+            />
+          )}
           {helpMenu?.length > 0 && (
             <HelpMenu
               title="Hjälp"
