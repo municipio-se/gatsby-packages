@@ -70,6 +70,7 @@ export default function UserProvider({
         newValue = newValue(userSettings);
       }
       try {
+        setUser({ ...user, settings: newValue });
         let response = await window.fetch(userSettingsURL, {
           method: "put",
           headers: {
@@ -81,7 +82,6 @@ export default function UserProvider({
         if (!response.ok) {
           throw new Error(response.statusText);
         }
-        setUser({ ...user, settings: newValue });
       } catch (error) {
         //
       }
