@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.17.0](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-intranet@0.16.1...@municipio/gatsby-theme-intranet@0.17.0) (2021-09-15)
+
+
+### Features
+
+* add bookmarks to sidebar ([99bc2e8](https://github.com/municipio-se/gatsby-packages/commit/99bc2e844d7612732676f777daa5cc5512e2568c))
+* put back code for drag and drop menu ([049e015](https://github.com/municipio-se/gatsby-packages/commit/049e015313c73d23d5eca6662ac66e8c28252fb0))
+* use optimistic ui for user settings ([009d83c](https://github.com/municipio-se/gatsby-packages/commit/009d83c3a8835d4791902bb99448254cda8e9d51))
+
+
+
 ### [0.16.1](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-intranet@0.16.0...@municipio/gatsby-theme-intranet@0.16.1) (2021-09-13)
 
 **Note:** Version bump only for package @municipio/gatsby-theme-intranet
