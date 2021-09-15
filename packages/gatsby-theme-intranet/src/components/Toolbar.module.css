@@ -3,8 +3,9 @@
   border-bottom: 1px solid var(--color-divider);
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: start;
   user-select: none;
+  gap: var(--toolbar-gap, 0.5rem);
 }
 
 @media (min-width: 48rem) {
@@ -12,11 +13,6 @@
     padding-left: var(--gap-max);
     padding-right: var(--gap-max);
   }
-}
-.content {
-  display: flex;
-  align-items: center;
-  flex-direction: row;
 }
 
 .sticky {
@@ -27,26 +23,8 @@
   z-index: 1;
 }
 
-.button {
-  display: inline-flex;
-  border: 1px solid var(--button-outline-color);
-  line-height: var(--toolbar-button-font-line-height, 0);
-  font-weight: var(--toolbar-button-font-weight, 400);
-  height: var(--toolbar-button-height, 2.25rem);
-  padding: var(--toolbar-button-padding, 0.5rem 0.75rem);
-  --button-background: var(--toolbar-button-background, #fff);
-  --button-hover-background: var(--toolbar-button-hover-background, red);
-  --button-hover-color: var(--toolbar-button-hover-color, blue);
-  --button-color: var(--color-foreground);
-  --button-outline-color: var(--color-divider);
-}
-
 .button.button {
   font-size: var(--toolbar-button-font-size, 0.875rem);
-}
-
-.button:not(:last-of-type) {
-  margin: 0 var(--gap-min, 1rem) 0 0;
 }
 
 .menu {
@@ -64,4 +42,8 @@
 
 .menu > * {
   pointer-events: none;
+}
+
+.spacer {
+  margin-left: auto;
 }
