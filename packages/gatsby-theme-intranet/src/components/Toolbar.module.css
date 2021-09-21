@@ -35,7 +35,7 @@
 }
 
 @media (min-width: 48rem) {
-  .menu {
+  .menu.menu {
     display: none;
   }
 }
