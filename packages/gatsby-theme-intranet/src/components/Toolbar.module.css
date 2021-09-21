@@ -6,6 +6,7 @@
   justify-content: start;
   user-select: none;
   gap: var(--toolbar-gap, 0.5rem);
+  min-height: 3.5rem;
 }
 
 @media (min-width: 48rem) {
@@ -35,7 +36,7 @@
 }
 
 @media (min-width: 48rem) {
-  .menu {
+  .menu.menu {
     display: none;
   }
 }
