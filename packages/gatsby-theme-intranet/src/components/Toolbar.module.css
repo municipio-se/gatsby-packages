@@ -20,7 +20,7 @@
   top: 0;
   background: var(--toolbar-background);
   backdrop-filter: blur(10px);
-  z-index: 1;
+  z-index: 999;
 }
 
 .button.button {
