@@ -31,31 +31,32 @@
   margin-bottom: -10rem;
 }
 
-@media (min-width: 48rem) {
-  .component.horizontal {
-    padding: 0;
-  }
+.component.horizontal .wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(15rem), 1fr));
+  grid-column-gap: var(--gap, 1rem);
+}
 
-  .component.horizontal .wrapper {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
-    grid-gap: var(--gap, 1rem);
-  }
+.component.horizontal {
+  padding: 0;
+}
 
-  .component.horizontal .content {
-    padding: var(--card-horizontal-content-padding, 2rem 1rem);
-    align-self: center;
-  }
+.component.horizontal .content {
+  padding: var(--card-horizontal-content-padding, 2rem 1rem);
+  align-self: center;
+}
+.component.horizontal .image {
+  top: 0;
+}
 
-  .component.component .image > span {
-    display: flex;
-    flex-direction: row;
-    height: 100%;
-  }
+.component.horizontal .image > span {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
 
-  .component.component .image > span > div {
-    width: 100%;
-  }
+.component.horizontal .image > span > div {
+  width: 100%;
 }
 
 .content {
