@@ -1,6 +1,7 @@
 import { Link } from "@whitespace/components";
 import clsx from "clsx";
 import React, { useContext, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import * as styles from "./DnDMenu.module.css";
 import { DnDContainerContext } from "./DnDMenuContainer";
@@ -9,6 +10,7 @@ export default function DnDMenuDisplayView({ ...restProps }) {
   const { items, visibleItemCount } = useContext(DnDContainerContext);
 
   const [displayAllItems, setDisplayAllItems] = useState(false);
+  const { t } = useTranslation();
 
   return (
     <>
@@ -33,7 +35,7 @@ export default function DnDMenuDisplayView({ ...restProps }) {
           aria-pressed={displayAllItems}
           onClick={() => setDisplayAllItems((value) => !value)}
         >
-          {!displayAllItems ? "Show more" : "Show less"}
+          {!displayAllItems ? t("showMoreToolsLabel") : t("showLessToolsLabel")}
         </span>
       )}
       {displayAllItems && items.length > visibleItemCount && (
