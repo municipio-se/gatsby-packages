@@ -13,12 +13,6 @@ TableModule.propTypes = {
   module: PropTypes.shape({
     modTableOptions: PropTypes.shape({
       modTable: PropTypes.string,
-      modTableCsvDelimiter: PropTypes.string,
-      modTableCsvFile: PropTypes.shape({
-        id: PropTypes.string,
-      }),
-      modTableDataType: PropTypes.string,
-      theme: PropTypes.string,
     }),
   }),
 };
