@@ -42,10 +42,10 @@
 }
 
 .image {
-  margin-right: calc(var(--box-padding) * -1);
-  margin-left: calc(var(--box-padding) * -1);
+  margin-right: calc(var(--card-padding, 1rem) * -1);
+  margin-left: calc(var(--card-padding, 1rem) * -1);
   position: relative;
-  top: calc(var(--box-padding) * -1);
+  top: calc(var(--card-padding, 1rem) * -1);
 }
 
 .title,
