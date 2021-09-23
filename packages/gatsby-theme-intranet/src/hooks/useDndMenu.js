@@ -15,7 +15,7 @@ DraggableComponent.propTypes = {
 /**
  * Draggable Component
  */
-export const DraggableComponent = ({ item, index, styles }) => {
+export function DraggableComponent({ item, index, styles }) {
   return (
     <Draggable draggableId={item.id} index={index}>
       {(provided, snapshot) => (
@@ -40,7 +40,7 @@ export const DraggableComponent = ({ item, index, styles }) => {
       )}
     </Draggable>
   );
-};
+}
 
 /**
  * Styling
