@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.18.1](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-intranet@0.18.0...@municipio/gatsby-theme-intranet@0.18.1) (2021-09-23)
+
+
+### Bug Fixes
+
+* unitialized variable ([200eca1](https://github.com/municipio-se/gatsby-packages/commit/200eca1e524f5d0f9a7f3caf7000c32356d9139a))
+
+
+
 ## [0.18.0](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-intranet@0.17.1...@municipio/gatsby-theme-intranet@0.18.0) (2021-09-23)
 
 

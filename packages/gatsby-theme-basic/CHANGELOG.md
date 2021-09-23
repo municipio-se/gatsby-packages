@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.18.1](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.18.0...@municipio/gatsby-theme-basic@0.18.1) (2021-09-23)
+
+
+### Bug Fixes
+
+* card image margin ([b014da6](https://github.com/municipio-se/gatsby-packages/commit/b014da631f8d86ba638a0c938db54c8b065376e5))
+* wrong wrapper for table module ([f937db4](https://github.com/municipio-se/gatsby-packages/commit/f937db4296a2f435a3a8b7ddf0111ed71aa53a65))
+
+
+
 ## [0.18.0](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.17.2...@municipio/gatsby-theme-basic@0.18.0) (2021-09-23)
 
 
