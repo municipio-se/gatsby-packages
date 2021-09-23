@@ -12,6 +12,7 @@
   border-spacing: 0;
   vertical-align: baseline;
   width: 100%;
+  background: var(--table-background, transparent);
 }
 
 .title {
@@ -24,7 +25,7 @@
 }
 
 .head {
-  background: var(--table--head-background, #f4f4f5);
+  background: var(--table-head-background, #f4f4f5);
   color: var(--table-head-color, inherit);
   border-bottom: var(--table-head-border-bottom, 1px solid transparent);
   border-bottom-color: var(--table-head-border-bottom-color, #d4d4d8);
@@ -32,6 +33,10 @@
 
 .th,
 .td {
+  background: var(--table-cell-background, #f4f4f5);
+  font-size: var(--table-cell-font-size, inherit);
+  font-weight: var(--table-cell-font-weight, inherit);
+  font-style: var(--table-cell-font-style, inherit);
   padding: var(--table-cell-padding, 0.25rem 0.75rem);
   border: var(--table-cell-border, 1px solid transparent);
   border-color: var(--table-cell-border-color, #d4d4d8);
