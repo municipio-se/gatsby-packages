@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@whitespace/gatsby-theme-wordpress-basic": "^0.16.4",
-    "autoprefixer": "^10.3.4",
+    "autoprefixer": "^10.3.5",
     "axios": "^0.21.4",
     "classnames": "^2.3.1",
     "filesize": "^8.0.3",
