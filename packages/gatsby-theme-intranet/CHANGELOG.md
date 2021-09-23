@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.17.1](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-intranet@0.17.0...@municipio/gatsby-theme-intranet@0.17.1) (2021-09-21)
+
+
+### Bug Fixes
+
+* augment z-index on toolbar ([403fa23](https://github.com/municipio-se/gatsby-packages/commit/403fa235c244b36dc0f882d9ee0b417b499713a0))
+* hide menu button on larger screen ([db50869](https://github.com/municipio-se/gatsby-packages/commit/db508695a164e987e49a7c81bab1fb400deb0e80))
+
+
+
 ## [0.17.0](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-intranet@0.16.1...@municipio/gatsby-theme-intranet@0.17.0) (2021-09-15)
 
 

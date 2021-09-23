@@ -1,6 +1,6 @@
 {
   "name": "@municipio/gatsby-theme-basic",
-  "version": "0.17.1",
+  "version": "0.17.2",
   "description": "Gatsby theme for Municipio",
   "license": "MIT",
   "files": [
@@ -22,12 +22,12 @@
     "yup": "^0.32.9"
   },
   "peerDependencies": {
-    "gatsby": "^3.13.0",
+    "gatsby": "^3.14.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "gatsby": "^3.13.0",
+    "gatsby": "^3.14.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   }

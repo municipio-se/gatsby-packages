@@ -1,5 +1,4 @@
 import clsx from "clsx";
-import parseEntities from "parse-entities";
 import PropTypes from "prop-types";
 import React from "react";
 
@@ -14,12 +13,6 @@ TableModule.propTypes = {
   module: PropTypes.shape({
     modTableOptions: PropTypes.shape({
       modTable: PropTypes.string,
-      modTableCsvDelimiter: PropTypes.string,
-      modTableCsvFile: PropTypes.shape({
-        id: PropTypes.string,
-      }),
-      modTableDataType: PropTypes.string,
-      theme: PropTypes.string,
     }),
   }),
 };
@@ -57,7 +50,7 @@ export default function TableModule({
             {tableData[0].map((title, index) => {
               return (
                 <th className={clsx(styles.th)} scope="col" key={index}>
-                  {parseEntities(title)}
+                  {title}
                 </th>
               );
             })}

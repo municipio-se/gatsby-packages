@@ -21,7 +21,6 @@ NoticeModule.propTypes = {
 };
 
 export default function NoticeModule({
-  className,
   module: {
     modNoticeOptions: { noticeText, noticeType },
   },
