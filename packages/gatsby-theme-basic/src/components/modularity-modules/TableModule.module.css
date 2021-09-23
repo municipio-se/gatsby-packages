@@ -4,7 +4,6 @@
   -webkit-overflow-scrolling: touch;
   border-collapse: collapse;
   display: block;
-  margin-bottom: var(--table-module-margin-bottom, 2rem);
 }
 
 .table {
@@ -32,6 +31,7 @@
   font-size: var(--table-head-font-size, inherit);
   font-weight: var(--table-head-font-weight, inherit);
   font-style: var(--table-head-font-style, inherit);
+  text-align: var(--table-head-align, left);
 }
 
 .th,
