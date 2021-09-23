@@ -4,10 +4,14 @@
   -webkit-overflow-scrolling: touch;
   border-collapse: collapse;
   display: block;
+  margin-bottom: var(--table-module-margin-bottom, 2rem);
 }
 
 .table {
   border-collapse: collapse;
+  border-spacing: 0;
+  vertical-align: baseline;
+  width: 100%;
 }
 
 .title {

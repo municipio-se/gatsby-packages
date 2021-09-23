@@ -52,7 +52,7 @@ export default function TableModule({
         className={clsx(styles.table)}
         {...restProps}
       >
-        <thead className={clsx(styles.head, "h6")}>
+        <thead className={clsx(styles.head)}>
           <tr className={clsx(styles.headTr)}>
             {tableData[0].map((title, index) => {
               return (
