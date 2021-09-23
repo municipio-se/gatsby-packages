@@ -22,8 +22,10 @@ DnDMenuContainer.propTypes = {
 export default function DnDMenuContainer({
   items = [],
   onChange,
-  styles = defaultStyles,
   title,
+  showMoreLabel,
+  showLessLabel,
+  styles = defaultStyles,
   visibleItemCount = 5,
   ...restProps
 }) {
@@ -57,7 +59,11 @@ export default function DnDMenuContainer({
             </span>
           )}
         </div>
-        {isEditing ? <DnDMenuEditView /> : <DnDMenuDisplayView />}
+        {isEditing ? (
+          <DnDMenuEditView />
+        ) : (
+          <DnDMenuDisplayView labels={{ showLessLabel, showMoreLabel }} />
+        )}
       </div>
     </DnDContainerContext.Provider>
   );

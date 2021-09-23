@@ -1,14 +1,20 @@
 import { Link } from "@whitespace/components";
 import clsx from "clsx";
+import PropTypes from "prop-types";
 import React, { useContext, useState } from "react";
 
 import * as styles from "./DnDMenu.module.css";
 import { DnDContainerContext } from "./DnDMenuContainer";
 
-export default function DnDMenuDisplayView({ ...restProps }) {
+DnDMenuDisplayView.propTypes = {
+  labels: PropTypes.objectOf(PropTypes.string),
+};
+
+export default function DnDMenuDisplayView({ labels, ...restProps }) {
   const { items, visibleItemCount } = useContext(DnDContainerContext);
 
   const [displayAllItems, setDisplayAllItems] = useState(false);
+  const { showLessLabel, showMoreLabel } = labels;
 
   return (
     <>
@@ -33,7 +39,7 @@ export default function DnDMenuDisplayView({ ...restProps }) {
           aria-pressed={displayAllItems}
           onClick={() => setDisplayAllItems((value) => !value)}
         >
-          {!displayAllItems ? "Show more" : "Show less"}
+          {!displayAllItems ? showMoreLabel : showLessLabel}
         </span>
       )}
       {displayAllItems && items.length > visibleItemCount && (
