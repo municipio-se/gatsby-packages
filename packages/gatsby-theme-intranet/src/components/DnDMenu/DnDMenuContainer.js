@@ -22,6 +22,8 @@ export default function DnDMenuContainer({
   visibleItemCount = 5,
   onChange,
   title,
+  showMoreLabel,
+  showLessLabel,
   styles = defaultStyles,
   ...restProps
 }) {
@@ -55,7 +57,11 @@ export default function DnDMenuContainer({
             </span>
           )}
         </div>
-        {isEditing ? <DnDMenuEditView /> : <DnDMenuDisplayView />}
+        {isEditing ? (
+          <DnDMenuEditView />
+        ) : (
+          <DnDMenuDisplayView labels={{ showLessLabel, showMoreLabel }} />
+        )}
       </div>
     </DnDContainerContext.Provider>
   );
