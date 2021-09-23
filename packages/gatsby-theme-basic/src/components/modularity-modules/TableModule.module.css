@@ -29,6 +29,9 @@
   color: var(--table-head-color, inherit);
   border-bottom: var(--table-head-border-bottom, 1px solid transparent);
   border-bottom-color: var(--table-head-border-bottom-color, #d4d4d8);
+  font-size: var(--table-head-font-size, inherit);
+  font-weight: var(--table-head-font-weight, inherit);
+  font-style: var(--table-head-font-style, inherit);
 }
 
 .th,
