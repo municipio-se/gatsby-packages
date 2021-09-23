@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.18.0](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.17.2...@municipio/gatsby-theme-basic@0.18.0) (2021-09-23)
+
+
+### ⚠ BREAKING CHANGES
+
+* **deps:** update all deps
+
+### Bug Fixes
+
+* lint errors ([685f4a7](https://github.com/municipio-se/gatsby-packages/commit/685f4a75a4d33ddb4c2a2186cb915b14c7895b73))
+* remove unnecessary parsing of entities in Table module ([b01f3e2](https://github.com/municipio-se/gatsby-packages/commit/b01f3e261e1856982ebafab4efc85a07b954143a))
+* remove unused prop types ([4ea4809](https://github.com/municipio-se/gatsby-packages/commit/4ea4809645dc7b8d4a8d40c3518d9840f60d3efb))
+
+
+### Miscellaneous Chores
+
+* **deps:** update all deps ([2048890](https://github.com/municipio-se/gatsby-packages/commit/2048890bdad68f2cbe6e152ccd40f51d7d94ef40))
+
+
+
 ### [0.17.2](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.17.1...@municipio/gatsby-theme-basic@0.17.2) (2021-09-21)
 
 

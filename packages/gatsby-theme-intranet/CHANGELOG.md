@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.18.0](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-intranet@0.17.1...@municipio/gatsby-theme-intranet@0.18.0) (2021-09-23)
+
+
+### Bug Fixes
+
+* add translation to toggle tools ([d908b29](https://github.com/municipio-se/gatsby-packages/commit/d908b2910aa492cae2390a019696c764450d613d))
+* lint errors ([685f4a7](https://github.com/municipio-se/gatsby-packages/commit/685f4a75a4d33ddb4c2a2186cb915b14c7895b73))
+* send in labels as variable ([a6b397b](https://github.com/municipio-se/gatsby-packages/commit/a6b397b2d7aa19cb13c7960f83801fa7d9183ef5))
+
+
+
 ### [0.17.1](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-intranet@0.17.0...@municipio/gatsby-theme-intranet@0.17.1) (2021-09-21)
 
 
