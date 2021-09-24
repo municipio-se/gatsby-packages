@@ -1,0 +1,87 @@
+/**
+  moduleContactBackground: "#efefef",
+  moduleContactSurface: "#000",
+  moduleContactActionColor: "blue",
+  moduleContactActionDecoration: "underline",
+  moduleContactFontWeight: "400",
+  moduleContactFontStyle: "normal",
+  moduleContactBorderWidth: "0",
+  moduleContactBorderStyle: "inherit",
+  moduleContactBorderColor: "transparent",
+  moduleContactBorderRadius: "0",
+  moduleContactSpacing: "1rem",
+  moduleContactIconColor: "inherit",
+  moduleContactDivider: "1px solid #000",
+  moduleContactDividerSpacing: "1rem",
+  moduleContactGridDefault: "15rem",
+  moduleContactGridNarrow: "5rem";
+  moduleContactLabelWeight: "700";
+  moduleContactLabelSpacing: "0.25rem";
+**/
+
+.component {
+  background: var(--module-contact-background);
+  color: var(--module-contact-surface);
+  font-weight: var(--module-contact-font-weight);
+  font-style: var(--module-contact-font-style);
+  border-width: var(--module-contact-border-width);
+  border-style: var(--module-contact-border-style);
+  border-color: var(--module-contact-border-color);
+  border-radius: var(--module-contact-border-radius);
+  padding: var(--module-contact-spacing);
+}
+
+.component a {
+  color: var(--module-contact-action-color);
+  text-decoration: var(--module-contact-action-decoration);
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column; 
+  gap: var(--module-contact-group-spacing);
+}
+
+.columns {
+  --grid: var(--module-contact-grid-default);
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--grid), 1fr));
+  gap: var(--module-contact-divider-spacing);
+}
+
+.columnsNarrow {
+  --grid: var(--module-contact-grid-narrow);
+}
+
+.divider {
+  border-top: var(--module-contact-divider);
+  padding-top: var(--module-contact-divider-spacing);
+}
+
+.label {
+  display: block;
+  margin-bottom: var(--module-contact-label-spacing);
+  font-weight: var(--module-contact-label-weight);
+}
+
+.photo {
+  margin-bottom: var(--module-contact-group-spacing);
+}
+
+.image {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.social {
+  margin-bottom: var(--module-contact-label-spacing);
+}
+
+.iconLabel {
+  --icon-color: var(--module-contact-icon-color);
+
+  display: flex;
+  gap: var(--module-contact-label-spacing);
+  align-items: center;
+}

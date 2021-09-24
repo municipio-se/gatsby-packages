@@ -68,39 +68,35 @@ export default function ContactCard({
   } = contact;
 
   return (
-    <address
-      itemScope=""
-      itemType="http://schema.org/Person"
-      className={clsx(styles.component, className)}
-      {...restProps}
-    >
+    <div className={clsx(styles.component, className)} {...restProps}>
       {image && (
-        <div>
+        <div className={clsx(styles.photo)}>
           <Img
             fixed={image}
             alt={lastName ? `${firstName} ${lastName}` : firstName}
+            className={clsx(styles.image)}
           />
         </div>
       )}
-      <div>
-        <H itemProp="name">
-          {lastName ? `${firstName} ${lastName}` : firstName}
-        </H>
-        {workTitle && <p itemProp="jobTitle">{workTitle}</p>}
-        {administrationUnit && <p itemProp="jobTitle">{administrationUnit}</p>}
+      <div className={clsx(styles.name)}>
+        <H>{lastName ? `${firstName} ${lastName}` : firstName}</H>
+        {workTitle && <p>{workTitle}</p>}
+        {administrationUnit && <p>{administrationUnit}</p>}
       </div>
       <Section>
-        <div>
-          <div>
+        <div className={clsx(styles.wrapper)}>
+          <div className={clsx(styles.divider)}>
             {email && (
-              <div>
-                <span>E-post</span>
-                <a href={`mailto:${email}`} itemProp="email">
+              <div className={clsx(styles.item)}>
+                <span className={clsx(styles.label)}>E-post</span>
+                <a href={`mailto:${email}`} className={clsx(styles.iconLabel)}>
                   <Icon name="email-bold" />
                   <span>{email}</span>
                 </a>
               </div>
             )}
+          </div>
+          <div className={clsx(styles.columns, styles.divider)}>
             {phoneNumbers &&
               phoneNumbers.map(({ type, number }, index) => {
                 if (!number) {
@@ -108,21 +104,27 @@ export default function ContactCard({
                 }
                 let label = type == "phone" ? "Telefonnummer" : "Mobilnummer";
                 return (
-                  <div key={index}>
-                    <span>{label}</span>
-                    <div itemProp="telephone">
+                  <div key={index} className={clsx(styles.item)}>
+                    <span className={clsx(styles.label)}>{label}</span>
+                    <div className={clsx(styles.iconLabel)}>
                       <Icon name={`${type}-bold`} />
                       <span>{number}</span>
                     </div>
                   </div>
                 );
               })}
+          </div>
+          <div className={clsx(styles.columns, styles.columnsNarrow, styles.divider)}>
             {socialMedia &&
               socialMedia.map(({ media, url }, index) => {
                 return (
                   url && (
-                    <div>
-                      <a href={url} key={index}>
+                    <div className={clsx(styles.social)}>
+                      <a
+                        href={url}
+                        key={index}
+                        className={clsx(styles.iconLabel)}
+                      >
                         <Icon name={`${media}-bold`} />
                         <span>{SOCIAL_MEDIA_NAMES[media]}</span>
                       </a>
@@ -131,27 +133,31 @@ export default function ContactCard({
                 );
               })}
           </div>
-          {address && (
-            <div>
-              <H>Adress</H>
-              {processContent(address)}
-            </div>
-          )}
-          {visitingAddress && (
-            <div>
-              <H>Besöksadress</H>
-              {processContent(visitingAddress)}
-            </div>
-          )}
+          <div className={clsx(styles.columns, styles.divider)}>
+            {address && (
+              <div className={clsx(styles.group)}>
+                <H>Adress</H>
+                {processContent(address)}
+              </div>
+            )}
+            {visitingAddress && (
+              <div className={clsx(styles.group)}>
+                <H>Besöksadress</H>
+                {processContent(visitingAddress)}
+              </div>
+            )}
+          </div>
           {openingHours && (
-            <div>
+            <div className={clsx(styles.divider)}>
               <H>Öppningstider</H>
               {processContent(openingHours)}
             </div>
           )}
-          {other && <div>{processContent(other)}</div>}
+          {other && (
+            <div className={clsx(styles.group,  styles.divider)}>{processContent(other)}</div>
+          )}
         </div>
       </Section>
-    </address>
+    </div>
   );
 }
