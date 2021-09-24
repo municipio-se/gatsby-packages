@@ -114,7 +114,13 @@ export default function ContactCard({
                 );
               })}
           </div>
-          <div className={clsx(styles.columns, styles.columnsNarrow, styles.divider)}>
+          <div
+            className={clsx(
+              styles.columns,
+              styles.columnsNarrow,
+              styles.divider,
+            )}
+          >
             {socialMedia &&
               socialMedia.map(({ media, url }, index) => {
                 return (
@@ -154,7 +160,9 @@ export default function ContactCard({
             </div>
           )}
           {other && (
-            <div className={clsx(styles.group,  styles.divider)}>{processContent(other)}</div>
+            <div className={clsx(styles.group, styles.divider)}>
+              {processContent(other)}
+            </div>
           )}
         </div>
       </Section>
