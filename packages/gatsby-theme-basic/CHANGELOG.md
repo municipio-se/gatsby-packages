@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.18.2](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.18.1...@municipio/gatsby-theme-basic@0.18.2) (2021-10-04)
+
+
+### Features
+
+* implement Video module ([9c66317](https://github.com/municipio-se/gatsby-packages/commit/9c66317d5ff2742adead43f0ede746a41762b448))
+
+
+
 ### [0.18.1](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.18.0...@municipio/gatsby-theme-basic@0.18.1) (2021-09-23)
 
 
