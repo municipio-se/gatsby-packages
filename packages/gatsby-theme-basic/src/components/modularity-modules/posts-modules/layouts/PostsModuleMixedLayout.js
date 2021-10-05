@@ -67,10 +67,7 @@ export default function PostsModuleMixedLayout({
           : null,
       })}
     >
-      <Grid
-        className={clsx(styles.list)}
-        columnMinWidth={normalizedItems.length === 1 && "100%"}
-      >
+      <Grid className={clsx(styles.list)}>
         {({ columns = [] }) => {
           let primaryItemCount =
             normalizedItems.length > columns.length
@@ -86,7 +83,6 @@ export default function PostsModuleMixedLayout({
                   className={clsx(styles.item)}
                   item={item}
                   visibleFields={postsFields || []}
-                  horizontal={normalizedItems.length === 1}
                 />
               );
             }),

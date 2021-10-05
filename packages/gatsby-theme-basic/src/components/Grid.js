@@ -53,6 +53,10 @@ export default function Grid({
   if (ItemWrapper == null) {
     ItemWrapper = Wrapper === "ul" || Wrapper === "ol" ? "li" : Fragment;
   }
+
+  const items =
+    typeof children === "function" ? children({ columns }) : children;
+
   return (
     <Wrapper
       ref={ref}
@@ -63,18 +67,25 @@ export default function Grid({
       })}
       {...restProps}
     >
-      {Children.map(
-        typeof children === "function" ? children({ columns }) : children,
-        (child, index) => {
-          return (
-            child && (
-              <ItemWrapper key={index} className={styles.item}>
-                {child}
-              </ItemWrapper>
-            )
-          );
-        },
-      )}
+      {Children.map(items, (child, index) => {
+        const itemsColumns = items.filter((item) => item).length;
+        return (
+          child && (
+            <ItemWrapper
+              key={index}
+              className={styles.item}
+              css={css(
+                itemsColumns === 1 && {
+                  gridColumnStart: 1,
+                  gridColumnEnd: -1,
+                },
+              )}
+            >
+              {child}
+            </ItemWrapper>
+          )
+        );
+      })}
     </Wrapper>
   );
 }

@@ -71,18 +71,13 @@ export default function PostsModuleGridLayout({
         ModuleWrapperHeader: PostsModuleHeader,
       }}
     >
-      <Grid
-        className={clsx(styles.list)}
-        columnMinWidth={normalizedItems.length === 1 && "100%"}
-        horizontal={normalizedItems.length === 1}
-      >
+      <Grid className={clsx(styles.list)}>
         {normalizedItems.map((item, index) => {
           return (
             <Item
               key={index}
               className={clsx(styles.item)}
               item={item}
-              horizontal={normalizedItems.length === 1}
               visibleFields={postsFields || []}
             />
           );

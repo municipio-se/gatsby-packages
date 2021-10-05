@@ -1,3 +1,4 @@
+import { useComponentWidth } from "@whitespace/components/dist/hooks";
 import clsx from "clsx";
 import PropTypes from "prop-types";
 import React from "react";
@@ -8,7 +9,6 @@ Card.propTypes = {
   as: PropTypes.elementType,
   children: PropTypes.node,
   className: PropTypes.string,
-  horizontal: PropTypes.bool,
   styles: PropTypes.objectOf(PropTypes.string),
 };
 
@@ -17,19 +17,26 @@ export default function Card({
   children,
   className,
   styles = defaultStyles,
-  horizontal = false,
   ...restProps
 }) {
+  const [width, ref] = useComponentWidth();
+  const isHorizontal = width >= 768;
+
   return (
     <Component
+      ref={ref}
       className={clsx(
         styles.component,
-        horizontal && styles.horizontal,
+        isHorizontal && styles.horizontal,
         className,
       )}
       {...restProps}
     >
-      {horizontal ? <div className={styles.wrapper}>{children}</div> : children}
+      {isHorizontal ? (
+        <div className={styles.wrapper}>{children}</div>
+      ) : (
+        children
+      )}
     </Component>
   );
 }
