@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.19.0](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.18.2...@municipio/gatsby-theme-basic@0.19.0) (2021-10-06)
+
+
+### Features
+
+* add support for horizontal card ([a373b2e](https://github.com/municipio-se/gatsby-packages/commit/a373b2e7d0fc828e98d724549e2496690f039db0))
+* add support for horizontal card ([d5a2c52](https://github.com/municipio-se/gatsby-packages/commit/d5a2c529e7ddb1ff86e0f418926fc64f1618f61b))
+
+
+### Bug Fixes
+
+* add support for automatic horizontal card with usecomponentWidth ([a7eaacd](https://github.com/municipio-se/gatsby-packages/commit/a7eaacdec1622732ae2272db9da62ec8f08e5173))
+
+
+
 ### [0.18.2](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.18.1...@municipio/gatsby-theme-basic@0.18.2) (2021-10-04)
 
 
