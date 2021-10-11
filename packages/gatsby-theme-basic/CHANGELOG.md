@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.19.2](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.19.1...@municipio/gatsby-theme-basic@0.19.2) (2021-10-11)
+
+
+### Features
+
+* implement Menu module ([1539627](https://github.com/municipio-se/gatsby-packages/commit/1539627f575544341174e37a47079710d10a30aa))
+
+
+
 ### [0.19.1](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.19.0...@municipio/gatsby-theme-basic@0.19.1) (2021-10-08)
 
 **Note:** Version bump only for package @municipio/gatsby-theme-basic
