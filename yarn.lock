@@ -3393,10 +3393,10 @@
     minisearch "^3.1.0"
     react-select "^5.1.0"
 
-"@whitespace/gatsby-theme-wordpress-basic@^0.18.2":
-  version "0.18.2"
-  resolved "https://registry.yarnpkg.com/@whitespace/gatsby-theme-wordpress-basic/-/gatsby-theme-wordpress-basic-0.18.2.tgz#3cf4ec0b818ee53f56f1147b2b8f59505034ad6e"
-  integrity sha512-3d+fr62vV+w7djBoEcmYZ38Oib02D+5c2WTmMcU2RKjZTA6sx8MUulpagg7BTgywidX3K3fk9ORGBVuG9UYzKQ==
+"@whitespace/gatsby-theme-wordpress-basic@^0.18.3":
+  version "0.18.3"
+  resolved "https://registry.yarnpkg.com/@whitespace/gatsby-theme-wordpress-basic/-/gatsby-theme-wordpress-basic-0.18.3.tgz#e66e73bf39c307be9c9dd35a0ea340ecfde714fe"
+  integrity sha512-e1MBZYVFRsgluuTwHW58AOTE3tKLVkxyhZCccy8+dMIoPIDXQhUAarJwWdOO2dqH/bpIydUXggddXYMjCseFag==
   dependencies:
     "@apollo/react-hooks" "^4.0.0"
     "@emotion/css" "^11.1.3"
