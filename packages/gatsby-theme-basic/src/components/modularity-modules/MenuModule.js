@@ -20,10 +20,19 @@ MenuModule.propTypes = {
 };
 
 function defaultTransformMenuItem(menuItem, { pages }) {
-  let { connectedNode, label, description, url, target, ...rest } = menuItem;
+  let { connectedNode, label, description, url, target, extra, ...rest } =
+    menuItem;
+
+  let icon = extra?.icon || rest?.icon;
+  if (typeof icon === "string") {
+    icon = { name: icon };
+  }
+
   let { contentType: { node: { name: type = "custom" } = {} } = {}, id } =
     connectedNode?.node || {};
+
   let content = type === "page" ? getPage(pages, id) : {};
+
   return {
     type,
     url,
@@ -31,7 +40,9 @@ function defaultTransformMenuItem(menuItem, { pages }) {
     ...content,
     label,
     description: description || (content && content.description),
+    ...extra,
     ...rest,
+    icon,
   };
 }
 
