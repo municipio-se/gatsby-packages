@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.19.3](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.19.2...@municipio/gatsby-theme-basic@0.19.3) (2021-10-14)
+
+
+### Bug Fixes
+
+* forward icon correctly to dashboard menu ([f9a7b40](https://github.com/municipio-se/gatsby-packages/commit/f9a7b408f8ac0ed51046d8f36de73cf7a4a7c682))
+
+
+
 ### [0.19.2](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.19.1...@municipio/gatsby-theme-basic@0.19.2) (2021-10-11)
 
 
