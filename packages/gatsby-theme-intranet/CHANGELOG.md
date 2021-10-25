@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.19.5](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-intranet@0.19.4...@municipio/gatsby-theme-intranet@0.19.5) (2021-10-25)
+
+
+### Bug Fixes
+
+* disable ul margin on dropdownList ([9d84776](https://github.com/municipio-se/gatsby-packages/commit/9d847762ab3ad9af9561405af98705d22301f196))
+
+
+
 ### [0.19.4](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-intranet@0.19.3...@municipio/gatsby-theme-intranet@0.19.4) (2021-10-14)
 
 **Note:** Version bump only for package @municipio/gatsby-theme-intranet

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.19.5](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.19.4...@municipio/gatsby-theme-basic@0.19.5) (2021-10-25)
+
+
+### Bug Fixes
+
+* add year and month facets ([fa28c8c](https://github.com/municipio-se/gatsby-packages/commit/fa28c8c25f40e077c4e6a3f7586690d53fc53bf9))
+* tag facets were objects ([7af7009](https://github.com/municipio-se/gatsby-packages/commit/7af7009188d4fc5c6af71d315b34f300f5d658d8))
+* use correct theme variables for teasers so that dates are visible ([6fcad2f](https://github.com/municipio-se/gatsby-packages/commit/6fcad2f6db4e3e4901664b0bb1afb62f116dd3b0))
+
+
+
 ### [0.19.4](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.19.3...@municipio/gatsby-theme-basic@0.19.4) (2021-10-14)
 
 **Note:** Version bump only for package @municipio/gatsby-theme-basic
