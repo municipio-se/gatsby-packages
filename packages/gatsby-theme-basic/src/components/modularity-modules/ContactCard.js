@@ -1,6 +1,6 @@
 import { H, Section } from "@jfrk/react-heading-levels";
 import { Icon } from "@whitespace/components";
-import { useHTMLProcessor } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/html-processor";
+import { HTML } from "@whitespace/gatsby-theme-wordpress-basic/src/components";
 import clsx from "clsx";
 import Img from "gatsby-image";
 import PropTypes from "prop-types";
@@ -50,8 +50,6 @@ export default function ContactCard({
   styles = defaultStyles,
   ...restProps
 }) {
-  const { processContent } = useHTMLProcessor();
-
   const {
     address,
     administrationUnit,
@@ -134,22 +132,26 @@ export default function ContactCard({
           {address && (
             <div>
               <H>Adress</H>
-              {processContent(address)}
+              <HTML>{address}</HTML>
             </div>
           )}
           {visitingAddress && (
             <div>
               <H>Besöksadress</H>
-              {processContent(visitingAddress)}
+              <HTML>{visitingAddress}</HTML>
             </div>
           )}
           {openingHours && (
             <div>
               <H>Öppningstider</H>
-              {processContent(openingHours)}
+              <HTML>{openingHours}</HTML>
             </div>
           )}
-          {other && <div>{processContent(other)}</div>}
+          {other && (
+            <div>
+              <HTML>{other}</HTML>
+            </div>
+          )}
         </div>
       </Section>
     </address>

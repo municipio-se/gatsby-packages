@@ -1,6 +1,6 @@
 {
   "name": "@municipio/gatsby-theme-basic",
-  "version": "0.19.0",
+  "version": "0.19.5",
   "description": "Gatsby theme for Municipio",
   "license": "MIT",
   "files": [
@@ -13,14 +13,14 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
-    "@whitespace/gatsby-theme-wordpress-basic": "^0.17.2",
+    "@whitespace/gatsby-theme-wordpress-basic": "^0.18.3",
     "autoprefixer": "^10.3.7",
-    "axios": "^0.22.0",
+    "axios": "^0.23.0",
     "classnames": "^2.3.1",
     "filesize": "^8.0.3",
     "formik": "^2.2.9",
     "js-video-url-parser": "^0.4.3",
-    "yup": "^0.32.9"
+    "yup": "^0.32.11"
   },
   "peerDependencies": {
     "gatsby": "^3.14.2",

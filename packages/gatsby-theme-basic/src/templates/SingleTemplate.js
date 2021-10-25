@@ -1,9 +1,9 @@
 import { H, Section } from "@jfrk/react-heading-levels";
 import {
   Image,
+  PageContent,
   Time,
 } from "@whitespace/gatsby-theme-wordpress-basic/src/components";
-import { useHTMLProcessor } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/html-processor";
 import PropTypes from "prop-types";
 import React from "react";
 
@@ -36,9 +36,6 @@ export default function SingleTemplate({ pageContext }) {
     // isPreview,
   } = pageContext;
 
-  const { processPageContent } = useHTMLProcessor();
-  let { preamble, content } = processPageContent(contentHTML, { contentMedia });
-
   return (
     <article>
       <H>{title}</H>
@@ -47,8 +44,15 @@ export default function SingleTemplate({ pageContext }) {
           Published: <Time date={dateGmt} />
         </div>
         {!!featuredImage?.node && <Image {...featuredImage.node} />}
-        {!!preamble && <div>{preamble}</div>}
-        {content}
+
+        <PageContent input={contentHTML} contentMedia={contentMedia}>
+          {({ preamble, content }) => (
+            <>
+              {!!preamble && <div>{preamble}</div>}
+              {content}
+            </>
+          )}
+        </PageContent>
         <ModularityArea area={contentArea} />
       </Section>
     </article>

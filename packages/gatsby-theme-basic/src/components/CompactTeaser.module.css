@@ -1,6 +1,6 @@
 .component {
   position: relative;
-  font-size: var(--card-font-size, 0.875rem);
+  font-size: var(--teaser-font-size, 0.875rem);
 }
 
 .content {
@@ -9,7 +9,7 @@
 }
 
 .meta {
-  color: var(--card-meta-color, #525c63);
+  color: var(--teaser-meta-color, inherit);
 }
 
 .image {
@@ -18,6 +18,6 @@
 
 .title,
 .titleLink {
-  font-size: var(--card-title-font-size, 1.25rem);
+  font-size: var(--teaser-title-font-size, 1.25rem);
   margin-bottom: 0;
 }

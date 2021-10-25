@@ -1,3 +1,4 @@
+import { HTML } from "@whitespace/gatsby-theme-wordpress-basic/src/components";
 import { useHTMLProcessor } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/html-processor";
 import { camelCase, upperFirst } from "lodash/fp";
 import PropTypes from "prop-types";
@@ -36,7 +37,7 @@ function normalizeItems({
   if (!modPostsDataSource?.postsDataSource) {
     return [];
   }
-  const { processContent, stripHTML } = useHTMLProcessor();
+  const { stripHTML } = useHTMLProcessor();
   const { showDate, showImage, showExcerpt } = visibleFields(
     modPostsDataDisplay.postsFields,
   );
@@ -45,9 +46,9 @@ function normalizeItems({
     case "input":
       return (modPostsDataSource.data || []).map(
         ({ postContentMedia, ...item }) => {
-          let processedContent = processContent(item.postContent, {
-            contentMedia: postContentMedia,
-          });
+          let processedContent = (
+            <HTML contentMedia={postContentMedia}>{item.postContent}</HTML>
+          );
           return {
             ...item,
             title: item.postTitle,
@@ -69,9 +70,9 @@ function normalizeItems({
         .filter(Boolean)
         .slice(0, itemsToSlice)
         .map(({ contentMedia, ...item }) => {
-          let processedContent = processContent(item.content, {
-            contentMedia,
-          });
+          let processedContent = (
+            <HTML contentMedia={contentMedia}>{item.content}</HTML>
+          );
 
           return {
             ...item,

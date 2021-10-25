@@ -3,6 +3,51 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.19.5](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.19.4...@municipio/gatsby-theme-basic@0.19.5) (2021-10-25)
+
+
+### Bug Fixes
+
+* add year and month facets ([fa28c8c](https://github.com/municipio-se/gatsby-packages/commit/fa28c8c25f40e077c4e6a3f7586690d53fc53bf9))
+* tag facets were objects ([7af7009](https://github.com/municipio-se/gatsby-packages/commit/7af7009188d4fc5c6af71d315b34f300f5d658d8))
+* use correct theme variables for teasers so that dates are visible ([6fcad2f](https://github.com/municipio-se/gatsby-packages/commit/6fcad2f6db4e3e4901664b0bb1afb62f116dd3b0))
+
+
+
+### [0.19.4](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.19.3...@municipio/gatsby-theme-basic@0.19.4) (2021-10-14)
+
+**Note:** Version bump only for package @municipio/gatsby-theme-basic
+
+
+
+
+
+### [0.19.3](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.19.2...@municipio/gatsby-theme-basic@0.19.3) (2021-10-14)
+
+
+### Bug Fixes
+
+* forward icon correctly to dashboard menu ([f9a7b40](https://github.com/municipio-se/gatsby-packages/commit/f9a7b408f8ac0ed51046d8f36de73cf7a4a7c682))
+
+
+
+### [0.19.2](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.19.1...@municipio/gatsby-theme-basic@0.19.2) (2021-10-11)
+
+
+### Features
+
+* implement Menu module ([1539627](https://github.com/municipio-se/gatsby-packages/commit/1539627f575544341174e37a47079710d10a30aa))
+
+
+
+### [0.19.1](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.19.0...@municipio/gatsby-theme-basic@0.19.1) (2021-10-08)
+
+**Note:** Version bump only for package @municipio/gatsby-theme-basic
+
+
+
+
+
 ## [0.19.0](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.18.2...@municipio/gatsby-theme-basic@0.19.0) (2021-10-06)
 
 
