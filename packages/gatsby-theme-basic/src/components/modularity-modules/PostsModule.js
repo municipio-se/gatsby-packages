@@ -20,11 +20,27 @@ function fromDisplayModeToComponentName(displayMode) {
   return displayMode && upperFirst(camelCase(displayMode)) + "PostsModule";
 }
 
-function normalizeItems({ modPostsDataSource, contentNodes }) {
+function visibleFields(item) {
+  return {
+    showDate: item?.includes("date"),
+    showImage: item?.includes("image"),
+    showExcerpt: item?.includes("excerpt"),
+  };
+}
+
+function normalizeItems({
+  modPostsDataSource,
+  contentNodes,
+  modPostsDataDisplay,
+}) {
   if (!modPostsDataSource?.postsDataSource) {
     return [];
   }
   const { processContent, stripHTML } = useHTMLProcessor();
+  const { showDate, showImage, showExcerpt } = visibleFields(
+    modPostsDataDisplay.postsFields,
+  );
+
   switch (modPostsDataSource.postsDataSource) {
     case "input":
       return (modPostsDataSource.data || []).map(
@@ -36,8 +52,8 @@ function normalizeItems({ modPostsDataSource, contentNodes }) {
             ...item,
             title: item.postTitle,
             url: item.link?.url || item.permalink,
-            excerpt: stripHTML(item.postContent),
-            content: processedContent,
+            excerpt: showExcerpt && stripHTML(item.postContent),
+            content: showExcerpt && processedContent,
           };
         },
       );
@@ -60,16 +76,18 @@ function normalizeItems({ modPostsDataSource, contentNodes }) {
           return {
             ...item,
             title: item.title,
+            dateGmt: showDate && item.dateGmt,
             date:
-              (item.archiveDatesGmt &&
+              showDate &&
+              ((item.archiveDatesGmt &&
                 getMostRelevantDate(item.archiveDatesGmt)) ||
-              item.dateGmt,
+                item.dateGmt),
             url: item.uri,
-            excerpt: item.description
-              ? item.description
-              : stripHTML(item.content),
-            image: item.featuredImage?.node,
-            content: processedContent,
+            excerpt:
+              showExcerpt &&
+              (item.description ? item.description : stripHTML(item.content)),
+            image: showImage && item.featuredImage?.node,
+            content: showExcerpt && processedContent,
             element: "div",
             taxonomies: useTaxonomies(
               { ...item.tags?.nodes, ...item.categories?.nodes },
@@ -85,6 +103,7 @@ function normalizeItems({ modPostsDataSource, contentNodes }) {
 
 export default function PostsModule({ module, ...restProps }) {
   const normalizedItems = normalizeItems(module);
+
   const { modPostsDataDisplay: { postsDisplayAs } = {} } = module;
 
   let componentName = fromDisplayModeToComponentName(postsDisplayAs);

@@ -45,7 +45,7 @@ export default function PostsModuleGridLayout({
   ...restProps
 }) {
   const {
-    modPostsDataDisplay: { postsFields, theme },
+    modPostsDataDisplay: { theme },
   } = module;
 
   return (
@@ -73,14 +73,7 @@ export default function PostsModuleGridLayout({
     >
       <Grid className={clsx(styles.list)}>
         {normalizedItems.map((item, index) => {
-          return (
-            <Item
-              key={index}
-              className={clsx(styles.item)}
-              item={item}
-              visibleFields={postsFields || []}
-            />
-          );
+          return <Item key={index} className={clsx(styles.item)} item={item} />;
         })}
       </Grid>
     </ModuleWrapper>
