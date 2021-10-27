@@ -1,7 +1,6 @@
 import { css } from "@emotion/react";
 import clsx from "clsx";
 import { kebabCase } from "lodash";
-import { difference } from "lodash/fp";
 import PropTypes from "prop-types";
 import React from "react";
 
@@ -82,7 +81,6 @@ export default function PostsModuleMixedLayout({
                   key={index}
                   className={clsx(styles.item)}
                   item={item}
-                  visibleFields={postsFields || []}
                 />
               );
             }),
@@ -93,10 +91,6 @@ export default function PostsModuleMixedLayout({
                     <ListPostsModuleItem
                       teaserStyles={teaserStyles}
                       item={item}
-                      visibleFields={difference(postsFields || [], [
-                        "image",
-                        "excerpt",
-                      ])}
                       className={clsx(styles.secondaryItem)}
                       key={index}
                     />

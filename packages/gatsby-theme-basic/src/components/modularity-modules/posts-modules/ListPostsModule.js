@@ -33,9 +33,8 @@ export default function ListPostsModule({
   ...restProps
 }) {
   const {
-    modPostsDataDisplay: { postsFields, theme },
+    modPostsDataDisplay: { theme },
   } = module;
-  // let showDate = postsFields?.includes("date");
   return (
     <ModuleWrapper
       title={title}
@@ -55,7 +54,6 @@ export default function ListPostsModule({
           return (
             <ListPostsModuleItem
               item={item}
-              visibleFields={postsFields || []}
               className={clsx(styles.item)}
               key={index}
             />

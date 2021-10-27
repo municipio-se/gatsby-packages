@@ -26,7 +26,6 @@ PostsModuleIndexItem.propTypes = {
     url: PropTypes.string,
     taxonomies: PropTypes.arrayOf(PropTypes.object),
   }),
-  visibleFields: PropTypes.arrayOf(PropTypes.string),
   styles: PropTypes.objectOf(PropTypes.string),
 };
 
@@ -37,13 +36,10 @@ export default function PostsModuleIndexItem({
     day: "numeric",
   },
   item,
-  visibleFields,
   styles = defaultStyles,
   ...restProps
 }) {
   const { dateGmt, excerpt, image, title, url, theme, taxonomies } = item;
-  let showDate = visibleFields.includes("date");
-  let showImage = visibleFields.includes("image");
   return (
     <Card
       css={css({
@@ -59,10 +55,10 @@ export default function PostsModuleIndexItem({
       })}
       {...restProps}
     >
-      {showImage && <CardMedia image={image} />}
+      {image && <CardMedia image={image} />}
       <CardContent>
         <CardTitle link={{ url }}>{title}</CardTitle>
-        {showDate && dateGmt && (
+        {dateGmt && (
           <CardMeta>
             <Time
               className={clsx(styles.date)}
@@ -71,7 +67,7 @@ export default function PostsModuleIndexItem({
             />
           </CardMeta>
         )}
-        <p className={clsx(styles.excerpt)}>{excerpt}</p>
+        {excerpt && <p className={clsx(styles.excerpt)}>{excerpt}</p>}
         {taxonomies && taxonomies.length > 0 && (
           <Taxonomies taxonomies={taxonomies} />
         )}

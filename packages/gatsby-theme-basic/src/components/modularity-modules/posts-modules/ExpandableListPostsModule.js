@@ -37,7 +37,6 @@ export default function ExpandableListPostsModule({
   const {
     modPostsDataDisplay: { theme },
   } = module;
-  // let showDate = postsFields?.includes("date");
 
   return (
     <ModuleWrapper
