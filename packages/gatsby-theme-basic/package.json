@@ -20,6 +20,7 @@
     "filesize": "^8.0.3",
     "formik": "^2.2.9",
     "js-video-url-parser": "^0.4.3",
+    "nuka-carousel": "^4.8.1",
     "yup": "^0.32.11"
   },
   "peerDependencies": {
