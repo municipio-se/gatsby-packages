@@ -52,7 +52,13 @@ export default function PostsModuleMixedLayout({
         "--card-background": theme
           ? `var(--brand-color-${kebabCase(theme)})`
           : null,
+        "--card-hover-background": theme
+          ? `var(--brand-color-${kebabCase(theme)})`
+          : null,
         "--card-color": theme
+          ? `var(--brand-color-${kebabCase(theme)}-text)`
+          : null,
+        "--card-hover-color": theme
           ? `var(--brand-color-${kebabCase(theme)}-text)`
           : null,
         "--card-meta-color": theme

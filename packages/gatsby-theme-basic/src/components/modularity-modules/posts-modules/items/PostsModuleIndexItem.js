@@ -1,15 +1,17 @@
 import { css } from "@emotion/react";
+import {
+  Card,
+  CardContent,
+  CardMedia,
+  CardMeta,
+  CardTitle,
+} from "@whitespace/components";
 import { Time } from "@whitespace/gatsby-theme-wordpress-basic/src/components";
 import clsx from "clsx";
 import { kebabCase } from "lodash";
 import PropTypes from "prop-types";
 import React from "react";
 
-import Card from "../../../Card";
-import CardContent from "../../../CardContent";
-import CardMedia from "../../../CardMedia";
-import CardMeta from "../../../CardMeta";
-import CardTitle from "../../../CardTitle";
 import Taxonomies from "../../../Taxonomies";
 
 import * as defaultStyles from "./PostsModuleIndexItem.module.css";
@@ -42,11 +44,18 @@ export default function PostsModuleIndexItem({
   const { dateGmt, excerpt, image, title, url, theme, taxonomies } = item;
   return (
     <Card
+      link={{ url }}
       css={css({
         "--card-background": theme
           ? `var(--brand-color-${kebabCase(theme)})`
           : null,
+        "--card-hover-background": theme
+          ? `var(--brand-color-${kebabCase(theme)})`
+          : null,
         "--card-color": theme
+          ? `var(--brand-color-${kebabCase(theme)}-text)`
+          : null,
+        "--card-hover-color": theme
           ? `var(--brand-color-${kebabCase(theme)}-text)`
           : null,
         "--card-meta-color": theme
@@ -55,9 +64,8 @@ export default function PostsModuleIndexItem({
       })}
       {...restProps}
     >
-      {image && <CardMedia image={image} />}
       <CardContent>
-        <CardTitle link={{ url }}>{title}</CardTitle>
+        <CardTitle>{title}</CardTitle>
         {dateGmt && (
           <CardMeta>
             <Time
@@ -72,6 +80,7 @@ export default function PostsModuleIndexItem({
           <Taxonomies taxonomies={taxonomies} />
         )}
       </CardContent>
+      {image && <CardMedia image={image} />}
     </Card>
   );
 }

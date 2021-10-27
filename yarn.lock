@@ -3366,9 +3366,9 @@
     "@xtuc/long" "4.2.2"
 
 "@whitespace/components@^0.13.1":
-  version "0.13.4"
-  resolved "https://registry.yarnpkg.com/@whitespace/components/-/components-0.13.4.tgz#5d37f7c3257701a4f59b7bd39c6cd6ab90233b7c"
-  integrity sha512-BJDAmyejM4hm1fRLYzvPNsS35Lhs0lzUlhCx+Yr/4phFbU0DwoK94Fp/iSMl3FURU2A5iOAOlOpK3R6y1qk35w==
+  version "0.13.5"
+  resolved "https://registry.yarnpkg.com/@whitespace/components/-/components-0.13.5.tgz#495200e02623b08306a78c27a2bc3a6cdfb9cc91"
+  integrity sha512-Cb5A6TB04bXhfM8gaYxX4IGoZYlO49vY7FC84xIQIduwqF203lThoFWI6cWchpqLlDEp8udUsez8Kl3PBIQTBw==
   dependencies:
     "@jfrk/react-heading-levels" "^1.0.0"
     clsx "^1.1.1"

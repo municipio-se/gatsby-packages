@@ -1,14 +1,11 @@
 import { css } from "@emotion/react";
+import { Card, CardContent, CardMeta, CardTitle } from "@whitespace/components";
 import { Time } from "@whitespace/gatsby-theme-wordpress-basic/src/components";
 import clsx from "clsx";
 import { kebabCase } from "lodash";
 import PropTypes from "prop-types";
 import React from "react";
 
-import Card from "../../../Card";
-import CardContent from "../../../CardContent";
-import CardMeta from "../../../CardMeta";
-import CardTitle from "../../../CardTitle";
 import Excerpt from "../../../Excerpt";
 
 import * as defaultStyles from "./PostsModuleBlocksItem.module.css";
@@ -43,11 +40,18 @@ export default function PostsModuleBlocksItem({
 
   return (
     <Card
+      link={{ url }}
       css={css({
         "--card-background": theme
           ? `var(--brand-color-${kebabCase(theme)})`
           : null,
+        "--card-hover-background": theme
+          ? `var(--brand-color-${kebabCase(theme)})`
+          : null,
         "--card-color": theme
+          ? `var(--brand-color-${kebabCase(theme)}-text)`
+          : null,
+        "--card-hover-color": theme
           ? `var(--brand-color-${kebabCase(theme)}-text)`
           : null,
         "--card-meta-color": theme
@@ -58,7 +62,8 @@ export default function PostsModuleBlocksItem({
       {...restProps}
     >
       <CardContent className={clsx(styles.content)}>
-        <CardTitle link={{ url }}>{title}</CardTitle>
+        <CardTitle>{title}</CardTitle>
+        {excerpt && <Excerpt text={excerpt} className={clsx(styles.excerpt)} />}
         {dateGmt && (
           <CardMeta className={clsx(styles.meta)}>
             <Time
@@ -68,7 +73,6 @@ export default function PostsModuleBlocksItem({
             />
           </CardMeta>
         )}
-        {excerpt && <Excerpt text={excerpt} className={clsx(styles.excerpt)} />}
       </CardContent>
     </Card>
   );
