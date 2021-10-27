@@ -24,7 +24,6 @@ ListPostsModuleItem.propTypes = {
     taxonomies: PropTypes.arrayOf(PropTypes.object),
   }),
   teaserStyles: PropTypes.objectOf(PropTypes.string),
-  visibleFields: PropTypes.arrayOf(PropTypes.string),
   styles: PropTypes.objectOf(PropTypes.string),
 };
 
@@ -38,13 +37,10 @@ export default function ListPostsModuleItem({
   item,
   styles = defaultStyles,
   teaserStyles,
-  visibleFields,
   ...restProps
 }) {
   const { dateGmt, excerpt, image, title, url, taxonomies } = item;
-  let showDate = visibleFields.includes("date");
-  let showImage = visibleFields.includes("image");
-  let showExcerpt = visibleFields.includes("excerpt");
+
   return (
     <Teaser
       className={clsx(className, styles.teaser)}
@@ -53,7 +49,7 @@ export default function ListPostsModuleItem({
     >
       <TeaserContent>
         <TeaserTitle link={{ url }}>{title}</TeaserTitle>
-        {showDate && (
+        {dateGmt && (
           <TeaserMeta>
             <Time
               className={clsx(styles.date)}
@@ -62,14 +58,12 @@ export default function ListPostsModuleItem({
             />
           </TeaserMeta>
         )}
-        {showExcerpt && excerpt && (
-          <p className={clsx(styles.excerpt)}>{excerpt}</p>
-        )}
+        {excerpt && <p className={clsx(styles.excerpt)}>{excerpt}</p>}
         {taxonomies && taxonomies.length > 0 && (
           <Taxonomies taxonomies={taxonomies} />
         )}
       </TeaserContent>
-      {showImage && <TeaserMedia image={image} />}
+      {image && <TeaserMedia image={image} />}
     </Teaser>
   );
 }

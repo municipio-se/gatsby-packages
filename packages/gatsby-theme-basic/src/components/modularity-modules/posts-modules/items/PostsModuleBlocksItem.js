@@ -25,7 +25,6 @@ PostsModuleBlocksItem.propTypes = {
     title: PropTypes.node,
     url: PropTypes.string,
   }),
-  visibleFields: PropTypes.arrayOf(PropTypes.string),
   styles: PropTypes.objectOf(PropTypes.string),
 };
 
@@ -37,12 +36,10 @@ export default function PostsModuleBlocksItem({
     day: "numeric",
   },
   item,
-  visibleFields,
   styles = defaultStyles,
   ...restProps
 }) {
   const { dateGmt, excerpt, title, url, theme } = item;
-  let showDate = visibleFields.includes("date");
 
   return (
     <Card
@@ -62,7 +59,7 @@ export default function PostsModuleBlocksItem({
     >
       <CardContent className={clsx(styles.content)}>
         <CardTitle link={{ url }}>{title}</CardTitle>
-        {showDate && dateGmt && (
+        {dateGmt && (
           <CardMeta className={clsx(styles.meta)}>
             <Time
               className={clsx(styles.date)}
@@ -71,7 +68,7 @@ export default function PostsModuleBlocksItem({
             />
           </CardMeta>
         )}
-        {<Excerpt text={excerpt} className={clsx(styles.excerpt)} />}
+        {excerpt && <Excerpt text={excerpt} className={clsx(styles.excerpt)} />}
       </CardContent>
     </Card>
   );
