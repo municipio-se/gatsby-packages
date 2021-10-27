@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.19.6](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.19.5...@municipio/gatsby-theme-basic@0.19.6) (2021-10-27)
+
+
+### Bug Fixes
+
+* don’t show iamge or excerpt in mixed post module layout ([4a8b342](https://github.com/municipio-se/gatsby-packages/commit/4a8b342cd11158d92c65ecd71adbf9d501b5407b))
+* hide post module image, date or image based on editor's choice ([c5d3c78](https://github.com/municipio-se/gatsby-packages/commit/c5d3c7878b6684434a7793cc168652dbe6c40589))
+
+
+
 ### [0.19.5](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.19.4...@municipio/gatsby-theme-basic@0.19.5) (2021-10-25)
 
 
