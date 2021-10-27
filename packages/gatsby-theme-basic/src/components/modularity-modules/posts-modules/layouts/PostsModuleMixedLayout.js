@@ -37,7 +37,7 @@ export default function PostsModuleMixedLayout({
   ...restProps
 }) {
   const {
-    modPostsDataDisplay: { postsFields, theme },
+    modPostsDataDisplay: { theme },
   } = module;
 
   return (
@@ -96,7 +96,7 @@ export default function PostsModuleMixedLayout({
                   return (
                     <ListPostsModuleItem
                       teaserStyles={teaserStyles}
-                      item={item}
+                      item={{ ...item, image: null, excerpt: null }}
                       className={clsx(styles.secondaryItem)}
                       key={index}
                     />
