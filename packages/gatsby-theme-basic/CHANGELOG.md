@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.19.7](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.19.6...@municipio/gatsby-theme-basic@0.19.7) (2021-11-03)
+
+
+### Features
+
+* add front-end filtering in posts module ([3339541](https://github.com/municipio-se/gatsby-packages/commit/33395419c90dca9875ca3eedf1b5ae59fec9cd64))
+
+
+
 ### [0.19.6](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.19.5...@municipio/gatsby-theme-basic@0.19.6) (2021-10-27)
 
 
