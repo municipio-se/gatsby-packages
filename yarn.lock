@@ -3366,9 +3366,9 @@
     "@xtuc/long" "4.2.2"
 
 "@whitespace/components@^0.13.1":
-  version "0.13.5"
-  resolved "https://registry.yarnpkg.com/@whitespace/components/-/components-0.13.5.tgz#495200e02623b08306a78c27a2bc3a6cdfb9cc91"
-  integrity sha512-Cb5A6TB04bXhfM8gaYxX4IGoZYlO49vY7FC84xIQIduwqF203lThoFWI6cWchpqLlDEp8udUsez8Kl3PBIQTBw==
+  version "0.13.6"
+  resolved "https://registry.yarnpkg.com/@whitespace/components/-/components-0.13.6.tgz#0ebbcfb1fe015fa644eef366ea76106c8d7eb587"
+  integrity sha512-z8/Bp0fkSAwYteauXOb0omEztw3N6UXnYJ3cehJZw4+H0N5LpIoXgksv2JcPHZF9/8HchsINtujC5T0UuZCd+Q==
   dependencies:
     "@jfrk/react-heading-levels" "^1.0.0"
     clsx "^1.1.1"
@@ -3408,10 +3408,10 @@
   dependencies:
     prop-types "^15.7.2"
 
-"@whitespace/gatsby-plugin-search@^0.12.8":
-  version "0.12.8"
-  resolved "https://registry.yarnpkg.com/@whitespace/gatsby-plugin-search/-/gatsby-plugin-search-0.12.8.tgz#e7dd3845faeb3b6af9408a753a39ab0996aed7c9"
-  integrity sha512-scZGRoccs/Nf2zX6Q+v6/XNnqAYbufLxRksrIUTLuxU5iIOziTsMniPZwzIH8pQ3TdBd5lFu8me5EKCKPW8GnQ==
+"@whitespace/gatsby-plugin-search@^0.12.11":
+  version "0.12.11"
+  resolved "https://registry.yarnpkg.com/@whitespace/gatsby-plugin-search/-/gatsby-plugin-search-0.12.11.tgz#474a85bca491ba17db531a56bd9ad9ebdc2fb6c6"
+  integrity sha512-5g3B46QqnsA92TDiYOo+yiKvIilNcXBK2A1tkiT7Y9A6qEjBVImr4+TlYqcq1lIFclLe8Zw2vujugrPKXKlp9A==
   dependencies:
     "@jfrk/react-heading-levels" "^1.0.0"
     "@whitespace/gatsby-hooks" "^0.5.0"
@@ -3421,9 +3421,9 @@
     react-select "^5.1.0"
 
 "@whitespace/gatsby-theme-wordpress-basic@^0.18.3":
-  version "0.18.7"
-  resolved "https://registry.yarnpkg.com/@whitespace/gatsby-theme-wordpress-basic/-/gatsby-theme-wordpress-basic-0.18.7.tgz#c7e28c3b974b2167d5f3253e5366341f9511feb8"
-  integrity sha512-huD8XS9NvADwpwCju7GLw2gTDrVfY7HKha5clYSZ+fVBSaUgJ5Ow1JdIZflib7PuVzIciElrkKdU6AF5VkvhQw==
+  version "0.18.10"
+  resolved "https://registry.yarnpkg.com/@whitespace/gatsby-theme-wordpress-basic/-/gatsby-theme-wordpress-basic-0.18.10.tgz#f322008ab9a76ee12acd61232a834670c3babb57"
+  integrity sha512-NfiXZlOYisYMFjr10FjF7Uua4WYG+rq8gXMlkzpbfro6Xo/pFD/kjFUR9Te+zmeKgPSo9/JXNZKIDxBE/frGJA==
   dependencies:
     "@apollo/react-hooks" "^4.0.0"
     "@emotion/css" "^11.5.0"
@@ -3435,7 +3435,7 @@
     "@whitespace/gatsby-hooks" "^0.5.0"
     "@whitespace/gatsby-plugin-i18next" "^0.4.4"
     "@whitespace/gatsby-plugin-page-wrapper" "^0.3.3"
-    "@whitespace/gatsby-plugin-search" "^0.12.8"
+    "@whitespace/gatsby-plugin-search" "^0.12.11"
     apollo-boost "^0.4.9"
     apollo-cache-inmemory "^1.6.6"
     clsx "^1.1.1"

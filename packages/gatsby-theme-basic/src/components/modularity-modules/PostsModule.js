@@ -4,15 +4,37 @@ import { camelCase, upperFirst } from "lodash/fp";
 import PropTypes from "prop-types";
 import React from "react";
 
-import useTaxonomies from "../../hooks/useTaxonomies";
-import getMostRelevantDate from "../../utils/getMostRelevantDate";
+import normalizePostsModuleItems from "../../utils/normalizePostsModuleItems";
 
 import * as postsModuleComponents from "./posts-modules";
+import PostsModuleFilterProvider from "./PostsModuleFilterProvider";
+
+const normalizeHit =
+  ({ HTML, stripHTML }) =>
+  (item) => {
+    // let processedContent = processContent(item.content);
+    return {
+      ...item,
+      title: item.label,
+      excerpt: item.text,
+      content: item.text,
+      // taxonomies: useTaxonomies(
+      //   { ...item.tags?.nodes, ...item.categories?.nodes },
+      //   item.contentType?.node?.name,
+      // ),
+    };
+  };
 
 PostsModule.propTypes = {
   module: PropTypes.shape({
+    modPostsDataSource: PropTypes.shape({
+      postsDataSource: PropTypes.string,
+    }),
     modPostsDataDisplay: PropTypes.shape({
       postsDisplayAs: PropTypes.string,
+    }),
+    modPostsDataFiltering: PropTypes.shape({
+      frontEndTaxFiltering: PropTypes.bool,
     }),
   }),
 };
@@ -21,102 +43,43 @@ function fromDisplayModeToComponentName(displayMode) {
   return displayMode && upperFirst(camelCase(displayMode)) + "PostsModule";
 }
 
-function visibleFields(item) {
-  return {
-    showDate: item?.includes("date"),
-    showImage: item?.includes("image"),
-    showExcerpt: item?.includes("excerpt"),
-  };
-}
-
-function normalizeItems({
-  modPostsDataSource,
-  contentNodes,
-  modPostsDataDisplay,
-}) {
-  if (!modPostsDataSource?.postsDataSource) {
-    return [];
-  }
-  const { stripHTML } = useHTMLProcessor();
-  const { showDate, showImage, showExcerpt } = visibleFields(
-    modPostsDataDisplay.postsFields,
-  );
-
-  switch (modPostsDataSource.postsDataSource) {
-    case "input":
-      return (modPostsDataSource.data || []).map(
-        ({ postContentMedia, ...item }) => {
-          let processedContent = (
-            <HTML contentMedia={postContentMedia}>{item.postContent}</HTML>
-          );
-          return {
-            ...item,
-            title: item.postTitle,
-            url: item.link?.url || item.permalink,
-            excerpt: showExcerpt && stripHTML(item.postContent),
-            content: showExcerpt && processedContent,
-          };
-        },
-      );
-
-    default: {
-      let itemsArr = contentNodes?.nodes || [];
-      let itemsToSlice =
-        modPostsDataSource.postsCount >= 0
-          ? modPostsDataSource.postsCount
-          : itemsArr.length;
-
-      let items = itemsArr
-        .filter(Boolean)
-        .slice(0, itemsToSlice)
-        .map(({ contentMedia, ...item }) => {
-          let processedContent = (
-            <HTML contentMedia={contentMedia}>{item.content}</HTML>
-          );
-
-          return {
-            ...item,
-            title: item.title,
-            dateGmt: showDate && item.dateGmt,
-            date:
-              showDate &&
-              ((item.archiveDatesGmt &&
-                getMostRelevantDate(item.archiveDatesGmt)) ||
-                item.dateGmt),
-            url: item.uri,
-            excerpt:
-              showExcerpt &&
-              (item.description ? item.description : stripHTML(item.content)),
-            image: showImage && item.featuredImage?.node,
-            content: showExcerpt && processedContent,
-            element: "div",
-            taxonomies: useTaxonomies(
-              { ...item.tags?.nodes, ...item.categories?.nodes },
-              item.contentType?.node?.name,
-            ),
-          };
-        });
-
-      return items;
-    }
-  }
-}
-
 export default function PostsModule({ module, ...restProps }) {
-  const normalizedItems = normalizeItems(module);
+  let displayMode = module?.modPostsDataDisplay?.postsDisplayAs;
+  let isFilteringEnabled =
+    !!module?.modPostsDataFiltering?.frontEndTaxFiltering &&
+    module?.modPostsDataSource?.postsDataSource === "posttype";
 
-  const { modPostsDataDisplay: { postsDisplayAs } = {} } = module;
-
-  let componentName = fromDisplayModeToComponentName(postsDisplayAs);
+  const { stripHTML } = useHTMLProcessor();
+  let componentName = fromDisplayModeToComponentName(displayMode);
   let Component =
     // eslint-disable-next-line import/namespace
     (componentName && postsModuleComponents[componentName]) ||
     // eslint-disable-next-line import/namespace
     postsModuleComponents.DefaultPostsModule;
+
+  if (isFilteringEnabled) {
+    return (
+      <PostsModuleFilterProvider>
+        {({ hits }) => (
+          <Component
+            module={module}
+            normalizedItems={(hits || []).map(
+              normalizeHit({ HTML, stripHTML }),
+            )}
+            {...restProps}
+          />
+        )}
+      </PostsModuleFilterProvider>
+    );
+  }
+
   return (
     <Component
       module={module}
-      normalizedItems={normalizedItems}
+      normalizedItems={normalizePostsModuleItems(module, {
+        HTML,
+        stripHTML,
+      })}
       {...restProps}
     />
   );

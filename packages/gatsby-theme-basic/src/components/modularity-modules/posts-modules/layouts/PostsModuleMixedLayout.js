@@ -9,6 +9,7 @@ import Grid from "../../../Grid";
 import ModuleWrapper from "../../../ModuleWrapper";
 import PostsModuleHeader from "../../../PostsModuleHeader";
 import RuledList from "../../../RuledList";
+import PostsModuleFilterForm from "../../PostsModuleFilterForm";
 import ListPostsModuleItem from "../ListPostsModuleItem";
 
 import * as defaultStyles from "./PostsModuleMixedLayout.module.css";
@@ -72,6 +73,7 @@ export default function PostsModuleMixedLayout({
           : null,
       })}
     >
+      <PostsModuleFilterForm className={clsx(styles.filterForm)} />
       <Grid className={clsx(styles.list)}>
         {({ columns = [] }) => {
           let primaryItemCount =
