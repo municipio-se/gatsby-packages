@@ -60,10 +60,7 @@
 .arrowDisabled {
   background-color: var(--gallery-arrow-disabled-background-color, #f9f9f9);
   color: var(--gallery-arrow-disabled-color, #aeaeae);
-
-  &:hover {
-    cursor: default;
-  }
+  pointer-events: none;
 }
 
 .arrowNext {
@@ -85,8 +82,8 @@
 }
 
 .arrowIcon {
-  width: 0.75em;
-  height: 0.75em;
+  width: 1em;
+  height: 1em;
 }
 
 .autoplayControl {
