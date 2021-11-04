@@ -123,7 +123,7 @@ export default function GalleryModule({
         aria-label={t("nextImage")}
         disabled={disabled}
       >
-        <Icon className={styles.arrowIcon} name="arrow-right-1" size="12" />
+        <Icon className={styles.arrowIcon} name="arrow-right" size="12" />
       </button>
     );
   }
@@ -140,7 +140,7 @@ export default function GalleryModule({
         aria-label={t("previousImage")}
         disabled={disabled}
       >
-        <Icon className={styles.arrowIcon} name="arrow-left-1" size="12" />
+        <Icon className={styles.arrowIcon} name="arrow-left" size="12" />
       </button>
     );
   }
@@ -187,7 +187,7 @@ export default function GalleryModule({
           >
             <Icon
               className={styles.autoPlayControlIcon}
-              name={autoplay ? "button-pause" : "button-play-1"}
+              name={autoplay ? "button-pause" : "button-play"}
               size="1.5rem"
             />
           </button>
