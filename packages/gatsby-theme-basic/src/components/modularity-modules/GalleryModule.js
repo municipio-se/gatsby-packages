@@ -163,44 +163,42 @@ export default function GalleryModule({
       className={clsx(styles.component, className)}
       {...restProps}
     >
-      <div className={clsx(styles.imageWrapper)}>
-        <div className={clsx(styles.carouselWrapper)}>
-          <Carousel {...carouselSettings}>
-            {images.map((image, index) => (
-              <Image
-                key={index}
-                {...image}
-                caption={false}
-                credit={false}
-                className={styles.item}
-              />
-            ))}
-          </Carousel>
-          {activateAutoplay && (
-            <button
-              className={clsx(
-                styles.autoplayControl,
-                (currentImage.credit || currentImage.caption) &&
-                  styles.autoplayControlWithCaption,
-              )}
-              onClick={(e) => toggleAutoplay(e.target)}
-              aria-label={t("Pause")}
-            >
-              <Icon
-                className={styles.autoPlayControlIcon}
-                name={autoplay ? "button-pause" : "button-play-1"}
-                size="1.5rem"
-              />
-            </button>
-          )}
-        </div>
-        <ImageDesc
-          styles={styles}
-          currentImage={currentImage}
-          hideCaption={hideCaption}
-          hidePhotograph={hidePhotograph}
-        />
+      <div className={clsx(styles.inner)}>
+        <Carousel {...carouselSettings}>
+          {images.map((image, index) => (
+            <Image
+              key={index}
+              {...image}
+              caption={false}
+              credit={false}
+              className={styles.item}
+            />
+          ))}
+        </Carousel>
+        {activateAutoplay && (
+          <button
+            className={clsx(
+              styles.autoplayControl,
+              (currentImage.credit || currentImage.caption) &&
+                styles.autoplayControlWithCaption,
+            )}
+            onClick={(e) => toggleAutoplay(e.target)}
+            aria-label={t("Pause")}
+          >
+            <Icon
+              className={styles.autoPlayControlIcon}
+              name={autoplay ? "button-pause" : "button-play-1"}
+              size="1.5rem"
+            />
+          </button>
+        )}
       </div>
+      <ImageDesc
+        styles={styles}
+        currentImage={currentImage}
+        hideCaption={hideCaption}
+        hidePhotograph={hidePhotograph}
+      />
     </ModuleWrapper>
   );
 }
