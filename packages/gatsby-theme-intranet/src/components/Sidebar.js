@@ -2,6 +2,7 @@ import { Section } from "@jfrk/react-heading-levels";
 import { usePages } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks";
 import clsx from "clsx";
 import produce from "immer";
+import { sortBy } from "lodash";
 import React, { useContext, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -14,7 +15,7 @@ import {
 import { SearchForm } from "../components/SidebarSearch";
 import userContext from "../contexts/userContext";
 import { useMenu } from "../hooks/menus";
-import { useTool } from "../hooks/tools";
+import useTools from "../hooks/tools";
 
 import DnDMenuContainer from "./DnDMenu/DnDMenuContainer";
 import Header from "./Header/Header";
@@ -74,7 +75,32 @@ export default function Sidebar({ ...restProps }) {
 
   let { items: mainMenu } = useMenu("MAIN_MENU");
   let { items: helpMenu } = useMenu("HELP_MENU");
-  let tools = useTool();
+
+  let allTools = useTools();
+
+  // If new tools has been added since the user set this setting, show the new tools directly above the fold.
+  let visibleToolsCount =
+    userSettings?.visibleToolsCount != null && userSettings?.tools != null
+      ? userSettings?.visibleToolsCount +
+        allTools.filter(
+          (tool) => !userSettings.tools.some(({ id }) => id === tool.id),
+        ).length
+      : 5;
+
+  // Order tools according to settings and show the new tools directly above the fold.
+  let tools = userSettings?.tools
+    ? sortBy(
+        allTools.map((tool) => {
+          let index = userSettings.tools.findIndex(({ id }) => id === tool.id);
+          return {
+            ...tool,
+            weight: ~index ? index : visibleToolsCount - 0.5,
+            unsorted: !~index,
+          };
+        }),
+        "weight",
+      )
+    : allTools;
 
   return (
     <aside
@@ -115,7 +141,18 @@ export default function Sidebar({ ...restProps }) {
           {tools?.length > 0 && (
             <DnDMenuContainer
               items={tools}
-              onChange={(result) => console.log(result)}
+              visibleItemCount={visibleToolsCount}
+              onChange={({ items, visibleItemCount }) => {
+                setUserSettings(
+                  produce((userSettings = {}) => {
+                    userSettings.tools = items.map((item) => ({
+                      id: item.id,
+                    }));
+                    userSettings.visibleToolsCount = visibleItemCount;
+                    return userSettings;
+                  }),
+                );
+              }}
               title={t("myToolsLabel")}
               showMoreLabel={t("allToolsLabel")}
               showLessLabel={t("hideToolsLabel")}

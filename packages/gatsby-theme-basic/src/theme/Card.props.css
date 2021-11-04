@@ -1,0 +1,37 @@
+:root {
+  --card-background: var(--color-sky-100);
+  --card-border-radius: 0.25rem; /* Must be a length value (rem, em, px ...) */
+  --card-border-width: 0rem; /* Must be a length value (rem, em, px ...) */
+  --card-border-style: solid;
+  --card-border-color: transparent;
+  --card-color: var(--color-sky-900);
+  --card-font-size: inherit;
+  --card-padding: 0rem; /* Must be a length value (rem, em, px ...) */
+  --card-box-shadow: none;
+  --card-column-min-width: 20rem;
+  --card-grid-auto-rows: min-content min-content 1fr;
+
+  --card-inner-gap: 0;
+
+  --card-content-padding: 1.5rem;
+  --card-content-gap: 0.5rem;
+  --card-content-align-content: center;
+
+  --card-title-font-size: 1.5rem;
+  --card-title-font-weight: 600;
+  --card-title-line-height: 100%;
+  --card-title-letter-spacing: -0.01px;
+
+  --card-meta-color: var(--color-sky-800);
+  --card-meta-font-size: 0.875rem;
+  --card-meta-font-weight: 400;
+  --card-meta-line-height: 125%;
+  --card-meta-letter-spacing: -0.01px;
+
+  /* --card-hover-background: var(--color-sky-200);
+  --card-hover-color: inherit;
+  --card-hover-text-decoration: none; */
+
+  --card-focus-outline: 4px solid transparent;
+  --card-focus-box-shadow: 0 0 0 4px var(--color-blue-500);
+}

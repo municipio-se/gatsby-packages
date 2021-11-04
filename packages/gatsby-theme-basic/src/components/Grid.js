@@ -25,6 +25,7 @@ function useComputedCSSGridColumns(ref, deps) {
 
 Grid.propTypes = {
   as: PropTypes.elementType,
+  autoFit: PropTypes.bool,
   children: PropTypes.node,
   className: PropTypes.string,
   columnMinWidth: PropTypes.number,
@@ -35,6 +36,7 @@ Grid.propTypes = {
 
 export default function Grid({
   as: Wrapper = "ul",
+  autoFit = false,
   children,
   className,
   columnMinWidth,
@@ -64,23 +66,14 @@ export default function Grid({
       css={css({
         "--grid-column-min-width": columnMinWidth,
         "--grid-gap": gap,
+        "--grid-repeat": autoFit ? "auto-fit" : null,
       })}
       {...restProps}
     >
       {Children.map(items, (child, index) => {
-        const itemsColumns = items.filter((item) => item).length;
         return (
           child && (
-            <ItemWrapper
-              key={index}
-              className={styles.item}
-              css={css(
-                itemsColumns === 1 && {
-                  gridColumnStart: 1,
-                  gridColumnEnd: -1,
-                },
-              )}
-            >
+            <ItemWrapper key={index} className={styles.item}>
               {child}
             </ItemWrapper>
           )
