@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.19.9](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.19.8...@municipio/gatsby-theme-basic@0.19.9) (2021-11-08)
+
+
+### Features
+
+* implement Gallery Module ([e7ec4b0](https://github.com/municipio-se/gatsby-packages/commit/e7ec4b064007be532cca1fc3da582833ef704dea))
+
+
+### Bug Fixes
+
+* adjust for new icons ([83ff03c](https://github.com/municipio-se/gatsby-packages/commit/83ff03c211cc8d4a110724e24be05a3eaf5789a2))
+* unwrap gallery module ([b0e839a](https://github.com/municipio-se/gatsby-packages/commit/b0e839a6439c70367e3fffafa0406c18a3b11462))
+* use new icon names ([1511b5c](https://github.com/municipio-se/gatsby-packages/commit/1511b5c77bdd031c3a8fe36eab5320cc8f917af6))
+
+
+
 ### [0.19.8](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.19.7...@municipio/gatsby-theme-basic@0.19.8) (2021-11-04)
 
 
