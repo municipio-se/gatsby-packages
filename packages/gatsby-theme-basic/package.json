@@ -1,6 +1,6 @@
 {
   "name": "@municipio/gatsby-theme-basic",
-  "version": "0.19.7",
+  "version": "0.19.8",
   "description": "Gatsby theme for Municipio",
   "license": "MIT",
   "files": [
@@ -13,7 +13,7 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
-    "@whitespace/gatsby-theme-wordpress-basic": "^0.18.3",
+    "@whitespace/gatsby-theme-wordpress-basic": "^0.18.11",
     "autoprefixer": "^10.3.7",
     "axios": "^0.23.0",
     "classnames": "^2.3.1",

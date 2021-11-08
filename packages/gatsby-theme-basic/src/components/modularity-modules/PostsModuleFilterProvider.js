@@ -3,7 +3,7 @@ import {
   LazyMinisearchSearchBackendProvider,
   StateSearchParamsProvider,
 } from "@whitespace/gatsby-plugin-search";
-import { sortBy } from "lodash-es";
+import { getOptionsFromTaxonomy } from "@whitespace/gatsby-theme-wordpress-basic/src/utils";
 import PropTypes from "prop-types";
 import React from "react";
 
@@ -15,36 +15,6 @@ PostsModuleFilterProvider.propTypes = {
   paramTypes: PropTypes.any,
 };
 
-function fromFacetsToOptions(
-  counts,
-  {
-    showCounts,
-    sortBy: sortByIteratee = ({ count }) => -count,
-    label = (value) => value,
-    anyLabel = () => "Any",
-  } = {},
-) {
-  return [
-    {
-      value: "",
-      label: showCounts
-        ? `${anyLabel()} (${Object.values(counts).reduce(
-            (sum, count) => sum + count,
-            0,
-          )})`
-        : anyLabel(),
-    },
-    ...sortBy(
-      Object.entries(counts).map(([value, count]) => ({
-        value,
-        label: showCounts ? `${label(value)} (${count})` : label(value),
-        count,
-      })),
-      sortByIteratee,
-    ),
-  ];
-}
-
 export default withComponentDefaults(
   PostsModuleFilterProvider,
   "postsModuleFilterProvider",
@@ -54,16 +24,16 @@ function PostsModuleFilterProvider({
   attributesForFaceting = ["tags"],
   children,
   paramTypes = {
+    contentType: {
+      type: "string",
+      multi: false,
+    },
     tags: {
       type: "string",
       multi: true,
       control: "select",
-      options: ({ facets }) =>
-        facets?.tags &&
-        fromFacetsToOptions(facets?.tags, {
-          showCounts: false,
-        }),
-      // conditions: { contentType: (value) => value === "post" },
+      options: getOptionsFromTaxonomy("tag"),
+      conditions: { contentType: (value) => value === "post" },
     },
   },
 }) {

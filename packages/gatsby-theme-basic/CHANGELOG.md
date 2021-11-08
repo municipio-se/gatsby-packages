@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.19.8](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.19.7...@municipio/gatsby-theme-basic@0.19.8) (2021-11-04)
+
+
+### Bug Fixes
+
+* broken theme inheritance ([5077c64](https://github.com/municipio-se/gatsby-packages/commit/5077c64c1d37752ac8bae97525c9d939b7c53109))
+
+
+
 ### [0.19.7](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.19.6...@municipio/gatsby-theme-basic@0.19.7) (2021-11-03)
 
 

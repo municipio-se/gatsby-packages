@@ -1,5 +1,5 @@
-import "./theme/colors.css";
-import "./theme/Card.props.css";
+import "./colors.css";
+import "./Card.props.css";
 import { Image } from "@whitespace/gatsby-theme-wordpress-basic/src/components";
 
 export default {
