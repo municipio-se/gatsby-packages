@@ -13,6 +13,7 @@ PostsModuleFilterProvider.propTypes = {
   attributesForFaceting: PropTypes.any,
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
   paramTypes: PropTypes.any,
+  transformParams: PropTypes.func,
 };
 
 export default withComponentDefaults(
@@ -36,6 +37,7 @@ function PostsModuleFilterProvider({
       conditions: { contentType: (value) => value === "post" },
     },
   },
+  transformParams = (params) => params,
 }) {
   let { module } = useModularityModule();
 
@@ -54,6 +56,7 @@ function PostsModuleFilterProvider({
           settings={{
             attributesForFaceting,
           }}
+          transformParams={transformParams}
         >
           {(backendContext) =>
             typeof children === "function"
