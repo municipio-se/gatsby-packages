@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.19.10](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.19.9...@municipio/gatsby-theme-basic@0.19.10) (2021-11-09)
+
+
+### Features
+
+* allow setting of `transformProps` via theme ([ee6460f](https://github.com/municipio-se/gatsby-packages/commit/ee6460f3ba0c642ce515063ba603d57a9b97a685))
+
+
+
 ### [0.19.9](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.19.8...@municipio/gatsby-theme-basic@0.19.9) (2021-11-08)
 
 
