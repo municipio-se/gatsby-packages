@@ -1,24 +1,3 @@
-/**
-  moduleContactBackground: "#efefef",
-  moduleContactSurface: "#000",
-  moduleContactActionColor: "blue",
-  moduleContactActionDecoration: "underline",
-  moduleContactFontWeight: "400",
-  moduleContactFontStyle: "normal",
-  moduleContactBorderWidth: "0",
-  moduleContactBorderStyle: "inherit",
-  moduleContactBorderColor: "transparent",
-  moduleContactBorderRadius: "0",
-  moduleContactSpacing: "1rem",
-  moduleContactIconColor: "inherit",
-  moduleContactDivider: "1px solid #000",
-  moduleContactDividerSpacing: "1rem",
-  moduleContactGridDefault: "15rem",
-  moduleContactGridNarrow: "5rem";
-  moduleContactLabelWeight: "700";
-  moduleContactLabelSpacing: "0.25rem";
-**/
-
 .component {
   background: var(--module-contact-background);
   color: var(--module-contact-surface);
