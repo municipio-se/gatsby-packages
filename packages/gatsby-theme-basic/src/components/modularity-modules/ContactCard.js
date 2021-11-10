@@ -155,7 +155,7 @@ export default function ContactCard({
           </div>
           {openingHours && (
             <div className={clsx(styles.divider)}>
-              <H>Öppningstider</H>
+              <H>Öppettider</H>
               {processContent(openingHours)}
             </div>
           )}
