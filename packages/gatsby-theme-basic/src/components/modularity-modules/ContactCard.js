@@ -125,12 +125,8 @@ export default function ContactCard({
               socialMedia.map(({ media, url }, index) => {
                 return (
                   url && (
-                    <div className={clsx(styles.social)}>
-                      <a
-                        href={url}
-                        key={index}
-                        className={clsx(styles.iconLabel)}
-                      >
+                    <div className={clsx(styles.social)} key={index}>
+                      <a href={url} className={clsx(styles.iconLabel)}>
                         <Icon name={`${media}-bold`} />
                         <span>{SOCIAL_MEDIA_NAMES[media]}</span>
                       </a>
