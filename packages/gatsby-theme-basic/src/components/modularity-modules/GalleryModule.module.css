@@ -1,0 +1,113 @@
+.component {
+  width: 100%;
+  height: 100%;
+}
+
+.inner {
+  position: relative;
+}
+
+.dots li {
+  margin: 0 0.25rem;
+}
+
+.dots :global(.paging-item) svg {
+  display: none;
+}
+
+.dots :global(.paging-item) button {
+  border: 1px solid var(--gallery-dot-color, #fff) !important;
+  border-radius: 50% !important;
+  width: 1rem !important;
+  height: 1rem !important;
+  background: none;
+}
+
+.dots :global(.paging-item.active) button {
+  border: 1px solid var(--gallery-dot-color, #fff) !important;
+  border-radius: 50% !important;
+  width: 1rem !important;
+  height: 1rem !important;
+  background-color: var(--gallery-dot-color, #fff) !important;
+  opacity: 1 !important;
+}
+
+.arrow {
+  background-color: var(--gallery-arrow-background-color, #fff);
+  color: var(--gallery-arrow-color, #000);
+  border: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--gallery-arrow-background-color, #fff);
+    color: var(--gallery-arrow-color, #000);
+  }
+
+  @media screen and (min-width: 40rem) {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
+.arrowDisabled {
+  background-color: var(--gallery-arrow-disabled-background-color, #f9f9f9);
+  color: var(--gallery-arrow-disabled-color, #aeaeae);
+  pointer-events: none;
+}
+
+.arrowNext {
+  right: 1.5rem;
+
+  &:active,
+  &:focus {
+    border-radius: 50%;
+  }
+}
+
+.arrowPrev {
+  left: 1.5rem;
+
+  &:active,
+  &:focus {
+    border-radius: 50%;
+  }
+}
+
+.arrowIcon {
+  width: 1em;
+  height: 1em;
+}
+
+.autoplayControl {
+  cursor: pointer;
+  position: absolute;
+  bottom: 1rem;
+  right: 1.5rem;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  padding: 0;
+}
+
+.autoPlayControlIcon {
+  color: var(--gallery-autoplay-control-color, #fff);
+  pointer-events: none;
+
+  @media screen and (min-width: 40rem) {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
+.autoplayControlWithCaption {
+}

@@ -1,5 +1,7 @@
-import { Image } from "@whitespace/gatsby-theme-wordpress-basic/src/components";
-import { useHTMLProcessor } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/html-processor";
+import {
+  HTML,
+  Image,
+} from "@whitespace/gatsby-theme-wordpress-basic/src/components";
 import clsx from "clsx";
 import PropTypes from "prop-types";
 import React from "react";
@@ -47,9 +49,6 @@ export default function ImageModule({
     } = {},
   } = module;
 
-  const { processContent } = useHTMLProcessor();
-  let processedCaption = processContent(modImageCaption || caption);
-
   return (
     <ModuleWrapper
       title={title}
@@ -59,7 +58,7 @@ export default function ImageModule({
       <Image
         alt={alt}
         base64={base64}
-        caption={processedCaption}
+        caption={<HTML>{modImageCaption || caption}</HTML>}
         className={clsx(styles.image)}
         credit={credit}
         height={height}

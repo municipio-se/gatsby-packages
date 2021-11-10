@@ -1,10 +1,8 @@
+import { PageContent } from "@whitespace/gatsby-theme-wordpress-basic/src/components";
 import * as defaultStyles from "@whitespace/gatsby-theme-wordpress-basic/src/components/ArticleBody.module.css";
 import TextContent from "@whitespace/gatsby-theme-wordpress-basic/src/components/TextContent";
 import WPBlocks from "@whitespace/gatsby-theme-wordpress-basic/src/components/WPBlocks";
-import {
-  useHTMLProcessor,
-  usePageContext,
-} from "@whitespace/gatsby-theme-wordpress-basic/src/hooks";
+import { usePageContext } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks";
 import clsx from "clsx";
 import PropTypes from "prop-types";
 import React from "react";
@@ -26,9 +24,6 @@ export default function ArticleBody({ styles = defaultStyles, ...restProps }) {
     },
   } = usePageContext();
 
-  const { processPageContent } = useHTMLProcessor();
-  let { preamble, content } = processPageContent(contentHTML, { contentMedia });
-
   return (
     <TextContent {...restProps}>
       {blocksJSON ? (
@@ -39,11 +34,17 @@ export default function ArticleBody({ styles = defaultStyles, ...restProps }) {
           />
         </>
       ) : (
-        <>
-          {preamble && <div className={clsx(styles.preamble)}>{preamble}</div>}
-          {content}
-          <ModularityArea area={contentArea} />
-        </>
+        <PageContent input={contentHTML} contentMedia={contentMedia}>
+          {({ preamble, content }) => (
+            <>
+              {preamble && (
+                <div className={clsx(styles.preamble)}>{preamble}</div>
+              )}
+              {content}
+              <ModularityArea area={contentArea} />
+            </>
+          )}
+        </PageContent>
       )}
     </TextContent>
   );

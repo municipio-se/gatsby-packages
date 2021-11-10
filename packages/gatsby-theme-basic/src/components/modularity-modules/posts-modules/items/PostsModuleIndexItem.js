@@ -1,15 +1,17 @@
 import { css } from "@emotion/react";
+import {
+  Card,
+  CardContent,
+  CardMedia,
+  CardMeta,
+  CardTitle,
+} from "@whitespace/components";
 import { Time } from "@whitespace/gatsby-theme-wordpress-basic/src/components";
 import clsx from "clsx";
 import { kebabCase } from "lodash";
 import PropTypes from "prop-types";
 import React from "react";
 
-import Card from "../../../Card";
-import CardContent from "../../../CardContent";
-import CardMedia from "../../../CardMedia";
-import CardMeta from "../../../CardMeta";
-import CardTitle from "../../../CardTitle";
 import Taxonomies from "../../../Taxonomies";
 
 import * as defaultStyles from "./PostsModuleIndexItem.module.css";
@@ -26,7 +28,6 @@ PostsModuleIndexItem.propTypes = {
     url: PropTypes.string,
     taxonomies: PropTypes.arrayOf(PropTypes.object),
   }),
-  visibleFields: PropTypes.arrayOf(PropTypes.string),
   styles: PropTypes.objectOf(PropTypes.string),
 };
 
@@ -37,20 +38,24 @@ export default function PostsModuleIndexItem({
     day: "numeric",
   },
   item,
-  visibleFields,
   styles = defaultStyles,
   ...restProps
 }) {
   const { dateGmt, excerpt, image, title, url, theme, taxonomies } = item;
-  let showDate = visibleFields.includes("date");
-  let showImage = visibleFields.includes("image");
   return (
     <Card
+      link={{ url }}
       css={css({
         "--card-background": theme
           ? `var(--brand-color-${kebabCase(theme)})`
           : null,
+        "--card-hover-background": theme
+          ? `var(--brand-color-${kebabCase(theme)})`
+          : null,
         "--card-color": theme
+          ? `var(--brand-color-${kebabCase(theme)}-text)`
+          : null,
+        "--card-hover-color": theme
           ? `var(--brand-color-${kebabCase(theme)}-text)`
           : null,
         "--card-meta-color": theme
@@ -59,10 +64,9 @@ export default function PostsModuleIndexItem({
       })}
       {...restProps}
     >
-      {showImage && <CardMedia image={image} />}
       <CardContent>
-        <CardTitle link={{ url }}>{title}</CardTitle>
-        {showDate && dateGmt && (
+        <CardTitle>{title}</CardTitle>
+        {dateGmt && (
           <CardMeta>
             <Time
               className={clsx(styles.date)}
@@ -71,11 +75,12 @@ export default function PostsModuleIndexItem({
             />
           </CardMeta>
         )}
-        <p className={clsx(styles.excerpt)}>{excerpt}</p>
+        {excerpt && <p className={clsx(styles.excerpt)}>{excerpt}</p>}
         {taxonomies && taxonomies.length > 0 && (
           <Taxonomies taxonomies={taxonomies} />
         )}
       </CardContent>
+      {image && <CardMedia image={image} />}
     </Card>
   );
 }

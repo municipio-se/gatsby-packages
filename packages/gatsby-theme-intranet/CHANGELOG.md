@@ -3,6 +3,123 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.19.11](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-intranet@0.19.10...@municipio/gatsby-theme-intranet@0.19.11) (2021-11-09)
+
+**Note:** Version bump only for package @municipio/gatsby-theme-intranet
+
+
+
+
+
+### [0.19.10](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-intranet@0.19.9...@municipio/gatsby-theme-intranet@0.19.10) (2021-11-08)
+
+**Note:** Version bump only for package @municipio/gatsby-theme-intranet
+
+
+
+
+
+### [0.19.9](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-intranet@0.19.8...@municipio/gatsby-theme-intranet@0.19.9) (2021-11-04)
+
+
+### Bug Fixes
+
+* broken theme inheritance ([5077c64](https://github.com/municipio-se/gatsby-packages/commit/5077c64c1d37752ac8bae97525c9d939b7c53109))
+
+
+
+### [0.19.8](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-intranet@0.19.7...@municipio/gatsby-theme-intranet@0.19.8) (2021-11-03)
+
+**Note:** Version bump only for package @municipio/gatsby-theme-intranet
+
+
+
+
+
+### [0.19.7](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-intranet@0.19.6...@municipio/gatsby-theme-intranet@0.19.7) (2021-11-03)
+
+
+### Features
+
+* allow user to reorder tools in sidebar ([40a40cd](https://github.com/municipio-se/gatsby-packages/commit/40a40cd71853f8adcf9899dc2cd3938f83bd80e1))
+
+
+
+### [0.19.6](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-intranet@0.19.5...@municipio/gatsby-theme-intranet@0.19.6) (2021-10-27)
+
+**Note:** Version bump only for package @municipio/gatsby-theme-intranet
+
+
+
+
+
+### [0.19.5](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-intranet@0.19.4...@municipio/gatsby-theme-intranet@0.19.5) (2021-10-25)
+
+
+### Bug Fixes
+
+* disable ul margin on dropdownList ([9d84776](https://github.com/municipio-se/gatsby-packages/commit/9d847762ab3ad9af9561405af98705d22301f196))
+
+
+
+### [0.19.4](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-intranet@0.19.3...@municipio/gatsby-theme-intranet@0.19.4) (2021-10-14)
+
+**Note:** Version bump only for package @municipio/gatsby-theme-intranet
+
+
+
+
+
+### [0.19.3](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-intranet@0.19.2...@municipio/gatsby-theme-intranet@0.19.3) (2021-10-14)
+
+**Note:** Version bump only for package @municipio/gatsby-theme-intranet
+
+
+
+
+
+### [0.19.2](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-intranet@0.19.1...@municipio/gatsby-theme-intranet@0.19.2) (2021-10-11)
+
+**Note:** Version bump only for package @municipio/gatsby-theme-intranet
+
+
+
+
+
+### [0.19.1](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-intranet@0.19.0...@municipio/gatsby-theme-intranet@0.19.1) (2021-10-08)
+
+
+### Features
+
+* add "skip to main content" link ([87fc8b2](https://github.com/municipio-se/gatsby-packages/commit/87fc8b2c8d9bc10243df9937f6c7a842e0d538f0))
+
+
+
+## [0.19.0](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-intranet@0.18.2...@municipio/gatsby-theme-intranet@0.19.0) (2021-10-06)
+
+**Note:** Version bump only for package @municipio/gatsby-theme-intranet
+
+
+
+
+
+### [0.18.2](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-intranet@0.18.1...@municipio/gatsby-theme-intranet@0.18.2) (2021-10-04)
+
+**Note:** Version bump only for package @municipio/gatsby-theme-intranet
+
+
+
+
+
+### [0.18.1](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-intranet@0.18.0...@municipio/gatsby-theme-intranet@0.18.1) (2021-09-23)
+
+
+### Bug Fixes
+
+* unitialized variable ([200eca1](https://github.com/municipio-se/gatsby-packages/commit/200eca1e524f5d0f9a7f3caf7000c32356d9139a))
+
+
+
 ## [0.18.0](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-intranet@0.17.1...@municipio/gatsby-theme-intranet@0.18.0) (2021-09-23)
 
 

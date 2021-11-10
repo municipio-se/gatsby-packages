@@ -29,22 +29,9 @@ export default function TableModule({
   const tableData = JSON.parse(modTable);
 
   return (
-    <div className={clsx(styles.component, className)} {...restProps}>
-      <ModuleWrapper
-        as={"table"}
-        title={title}
-        components={{
-          // eslint-disable-next-line react/display-name, react/prop-types
-          ModuleWrapperHeader: ({ children, className, ...restProps }) => (
-            <caption className={clsx(styles.title, className)} {...restProps}>
-              {children}
-            </caption>
-          ),
-          ModuleWrapperTitle: "span",
-        }}
-        className={clsx(styles.table)}
-        {...restProps}
-      >
+    <ModuleWrapper className={clsx(styles.component, className)} {...restProps}>
+      <table className={clsx(styles.table)}>
+        <caption className={clsx(styles.title)}>{title}</caption>
         <thead className={clsx(styles.head)}>
           <tr className={clsx(styles.headTr)}>
             {tableData[0].map((title, index) => {
@@ -71,7 +58,7 @@ export default function TableModule({
             );
           })}
         </tbody>
-      </ModuleWrapper>
-    </div>
+      </table>
+    </ModuleWrapper>
   );
 }

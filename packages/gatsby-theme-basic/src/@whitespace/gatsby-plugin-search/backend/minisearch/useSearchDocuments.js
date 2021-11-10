@@ -1,3 +1,5 @@
+import formatDate from "date-fns/format";
+import parseDate from "date-fns/parseJSON";
 import { graphql, useStaticQuery } from "gatsby";
 
 function htmlToText(html) {
@@ -11,6 +13,8 @@ function defaultContentNodeFields(source) {
     contentType: source.contentType?.node.name,
     label: source.title,
     date: source.dateGmt,
+    year: source.dateGmt && formatDate(parseDate(source.dateGmt), "yyyy"),
+    month: source.dateGmt && formatDate(parseDate(source.dateGmt), "yyyy-MM"),
     image: source.featuredImage?.node,
     text: [
       // Post content
@@ -45,7 +49,7 @@ export default function useSearchDocuments() {
   return [
     data.contentNodes.nodes.map((source) => ({
       ...defaultContentNodeFields(source),
-      tags: source.tags?.nodes,
+      tags: source.tags?.nodes?.map((tag) => tag?.slug),
     })),
   ];
 }

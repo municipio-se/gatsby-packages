@@ -1,6 +1,6 @@
 // import { Icon, RoundIcon } from "gatsby-theme-municipio/src/components/Icon";
 // import { FluidImage } from "gatsby-theme-municipio/src/components/Image";
-import { Icon } from "@whitespace/components";
+import { Icon, SkipTo } from "@whitespace/components";
 import { Image } from "@whitespace/gatsby-theme-wordpress-basic/src/components";
 import HeaderLogo from "@whitespace/gatsby-theme-wordpress-basic/src/components/HeaderLogo";
 import clsx from "clsx";
@@ -36,6 +36,7 @@ export default function Header({ image, ...restProps }) {
   return (
     <header className={clsx(styles.component, styles.sticky)} {...restProps}>
       <div className={clsx(styles.wrapper)}>
+        <SkipTo />
         <HeaderLogo className={clsx(styles.logo)} linkTo="/" />
         <div
           className={clsx(styles.dropdownTrigger)}

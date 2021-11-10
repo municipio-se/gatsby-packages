@@ -1,7 +1,7 @@
+import parentTheme from "@municipio/gatsby-theme-basic/src/theme";
 import { mergeThemes } from "@whitespace/components";
-import parentTheme from "@whitespace/gatsby-theme-wordpress-basic/src/theme";
 
-import childTheme from "../../theme";
+import childTheme from "../../../theme";
 
 var theme = mergeThemes(parentTheme, childTheme);
 

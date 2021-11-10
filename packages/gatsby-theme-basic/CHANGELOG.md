@@ -3,6 +3,138 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.19.10](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.19.9...@municipio/gatsby-theme-basic@0.19.10) (2021-11-09)
+
+
+### Features
+
+* allow setting of `transformProps` via theme ([ee6460f](https://github.com/municipio-se/gatsby-packages/commit/ee6460f3ba0c642ce515063ba603d57a9b97a685))
+
+
+
+### [0.19.9](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.19.8...@municipio/gatsby-theme-basic@0.19.9) (2021-11-08)
+
+
+### Features
+
+* implement Gallery Module ([e7ec4b0](https://github.com/municipio-se/gatsby-packages/commit/e7ec4b064007be532cca1fc3da582833ef704dea))
+
+
+### Bug Fixes
+
+* adjust for new icons ([83ff03c](https://github.com/municipio-se/gatsby-packages/commit/83ff03c211cc8d4a110724e24be05a3eaf5789a2))
+* unwrap gallery module ([b0e839a](https://github.com/municipio-se/gatsby-packages/commit/b0e839a6439c70367e3fffafa0406c18a3b11462))
+* use new icon names ([1511b5c](https://github.com/municipio-se/gatsby-packages/commit/1511b5c77bdd031c3a8fe36eab5320cc8f917af6))
+
+
+
+### [0.19.8](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.19.7...@municipio/gatsby-theme-basic@0.19.8) (2021-11-04)
+
+
+### Bug Fixes
+
+* broken theme inheritance ([5077c64](https://github.com/municipio-se/gatsby-packages/commit/5077c64c1d37752ac8bae97525c9d939b7c53109))
+
+
+
+### [0.19.7](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.19.6...@municipio/gatsby-theme-basic@0.19.7) (2021-11-03)
+
+
+### Features
+
+* add front-end filtering in posts module ([3339541](https://github.com/municipio-se/gatsby-packages/commit/33395419c90dca9875ca3eedf1b5ae59fec9cd64))
+
+
+
+### [0.19.6](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.19.5...@municipio/gatsby-theme-basic@0.19.6) (2021-10-27)
+
+
+### Bug Fixes
+
+* don’t show iamge or excerpt in mixed post module layout ([4a8b342](https://github.com/municipio-se/gatsby-packages/commit/4a8b342cd11158d92c65ecd71adbf9d501b5407b))
+* hide post module image, date or image based on editor's choice ([c5d3c78](https://github.com/municipio-se/gatsby-packages/commit/c5d3c7878b6684434a7793cc168652dbe6c40589))
+
+
+
+### [0.19.5](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.19.4...@municipio/gatsby-theme-basic@0.19.5) (2021-10-25)
+
+
+### Bug Fixes
+
+* add year and month facets ([fa28c8c](https://github.com/municipio-se/gatsby-packages/commit/fa28c8c25f40e077c4e6a3f7586690d53fc53bf9))
+* tag facets were objects ([7af7009](https://github.com/municipio-se/gatsby-packages/commit/7af7009188d4fc5c6af71d315b34f300f5d658d8))
+* use correct theme variables for teasers so that dates are visible ([6fcad2f](https://github.com/municipio-se/gatsby-packages/commit/6fcad2f6db4e3e4901664b0bb1afb62f116dd3b0))
+
+
+
+### [0.19.4](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.19.3...@municipio/gatsby-theme-basic@0.19.4) (2021-10-14)
+
+**Note:** Version bump only for package @municipio/gatsby-theme-basic
+
+
+
+
+
+### [0.19.3](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.19.2...@municipio/gatsby-theme-basic@0.19.3) (2021-10-14)
+
+
+### Bug Fixes
+
+* forward icon correctly to dashboard menu ([f9a7b40](https://github.com/municipio-se/gatsby-packages/commit/f9a7b408f8ac0ed51046d8f36de73cf7a4a7c682))
+
+
+
+### [0.19.2](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.19.1...@municipio/gatsby-theme-basic@0.19.2) (2021-10-11)
+
+
+### Features
+
+* implement Menu module ([1539627](https://github.com/municipio-se/gatsby-packages/commit/1539627f575544341174e37a47079710d10a30aa))
+
+
+
+### [0.19.1](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.19.0...@municipio/gatsby-theme-basic@0.19.1) (2021-10-08)
+
+**Note:** Version bump only for package @municipio/gatsby-theme-basic
+
+
+
+
+
+## [0.19.0](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.18.2...@municipio/gatsby-theme-basic@0.19.0) (2021-10-06)
+
+
+### Features
+
+* add support for horizontal card ([a373b2e](https://github.com/municipio-se/gatsby-packages/commit/a373b2e7d0fc828e98d724549e2496690f039db0))
+* add support for horizontal card ([d5a2c52](https://github.com/municipio-se/gatsby-packages/commit/d5a2c529e7ddb1ff86e0f418926fc64f1618f61b))
+
+
+### Bug Fixes
+
+* add support for automatic horizontal card with usecomponentWidth ([a7eaacd](https://github.com/municipio-se/gatsby-packages/commit/a7eaacdec1622732ae2272db9da62ec8f08e5173))
+
+
+
+### [0.18.2](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.18.1...@municipio/gatsby-theme-basic@0.18.2) (2021-10-04)
+
+
+### Features
+
+* implement Video module ([9c66317](https://github.com/municipio-se/gatsby-packages/commit/9c66317d5ff2742adead43f0ede746a41762b448))
+
+
+
+### [0.18.1](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.18.0...@municipio/gatsby-theme-basic@0.18.1) (2021-09-23)
+
+
+### Bug Fixes
+
+* card image margin ([b014da6](https://github.com/municipio-se/gatsby-packages/commit/b014da631f8d86ba638a0c938db54c8b065376e5))
+* wrong wrapper for table module ([f937db4](https://github.com/municipio-se/gatsby-packages/commit/f937db4296a2f435a3a8b7ddf0111ed71aa53a65))
+
+
+
 ## [0.18.0](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.17.2...@municipio/gatsby-theme-basic@0.18.0) (2021-09-23)
 
 
