@@ -18,6 +18,7 @@
 .wrapper {
   display: flex;
   flex-direction: column;
+  margin-top: var(--module-contact-group-spacing);
   gap: var(--module-contact-group-spacing);
 }
 
@@ -42,6 +43,9 @@
   display: block;
   margin-bottom: var(--module-contact-label-spacing);
   font-weight: var(--module-contact-label-weight);
+}
+
+.name {
 }
 
 .photo {

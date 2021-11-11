@@ -114,41 +114,45 @@ export default function ContactCard({
                 );
               })}
           </div>
-          <div
-            className={clsx(
-              styles.columns,
-              styles.columnsNarrow,
-              styles.divider,
-            )}
-          >
-            {socialMedia &&
-              socialMedia.map(({ media, url }, index) => {
-                return (
-                  url && (
-                    <div className={clsx(styles.social)} key={index}>
-                      <a href={url} className={clsx(styles.iconLabel)}>
-                        <Icon name={`${media}-bold`} />
-                        <span>{SOCIAL_MEDIA_NAMES[media]}</span>
-                      </a>
-                    </div>
-                  )
-                );
-              })}
-          </div>
-          <div className={clsx(styles.columns, styles.divider)}>
-            {address && (
-              <div className={clsx(styles.group)}>
-                <H>Adress</H>
-                {processContent(address)}
-              </div>
-            )}
-            {visitingAddress && (
-              <div className={clsx(styles.group)}>
-                <H>Besöksadress</H>
-                {processContent(visitingAddress)}
-              </div>
-            )}
-          </div>
+          {socialMedia && (
+            <div
+              className={clsx(
+                styles.columns,
+                styles.columnsNarrow,
+                styles.divider,
+              )}
+            >
+              {socialMedia &&
+                socialMedia.map(({ media, url }, index) => {
+                  return (
+                    url && (
+                      <div className={clsx(styles.social)} key={index}>
+                        <a href={url} className={clsx(styles.iconLabel)}>
+                          <Icon name={`${media}-bold`} />
+                          <span>{SOCIAL_MEDIA_NAMES[media]}</span>
+                        </a>
+                      </div>
+                    )
+                  );
+                })}
+            </div>
+          )}
+          {(address || visitingAddress) && (
+            <div className={clsx(styles.columns, styles.divider)}>
+              {address && (
+                <div className={clsx(styles.group)}>
+                  <H>Adress</H>
+                  {processContent(address)}
+                </div>
+              )}
+              {visitingAddress && (
+                <div className={clsx(styles.group)}>
+                  <H>Besöksadress</H>
+                  {processContent(visitingAddress)}
+                </div>
+              )}
+            </div>
+          )}
           {openingHours && (
             <div className={clsx(styles.divider)}>
               <H>Öppettider</H>
