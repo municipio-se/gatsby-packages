@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.20.0](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.19.10...@municipio/gatsby-theme-basic@0.20.0) (2021-11-22)
+
+
+### ⚠ BREAKING CHANGES
+
+* update theme
+
+### Code Refactoring
+
+* update theme ([cfa02d6](https://github.com/municipio-se/gatsby-packages/commit/cfa02d620cc1452be74734d279053b4db8d116bc))
+
+
+
 ### [0.19.10](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.19.9...@municipio/gatsby-theme-basic@0.19.10) (2021-11-09)
 
 
