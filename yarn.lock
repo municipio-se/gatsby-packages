@@ -3365,10 +3365,10 @@
     "@webassemblyjs/ast" "1.11.1"
     "@xtuc/long" "4.2.2"
 
-"@whitespace/components@^0.13.1":
-  version "0.13.6"
-  resolved "https://registry.yarnpkg.com/@whitespace/components/-/components-0.13.6.tgz#0ebbcfb1fe015fa644eef366ea76106c8d7eb587"
-  integrity sha512-z8/Bp0fkSAwYteauXOb0omEztw3N6UXnYJ3cehJZw4+H0N5LpIoXgksv2JcPHZF9/8HchsINtujC5T0UuZCd+Q==
+"@whitespace/components@^0.13.7":
+  version "0.13.8"
+  resolved "https://registry.yarnpkg.com/@whitespace/components/-/components-0.13.8.tgz#0c2512d38c3c31828493cd4e4cb344619bed7127"
+  integrity sha512-XN7Ht4A1Wu2pvJHs2EazvJKU0d5VyF8WhS5rLcytcyEs1BUu+srA2f2d0UL5FEen5DffXYMvEg/rFPWshmjC2Q==
   dependencies:
     "@jfrk/react-heading-levels" "^1.0.0"
     clsx "^1.1.1"
@@ -3408,10 +3408,10 @@
   dependencies:
     prop-types "^15.7.2"
 
-"@whitespace/gatsby-plugin-search@^0.12.12":
-  version "0.12.12"
-  resolved "https://registry.yarnpkg.com/@whitespace/gatsby-plugin-search/-/gatsby-plugin-search-0.12.12.tgz#58e32fcb630115dfa9a68c15c9a2cc2dd791ec29"
-  integrity sha512-rHbYxquTWB3jF3a9fcJ6Z1l2OHAdZJYy/q6te00jQuTctSI0Nx57w9p4U+uZ/elqNvSDAiWIqRIkugg5luRy5A==
+"@whitespace/gatsby-plugin-search@^0.13.0":
+  version "0.13.0"
+  resolved "https://registry.yarnpkg.com/@whitespace/gatsby-plugin-search/-/gatsby-plugin-search-0.13.0.tgz#2172533028bcdbb99c0f22714a4043df55285b67"
+  integrity sha512-nt/LugH6uNtHMX1TfUzz2raJnxMa+G2ZjQSoKb+ndOnms/+JqbjmMKFhaf8klLWDyZgHdYTNH0tvr0Cx6FcHVg==
   dependencies:
     "@jfrk/react-heading-levels" "^1.0.0"
     "@whitespace/gatsby-hooks" "^0.5.0"
@@ -3420,10 +3420,10 @@
     minisearch "^3.1.0"
     react-select "^5.1.0"
 
-"@whitespace/gatsby-theme-wordpress-basic@^0.18.11":
-  version "0.18.11"
-  resolved "https://registry.yarnpkg.com/@whitespace/gatsby-theme-wordpress-basic/-/gatsby-theme-wordpress-basic-0.18.11.tgz#01a6115275bdcb1f5a1135ab92edbc0fa2efe583"
-  integrity sha512-134AsnRkCk565eGZLs4VqHsPqXCUpbGkjXZYGI0gGCHpL+xqj+r0wBEvY/tEI7VL4QGNex9YnE/RrsOlQC1tfA==
+"@whitespace/gatsby-theme-wordpress-basic@^0.19":
+  version "0.19.0"
+  resolved "https://registry.yarnpkg.com/@whitespace/gatsby-theme-wordpress-basic/-/gatsby-theme-wordpress-basic-0.19.0.tgz#9939f5611e217f02585e7c40f44916ff37ac3be8"
+  integrity sha512-WLrUNrkvLKy4l42JNXp/uzSKJZoOHumYOUVBsqLoCwtj1yL1nCKwgbJ0SMYkNO1EHhSQswP/m1hr1SGfJHPJ+w==
   dependencies:
     "@apollo/react-hooks" "^4.0.0"
     "@emotion/css" "^11.5.0"
@@ -3431,11 +3431,11 @@
     "@emotion/styled" "^11.3.0"
     "@jfrk/react-heading-levels" "^1.0.0"
     "@jfrk/react-id" "^1.0.0"
-    "@whitespace/components" "^0.13.1"
+    "@whitespace/components" "^0.13.7"
     "@whitespace/gatsby-hooks" "^0.5.0"
     "@whitespace/gatsby-plugin-i18next" "^0.4.4"
     "@whitespace/gatsby-plugin-page-wrapper" "^0.3.3"
-    "@whitespace/gatsby-plugin-search" "^0.12.12"
+    "@whitespace/gatsby-plugin-search" "^0.13.0"
     apollo-boost "^0.4.9"
     apollo-cache-inmemory "^1.6.6"
     clsx "^1.1.1"
@@ -6421,7 +6421,7 @@ eslint-webpack-plugin@^2.5.4:
     normalize-path "^3.0.0"
     schema-utils "^3.0.0"
 
-eslint@^7.32.0:
+eslint@^7, eslint@^7.32.0:
   version "7.32.0"
   resolved "https://registry.yarnpkg.com/eslint/-/eslint-7.32.0.tgz#c6d328a14be3fb08c8d1d21e12c02fdb7a2a812d"
   integrity sha512-VHZ8gX+EDfz+97jGcgyGCyRia/dPOd6Xh9yPv8Bl1+SoaIwD+a/vlrOmGRUyOYu7MwUhc7CxqeaDZU13S4+EpA==
@@ -10843,6 +10843,18 @@ nuka-carousel@^4.8.0:
   version "4.8.0"
   resolved "https://registry.yarnpkg.com/nuka-carousel/-/nuka-carousel-4.8.0.tgz#0d012615cbc13e4e02fb90793ca12e392d24354e"
   integrity sha512-yZ20t2OjV1Rp2bV7IhtDyW55kag1V3yCgwIKFy39z6B1aqpYS1ou75zKP341tIIrluYVO9WGTDtFVr/vq2xQpw==
+  dependencies:
+    csstype "^2.6.6"
+    d3-ease "^1.0.3"
+    exenv "^1.2.0"
+    prop-types "^15.6.0"
+    react-move "^6.5.0"
+    wicg-inert "^3.1.0"
+
+nuka-carousel@^4.8.1:
+  version "4.8.3"
+  resolved "https://registry.yarnpkg.com/nuka-carousel/-/nuka-carousel-4.8.3.tgz#98840e7a6eb205ea7733e56c9f429081ee1e2d0d"
+  integrity sha512-wamnVMYu7bbsYc+w3XJ0zaJ6koGKsg98uMTl7mW8lXaSr29bNvMTpouA0iSoFauRbhjKp+75VEdnhTWS2tFEVg==
   dependencies:
     csstype "^2.6.6"
     d3-ease "^1.0.3"
