@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.20.2](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.20.1...@municipio/gatsby-theme-basic@0.20.2) (2021-11-24)
+
+
+### Features
+
+* return fragment from ModularityArea if no props are passed ([cbd175e](https://github.com/municipio-se/gatsby-packages/commit/cbd175e476f48a185c54faa0a09abca6e9241069))
+
+
+
 ### [0.20.1](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.20.0...@municipio/gatsby-theme-basic@0.20.1) (2021-11-22)
 
 **Note:** Version bump only for package @municipio/gatsby-theme-basic
