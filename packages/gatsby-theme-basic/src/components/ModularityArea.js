@@ -1,3 +1,4 @@
+import { MaybeFragment } from "@whitespace/components";
 import clsx from "clsx";
 import PropTypes from "prop-types";
 import React from "react";
@@ -27,7 +28,11 @@ export default function ModularityArea({
   return (
     <modularityAreaContext.Provider value={area}>
       {!!modules && (
-        <div className={clsx(styles.component, className)} {...restProps}>
+        <MaybeFragment
+          as="div"
+          className={clsx(styles.component, className)}
+          {...restProps}
+        >
           {modules.map(({ hidden, module, columnWidth, ...rest }, index) => {
             if (hidden || !module) {
               return null;
@@ -41,7 +46,7 @@ export default function ModularityArea({
               </modularityModuleContext.Provider>
             );
           })}
-        </div>
+        </MaybeFragment>
       )}
     </modularityAreaContext.Provider>
   );
