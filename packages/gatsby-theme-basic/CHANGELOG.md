@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.20.4](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.20.3...@municipio/gatsby-theme-basic@0.20.4) (2021-11-26)
+
+
+### Bug Fixes
+
+* Module column widths ([af29418](https://github.com/municipio-se/gatsby-packages/commit/af294183a9aa92f2bf66fc8c043e0384989f19f3))
+* TextModule font size ([cb5171f](https://github.com/municipio-se/gatsby-packages/commit/cb5171f6a0115cbcaca0bea35566698c524581a9))
+
+
+
 ### [0.20.3](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.20.2...@municipio/gatsby-theme-basic@0.20.3) (2021-11-25)
 
 **Note:** Version bump only for package @municipio/gatsby-theme-basic

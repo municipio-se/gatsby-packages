@@ -1,6 +1,6 @@
 {
   "name": "@municipio/gatsby-theme-intranet",
-  "version": "0.20.3",
+  "version": "0.20.4",
   "description": "Gatsby theme for Municipio intranet",
   "license": "MIT",
   "files": [
@@ -13,7 +13,7 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
-    "@municipio/gatsby-theme-basic": "^0.20.3",
+    "@municipio/gatsby-theme-basic": "^0.20.4",
     "array-move": "^4.0.0",
     "http-proxy-middleware": "^2.0.1",
     "react-accessible-dropdown-menu-hook": "^3.1.0",
