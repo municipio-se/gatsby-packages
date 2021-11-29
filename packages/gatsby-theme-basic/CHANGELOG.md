@@ -3,6 +3,54 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.20.4](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.20.3...@municipio/gatsby-theme-basic@0.20.4) (2021-11-26)
+
+
+### Bug Fixes
+
+* Module column widths ([af29418](https://github.com/municipio-se/gatsby-packages/commit/af294183a9aa92f2bf66fc8c043e0384989f19f3))
+* TextModule font size ([cb5171f](https://github.com/municipio-se/gatsby-packages/commit/cb5171f6a0115cbcaca0bea35566698c524581a9))
+
+
+
+### [0.20.3](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.20.2...@municipio/gatsby-theme-basic@0.20.3) (2021-11-25)
+
+**Note:** Version bump only for package @municipio/gatsby-theme-basic
+
+
+
+
+
+### [0.20.2](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.20.1...@municipio/gatsby-theme-basic@0.20.2) (2021-11-24)
+
+
+### Features
+
+* return fragment from ModularityArea if no props are passed ([cbd175e](https://github.com/municipio-se/gatsby-packages/commit/cbd175e476f48a185c54faa0a09abca6e9241069))
+
+
+
+### [0.20.1](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.20.0...@municipio/gatsby-theme-basic@0.20.1) (2021-11-22)
+
+**Note:** Version bump only for package @municipio/gatsby-theme-basic
+
+
+
+
+
+## [0.20.0](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.19.10...@municipio/gatsby-theme-basic@0.20.0) (2021-11-22)
+
+
+### ⚠ BREAKING CHANGES
+
+* update theme
+
+### Code Refactoring
+
+* update theme ([cfa02d6](https://github.com/municipio-se/gatsby-packages/commit/cfa02d620cc1452be74734d279053b4db8d116bc))
+
+
+
 ### [0.19.10](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.19.9...@municipio/gatsby-theme-basic@0.19.10) (2021-11-09)
 
 

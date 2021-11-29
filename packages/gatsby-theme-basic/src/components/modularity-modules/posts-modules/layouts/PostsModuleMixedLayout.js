@@ -4,7 +4,6 @@ import { kebabCase } from "lodash";
 import PropTypes from "prop-types";
 import React from "react";
 
-import * as teaserStyles from "../../../CompactTeaser.module.css";
 import Grid from "../../../Grid";
 import ModuleWrapper from "../../../ModuleWrapper";
 import PostsModuleHeader from "../../../PostsModuleHeader";
@@ -97,7 +96,6 @@ export default function PostsModuleMixedLayout({
                 {secondaryItems.map((item, index) => {
                   return (
                     <ListPostsModuleItem
-                      teaserStyles={teaserStyles}
                       item={{ ...item, image: null, excerpt: null }}
                       className={clsx(styles.secondaryItem)}
                       key={index}

@@ -15,7 +15,7 @@ PostsModuleBlocksItem.propTypes = {
   dateFormat: PropTypes.objectOf(PropTypes.string),
   item: PropTypes.shape({
     content: PropTypes.node,
-    dateGmt: PropTypes.string,
+    date: PropTypes.string,
     excerpt: PropTypes.node,
     image: PropTypes.object,
     theme: PropTypes.string,
@@ -36,7 +36,7 @@ export default function PostsModuleBlocksItem({
   styles = defaultStyles,
   ...restProps
 }) {
-  const { dateGmt, excerpt, title, url, theme } = item;
+  const { date, excerpt, title, url, theme } = item;
 
   return (
     <Card
@@ -64,11 +64,11 @@ export default function PostsModuleBlocksItem({
       <CardContent className={clsx(styles.content)}>
         <CardTitle>{title}</CardTitle>
         {excerpt && <Excerpt text={excerpt} className={clsx(styles.excerpt)} />}
-        {dateGmt && (
+        {date && (
           <CardMeta className={clsx(styles.meta)}>
             <Time
               className={clsx(styles.date)}
-              date={dateGmt}
+              date={date}
               format={dateFormat}
             />
           </CardMeta>

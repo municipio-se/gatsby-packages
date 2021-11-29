@@ -51,6 +51,7 @@ export default function TextModule({
         "--box-color": theme
           ? `var(--brand-color-${kebabCase(theme)}-text)`
           : null,
+        "--box-font-size": "var(--text-module-boxed-font-size, 0.875rem)",
       })}
       styles={styles}
       className={clsx(className)}

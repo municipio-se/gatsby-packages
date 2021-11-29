@@ -1,4 +1,4 @@
-import { Link, Icon } from "@whitespace/components";
+import { Link, RoundIcon, withComponentDefaults } from "@whitespace/components";
 import { getMainArchivePagePathFromPageContext } from "@whitespace/gatsby-theme-wordpress-basic/src/contentType";
 import clsx from "clsx";
 import PropTypes from "prop-types";
@@ -9,15 +9,21 @@ import { useModularityModule } from "../hooks";
 import * as defaultStyles from "./PostsModuleHeader.module.css";
 
 PostsModuleHeader.propTypes = {
-  styles: PropTypes.objectOf(PropTypes.string),
-  className: PropTypes.string,
   children: PropTypes.node,
+  className: PropTypes.string,
+  components: PropTypes.objectOf(PropTypes.elementType),
+  icon: PropTypes.object,
+  styles: PropTypes.objectOf(PropTypes.string),
 };
 
-export default function PostsModuleHeader({
-  styles = defaultStyles,
-  className,
+export default withComponentDefaults(PostsModuleHeader, "postsModuleHeader");
+
+function PostsModuleHeader({
   children,
+  className,
+  components: { Icon = RoundIcon } = { Icon: RoundIcon },
+  icon = { name: "chevron-right" },
+  styles = defaultStyles,
   ...restProps
 }) {
   const { module } = useModularityModule();
@@ -41,9 +47,7 @@ export default function PostsModuleHeader({
       {!!showArchiveLink && (
         <Link className={styles.link} to={archiveLinkUri}>
           {archiveLinkLabel}
-          <span className={styles.linkIcon}>
-            <Icon name="chevron-right" />
-          </span>
+          {!!icon && <Icon className={styles.linkIcon} {...icon} />}
         </Link>
       )}
     </div>

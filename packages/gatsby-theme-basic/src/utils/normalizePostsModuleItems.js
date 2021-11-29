@@ -56,6 +56,7 @@ export default function normalizePostsModuleItems(
 
           return {
             ...item,
+            contentType: item.contentType?.node?.name,
             title: item.title,
             dateGmt: showDate && item.dateGmt,
             date:
@@ -69,7 +70,6 @@ export default function normalizePostsModuleItems(
               (item.description ? item.description : stripHTML(item.content)),
             image: showImage && item.featuredImage?.node,
             content: showExcerpt && processedContent,
-            element: "div",
             taxonomies: useTaxonomies(
               { ...item.tags?.nodes, ...item.categories?.nodes },
               item.contentType?.node?.name,
