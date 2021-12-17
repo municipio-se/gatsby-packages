@@ -1,5 +1,6 @@
 import { Global } from "@emotion/react";
-import Color from "color";
+import * as nyans from "@nyans/parser";
+import chroma from "chroma-js";
 import { graphql, useStaticQuery } from "gatsby";
 import { kebabCase, transform } from "lodash";
 import PropTypes from "prop-types";
@@ -19,20 +20,20 @@ export default function BrandColorWrapper({ children }) {
       }
     `).wp.acfOptionsThemeOptions?.colorScheme?.brandColors || [];
 
-  let colors = transform(
-    colorItems,
-    (colors, { key, value }) => (colors[key] = value),
-    {},
-  );
+  let colors = nyans.normalize(nyans.parse(colorItems));
 
   let vars = {};
 
-  Object.entries(colors).forEach(([key, value]) => {
-    let color = Color(value);
+  colors.forEach(({ key, value, shades }) => {
+    let color = chroma(value);
     vars[`--brand-color-${kebabCase(key)}`] = value;
-    vars[`--brand-color-${kebabCase(key)}-text`] = color.isDark(value)
-      ? "white"
-      : "black";
+    vars[`--brand-color-${kebabCase(key)}-text`] =
+      chroma.contrast(color, "black") >= 4.51 ? "black" : "white";
+    Object.entries(shades, {}).forEach(([level, shade]) => {
+      vars[`--brand-color-${kebabCase(key)}-${level}`] = shade;
+      vars[`--brand-color-${kebabCase(key)}-${level}-text`] =
+        chroma.contrast(shade, "black") >= 4.51 ? "black" : "white";
+    });
   });
 
   return (
