@@ -4,6 +4,13 @@ node_modules
 # Yarn
 package-lock.json
 yarn-error.log
+.yarn/*
+!.yarn/cache
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
 
 # Gatsby
 .cache
