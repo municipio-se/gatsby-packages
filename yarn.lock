@@ -3914,7 +3914,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@municipio/gatsby-starter-basic@workspace:examples/gatsby-starter-basic"
   dependencies:
-    "@municipio/gatsby-theme-basic": ^0.20
+    "@municipio/gatsby-theme-basic": ^0.21.0
     cross-env: ^7.0.3
     eslint: ^8.0.1
     eslint-plugin-import: ^2.25.2
@@ -3932,7 +3932,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@municipio/gatsby-starter-intranet@workspace:examples/gatsby-starter-intranet"
   dependencies:
-    "@municipio/gatsby-theme-intranet": ^0.20
+    "@municipio/gatsby-theme-intranet": ^0.21.0
     cross-env: ^7.0.3
     eslint: ^8.0.1
     eslint-plugin-import: ^2.25.2
@@ -3946,7 +3946,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@municipio/gatsby-theme-basic@^0.20, @municipio/gatsby-theme-basic@^0.20.4, @municipio/gatsby-theme-basic@workspace:packages/gatsby-theme-basic":
+"@municipio/gatsby-theme-basic@^0.21.0, @municipio/gatsby-theme-basic@workspace:packages/gatsby-theme-basic":
   version: 0.0.0-use.local
   resolution: "@municipio/gatsby-theme-basic@workspace:packages/gatsby-theme-basic"
   dependencies:
@@ -3972,11 +3972,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@municipio/gatsby-theme-intranet@^0.20, @municipio/gatsby-theme-intranet@workspace:packages/gatsby-theme-intranet":
+"@municipio/gatsby-theme-intranet@^0.21.0, @municipio/gatsby-theme-intranet@workspace:packages/gatsby-theme-intranet":
   version: 0.0.0-use.local
   resolution: "@municipio/gatsby-theme-intranet@workspace:packages/gatsby-theme-intranet"
   dependencies:
-    "@municipio/gatsby-theme-basic": ^0.20.4
+    "@municipio/gatsby-theme-basic": ^0.21.0
     array-move: ^4.0.0
     gatsby: ^3.14.3
     http-proxy-middleware: ^2.0.1
