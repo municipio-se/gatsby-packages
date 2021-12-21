@@ -23,6 +23,7 @@
     "formik": "^2.2.9",
     "js-video-url-parser": "^0.4.3",
     "nuka-carousel": "^4.8.1",
+    "traverse": "^0.6.6",
     "yup": "^0.32.11"
   },
   "peerDependencies": {

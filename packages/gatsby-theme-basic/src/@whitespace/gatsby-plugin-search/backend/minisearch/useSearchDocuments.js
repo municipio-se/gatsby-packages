@@ -1,11 +1,19 @@
 import formatDate from "date-fns/format";
 import parseDate from "date-fns/parseJSON";
 import { graphql, useStaticQuery } from "gatsby";
+import traverse from "traverse";
 
 import { getMostRelevantDate } from "../../../../utils";
 
 function htmlToText(html) {
   return html && html.replace(/(<([^>]+)>)/gi, "");
+}
+
+function extractAllStrings(obj) {
+  return traverse(obj)
+    .nodes()
+    .filter((node) => typeof node === "string" || typeof node === "number")
+    .join(" ");
 }
 
 function defaultContentNodeFields(source) {
@@ -43,6 +51,8 @@ function defaultContentNodeFields(source) {
           data.postTitle,
           htmlToText(data.postContent),
         ]),
+        // Values in Contacts module
+        module?.modContactsOptions?.contacts?.map(extractAllStrings),
       ]),
     ],
   };
