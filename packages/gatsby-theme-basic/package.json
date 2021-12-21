@@ -34,5 +34,10 @@
     "gatsby": "^3.14.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/municipio-se/gatsby-packages.git",
+    "directory": "packages/gatsby-theme-basic"
   }
 }
