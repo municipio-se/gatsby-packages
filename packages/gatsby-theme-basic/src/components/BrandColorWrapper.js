@@ -11,14 +11,16 @@ BrandColorWrapper.propTypes = {
 };
 
 export default function BrandColorWrapper({ children }) {
-  let colorItems =
-    useStaticQuery(graphql`
-      query BrandColors {
-        wp {
-          ...WP_BrandColorsForHook
-        }
+  let result = useStaticQuery(graphql`
+    query BrandColors {
+      wp {
+        ...WP_BrandColorsForHook
       }
-    `).wp.acfOptionsThemeOptions?.colorScheme?.brandColors || [];
+    }
+  `);
+  let colorItems =
+    result.wp.acfOptionsThemeOptions?.colorScheme?.brandColorsSource ||
+    result.wp.acfOptionsThemeOptions?.colorScheme?.brandColors;
 
   let colors = nyans.normalize(nyans.parse(colorItems));
 
