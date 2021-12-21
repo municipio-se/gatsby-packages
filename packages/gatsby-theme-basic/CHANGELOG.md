@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.21.2](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.21.1...@municipio/gatsby-theme-basic@0.21.2) (2021-12-21)
+
+
+### Bug Fixes
+
+* Handle advanced brand colors ([899fbb2](https://github.com/municipio-se/gatsby-packages/commit/899fbb250cb4255b37a66592aef089bb2e67a601))
+
+
+
 ### [0.21.1](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.21.0...@municipio/gatsby-theme-basic@0.21.1) (2021-12-21)
 
 
