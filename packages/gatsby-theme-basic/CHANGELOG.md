@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.21.1](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.21.0...@municipio/gatsby-theme-basic@0.21.1) (2021-12-21)
+
+
+### Bug Fixes
+
+* Text in Notice modules was not indexed in Minisearch ([ccfde07](https://github.com/municipio-se/gatsby-packages/commit/ccfde0737907fe68e261f0fd5e3410a363b6ef33))
+
+
+
 ## [0.21.0](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.20.4...@municipio/gatsby-theme-basic@0.21.0) (2021-12-21)
 
 
