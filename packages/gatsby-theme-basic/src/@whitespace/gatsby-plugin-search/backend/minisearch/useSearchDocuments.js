@@ -39,7 +39,7 @@ function defaultContentNodeFields(source) {
         // Module content (in text modules etc)
         htmlToText(module?.content),
         // Manual input in Posts module
-        module?.dataSource?.data?.map((data) => [
+        module?.modPostsDataSource?.data?.map((data) => [
           data.postTitle,
           htmlToText(data.postContent),
         ]),
