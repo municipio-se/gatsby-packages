@@ -53,6 +53,8 @@ function defaultContentNodeFields(source) {
         ]),
         // Values in Contacts module
         module?.modContactsOptions?.contacts?.map(extractAllStrings),
+        // Text in Notice module
+        module?.modNoticeOptions?.noticeText,
       ]),
     ],
   };
