@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.21.0](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.20.4...@municipio/gatsby-theme-basic@0.21.0) (2021-12-21)
+
+
+### Features
+
+* Generate shades for brand colors ([b7e7622](https://github.com/municipio-se/gatsby-packages/commit/b7e76225ed1a0b9d172b824b001c6a21d8438e74))
+
+
+### Bug Fixes
+
+* **deps:** use same Gatsby version as deps ([d3c16f6](https://github.com/municipio-se/gatsby-packages/commit/d3c16f6471e02c90b5ebf1b802aa2224e61f2ca6))
+* Manual content in Posts module was not indexed in Minisearch ([515e8ad](https://github.com/municipio-se/gatsby-packages/commit/515e8ad467d88c8763711e7fc923c769b0b8d712))
+* Values in Contacts module was not indexed in Minisearch ([2df84d6](https://github.com/municipio-se/gatsby-packages/commit/2df84d69337f5403b4d07696c72b1877ce4b0c8c))
+
+
+
 ### [0.20.4](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.20.3...@municipio/gatsby-theme-basic@0.20.4) (2021-11-26)
 
 

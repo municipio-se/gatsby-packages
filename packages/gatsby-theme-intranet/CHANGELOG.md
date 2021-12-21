@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.21.0](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-intranet@0.20.4...@municipio/gatsby-theme-intranet@0.21.0) (2021-12-21)
+
+
+### Bug Fixes
+
+* **deps:** use same Gatsby version as deps ([d3c16f6](https://github.com/municipio-se/gatsby-packages/commit/d3c16f6471e02c90b5ebf1b802aa2224e61f2ca6))
+
+
+
 ### [0.20.4](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-intranet@0.20.3...@municipio/gatsby-theme-intranet@0.20.4) (2021-11-26)
 
 **Note:** Version bump only for package @municipio/gatsby-theme-intranet
