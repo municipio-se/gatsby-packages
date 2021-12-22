@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.21.3](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.21.2...@municipio/gatsby-theme-basic@0.21.3) (2021-12-22)
+
+
+### Bug Fixes
+
+* Filenames in Fileslist module was not indexed in Minisearch ([951966f](https://github.com/municipio-se/gatsby-packages/commit/951966f57a30b2e915371f5577f7d24ba34580ff))
+
+
+
 ### [0.21.2](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-basic@0.21.1...@municipio/gatsby-theme-basic@0.21.2) (2021-12-21)
 
 
