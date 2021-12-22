@@ -1,6 +1,7 @@
 {
   "name": "root",
   "private": true,
+  "packageManager": "yarn@1.22.17",
   "workspaces": {
     "packages": [
       "packages/*",
