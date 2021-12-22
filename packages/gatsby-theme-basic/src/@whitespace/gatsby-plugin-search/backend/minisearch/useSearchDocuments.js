@@ -10,10 +10,12 @@ function htmlToText(html) {
 }
 
 function extractAllStrings(obj) {
-  return traverse(obj)
-    .nodes()
-    .filter((node) => typeof node === "string" || typeof node === "number")
-    .join(" ");
+  return typeof obj === "object"
+    ? traverse(obj)
+        .nodes()
+        .filter((node) => typeof node === "string" || typeof node === "number")
+        .join(" ")
+    : obj;
 }
 
 function defaultContentNodeFields(source) {
@@ -53,6 +55,8 @@ function defaultContentNodeFields(source) {
         ]),
         // Values in Contacts module
         module?.modContactsOptions?.contacts?.map(extractAllStrings),
+        // Values in Fileslist module
+        extractAllStrings(module?.modFileslistOptions),
         // Text in Notice module
         module?.modNoticeOptions?.noticeText,
       ]),
