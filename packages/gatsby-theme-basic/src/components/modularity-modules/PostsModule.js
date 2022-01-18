@@ -5,19 +5,25 @@ import PropTypes from "prop-types";
 import React from "react";
 
 import normalizePostsModuleItems from "../../utils/normalizePostsModuleItems";
+import visibleFields from "../../utils/visibleFields";
 
 import * as postsModuleComponents from "./posts-modules";
 import PostsModuleFilterProvider from "./PostsModuleFilterProvider";
 
 const normalizeHit =
-  ({ HTML, stripHTML }) =>
+  ({ module, HTML, stripHTML }) =>
   (item) => {
     // let processedContent = processContent(item.content);
+    const { showDate, showImage, showExcerpt } = visibleFields(
+      module?.modPostsDataDisplay?.postsFields,
+    );
     return {
       ...item,
+      date: showDate && item.date,
       title: item.label,
-      excerpt: item.text,
-      content: item.text,
+      excerpt: showExcerpt && item.text,
+      image: showImage && item?.image,
+      content: showExcerpt && item.text,
       // taxonomies: useTaxonomies(
       //   { ...item.tags?.nodes, ...item.categories?.nodes },
       //   item.contentType?.node?.name,
@@ -64,7 +70,7 @@ export default function PostsModule({ module, ...restProps }) {
           <Component
             module={module}
             normalizedItems={(hits || []).map(
-              normalizeHit({ HTML, stripHTML }),
+              normalizeHit({ module, HTML, stripHTML }),
             )}
             {...restProps}
           />

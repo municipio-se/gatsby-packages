@@ -3,14 +3,7 @@ import React from "react";
 import useTaxonomies from "../hooks/useTaxonomies";
 
 import getMostRelevantDate from "./getMostRelevantDate";
-
-function visibleFields(item) {
-  return {
-    showDate: item?.includes("date"),
-    showImage: item?.includes("image"),
-    showExcerpt: item?.includes("excerpt"),
-  };
-}
+import visibleFields from "./visibleFields";
 
 export default function normalizePostsModuleItems(
   { modPostsDataSource, contentNodes, modPostsDataDisplay },
