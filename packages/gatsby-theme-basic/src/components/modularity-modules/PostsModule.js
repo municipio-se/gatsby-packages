@@ -8,16 +8,22 @@ import normalizePostsModuleItems from "../../utils/normalizePostsModuleItems";
 
 import * as postsModuleComponents from "./posts-modules";
 import PostsModuleFilterProvider from "./PostsModuleFilterProvider";
+import visibleFields from "../../utils/visibleFields";
 
 const normalizeHit =
   ({ HTML, stripHTML }) =>
   (item) => {
     // let processedContent = processContent(item.content);
+    const { showDate, showImage, showExcerpt } = visibleFields(
+      module?.modPostsDataDisplay?.postsFields,
+    );
     return {
       ...item,
+      date: showDate && item.date,
       title: item.label,
-      excerpt: item.text,
-      content: item.text,
+      excerpt: showExcerpt && item.text,
+      image: showImage && item?.image,
+      content: showExcerpt && item.text,
       // taxonomies: useTaxonomies(
       //   { ...item.tags?.nodes, ...item.categories?.nodes },
       //   item.contentType?.node?.name,
