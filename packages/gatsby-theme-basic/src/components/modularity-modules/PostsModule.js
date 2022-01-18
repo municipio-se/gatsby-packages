@@ -11,7 +11,7 @@ import * as postsModuleComponents from "./posts-modules";
 import PostsModuleFilterProvider from "./PostsModuleFilterProvider";
 
 const normalizeHit =
-  ({ HTML, stripHTML }) =>
+  ({ module, HTML, stripHTML }) =>
   (item) => {
     // let processedContent = processContent(item.content);
     const { showDate, showImage, showExcerpt } = visibleFields(
@@ -70,7 +70,7 @@ export default function PostsModule({ module, ...restProps }) {
           <Component
             module={module}
             normalizedItems={(hits || []).map(
-              normalizeHit({ HTML, stripHTML }),
+              normalizeHit({ module, HTML, stripHTML }),
             )}
             {...restProps}
           />
