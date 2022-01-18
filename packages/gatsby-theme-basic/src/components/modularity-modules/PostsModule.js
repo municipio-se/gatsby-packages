@@ -5,10 +5,10 @@ import PropTypes from "prop-types";
 import React from "react";
 
 import normalizePostsModuleItems from "../../utils/normalizePostsModuleItems";
+import visibleFields from "../../utils/visibleFields";
 
 import * as postsModuleComponents from "./posts-modules";
 import PostsModuleFilterProvider from "./PostsModuleFilterProvider";
-import visibleFields from "../../utils/visibleFields";
 
 const normalizeHit =
   ({ HTML, stripHTML }) =>
