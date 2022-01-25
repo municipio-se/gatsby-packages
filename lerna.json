@@ -6,11 +6,15 @@
         "issueUrlFormat": "{{host}}/{{owner}}/{{repository}}/issues/{{id}}"
       },
       "conventionalCommits": true,
-      "ignoreChanges": ["CHANGELOG.md"],
+      "ignoreChanges": [
+        "CHANGELOG.md"
+      ],
       "message": "chore(release): publish packages"
     }
   },
   "npmClient": "yarn",
-  "packages": ["packages/*"],
-  "version": "independent"
+  "packages": [
+    "packages/*"
+  ],
+  "version": "1.0.0-beta.0"
 }
