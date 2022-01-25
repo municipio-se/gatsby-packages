@@ -3,6 +3,72 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0](https://github.com/municipio-se/gatsby-packages/compare/v0.4.2...v1.0.0) (2022-01-25)
+
+
+### ⚠ BREAKING CHANGES
+
+* **deps:** update all deps
+* **deps:** Major version bump of @whitespace/gatsby-theme-wordpress-basic
+* **deps:** update all deps
+* use gql fragment for sidebar settings
+* `requireLogin` defaults to `false`
+
+### Features
+
+* add "skip to main content" link ([87fc8b2](https://github.com/municipio-se/gatsby-packages/commit/87fc8b2c8d9bc10243df9937f6c7a842e0d538f0))
+* add ability to override logo ([59378a0](https://github.com/municipio-se/gatsby-packages/commit/59378a098e0065ba3aadf03156c163b8fa05a136))
+* add bookmarks to sidebar ([99bc2e8](https://github.com/municipio-se/gatsby-packages/commit/99bc2e844d7612732676f777daa5cc5512e2568c))
+* add dnd component with display of tools links ([f4b1fce](https://github.com/municipio-se/gatsby-packages/commit/f4b1fce1ea7d8e8a7e23c07b4817a11be65135aa))
+* Add first version of help menu ([a73f363](https://github.com/municipio-se/gatsby-packages/commit/a73f36390eb6b43ecac0f05a98df2ec58c6a875c))
+* add Inter font ([b7e6830](https://github.com/municipio-se/gatsby-packages/commit/b7e6830c19d1916f9622431c027387f93b535a3c))
+* add option to disable login requirement ([3218569](https://github.com/municipio-se/gatsby-packages/commit/3218569f92c080e4329fc2d8c20b0d4565712479))
+* add support for tree menu ([1449433](https://github.com/municipio-se/gatsby-packages/commit/14494339c521feb94b92de535b6574a76b840e1e))
+* add TreeMenu from whitespace/components ([3b53db0](https://github.com/municipio-se/gatsby-packages/commit/3b53db04f5624cbc516e38b87bf2e876b989773a))
+* allow user to reorder tools in sidebar ([40a40cd](https://github.com/municipio-se/gatsby-packages/commit/40a40cd71853f8adcf9899dc2cd3938f83bd80e1))
+* **gatsby-theme-intranet:** add authentication ([281171d](https://github.com/municipio-se/gatsby-packages/commit/281171d3b98e18e4c204c9c969dd205387a2bc66))
+* **gatsby-theme-intranet:** enable mobile sidebar ([6b4d06c](https://github.com/municipio-se/gatsby-packages/commit/6b4d06c0b45817c9ea4ba6a2491d4a67e76b011a))
+* provide user settings ([a632c7f](https://github.com/municipio-se/gatsby-packages/commit/a632c7f97e5a7fcbb7936c6dd0a2ae7616ba7f47))
+* put back code for drag and drop menu ([049e015](https://github.com/municipio-se/gatsby-packages/commit/049e015313c73d23d5eca6662ac66e8c28252fb0))
+* support slider modularity area ([4fe73c8](https://github.com/municipio-se/gatsby-packages/commit/4fe73c887171a1973ba6d492d84b86bfef6a247d))
+* use gql fragment for sidebar settings ([e688b7c](https://github.com/municipio-se/gatsby-packages/commit/e688b7cde65d1928e48c56beff2f5784e4b619b0))
+* use optimistic ui for user settings ([009d83c](https://github.com/municipio-se/gatsby-packages/commit/009d83c3a8835d4791902bb99448254cda8e9d51))
+
+
+### Bug Fixes
+
+* add fallback value when fetching sliderArea ([bf83b2a](https://github.com/municipio-se/gatsby-packages/commit/bf83b2a7d5518feb6b931075685ee806613d4ee9))
+* add translation to toggle tools ([d908b29](https://github.com/municipio-se/gatsby-packages/commit/d908b2910aa492cae2390a019696c764450d613d))
+* augment z-index on toolbar ([403fa23](https://github.com/municipio-se/gatsby-packages/commit/403fa235c244b36dc0f882d9ee0b417b499713a0))
+* broken theme inheritance ([5077c64](https://github.com/municipio-se/gatsby-packages/commit/5077c64c1d37752ac8bae97525c9d939b7c53109))
+* **deps:** use same Gatsby version as deps ([d3c16f6](https://github.com/municipio-se/gatsby-packages/commit/d3c16f6471e02c90b5ebf1b802aa2224e61f2ca6))
+* disable ul margin on dropdownList ([9d84776](https://github.com/municipio-se/gatsby-packages/commit/9d847762ab3ad9af9561405af98705d22301f196))
+* error due to typo ([5da0fbc](https://github.com/municipio-se/gatsby-packages/commit/5da0fbcd8b784f4a59ef3a6c1234d826265f6d1a))
+* **gatsby-theme-intranet/deps:** remove transitive dep ([676359c](https://github.com/municipio-se/gatsby-packages/commit/676359c8220935c02eab78ed747fdc55855627de))
+* **gatsby-theme-intranet:** faulty export of theme ([13db187](https://github.com/municipio-se/gatsby-packages/commit/13db18758ebd5ab7f29821aff6e92f7651bc5819))
+* **gatsby-theme-intranet:** harmonize focus ring ([4dec563](https://github.com/municipio-se/gatsby-packages/commit/4dec563adb24207e946f60aa9b1ef38985a52c79))
+* hide menu button on larger screen ([db50869](https://github.com/municipio-se/gatsby-packages/commit/db508695a164e987e49a7c81bab1fb400deb0e80))
+* icons didn’t show up ([e009abb](https://github.com/municipio-se/gatsby-packages/commit/e009abb01de1ab9633e2690539d6393847993fe7))
+* lint errors ([685f4a7](https://github.com/municipio-se/gatsby-packages/commit/685f4a75a4d33ddb4c2a2186cb915b14c7895b73))
+* position help menu at the bottom and correct alignment ([c53a691](https://github.com/municipio-se/gatsby-packages/commit/c53a691dc3098c763d867cbf488bc6deaac2b426))
+* remove and update css variables to top navigation ([5e94075](https://github.com/municipio-se/gatsby-packages/commit/5e94075805b9cd60cb4e1cac5e0c8e6ac9f36d82))
+* replace cx with clsx and remove log ([1c5f27f](https://github.com/municipio-se/gatsby-packages/commit/1c5f27f2b15af0c8ec69e3ab20077aed18a71388))
+* replace dynamic navigation menu with help menu ([5f7d3c4](https://github.com/municipio-se/gatsby-packages/commit/5f7d3c457e624ac6152538baa370044227d6dfaf))
+* send in labels as variable ([a6b397b](https://github.com/municipio-se/gatsby-packages/commit/a6b397b2d7aa19cb13c7960f83801fa7d9183ef5))
+* sidebar styling ([9439711](https://github.com/municipio-se/gatsby-packages/commit/94397111b5cc0baff55f879f5ba397b5eda02618))
+* unitialized variable ([200eca1](https://github.com/municipio-se/gatsby-packages/commit/200eca1e524f5d0f9a7f3caf7000c32356d9139a))
+* update styling of navigation ([955c241](https://github.com/municipio-se/gatsby-packages/commit/955c241abf0dddd8e45d2176c1134b91d4506a76))
+* use Link from @whitespace/components ([83cc871](https://github.com/municipio-se/gatsby-packages/commit/83cc8710db9f4fd9f0bb94564d1dafa5bf198794))
+
+
+### Miscellaneous Chores
+
+* **deps:** update all deps ([4850be2](https://github.com/municipio-se/gatsby-packages/commit/4850be250252c1705e6ab4eee566dd7d5dfe4340))
+* **deps:** update all deps ([f71db9b](https://github.com/municipio-se/gatsby-packages/commit/f71db9ba71bc214f46e1db17c37d43f87e3e9ea7))
+* **deps:** update all deps ([1ad944d](https://github.com/municipio-se/gatsby-packages/commit/1ad944db99e65e760b7d5a786c0894cb501f1190))
+
+
+
 ### [0.21.3](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-intranet@0.21.2...@municipio/gatsby-theme-intranet@0.21.3) (2021-12-22)
 
 **Note:** Version bump only for package @municipio/gatsby-theme-intranet
