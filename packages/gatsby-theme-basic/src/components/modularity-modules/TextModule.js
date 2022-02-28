@@ -1,6 +1,6 @@
 import { css } from "@emotion/react";
+import { HTML } from "@whitespace/gatsby-theme-wordpress-basic/src/components";
 import TextContent from "@whitespace/gatsby-theme-wordpress-basic/src/components/TextContent";
-import { useHTMLProcessor } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/html-processor";
 import clsx from "clsx";
 import { kebabCase } from "lodash";
 import PropTypes from "prop-types";
@@ -37,11 +37,6 @@ export default function TextModule({
   // colorScheme,
   ...restProps
 }) {
-  const { processPageContent } = useHTMLProcessor();
-  let { content: processedContent } = processPageContent(content, {
-    contentMedia,
-  });
-
   const Wrapper = hideBoxFrame ? "div" : Box;
 
   return (
@@ -56,11 +51,14 @@ export default function TextModule({
         "--box-color": theme
           ? `var(--brand-color-${kebabCase(theme)}-text)`
           : null,
+        "--box-font-size": "var(--text-module-boxed-font-size, 0.875rem)",
       })}
       styles={styles}
       className={clsx(className)}
     >
-      <TextContent className={styles.content}>{processedContent}</TextContent>
+      <TextContent className={styles.content}>
+        <HTML contentMedia={contentMedia}>{content}</HTML>
+      </TextContent>
     </ModuleWrapper>
   );
 }

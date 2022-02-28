@@ -1,5 +1,4 @@
 import clsx from "clsx";
-import parseEntities from "parse-entities";
 import PropTypes from "prop-types";
 import React from "react";
 
@@ -14,12 +13,6 @@ TableModule.propTypes = {
   module: PropTypes.shape({
     modTableOptions: PropTypes.shape({
       modTable: PropTypes.string,
-      modTableCsvDelimiter: PropTypes.string,
-      modTableCsvFile: PropTypes.shape({
-        id: PropTypes.string,
-      }),
-      modTableDataType: PropTypes.string,
-      theme: PropTypes.string,
     }),
   }),
 };
@@ -36,28 +29,15 @@ export default function TableModule({
   const tableData = JSON.parse(modTable);
 
   return (
-    <div className={clsx(styles.component, className)} {...restProps}>
-      <ModuleWrapper
-        as={"table"}
-        title={title}
-        components={{
-          // eslint-disable-next-line react/display-name, react/prop-types
-          ModuleWrapperHeader: ({ children, className, ...restProps }) => (
-            <caption className={clsx(styles.title, className)} {...restProps}>
-              {children}
-            </caption>
-          ),
-          ModuleWrapperTitle: "span",
-        }}
-        className={clsx(styles.table)}
-        {...restProps}
-      >
-        <thead className={clsx(styles.head, "h6")}>
+    <ModuleWrapper className={clsx(styles.component, className)} {...restProps}>
+      <table className={clsx(styles.table)}>
+        <caption className={clsx(styles.title)}>{title}</caption>
+        <thead className={clsx(styles.head)}>
           <tr className={clsx(styles.headTr)}>
             {tableData[0].map((title, index) => {
               return (
                 <th className={clsx(styles.th)} scope="col" key={index}>
-                  {parseEntities(title)}
+                  {title}
                 </th>
               );
             })}
@@ -78,7 +58,7 @@ export default function TableModule({
             );
           })}
         </tbody>
-      </ModuleWrapper>
-    </div>
+      </table>
+    </ModuleWrapper>
   );
 }

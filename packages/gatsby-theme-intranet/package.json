@@ -1,8 +1,8 @@
 {
   "name": "@municipio/gatsby-theme-intranet",
-  "version": "0.17.0",
+  "version": "1.0.0",
   "description": "Gatsby theme for Municipio intranet",
-  "license": "MIT",
+  "license": "AGPL",
   "files": [
     "src/**/*",
     "node/**/*",
@@ -13,22 +13,27 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
-    "@municipio/gatsby-theme-basic": "^0.17.1",
+    "@municipio/gatsby-theme-basic": "^1.0.0",
     "array-move": "^4.0.0",
     "http-proxy-middleware": "^2.0.1",
-    "react-accessible-dropdown-menu-hook": "^3.0.0",
+    "react-accessible-dropdown-menu-hook": "^3.1.0",
     "react-beautiful-dnd": "^13.1.0",
     "react-error-boundary": "^3.1.3",
     "react-simple-tree-menu": "^1.1.18"
   },
   "peerDependencies": {
-    "gatsby": "^3.13.0",
+    "gatsby": "^3.14.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "gatsby": "^3.13.0",
+    "gatsby": "^3.14.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/municipio-se/gatsby-packages.git",
+    "directory": "packages/gatsby-theme-intranet"
   }
 }

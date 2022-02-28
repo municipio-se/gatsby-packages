@@ -38,7 +38,7 @@ export default function DnDMenuEditView({ ...restProps }) {
       }}
     >
       <Droppable droppableId="list">
-        {(provided, snapshot) => (
+        {(provided) => (
           <ul
             className={clsx(styles.list, styles.edit, styles.editVisible)}
             ref={provided.innerRef}

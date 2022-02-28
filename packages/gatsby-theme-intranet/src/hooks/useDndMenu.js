@@ -4,10 +4,18 @@ import PropTypes from "prop-types";
 import React from "react";
 import { Draggable } from "react-beautiful-dnd";
 
+DraggableComponent.propTypes = {
+  item: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    label: PropTypes.node,
+  }).isRequired,
+  index: PropTypes.number.isRequired,
+  styles: PropTypes.objectOf(PropTypes.string),
+};
 /**
  * Draggable Component
  */
-export const DraggableComponent = ({ item, index, styles }) => {
+export function DraggableComponent({ item, index, styles }) {
   return (
     <Draggable draggableId={item.id} index={index}>
       {(provided, snapshot) => (
@@ -32,7 +40,7 @@ export const DraggableComponent = ({ item, index, styles }) => {
       )}
     </Draggable>
   );
-};
+}
 
 /**
  * Styling

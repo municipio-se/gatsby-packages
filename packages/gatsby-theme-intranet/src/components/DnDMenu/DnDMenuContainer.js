@@ -11,18 +11,22 @@ import DnDMenuEditView from "./DnDMenuEditView";
 
 DnDMenuContainer.propTypes = {
   items: PropTypes.array,
+  onChange: PropTypes.func,
   showLessLabel: PropTypes.string,
   showMoreLabel: PropTypes.string,
   styles: PropTypes.objectOf(PropTypes.string),
   title: PropTypes.node,
+  visibleItemCount: PropTypes.number,
 };
 
 export default function DnDMenuContainer({
   items = [],
-  visibleItemCount = 5,
   onChange,
   title,
+  showMoreLabel,
+  showLessLabel,
   styles = defaultStyles,
+  visibleItemCount = 5,
   ...restProps
 }) {
   const { t } = useTranslation();
@@ -55,7 +59,11 @@ export default function DnDMenuContainer({
             </span>
           )}
         </div>
-        {isEditing ? <DnDMenuEditView /> : <DnDMenuDisplayView />}
+        {isEditing ? (
+          <DnDMenuEditView />
+        ) : (
+          <DnDMenuDisplayView labels={{ showLessLabel, showMoreLabel }} />
+        )}
       </div>
     </DnDContainerContext.Provider>
   );

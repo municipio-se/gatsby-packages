@@ -1,14 +1,11 @@
 import { css } from "@emotion/react";
+import { Card, CardContent, CardMeta, CardTitle } from "@whitespace/components";
 import { Time } from "@whitespace/gatsby-theme-wordpress-basic/src/components";
 import clsx from "clsx";
 import { kebabCase } from "lodash";
 import PropTypes from "prop-types";
 import React from "react";
 
-import Card from "../../../Card";
-import CardContent from "../../../CardContent";
-import CardMeta from "../../../CardMeta";
-import CardTitle from "../../../CardTitle";
 import Excerpt from "../../../Excerpt";
 
 import * as defaultStyles from "./PostsModuleBlocksItem.module.css";
@@ -18,14 +15,13 @@ PostsModuleBlocksItem.propTypes = {
   dateFormat: PropTypes.objectOf(PropTypes.string),
   item: PropTypes.shape({
     content: PropTypes.node,
-    dateGmt: PropTypes.string,
+    date: PropTypes.string,
     excerpt: PropTypes.node,
     image: PropTypes.object,
     theme: PropTypes.string,
     title: PropTypes.node,
     url: PropTypes.string,
   }),
-  visibleFields: PropTypes.arrayOf(PropTypes.string),
   styles: PropTypes.objectOf(PropTypes.string),
 };
 
@@ -37,20 +33,25 @@ export default function PostsModuleBlocksItem({
     day: "numeric",
   },
   item,
-  visibleFields,
   styles = defaultStyles,
   ...restProps
 }) {
-  const { dateGmt, excerpt, title, url, theme } = item;
-  let showDate = visibleFields.includes("date");
+  const { date, excerpt, title, url, theme } = item;
 
   return (
     <Card
+      link={{ url }}
       css={css({
         "--card-background": theme
           ? `var(--brand-color-${kebabCase(theme)})`
           : null,
+        "--card-hover-background": theme
+          ? `var(--brand-color-${kebabCase(theme)})`
+          : null,
         "--card-color": theme
+          ? `var(--brand-color-${kebabCase(theme)}-text)`
+          : null,
+        "--card-hover-color": theme
           ? `var(--brand-color-${kebabCase(theme)}-text)`
           : null,
         "--card-meta-color": theme
@@ -61,17 +62,17 @@ export default function PostsModuleBlocksItem({
       {...restProps}
     >
       <CardContent className={clsx(styles.content)}>
-        <CardTitle link={{ url }}>{title}</CardTitle>
-        {showDate && dateGmt && (
+        <CardTitle>{title}</CardTitle>
+        {excerpt && <Excerpt text={excerpt} className={clsx(styles.excerpt)} />}
+        {date && (
           <CardMeta className={clsx(styles.meta)}>
             <Time
               className={clsx(styles.date)}
-              date={dateGmt}
+              date={date}
               format={dateFormat}
             />
           </CardMeta>
         )}
-        {<Excerpt text={excerpt} className={clsx(styles.excerpt)} />}
       </CardContent>
     </Card>
   );

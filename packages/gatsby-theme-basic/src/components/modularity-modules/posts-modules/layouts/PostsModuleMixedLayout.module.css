@@ -1,4 +1,7 @@
 .secondaryList {
-  --list-gap: 2rem;
   --focus-outset: calc((var(--list-gap, 0) - var(--list-rule-width, 1px)) / 2);
+}
+
+.filterForm {
+  margin-bottom: 1rem;
 }

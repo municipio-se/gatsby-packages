@@ -10,11 +10,11 @@
 
 .component::after {
   content: "";
-  display: var(--module-wrapper-header-after-display, "block");
+  display: block;
   position: absolute;
   left: 0;
   top: calc(100% + var(--module-wrapper-header-rule-position, 0.25rem));
-  width: var(--module-wrapper-header-rule-width, 100%);
+  width: 100%;
   height: var(--module-wrapper-header-rule-height, 1px);
   background-color: var(--module-wrapper-header-rule-color, #c9e2ea);
 }
@@ -28,7 +28,7 @@
   --link-color: var(--module-wrapper-header-link-color, #000000);
   --link-hover-color: var(--module-wrapper-header-link-hover-color, #000000);
 
-  --link-font-size: var(--module-wrapper-header-link-font-size, 0.875rem);
+  font-size: var(--module-wrapper-header-link-font-size, 0.875rem);
   --link-text-decoration: var(
     --module-wrapper-header-link-text-decoration,
     none
@@ -45,13 +45,9 @@
 }
 
 .linkIcon {
-  background-color: var(--module-wrapper-header-icon-background, lightgray);
-  border-radius: 50%;
-  width: var(--module-wrapper-header-icon-size, 1.5rem);
-  height: var(--module-wrapper-header-icon-size, 1.5rem);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  --icon-color: var(--module-wrapper-header-icon-color, #000000);
+  --round-icon-background-color: var(
+    --module-wrapper-header-icon-background,
+    #000000
+  );
+  --icon-color: var(--module-wrapper-header-icon-color, #fff);
 }

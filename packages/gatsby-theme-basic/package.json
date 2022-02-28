@@ -1,8 +1,8 @@
 {
   "name": "@municipio/gatsby-theme-basic",
-  "version": "0.17.1",
+  "version": "1.0.0",
   "description": "Gatsby theme for Municipio",
-  "license": "MIT",
+  "license": "AGPL",
   "files": [
     "src/**/*",
     "node/**/*",
@@ -13,22 +13,32 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
-    "@whitespace/gatsby-theme-wordpress-basic": "^0.16.4",
-    "autoprefixer": "^10.3.4",
-    "axios": "^0.21.4",
+    "@nyans/parser": "^0.1.6",
+    "@whitespace/gatsby-theme-wordpress-basic": "^1.0.0",
+    "autoprefixer": "^10.3.7",
+    "axios": "^0.23.0",
+    "chroma-js": "^2.1.2",
     "classnames": "^2.3.1",
     "filesize": "^8.0.3",
     "formik": "^2.2.9",
-    "yup": "^0.32.9"
+    "js-video-url-parser": "^0.4.3",
+    "nuka-carousel": "^4.8.1",
+    "traverse": "^0.6.6",
+    "yup": "^0.32.11"
   },
   "peerDependencies": {
-    "gatsby": "^3.13.0",
+    "gatsby": "^3.14.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "gatsby": "^3.13.0",
+    "gatsby": "^3.14.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/municipio-se/gatsby-packages.git",
+    "directory": "packages/gatsby-theme-basic"
   }
 }

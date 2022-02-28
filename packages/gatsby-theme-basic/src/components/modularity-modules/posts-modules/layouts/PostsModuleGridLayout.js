@@ -1,4 +1,5 @@
 import { css } from "@emotion/react";
+import { useSearch } from "@whitespace/gatsby-plugin-search/src/hooks";
 import clsx from "clsx";
 import { kebabCase } from "lodash";
 import PropTypes from "prop-types";
@@ -7,6 +8,7 @@ import React from "react";
 import Grid from "../../../Grid";
 import ModuleWrapper from "../../../ModuleWrapper";
 import PostsModuleHeader from "../../../PostsModuleHeader";
+import PostsModuleFilterForm from "../../PostsModuleFilterForm";
 
 import * as defaultStyles from "./PostsModuleGridLayout.module.css";
 
@@ -45,8 +47,10 @@ export default function PostsModuleGridLayout({
   ...restProps
 }) {
   const {
-    modPostsDataDisplay: { postsFields, theme },
+    modPostsDataDisplay: { theme },
   } = module;
+
+  const { schema } = useSearch();
 
   return (
     <ModuleWrapper
@@ -57,7 +61,13 @@ export default function PostsModuleGridLayout({
         "--card-background": theme
           ? `var(--brand-color-${kebabCase(theme)})`
           : null,
+        "--card-hover-background": theme
+          ? `var(--brand-color-${kebabCase(theme)})`
+          : null,
         "--card-color": theme
+          ? `var(--brand-color-${kebabCase(theme)}-text)`
+          : null,
+        "--card-hover-color": theme
           ? `var(--brand-color-${kebabCase(theme)}-text)`
           : null,
         "--card-meta-color": theme
@@ -71,16 +81,10 @@ export default function PostsModuleGridLayout({
         ModuleWrapperHeader: PostsModuleHeader,
       }}
     >
-      <Grid className={clsx(styles.list)}>
+      <PostsModuleFilterForm className={clsx(styles.filterForm)} />
+      <Grid className={clsx(styles.list)} autoFit={!schema}>
         {normalizedItems.map((item, index) => {
-          return (
-            <Item
-              key={index}
-              className={clsx(styles.item)}
-              item={item}
-              visibleFields={postsFields || []}
-            />
-          );
+          return <Item key={index} className={clsx(styles.item)} item={item} />;
         })}
       </Grid>
     </ModuleWrapper>
