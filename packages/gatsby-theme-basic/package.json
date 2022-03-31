@@ -21,9 +21,11 @@
     "classnames": "^2.3.1",
     "filesize": "^8.0.3",
     "formik": "^2.2.9",
+    "immer": "^9.0.7",
     "js-video-url-parser": "^0.4.3",
     "nuka-carousel": "^4.8.1",
     "traverse": "^0.6.6",
+    "use-persisted-state": "^0.3.3",
     "yup": "^0.32.11"
   },
   "peerDependencies": {
