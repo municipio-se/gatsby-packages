@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.0-beta.1](https://github.com/municipio-se/gatsby-packages/compare/v1.1.0-beta.0...v1.1.0-beta.1) (2022-03-31)
+
+
+### Bug Fixes
+
+* Build error in feedback module ([d055a97](https://github.com/municipio-se/gatsby-packages/commit/d055a97744c6dfe5816be9553aa02e370c3820b8))
+
+
+
 ## [1.1.0-beta.0](https://github.com/municipio-se/gatsby-packages/compare/v1.0.0...v1.1.0-beta.0) (2022-03-31)
 
 
