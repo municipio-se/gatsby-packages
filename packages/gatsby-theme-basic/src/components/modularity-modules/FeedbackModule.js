@@ -48,8 +48,6 @@ export default function FeedbackModule({
   const { reactedJustNow, hasRecentReaction, canReact } =
     useFeedbackFormContext();
 
-  console.log(canReact, title);
-
   if (!canReact) {
     return null;
   }
