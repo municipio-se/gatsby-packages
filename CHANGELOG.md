@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.0](https://github.com/municipio-se/gatsby-packages/compare/v1.1.0-beta.1...v1.1.0) (2022-05-09)
+
+
+### Features
+
+* Add plugin options context ([4569422](https://github.com/municipio-se/gatsby-packages/commit/4569422d53e50f3330724c6a6ccd2eb5f41cd3d5))
+
+
+### Bug Fixes
+
+* **deps:** Use correct postcss version ([bed8bea](https://github.com/municipio-se/gatsby-packages/commit/bed8bea037798b9ef09a647aad5e8830c118d917))
+* Remove debug code ([1381aae](https://github.com/municipio-se/gatsby-packages/commit/1381aae37132b9308f2dc2b99987c8a210d3fdb7))
+
+
+
 ## [1.1.0-beta.1](https://github.com/municipio-se/gatsby-packages/compare/v1.1.0-beta.0...v1.1.0-beta.1) (2022-03-31)
 
 
