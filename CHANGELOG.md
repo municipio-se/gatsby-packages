@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.0](https://github.com/municipio-se/gatsby-packages/compare/v1.1.1-next.0...v1.2.0) (2022-09-25)
+
+
+### Features
+
+* Update theme ([47adca8](https://github.com/municipio-se/gatsby-packages/commit/47adca8d3d14deee15d60221b4e0cf0e041d4715))
+
+
+### Bug Fixes
+
+* Sorting error in `getMostRelevantDate` ([cc196f6](https://github.com/municipio-se/gatsby-packages/commit/cc196f6dfb0e39943203f90b58546c0ec3d919b5))
+
+
+
+### [1.1.1-next.0](https://github.com/municipio-se/gatsby-packages/compare/v1.1.0...v1.1.1-next.0) (2022-07-04)
+
+**Note:** Version bump only for package root
+
+
+
+
+
 ## [1.1.0](https://github.com/municipio-se/gatsby-packages/compare/v1.1.0-beta.1...v1.1.0) (2022-05-09)
 
 
