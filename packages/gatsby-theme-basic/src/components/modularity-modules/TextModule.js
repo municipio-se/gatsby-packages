@@ -18,6 +18,7 @@ TextModule.propTypes = {
   module: PropTypes.shape({
     content: PropTypes.string,
     contentMedia: PropTypes.arrayOf(PropTypes.object),
+    contentModularityModules: PropTypes.shape({ nodes: PropTypes.any }),
     modTextOptions: PropTypes.shape({
       hideBoxFrame: PropTypes.bool,
       theme: PropTypes.string,
@@ -32,6 +33,7 @@ export default function TextModule({
   module: {
     content,
     contentMedia,
+    contentModularityModules,
     modTextOptions: { hideBoxFrame = false, theme } = {},
   },
   // colorScheme,
@@ -57,7 +59,12 @@ export default function TextModule({
       className={clsx(className)}
     >
       <TextContent className={styles.content}>
-        <HTML contentMedia={contentMedia}>{content}</HTML>
+        <HTML
+          contentMedia={contentMedia}
+          contentModularityModules={contentModularityModules?.nodes}
+        >
+          {content}
+        </HTML>
       </TextContent>
     </ModuleWrapper>
   );

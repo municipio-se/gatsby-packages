@@ -25,9 +25,14 @@ export default function normalizePostsModuleItems(
   switch (modPostsDataSource.postsDataSource) {
     case "input":
       return (modPostsDataSource.data || []).map(
-        ({ postContentMedia, ...item }) => {
+        ({ postContentMedia, postContentModularityModules, ...item }) => {
           let processedContent = (
-            <HTML contentMedia={postContentMedia}>{item.postContent}</HTML>
+            <HTML
+              contentMedia={postContentMedia}
+              contentModularityModules={postContentModularityModules?.nodes}
+            >
+              {item.postContent}
+            </HTML>
           );
           return {
             ...item,
