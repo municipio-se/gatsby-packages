@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.0-next.1](https://github.com/municipio-se/gatsby-packages/compare/v1.3.0-next.0...v1.3.0-next.1) (2022-10-18)
+
+
+### Features
+
+* Allow module shortcodes inside modules ([c544da5](https://github.com/municipio-se/gatsby-packages/commit/c544da5b013d2d3c5ae83045742316bbb36d86e5))
+
+
+
 ## [1.3.0-next.0](https://github.com/municipio-se/gatsby-packages/compare/v1.2.0...v1.3.0-next.0) (2022-10-18)
 
 
