@@ -29,7 +29,7 @@ export default function SingleTemplate({ pageContext }) {
       content: contentHTML,
       contentArea,
       contentMedia,
-      contentModularityModules: { nodes: contentModularityModules },
+      contentModularityModules,
       // databaseId,
       dateGmt,
       featuredImage,
@@ -50,7 +50,7 @@ export default function SingleTemplate({ pageContext }) {
         <PageContent
           input={contentHTML}
           contentMedia={contentMedia}
-          contentModularityModules={contentModularityModules}
+          contentModularityModules={contentModularityModules?.nodes}
         >
           {({ preamble, content }) => (
             <>
