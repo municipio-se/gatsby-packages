@@ -18,6 +18,7 @@ SingleTemplate.propTypes = {
       dateGmt: PropTypes.any,
       featuredImage: PropTypes.shape({ node: PropTypes.any }),
       title: PropTypes.node,
+      contentModularityModules: PropTypes.shape({ nodes: PropTypes.any }),
     }),
   }),
 };
@@ -28,6 +29,7 @@ export default function SingleTemplate({ pageContext }) {
       content: contentHTML,
       contentArea,
       contentMedia,
+      contentModularityModules: { nodes: contentModularityModules },
       // databaseId,
       dateGmt,
       featuredImage,
@@ -45,7 +47,11 @@ export default function SingleTemplate({ pageContext }) {
         </div>
         {!!featuredImage?.node && <Image {...featuredImage.node} />}
 
-        <PageContent input={contentHTML} contentMedia={contentMedia}>
+        <PageContent
+          input={contentHTML}
+          contentMedia={contentMedia}
+          contentModularityModules={contentModularityModules}
+        >
           {({ preamble, content }) => (
             <>
               {!!preamble && <div>{preamble}</div>}
