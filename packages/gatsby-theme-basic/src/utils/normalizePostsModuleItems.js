@@ -40,6 +40,7 @@ export default function normalizePostsModuleItems(
             url: item.link?.url || item.permalink,
             excerpt: showExcerpt && stripHTML(item.postContent),
             content: showExcerpt && processedContent,
+            showAll: true,
           };
         },
       );
