@@ -26,7 +26,17 @@ export default function TableModule({
 }) {
   const { modTableOptions: { modTable } = {} } = module;
 
-  const tableData = JSON.parse(modTable);
+  let tableData;
+
+  try {
+    tableData = JSON.parse(modTable);
+  } catch {
+    // Do nothing
+  }
+
+  if (!tableData?.length) {
+    return null;
+  }
 
   return (
     <ModuleWrapper className={clsx(styles.component, className)} {...restProps}>
