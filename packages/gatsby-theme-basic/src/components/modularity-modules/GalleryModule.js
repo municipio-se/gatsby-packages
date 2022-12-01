@@ -59,16 +59,19 @@ function ImageDesc({ styles, currentImage: { databaseId, caption, credit } }) {
 export default function GalleryModule({
   styles = defaultStyles,
   className,
-  module: {
-    modGalleryOptions: { modGalleryImages: images = [] },
-    settings: { display: displaySettings, pauseOnHover },
-  },
+  module,
   title,
   ...restProps
 }) {
   const { t } = useTranslation();
 
-  if (!images.length) return null;
+  let images = module?.modGalleryOptions?.modGalleryImages?.images;
+  let displaySettings = module?.settings?.display;
+  let pauseOnHover = module?.settings?.pauseOnHover;
+
+  if (!images?.length) {
+    return null;
+  }
 
   const [currentImage, setCurrentImage] = useState(images[0]);
 

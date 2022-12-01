@@ -23,7 +23,11 @@ export default function ContactsModule({
   module = {},
   ...restProps
 }) {
-  const { modContactsOptions: { contacts } = {} } = module;
+  const contacts = module?.modContactsOptions?.contacts;
+
+  if (!contacts?.length) {
+    return null;
+  }
 
   return (
     <ModuleWrapper
