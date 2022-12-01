@@ -3,6 +3,48 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.0](https://github.com/municipio-se/gatsby-packages/compare/v1.3.0-next.2...v1.3.0) (2022-12-01)
+
+
+### Features
+
+* Upgrade @whitespace/gatsby-theme-wordpress-basic to v1.3 ([e358ce3](https://github.com/municipio-se/gatsby-packages/commit/e358ce3543710b901784e11ba15058a0874aecf8))
+
+
+### Bug Fixes
+
+* Avoid errors on missing module fragments ([6bf1f26](https://github.com/municipio-se/gatsby-packages/commit/6bf1f2676d8aad9457cb1d8e6f042e609c261fa4))
+* Avoid runtime error when table cant be parsed ([5e09ae2](https://github.com/municipio-se/gatsby-packages/commit/5e09ae2cb90665edd8c6f83729dfac9ac1ece11e))
+
+
+
+## [1.3.0-next.2](https://github.com/municipio-se/gatsby-packages/compare/v1.3.0-next.1...v1.3.0-next.2) (2022-11-10)
+
+
+### Features
+
+* always show entire excerpt for manual input posts ([fa1e39d](https://github.com/municipio-se/gatsby-packages/commit/fa1e39d88a082fb5bbfd425461c5429038f34e0f))
+
+
+
+## [1.3.0-next.1](https://github.com/municipio-se/gatsby-packages/compare/v1.3.0-next.0...v1.3.0-next.1) (2022-10-18)
+
+
+### Features
+
+* Allow module shortcodes inside modules ([c544da5](https://github.com/municipio-se/gatsby-packages/commit/c544da5b013d2d3c5ae83045742316bbb36d86e5))
+
+
+
+## [1.3.0-next.0](https://github.com/municipio-se/gatsby-packages/compare/v1.2.0...v1.3.0-next.0) (2022-10-18)
+
+
+### Features
+
+* Add support for module shortcodes ([4216ba7](https://github.com/municipio-se/gatsby-packages/commit/4216ba7356f20aa0af0e2b067775ab7c94f29d86))
+
+
+
 ## [1.2.0](https://github.com/municipio-se/gatsby-packages/compare/v1.1.1-next.0...v1.2.0) (2022-09-25)
 
 

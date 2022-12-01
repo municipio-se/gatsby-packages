@@ -21,6 +21,7 @@ export default function ArticleBody({ styles = defaultStyles, ...restProps }) {
       content: contentHTML,
       contentArea,
       contentMedia,
+      contentModularityModules,
     },
   } = usePageContext();
 
@@ -34,7 +35,11 @@ export default function ArticleBody({ styles = defaultStyles, ...restProps }) {
           />
         </>
       ) : (
-        <PageContent input={contentHTML} contentMedia={contentMedia}>
+        <PageContent
+          input={contentHTML}
+          contentMedia={contentMedia}
+          contentModularityModules={contentModularityModules?.nodes}
+        >
           {({ preamble, content }) => (
             <>
               {preamble && (
