@@ -1,4 +1,3 @@
-import "./src/index.css";
 import { HtmlProcessorExtensionProvider } from "@whitespace/gatsby-theme-wordpress-basic/src/components";
 import React from "react";
 
