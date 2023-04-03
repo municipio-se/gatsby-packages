@@ -1,0 +1,60 @@
+import { Canvas, Meta, Story } from "@storybook/addon-docs";
+import ImageModule from "./ImageModule.jsx";
+
+export const IMAGES = {
+  image1: {
+    alt: "Bild på en katt",
+    base64:
+      "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxISEhUSEhIVFRUVFRUVFRUVFRUVFRUVFRUVFRUWFhUVFRUYHSggGBolHRUVITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OGhAQGy0lIC",
+  },
+};
+
+<Meta
+  title="ImageModule"
+  component={ImageModule}
+  argTypes={{
+    title: { type: "string" },
+    image: { type: "enum", options: ["image1"] },
+    linkUrl: { type: "string" },
+    caption: { type: "string" },
+  }}
+/>
+
+export const Template = ({ title, image, linkUrl, caption, ...args }) => {
+  let { alt, base64 } = IMAGES[image];
+  return (
+    <ImageModule
+      title={title}
+      module={{
+        modImageOptions: {
+          modImageImage: {
+            alt,
+            base64,
+            caption: null,
+            credit: null,
+            height: null,
+            src: null,
+            srcSet: null,
+            srcSetWebp: null,
+            width: null,
+          },
+          link: { url: linkUrl },
+          modImageCaption: caption,
+        },
+      }}
+      {...args}
+    />
+  );
+};
+
+# ImageModule
+
+## Props
+
+## Basic usage
+
+<Canvas>
+  <Story name="Basic usage" args={{}}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
