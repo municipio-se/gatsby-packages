@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0-next.1](https://github.com/municipio-se/gatsby-packages/compare/v1.4.0-next.0...v1.4.0-next.1) (2023-04-03)
+
+
+### Bug Fixes
+
+* Broken import ([254cc6c](https://github.com/municipio-se/gatsby-packages/commit/254cc6c95067b4c4b3379ab803f498384a799bf5))
+
+
+
 ## [1.4.0-next.0](https://github.com/municipio-se/gatsby-packages/compare/v1.3.0...v1.4.0-next.0) (2023-04-03)
 
 **Note:** Version bump only for package root
