@@ -4682,20 +4682,6 @@
     "@whitespace/gatsby-hooks" "^0.5.0"
     prop-types "^15.7.2"
 
-"@whitespace/gatsby-plugin-cookie-consent@^1.4.0-next.7":
-  version "1.4.0-next.7"
-  resolved "https://registry.yarnpkg.com/@whitespace/gatsby-plugin-cookie-consent/-/gatsby-plugin-cookie-consent-1.4.0-next.7.tgz#c69670a55c48f1cc21b3aca8ed8e94ce79e2a8e8"
-  integrity sha512-nHRhT/Et2o/Zi7BZX4kD8FxZrMysBK4nrsXo0MCydWN6oZTUXQV98RNdvDdgDUpC/GRDJ1IwQC5oGlWLImScFA==
-  dependencies:
-    "@jeanfredrik/yett" "^2.0.0"
-    "@whitespace/components" "^0.13.13"
-    "@whitespace/gatsby-hooks" "^0.5.0"
-    clsx "^1.1.1"
-    date-fns "^2.25.0"
-    immer "^9.0.6"
-    prop-types "^15.7.2"
-    use-persisted-state "^0.3.3"
-
 "@whitespace/gatsby-plugin-cookie-consent@^1.4.0-next.9":
   version "1.4.0-next.9"
   resolved "https://registry.yarnpkg.com/@whitespace/gatsby-plugin-cookie-consent/-/gatsby-plugin-cookie-consent-1.4.0-next.9.tgz#cf82a0f23f6414132e66bb6d0efd8c90899f2022"
@@ -4718,13 +4704,6 @@
     js-yaml "^4.1.0"
     tagged-template-noop "^2.1.1"
     toml "^3.0.0"
-
-"@whitespace/gatsby-plugin-matomo@^1.4.0-next.7":
-  version "1.4.0-next.7"
-  resolved "https://registry.yarnpkg.com/@whitespace/gatsby-plugin-matomo/-/gatsby-plugin-matomo-1.4.0-next.7.tgz#8ac9a84aed129b44ed7e08cadbe323481f70f75b"
-  integrity sha512-CvF1HQbn6VJkGmL9icMu3oKuhWbU7GVJoRl5GrG4XpLa3KemP2nq9lGgXiPkA6nH7YvnkMeAW7lDzKMwCqNUeA==
-  dependencies:
-    common-tags "^1.8.2"
 
 "@whitespace/gatsby-plugin-matomo@^1.4.0-next.9":
   version "1.4.0-next.9"
