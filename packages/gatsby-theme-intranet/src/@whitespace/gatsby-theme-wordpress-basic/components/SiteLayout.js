@@ -1,6 +1,6 @@
 import ModularityArea from "@municipio/gatsby-theme-basic/src/components/ModularityArea";
 import { usePageContext } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/page-context";
-import cx from "classnames";
+import clsx from "clsx";
 // import useLocation from "gatsby-theme-municipio/src/hooks/location";
 // import usePrevious from "gatsby-theme-municipio/src/hooks/previous";
 import PropTypes from "prop-types";
@@ -38,13 +38,15 @@ export default function SiteLayout({ children }) {
   return (
     <SiteLayoutContext.Provider value={[siteContext, setSiteContext]}>
       <AccessWall autoLogin={true}>
-        <div className={cx(styles.component, menuOpen && styles.sidebarIsOpen)}>
+        <div
+          className={clsx(styles.component, menuOpen && styles.sidebarIsOpen)}
+        >
           <Sidebar />
           <main className={styles.main} id="main">
             <Toolbar />
             <ModularityArea
               area={sliderArea}
-              className={cx(styles.sliderArea)}
+              className={clsx(styles.sliderArea)}
             />
             <div className={styles.content}>{children}</div>
           </main>

@@ -23,13 +23,13 @@
   },
   "peerDependencies": {
     "gatsby": "^3.14.3",
-    "react": "^17.0.0 || ^18.0.0",
-    "react-dom": "^17.0.0 || ^18.0.0"
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0"
   },
   "devDependencies": {
     "gatsby": "^3.14.3",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0"
   },
   "repository": {
     "type": "git",

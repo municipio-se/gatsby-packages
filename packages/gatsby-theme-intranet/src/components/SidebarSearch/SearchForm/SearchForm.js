@@ -1,5 +1,5 @@
 import { Icon } from "@whitespace/components";
-import cslx from "classnames";
+import clsx from "clsx";
 import { navigate } from "gatsby";
 import PropTypes from "prop-types";
 import qs from "query-string";
@@ -25,7 +25,7 @@ export function SearchForm({ placeholderText, className, ...restprops }) {
 
   return (
     <form
-      className={cslx(styles.component, className)}
+      className={clsx(styles.component, className)}
       action={`/sok`}
       method="get"
       role="search"
@@ -35,8 +35,8 @@ export function SearchForm({ placeholderText, className, ...restprops }) {
       }}
       {...restprops}
     >
-      <Icon name="search" className={cslx(styles.icon)} size="1rem" />
-      <label className={cslx(styles.label, "visually-hidden")}>
+      <Icon name="search" className={clsx(styles.icon)} size="1rem" />
+      <label className={clsx(styles.label, "visually-hidden")}>
         {searchLabelText}
       </label>
       <input
