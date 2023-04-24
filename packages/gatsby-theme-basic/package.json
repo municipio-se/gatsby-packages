@@ -38,15 +38,15 @@
     "yup": "^0.32.11"
   },
   "peerDependencies": {
-    "@wsui/base": "^0.3.4",
-    "@wsui/municipio": "^0.3.4",
+    "@wsui/base": "^0.3.5",
+    "@wsui/municipio": "^0.3.5",
     "gatsby": "^3.14.3",
     "react": "^17.0.0 || ^18.0.0",
     "react-dom": "^17.0.0 || ^18.0.0"
   },
   "devDependencies": {
-    "@wsui/base": "^0.3.4",
-    "@wsui/municipio": "^0.3.4",
+    "@wsui/base": "^0.3.5",
+    "@wsui/municipio": "^0.3.5",
     "gatsby": "^3.14.3",
     "react": "^17.0.0",
     "react-dom": "^17.0.0"
