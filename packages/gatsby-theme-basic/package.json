@@ -29,6 +29,7 @@
     "gatsby-image": "^3.11.0",
     "immer": "^9.0.7",
     "js-video-url-parser": "^0.4.3",
+    "lodash": "^4.17.21",
     "nuka-carousel": "^4.8.1",
     "prop-types": "^15.7.2",
     "react-i18next": "^11.12.0",
@@ -37,11 +38,15 @@
     "yup": "^0.32.11"
   },
   "peerDependencies": {
+    "@wsui/base": "^0.3.4",
+    "@wsui/municipio": "^0.3.4",
     "gatsby": "^3.14.3",
     "react": "^17.0.0 || ^18.0.0",
     "react-dom": "^17.0.0 || ^18.0.0"
   },
   "devDependencies": {
+    "@wsui/base": "^0.3.4",
+    "@wsui/municipio": "^0.3.4",
     "gatsby": "^3.14.3",
     "react": "^17.0.0",
     "react-dom": "^17.0.0"
