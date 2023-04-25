@@ -28,8 +28,12 @@ button.component {
 }
 
 /* Hover */
-.component:hover:not(.component.inert, .component:disabled, .component[aria-disabled="true"], :disabled
-    + .component.label) {
+.component:hover:not(
+    .component.inert,
+    .component:disabled,
+    .component[aria-disabled="true"],
+    :disabled + .component.label
+  ) {
   /* filter: brightness(var(--toolbar-button-hover-brightness, 100%)) grayscale(var(--toolbar-button-hover-grayscale, 0%)); */
   --toolbar-button-color: var(--toolbar-button-hover-color);
   --toolbar-button-text-decoration: var(--toolbar-button-hover-text-decoration);

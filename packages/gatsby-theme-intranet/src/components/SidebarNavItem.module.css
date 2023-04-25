@@ -20,8 +20,12 @@
 }
 
 /* Hover */
-.component:hover:not(.component.inert, .component:disabled, .component[aria-disabled="true"], :disabled
-    + .component.label) {
+.component:hover:not(
+    .component.inert,
+    .component:disabled,
+    .component[aria-disabled="true"],
+    :disabled + .component.label
+  ) {
   color: var(--button-hover-color, white);
   text-decoration: var(--button-hover-text-decoration, none);
   border: var(
