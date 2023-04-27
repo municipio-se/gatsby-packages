@@ -1,9 +1,10 @@
-import { parseColumnWidth } from "@municipio/gatsby-theme-basic/src/utils";
-import { PageGrid, PageGridItem } from "@wsui/base";
-import React from "react";
+/** @jsx jsx */
+import { jsx } from "@emotion/react";
+import { PageGrid, PageGridItem, useThemeProps } from "@wsui/base";
 
 import modularityAreaContext from "../../modularityAreaContext";
 import modularityModuleContext from "../../modularityModuleContext";
+import { parseColumnWidth } from "../../utils";
 
 import ModuleController from "./ModuleController.jsx";
 
@@ -27,11 +28,9 @@ function makeRows(modules) {
   return rows;
 }
 
-export default function ModularityArea({
-  area = {},
-  defaultColspan = 7,
-  ...restProps
-}) {
+export default function ModularityArea(props) {
+  props = useThemeProps({ props, name: "ModularityArea" });
+  let { area = {}, defaultColspan = 7, ...restProps } = props;
   const { modules } = area;
   if (!modules?.length) {
     return null;
