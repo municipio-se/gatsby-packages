@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0-next.3](https://github.com/municipio-se/gatsby-packages/compare/v1.4.0-next.2...v1.4.0-next.3) (2023-04-27)
+
+
+### Bug Fixes
+
+* Add missing deps ([dfbaf03](https://github.com/municipio-se/gatsby-packages/commit/dfbaf0397522bd46ce4628de5eb72044250594d4))
+
+
+
 ## [1.4.0-next.2](https://github.com/municipio-se/gatsby-packages/compare/v1.4.0-next.1...v1.4.0-next.2) (2023-04-04)
 
 

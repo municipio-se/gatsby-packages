@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0-next.3](https://github.com/municipio-se/gatsby-packages/compare/v1.4.0-next.2...v1.4.0-next.3) (2023-04-27)
+
+
+### ⚠ BREAKING CHANGES
+
+* Don't force merge with the Standard WSUI theme
+
+### Features
+
+* Add ability to override default props for ModularityArea component ([a76a363](https://github.com/municipio-se/gatsby-packages/commit/a76a36379f99d5d7fe9011407891f679e7dd78b7))
+* Improve fallback module ([2859319](https://github.com/municipio-se/gatsby-packages/commit/285931909e57c2f2a2e379ba1683cf8422f26815))
+
+
+### Bug Fixes
+
+* Add missing deps ([70dc87d](https://github.com/municipio-se/gatsby-packages/commit/70dc87db4503f83f690e09dc1f98d4954c52aaf5))
+* Add missing deps ([dfbaf03](https://github.com/municipio-se/gatsby-packages/commit/dfbaf0397522bd46ce4628de5eb72044250594d4))
+* Don't force merge with the Standard WSUI theme ([1f58708](https://github.com/municipio-se/gatsby-packages/commit/1f58708ed6fe7b464d37dc56b2f249653e30adad))
+
+
+
 ## [1.4.0-next.2](https://github.com/municipio-se/gatsby-packages/compare/v1.4.0-next.1...v1.4.0-next.2) (2023-04-04)
 
 
