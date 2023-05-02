@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0-next.4](https://github.com/municipio-se/gatsby-packages/compare/v1.4.0-next.3...v1.4.0-next.4) (2023-05-02)
+
+
+### Bug Fixes
+
+* Handle broken image modules ([b297087](https://github.com/municipio-se/gatsby-packages/commit/b2970876231dc01373cafe8b1ee0ae76256c6da0))
+
+
+
 ## [1.4.0-next.3](https://github.com/municipio-se/gatsby-packages/compare/v1.4.0-next.2...v1.4.0-next.3) (2023-04-27)
 
 
