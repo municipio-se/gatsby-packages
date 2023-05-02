@@ -1,12 +1,6 @@
 /** @jsx jsx */
 import { css, jsx } from "@emotion/react";
 import { Section } from "@jfrk/react-heading-levels";
-import {
-  // PageChildNavigation,
-  PageContentAreaModules,
-  // PageFeaturedImage,
-  // PageSiblingNavigation,
-} from "@municipio/gatsby-theme-basic/src/wsui/components";
 import { usePageContext } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/page-context";
 import {
   PageContent,
@@ -16,8 +10,15 @@ import {
 } from "@whitespace/gatsby-theme-wordpress-basic/src/wsui/components";
 import { PageGrid, PageGridItem, useThemeProps } from "@wsui/base";
 
-export default function DefaultPageTemplate(props) {
-  props = useThemeProps({ props, name: "DefaultPageTemplate" });
+import {
+  // PageChildNavigation,
+  PageContentAreaModules,
+  // PageFeaturedImage,
+  // PageSiblingNavigation,
+} from "../../../../wsui/components";
+
+export default function DefaultTemplate(props) {
+  props = useThemeProps({ props, name: "DefaultTemplate" });
   const { title } = usePageContext();
   return (
     <article css={css``}>
