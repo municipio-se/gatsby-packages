@@ -1,3 +1,4 @@
+import { css, useTheme } from "@emotion/react";
 import { H, Section } from "@jfrk/react-heading-levels";
 import React from "react";
 
@@ -11,6 +12,7 @@ export default function ModuleWrapper({
   title,
   ...restProps
 }) {
+  const theme = useTheme();
   const MaybeSection = title ? Section : React.Fragment;
 
   return (
@@ -20,7 +22,13 @@ export default function ModuleWrapper({
           {typeof title === "function" ? (
             title({ H })
           ) : (
-            <ModuleWrapperTitle>{title}</ModuleWrapperTitle>
+            <ModuleWrapperTitle
+              css={css`
+                margin-bottom: ${theme.getLength(7.5)};
+              `}
+            >
+              {title}
+            </ModuleWrapperTitle>
           )}
         </ModuleWrapperHeader>
       )}
