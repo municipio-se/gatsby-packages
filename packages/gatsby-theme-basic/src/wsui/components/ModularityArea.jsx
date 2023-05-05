@@ -4,6 +4,7 @@ import { PageGrid, PageGridItem, useThemeProps } from "@wsui/base";
 
 import modularityAreaContext from "../../modularityAreaContext";
 import modularityModuleContext from "../../modularityModuleContext";
+import modularityRowContext from "../../modularityRowContext";
 import { parseColumnWidth } from "../../utils";
 
 import ModuleController from "./ModuleController.jsx";
@@ -30,7 +31,7 @@ function makeRows(modules) {
 
 export default function ModularityArea(props) {
   props = useThemeProps({ props, name: "ModularityArea" });
-  let { area = {}, defaultColspan = 7, ...restProps } = props;
+  let { area = {}, defaultColspan = 7, context = {}, ...restProps } = props;
   const { modules } = area;
   if (!modules?.length) {
     return null;
@@ -44,22 +45,24 @@ export default function ModularityArea(props) {
       })),
   );
   return (
-    <modularityAreaContext.Provider value={area}>
+    <modularityAreaContext.Provider value={{...area, ...context}}>
       {moduleRows.map(({ modules }, index) => {
         return (
-          <PageGrid key={index} as="div" {...restProps}>
-            {modules.map(({ hidden, module, colspan, ...rest }, index) => {
-              return (
-                <PageGridItem key={index} colspan={colspan || defaultColspan}>
-                  <modularityModuleContext.Provider
-                    value={{ hidden, module, colspan, ...rest }}
-                  >
-                    <ModuleController module={module} />
-                  </modularityModuleContext.Provider>
-                </PageGridItem>
-              );
-            })}
-          </PageGrid>
+          <modularityRowContext.Provider key={index} value={{modules, index}}>
+            <PageGrid key={index} as="div" {...restProps}>
+              {modules.map(({ hidden, module, colspan, ...rest }, index) => {
+                return (
+                  <PageGridItem key={index} colspan={colspan || defaultColspan}>
+                    <modularityModuleContext.Provider
+                      value={{ hidden, module, colspan, ...rest }}
+                    >
+                      <ModuleController module={module} />
+                    </modularityModuleContext.Provider>
+                  </PageGridItem>
+                );
+              })}
+            </PageGrid>
+          </modularityRowContext.Provider>
         );
       })}
     </modularityAreaContext.Provider>
