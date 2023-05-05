@@ -45,10 +45,10 @@ export default function ModularityArea(props) {
       })),
   );
   return (
-    <modularityAreaContext.Provider value={{...area, ...context}}>
+    <modularityAreaContext.Provider value={{ ...area, ...context }}>
       {moduleRows.map(({ modules }, index) => {
         return (
-          <modularityRowContext.Provider key={index} value={{modules, index}}>
+          <modularityRowContext.Provider key={index} value={{ modules, index }}>
             <PageGrid key={index} as="div" {...restProps}>
               {modules.map(({ hidden, module, colspan, ...rest }, index) => {
                 return (
