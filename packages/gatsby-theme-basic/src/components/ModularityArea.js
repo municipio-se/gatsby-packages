@@ -1,4 +1,3 @@
-import { parseColumnWidth } from "@municipio/gatsby-theme-basic/src/utils";
 import { MaybeFragment, PageGridGroup } from "@whitespace/components";
 import clsx from "clsx";
 import PropTypes from "prop-types";
@@ -6,6 +5,7 @@ import React from "react";
 
 import modularityAreaContext from "../modularityAreaContext";
 import modularityModuleContext from "../modularityModuleContext";
+import { parseColumnWidth } from "../utils";
 
 import * as defaultStyles from "./ModularityArea.module.css";
 import ModuleController from "./ModuleController";

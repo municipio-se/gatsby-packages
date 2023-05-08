@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@gatsbyjs/reach-router": "^1.3.6",
+    "@jfrk/react-heading-levels": "^1.0.0",
     "@nyans/parser": "^0.1.6",
     "@whitespace/components": "^0.13.24",
     "@whitespace/gatsby-hooks": "^0.5.0",
@@ -38,7 +39,9 @@
     "yup": "^0.32.11"
   },
   "peerDependencies": {
-    "@emotion/react": "^11.10.6",
+    "@emotion/css": "^11.5.0",
+    "@emotion/react": "^11.5.0",
+    "@emotion/styled": "^11.5.0",
     "@wsui/base": "^0.3.5",
     "@wsui/municipio": "^0.3.5",
     "gatsby": "^3.14.3",
@@ -46,7 +49,9 @@
     "react-dom": "^17.0.0 || ^18.0.0"
   },
   "devDependencies": {
-    "@emotion/react": "^11.10.6",
+    "@emotion/css": "^11.5.0",
+    "@emotion/react": "^11.5.0",
+    "@emotion/styled": "^11.5.0",
     "@wsui/base": "^0.3.5",
     "@wsui/municipio": "^0.3.5",
     "gatsby": "^3.14.3",
