@@ -59,8 +59,8 @@ function defaultNormalizePostsModuleItems(
           );
 
           let excerpt = excerpted(stripHTML(item.content));
-          const splitContent = item.content.split("<!--more-->");
-          if (splitContent[1]) {
+          const splitContent = item.content?.split("<!--more-->");
+          if (splitContent?.[1]) {
             // Use everything above Read more tag as excerpt/preamble
             excerpt = stripHTML(splitContent[0]);
           }
