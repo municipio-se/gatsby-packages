@@ -1,12 +1,5 @@
 /** @jsx jsx */
 import { css, jsx } from "@emotion/react";
-import { Section } from "@jfrk/react-heading-levels";
-import {
-  // PageChildNavigation,
-  PageContentAreaModules,
-  // PageFeaturedImage,
-  // PageSiblingNavigation,
-} from "@municipio/gatsby-theme-basic/src/wsui/components";
 import { usePageContext } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/page-context";
 import {
   PageContent,
@@ -14,13 +7,20 @@ import {
   PagePreamble,
   Seo,
 } from "@whitespace/gatsby-theme-wordpress-basic/src/wsui/components";
-import { PageGrid, PageGridItem, useThemeProps } from "@wsui/base";
+import { Section, PageGrid, PageGridItem, useThemeProps } from "@wsui/base";
+
+import {
+  // PageChildNavigation,
+  PageContentAreaModules,
+  // PageFeaturedImage,
+  // PageSiblingNavigation,
+} from "../../../../wsui/components";
 
 export default function FrontPageTemplate(props) {
   props = useThemeProps({ props, name: "FrontPageTemplate" });
   const { title } = usePageContext();
   return (
-    <article css={css``}>
+    <article>
       <Seo title={title} isFrontPage />
       <PageGrid
         css={css`
@@ -36,7 +36,9 @@ export default function FrontPageTemplate(props) {
           </Section>
         </PageGridItem>
       </PageGrid>
-      <PageContentAreaModules maxColspan={7} css={css``} />
+      <Section>
+        <PageContentAreaModules maxColspan={7} css={css``} />
+      </Section>
     </article>
   );
 }
