@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0-next.7](https://github.com/municipio-se/gatsby-packages/compare/v1.4.0-next.6...v1.4.0-next.7) (2023-05-09)
+
+
+### Bug Fixes
+
+* Handle no content in posts module ([8360421](https://github.com/municipio-se/gatsby-packages/commit/8360421ba2dc78c8c0b3f100211c64d21a70b91d))
+
+
+
 ## [1.4.0-next.6](https://github.com/municipio-se/gatsby-packages/compare/v1.4.0-next.5...v1.4.0-next.6) (2023-05-08)
 
 **Note:** Version bump only for package root
