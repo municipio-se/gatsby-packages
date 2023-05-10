@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { css, jsx } from "@emotion/react";
+import { css, jsx, useTheme } from "@emotion/react";
 import { usePageContext } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/page-context";
 import {
   PageContent,
@@ -17,27 +17,29 @@ import {
 } from "../../../../wsui/components";
 
 export default function FrontPageTemplate(props) {
+  const theme = useTheme();
   props = useThemeProps({ props, name: "FrontPageTemplate" });
+  let { spacing = [4, 8] } = props;
   const { title } = usePageContext();
   return (
     <article>
       <Seo title={title} isFrontPage />
-      <PageGrid
-        css={css`
-          text-align: center;
-          padding-block: 2rem;
-        `}
-      >
+      <PageGrid>
         <PageGridItem maxColspan={7}>
-          <PageHeading hideTitle css={css``} marginAfter />
+          <PageHeading hideTitle marginAfter />
           <Section>
-            <PagePreamble css={css``} marginAfter />
-            <PageContent />
+            <PagePreamble marginAfter />
+            <PageContent marginAfter />
           </Section>
         </PageGridItem>
       </PageGrid>
       <Section>
-        <PageContentAreaModules maxColspan={7} css={css``} />
+        <PageContentAreaModules
+          maxColspan={7}
+          css={css`
+            margin-bottom: ${theme.getLength(spacing)};
+          `}
+        />
       </Section>
     </article>
   );

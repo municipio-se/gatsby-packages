@@ -1,5 +1,5 @@
 import { css, useTheme } from "@emotion/react";
-import { H, Section } from "@jfrk/react-heading-levels";
+import { H, Section } from "@wsui/base";
 import React from "react";
 
 export default function ModuleWrapper({

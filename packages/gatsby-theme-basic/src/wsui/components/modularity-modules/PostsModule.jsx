@@ -1,12 +1,12 @@
 import { HTML } from "@whitespace/gatsby-theme-wordpress-basic/src/components";
 import { useHTMLProcessor } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/html-processor";
 import { PostsModule as WsuiPostsModule } from "@wsui/municipio";
-import React from "react";
+import React, { useContext } from "react";
 
 // import PostsModuleFilterProvider from "../../../components/modularity-modules/PostsModuleFilterProvider";
 import useTaxonomies from "../../../hooks/useTaxonomies";
+import modularityModuleContext from "../../../modularityModuleContext";
 import getMostRelevantDate from "../../../utils/getMostRelevantDate";
-import ModuleWrapper from "../ModuleWrapper.jsx";
 
 const excerpted = (text) => {
   return text.length > 153 ? text.slice(0, 150) + "…" : text;
@@ -125,6 +125,8 @@ export default function PostsModule({
     stripHTML,
   });
 
+  const { headingVariant } = useContext(modularityModuleContext);
+
   // if (isFilteringEnabled) {
   //   return (
   //     <PostsModuleFilterProvider>
@@ -139,12 +141,13 @@ export default function PostsModule({
   // }
 
   return (
-    <ModuleWrapper title={title} {...restProps}>
-      <WsuiPostsModule
-        items={items}
-        visibleFields={visibleFields}
-        displayMode={displayMode}
-      />
-    </ModuleWrapper>
+    <WsuiPostsModule
+      title={title}
+      items={items}
+      visibleFields={visibleFields}
+      displayMode={displayMode}
+      headingVariant={headingVariant}
+      {...restProps}
+    />
   );
 }

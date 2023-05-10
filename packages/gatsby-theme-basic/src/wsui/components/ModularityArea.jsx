@@ -31,7 +31,13 @@ function makeRows(modules) {
 
 export default function ModularityArea(props) {
   props = useThemeProps({ props, name: "ModularityArea" });
-  let { area = {}, defaultColspan = 7, context = {}, ...restProps } = props;
+  let {
+    area = {},
+    defaultColspan = 7,
+    context = {},
+    headingVariant,
+    ...restProps
+  } = props;
   const { modules } = area;
   if (!modules?.length) {
     return null;
@@ -54,7 +60,13 @@ export default function ModularityArea(props) {
                 return (
                   <PageGridItem key={index} colspan={colspan || defaultColspan}>
                     <modularityModuleContext.Provider
-                      value={{ hidden, module, colspan, ...rest }}
+                      value={{
+                        hidden,
+                        module,
+                        colspan,
+                        headingVariant,
+                        ...rest,
+                      }}
                     >
                       <ModuleController module={module} />
                     </modularityModuleContext.Provider>
