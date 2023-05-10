@@ -1,5 +1,5 @@
 import { css, useTheme } from "@emotion/react";
-import { H, Section } from "@wsui/base";
+import { H, Heading, Section, withDefaultProps } from "@wsui/base";
 import React from "react";
 
 export default function ModuleWrapper({
@@ -7,7 +7,10 @@ export default function ModuleWrapper({
   children,
   components: { ModuleWrapperHeader = "div", ModuleWrapperTitle = H } = {
     ModuleWrapperHeader: "div",
-    ModuleWrapperTitle: H,
+    ModuleWrapperTitle: withDefaultProps(Heading, {
+      marginBefore: true,
+      marginAfter: true,
+    }),
   },
   title,
   ...restProps
@@ -20,15 +23,9 @@ export default function ModuleWrapper({
       {!!title && (
         <ModuleWrapperHeader>
           {typeof title === "function" ? (
-            title({ H })
+            title({ H, Heading })
           ) : (
-            <ModuleWrapperTitle
-              css={css`
-                margin-bottom: ${theme.getLength(7.5)};
-              `}
-            >
-              {title}
-            </ModuleWrapperTitle>
+            <ModuleWrapperTitle>{title}</ModuleWrapperTitle>
           )}
         </ModuleWrapperHeader>
       )}
