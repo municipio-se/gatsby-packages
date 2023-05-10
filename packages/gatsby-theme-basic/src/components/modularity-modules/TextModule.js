@@ -61,7 +61,7 @@ export default function TextModule({
       <TextContent className={styles.content}>
         <HTML
           contentMedia={contentMedia}
-          contentModularityModules={contentModularityModules?.nodes}
+          contentModularityModules={contentModularityModules}
         >
           {content}
         </HTML>

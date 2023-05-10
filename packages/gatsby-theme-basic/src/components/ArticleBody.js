@@ -38,7 +38,7 @@ export default function ArticleBody({ styles = defaultStyles, ...restProps }) {
         <PageContent
           input={contentHTML}
           contentMedia={contentMedia}
-          contentModularityModules={contentModularityModules?.nodes}
+          contentModularityModules={contentModularityModules}
         >
           {({ preamble, content }) => (
             <>

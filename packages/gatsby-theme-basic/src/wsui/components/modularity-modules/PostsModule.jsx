@@ -27,7 +27,7 @@ function defaultNormalizePostsModuleItems(
           let processedContent = (
             <HTML
               contentMedia={postContentMedia}
-              contentModularityModules={postContentModularityModules?.nodes}
+              contentModularityModules={postContentModularityModules}
             >
               {item.postContent}
             </HTML>

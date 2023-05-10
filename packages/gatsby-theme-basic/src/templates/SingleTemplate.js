@@ -50,7 +50,7 @@ export default function SingleTemplate({ pageContext }) {
         <PageContent
           input={contentHTML}
           contentMedia={contentMedia}
-          contentModularityModules={contentModularityModules?.nodes}
+          contentModularityModules={contentModularityModules}
         >
           {({ preamble, content }) => (
             <>
