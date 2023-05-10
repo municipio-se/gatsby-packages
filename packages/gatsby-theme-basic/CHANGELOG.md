@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0-next.9](https://github.com/municipio-se/gatsby-packages/compare/v1.4.0-next.8...v1.4.0-next.9) (2023-05-10)
+
+
+### Bug Fixes
+
+* Front page heading levels ([1b0cfac](https://github.com/municipio-se/gatsby-packages/commit/1b0cfac84a22fc7761e6a6e65d3df4b18a05b383))
+* Layout issues ([c8b0bdc](https://github.com/municipio-se/gatsby-packages/commit/c8b0bdc7365f2f50b3592d57b63cee5a8e6e81cc))
+* Map excerpt field to description field ([fd9ef3b](https://github.com/municipio-se/gatsby-packages/commit/fd9ef3b392204a4b5f01fc7066389a7e2e6712db))
+
+
+
 ## [1.4.0-next.8](https://github.com/municipio-se/gatsby-packages/compare/v1.4.0-next.7...v1.4.0-next.8) (2023-05-09)
 
 **Note:** Version bump only for package @municipio/gatsby-theme-basic
