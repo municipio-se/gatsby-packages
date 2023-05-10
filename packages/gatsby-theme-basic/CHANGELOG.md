@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0-next.10](https://github.com/municipio-se/gatsby-packages/compare/v1.4.0-next.9...v1.4.0-next.10) (2023-05-10)
+
+
+### Bug Fixes
+
+* Modularity shortcodes in WSUI ([a3b198e](https://github.com/municipio-se/gatsby-packages/commit/a3b198e7ceefa16da25971e11a97760efca3f310))
+* Normalize module headings ([dd956bc](https://github.com/municipio-se/gatsby-packages/commit/dd956bc2ecf7ee804caa8f9c6cc5b795f3d9e4d3))
+
+
+
 ## [1.4.0-next.9](https://github.com/municipio-se/gatsby-packages/compare/v1.4.0-next.8...v1.4.0-next.9) (2023-05-10)
 
 
