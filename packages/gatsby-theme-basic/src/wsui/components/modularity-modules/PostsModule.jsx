@@ -37,7 +37,7 @@ function defaultNormalizePostsModuleItems(
             ...item,
             title: item.postTitle,
             link: item?.link,
-            excerpt: stripHTML(item.postContent),
+            description: stripHTML(item.postContent),
             content: processedContent,
           };
         },
@@ -113,10 +113,14 @@ export default function PostsModule({
   let displayMode = module?.modPostsDataDisplay?.postsDisplayAs;
 
   let visibleFields =
-    module?.modPostsDataSource.postsDataSource !== "input" &&
-    module?.modPostsDataDisplay?.postsFields
-      ? ["title", ...module.modPostsDataDisplay.postsFields]
-      : ["image", "title", "excerpt"];
+    displayMode === "expandable-list"
+      ? ["title", "description"]
+      : module?.modPostsDataSource.postsDataSource !== "input" &&
+        module?.modPostsDataDisplay?.postsFields
+      ? ["title", ...module.modPostsDataDisplay.postsFields].map((field) =>
+          field === "excerpt" ? "description" : field,
+        )
+      : ["image", "title", "description"];
 
   const { stripHTML } = useHTMLProcessor();
 
