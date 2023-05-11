@@ -18,7 +18,6 @@ export default function WPModularityModule(props) {
   let module = contentModularityModules?.nodes?.find(
     (module) => module.databaseId === Number(moduleDatabaseId),
   );
-  console.log(module);
   if (!module) {
     if (process.env.NODE_ENV !== "production") {
       return (
