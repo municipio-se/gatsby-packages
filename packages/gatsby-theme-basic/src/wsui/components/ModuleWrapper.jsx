@@ -1,4 +1,4 @@
-import { css, useTheme } from "@emotion/react";
+import { useTheme } from "@emotion/react";
 import { H, Heading, Section, withDefaultProps } from "@wsui/base";
 import React from "react";
 
@@ -13,8 +13,10 @@ export default function ModuleWrapper({
     }),
   },
   title,
+  headingVariant,
   ...restProps
 }) {
+  // eslint-disable-next-line no-unused-vars
   const theme = useTheme();
   const MaybeSection = title ? Section : React.Fragment;
 
@@ -23,9 +25,11 @@ export default function ModuleWrapper({
       {!!title && (
         <ModuleWrapperHeader>
           {typeof title === "function" ? (
-            title({ H, Heading })
+            title({ H, Heading, variant: headingVariant })
           ) : (
-            <ModuleWrapperTitle>{title}</ModuleWrapperTitle>
+            <ModuleWrapperTitle variant={headingVariant}>
+              {title}
+            </ModuleWrapperTitle>
           )}
         </ModuleWrapperHeader>
       )}
