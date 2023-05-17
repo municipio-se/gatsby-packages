@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0-next.11](https://github.com/municipio-se/gatsby-packages/compare/v1.4.0-next.10...v1.4.0-next.11) (2023-05-17)
+
+
+### Bug Fixes
+
+* Support module wrapper heading variant ([76e1e25](https://github.com/municipio-se/gatsby-packages/commit/76e1e256d9386396c7aff6b70105ef449e1e2ea3))
+
+
+
 ## [1.4.0-next.10](https://github.com/municipio-se/gatsby-packages/compare/v1.4.0-next.9...v1.4.0-next.10) (2023-05-10)
 
 
