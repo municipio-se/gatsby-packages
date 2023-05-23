@@ -28,6 +28,9 @@ FileslistModule.propTypes = {
         }),
       ),
     }).isRequired,
+    modDescription: PropTypes.shape({
+      description: PropTypes.string,
+    }),
   }).isRequired,
 };
 

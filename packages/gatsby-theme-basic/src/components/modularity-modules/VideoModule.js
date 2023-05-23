@@ -23,6 +23,9 @@ VideoModule.propTypes = {
       // }),
       embedLink: PropTypes.string,
     }),
+    modDescription: PropTypes.shape({
+      description: PropTypes.string,
+    }),
   }),
 };
 

@@ -1,4 +1,6 @@
 import { css } from "@emotion/react";
+import { Html } from "@whitespace/gatsby-theme-wordpress-basic/src/wsui/components";
+import { TypographyBlock } from "@wsui/base";
 import clsx from "clsx";
 import { kebabCase } from "lodash";
 import PropTypes from "prop-types";
@@ -17,6 +19,9 @@ ListPostsModule.propTypes = {
       postsFields: PropTypes.arrayOf(PropTypes.string),
       theme: PropTypes.string,
     }),
+    modDescription: PropTypes.shape({
+      description: PropTypes.string,
+    }),
   }),
   normalizedItems: PropTypes.arrayOf(PropTypes.object),
   styles: PropTypes.objectOf(PropTypes.string),
@@ -34,6 +39,7 @@ export default function ListPostsModule({
 }) {
   const {
     modPostsDataDisplay: { theme },
+    modDescription: { description },
   } = module;
   return (
     <ModuleWrapper
@@ -49,6 +55,11 @@ export default function ListPostsModule({
           : null,
       })}
     >
+      {description && (
+        <TypographyBlock>
+          <Html>{description}</Html>
+        </TypographyBlock>
+      )}
       <RuledList className={clsx(styles.list)} ruleTop={!title} ruleBottom>
         {normalizedItems.map((item, index) => {
           return (

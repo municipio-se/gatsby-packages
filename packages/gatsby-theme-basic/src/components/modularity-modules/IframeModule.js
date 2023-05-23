@@ -17,6 +17,9 @@ IframeModule.propTypes = {
       iframeHeight: PropTypes.number,
       iframeUrl: PropTypes.string,
     }),
+    modDescription: PropTypes.shape({
+      description: PropTypes.string,
+    }),
   }),
 };
 

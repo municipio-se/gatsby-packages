@@ -25,6 +25,9 @@ GalleryModule.propTypes = {
       display: PropTypes.array,
       pauseOnHover: PropTypes.bool,
     }),
+    modDescription: PropTypes.shape({
+      description: PropTypes.string,
+    }),
   }),
 };
 
