@@ -1,4 +1,6 @@
 import { Link } from "@whitespace/components";
+import { Html } from "@whitespace/gatsby-theme-wordpress-basic/src/wsui/components";
+import { TypographyBlock } from "@wsui/base";
 import clsx from "clsx";
 import formatFileSize from "filesize";
 import PropTypes from "prop-types";
@@ -50,16 +52,23 @@ export default function FileslistModule({
   const {
     i18n: { language },
   } = useTranslation();
+  const description = module?.modDescription?.description;
   const fileList = module?.modFileslistOptions?.fileList;
   if (!fileList?.length) {
     return null;
   }
+
   return (
     <ModuleWrapper
       title={title}
       {...restProps}
       className={clsx(styles.component, className)}
     >
+      {description && (
+        <TypographyBlock>
+          <Html>{description}</Html>
+        </TypographyBlock>
+      )}
       <ul className={clsx(styles.list)}>
         {fileList.map((item, index) => {
           if (!item.file) {
