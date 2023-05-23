@@ -1,3 +1,4 @@
+import { getMainArchivePagePathFromPageContext } from "@whitespace/gatsby-theme-wordpress-basic/src/contentType";
 import { useHTMLProcessor } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/html-processor";
 import { Html } from "@whitespace/gatsby-theme-wordpress-basic/src/wsui/components";
 import { TypographyBlock } from "@wsui/base";
@@ -127,6 +128,23 @@ export default function PostsModule({
         )
       : ["image", "title", "description"];
 
+  const archiveLinkLabel = module.modPostsDataSource?.customArchiveLink?.url
+    ? module.modPostsDataSource?.customArchiveLink?.title
+    : module.modPostsDataSource?.postsDataPostType?.labels?.allItems;
+
+  const archiveLinkUri = module.modPostsDataSource?.customArchiveLink?.url
+    ? module.modPostsDataSource?.customArchiveLink?.url
+    : module.modPostsDataSource?.postsDataPostType &&
+      getMainArchivePagePathFromPageContext({
+        contentType: module.modPostsDataSource?.postsDataPostType,
+      });
+  const showArchiveLink =
+    module.modPostsDataSource?.archiveLink &&
+    (module.modPostsDataSource?.customArchiveLink?.url ||
+      module.modPostsDataSource?.postsDataPostType?.hasArchive) &&
+    archiveLinkUri &&
+    archiveLinkLabel;
+
   const { stripHTML } = useHTMLProcessor();
 
   const items = normalizePostsModuleItems(module, {
@@ -157,6 +175,12 @@ export default function PostsModule({
       visibleFields={visibleFields}
       displayMode={displayMode}
       headingVariant={headingVariant}
+      archiveLink={
+        !!showArchiveLink && {
+          label: archiveLinkLabel,
+          uri: archiveLinkUri,
+        }
+      }
       {...restProps}
     />
   );
