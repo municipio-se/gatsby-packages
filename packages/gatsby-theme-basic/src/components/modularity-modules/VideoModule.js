@@ -1,3 +1,5 @@
+import { Html } from "@whitespace/gatsby-theme-wordpress-basic/src/wsui/components";
+import { TypographyBlock } from "@wsui/base";
 import clsx from "clsx";
 import urlParser from "js-video-url-parser";
 import PropTypes from "prop-types";
@@ -31,7 +33,10 @@ export default function VideoModule({
   title,
   ...restProps
 }) {
-  const { modVideoOptions: { embedLink } = {} } = module;
+  const {
+    modVideoOptions: { embedLink } = {},
+    modDescription: { description },
+  } = module;
   const url = urlParser.create({
     videoInfo: urlParser.parse(embedLink),
     format: "embed",
@@ -43,6 +48,11 @@ export default function VideoModule({
       {...restProps}
       className={clsx(styles.component, className)}
     >
+      {description && (
+        <TypographyBlock>
+          <Html>{description}</Html>
+        </TypographyBlock>
+      )}
       <VideoIframe url={url} aspectRatio={"16/9"} />
     </ModuleWrapper>
   );
