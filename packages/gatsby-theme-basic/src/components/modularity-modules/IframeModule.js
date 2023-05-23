@@ -1,3 +1,5 @@
+import { Html } from "@whitespace/gatsby-theme-wordpress-basic/src/wsui/components";
+import { TypographyBlock } from "@wsui/base";
 import clsx from "clsx";
 import PropTypes from "prop-types";
 import React from "react";
@@ -25,7 +27,10 @@ export default function IframeModule({
   module = {},
   ...restProps
 }) {
-  const { modIframeOptions: { iframeHeight, iframeUrl } = {} } = module;
+  const {
+    modIframeOptions: { iframeHeight, iframeUrl } = {},
+    modDescription: { description },
+  } = module;
 
   return (
     <ModuleWrapper
@@ -33,6 +38,11 @@ export default function IframeModule({
       {...restProps}
       className={clsx(styles.component, className)}
     >
+      {description && (
+        <TypographyBlock>
+          <Html>{description}</Html>
+        </TypographyBlock>
+      )}
       <iframe
         src={iframeUrl}
         height={iframeHeight}
