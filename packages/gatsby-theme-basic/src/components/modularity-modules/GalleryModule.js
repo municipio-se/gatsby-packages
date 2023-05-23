@@ -1,6 +1,8 @@
 import { Icon } from "@whitespace/components";
 import { Image } from "@whitespace/gatsby-theme-wordpress-basic/src/components";
 import { useHTMLProcessor } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/html-processor";
+import { Html } from "@whitespace/gatsby-theme-wordpress-basic/src/wsui/components";
+import { TypographyBlock } from "@wsui/base";
 import clsx from "clsx";
 import Carousel from "nuka-carousel";
 import PropTypes from "prop-types";
@@ -65,6 +67,7 @@ export default function GalleryModule({
 }) {
   const { t } = useTranslation();
 
+  const description = module?.modDescription?.description;
   let images = module?.modGalleryOptions?.modGalleryImages?.images;
   let displaySettings = module?.settings?.display;
   let pauseOnHover = module?.settings?.pauseOnHover;
@@ -166,6 +169,11 @@ export default function GalleryModule({
       className={clsx(styles.component, className)}
       {...restProps}
     >
+      {description && (
+        <TypographyBlock>
+          <Html>{description}</Html>
+        </TypographyBlock>
+      )}
       <div className={clsx(styles.inner)}>
         <Carousel {...carouselSettings}>
           {images.map((image, index) => (
