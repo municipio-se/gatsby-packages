@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from "@emotion/react";
+import { css, jsx, useTheme } from "@emotion/react";
 import { PageGrid, PageGridItem, useThemeProps } from "@wsui/base";
 
 import modularityAreaContext from "../../modularityAreaContext";
@@ -30,11 +30,13 @@ function makeRows(modules) {
 }
 
 export default function ModularityArea(props) {
+  const theme = useTheme();
   props = useThemeProps({ props, name: "ModularityArea" });
   let {
     area = {},
     defaultColspan = 7,
     context = {},
+    gap = [4, 8],
     headingVariant,
     ...restProps
   } = props;
@@ -55,7 +57,16 @@ export default function ModularityArea(props) {
       {moduleRows.map(({ modules }, index) => {
         return (
           <modularityRowContext.Provider key={index} value={{ modules, index }}>
-            <PageGrid key={index} as="div" {...restProps}>
+            <PageGrid
+              key={index}
+              as="div"
+              css={css`
+                margin-bottom: ${index < moduleRows.length - 1
+                  ? theme.getLength(gap)
+                  : null};
+              `}
+              {...restProps}
+            >
               {modules.map(({ hidden, module, colspan, ...rest }, index) => {
                 return (
                   <PageGridItem key={index} colspan={colspan || defaultColspan}>
