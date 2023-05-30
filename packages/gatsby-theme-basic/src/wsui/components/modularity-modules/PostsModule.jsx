@@ -1,6 +1,6 @@
-import { HTML } from "@whitespace/gatsby-theme-wordpress-basic/src/components";
 import { getMainArchivePagePathFromPageContext } from "@whitespace/gatsby-theme-wordpress-basic/src/contentType";
 import { useHTMLProcessor } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/html-processor";
+import { Html } from "@whitespace/gatsby-theme-wordpress-basic/src/wsui/components";
 import { PostsModule as WsuiPostsModule } from "@wsui/municipio";
 import React, { useContext } from "react";
 
@@ -17,7 +17,7 @@ const excerpted = (text) => {
 
 function defaultNormalizePostsModuleItems(
   { modPostsDataSource, contentNodes },
-  { HTML, stripHTML } = {},
+  { Html, stripHTML } = {},
 ) {
   if (!modPostsDataSource?.postsDataSource) {
     return [];
@@ -34,12 +34,12 @@ function defaultNormalizePostsModuleItems(
           ...item
         }) => {
           let processedContent = (
-            <HTML
+            <Html
               contentMedia={postContentMedia}
               contentModularityModules={postContentModularityModules}
             >
               {item.postContent}
-            </HTML>
+            </Html>
           );
 
           // Use the link field but also consider the deprecated permalink field
@@ -70,7 +70,7 @@ function defaultNormalizePostsModuleItems(
         .slice(0, itemsToSlice)
         .map(({ contentMedia, ...item }) => {
           let processedContent = (
-            <HTML contentMedia={contentMedia}>{item.content}</HTML>
+            <Html contentMedia={contentMedia}>{item.content}</Html>
           );
 
           let excerpt = excerpted(stripHTML(item.content));
@@ -129,6 +129,7 @@ export default function PostsModule({
   //   !!module?.modPostsDataFiltering?.frontEndTaxFiltering &&
   //   module?.modPostsDataSource?.postsDataSource === "posttype";
   let displayMode = module?.modPostsDataDisplay?.postsDisplayAs;
+  let description = module?.modDescription?.description;
 
   let visibleFields =
     displayMode === "expandable-list"
@@ -165,7 +166,7 @@ export default function PostsModule({
   const { stripHTML } = useHTMLProcessor();
 
   const items = normalizePostsModuleItems(module, {
-    HTML,
+    Html,
     stripHTML,
   });
 
@@ -192,6 +193,7 @@ export default function PostsModule({
       itemColor={itemColor}
       headingPosition={headingPosition}
       visibleFields={visibleFields}
+      description={description}
       displayMode={displayMode}
       headingVariant={headingVariant}
       archiveLink={
