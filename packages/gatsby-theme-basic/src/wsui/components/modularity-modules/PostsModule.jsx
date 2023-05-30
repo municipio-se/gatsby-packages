@@ -140,6 +140,8 @@ export default function PostsModule({
     archiveLinkUri &&
     archiveLinkLabel;
 
+  const itemColor = module?.modPostsDataDisplay?.theme || undefined;
+
   const { stripHTML } = useHTMLProcessor();
 
   const items = normalizePostsModuleItems(module, {
@@ -166,6 +168,7 @@ export default function PostsModule({
     <WsuiPostsModule
       title={title}
       items={items}
+      itemColor={itemColor}
       visibleFields={visibleFields}
       displayMode={displayMode}
       headingVariant={headingVariant}
