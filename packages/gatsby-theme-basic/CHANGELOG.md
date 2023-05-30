@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0-next.14](https://github.com/municipio-se/gatsby-packages/compare/v1.4.0-next.13...v1.4.0-next.14) (2023-05-30)
+
+
+### Bug Fixes
+
+* Add spacing between module sections ([9db388a](https://github.com/municipio-se/gatsby-packages/commit/9db388a184c0718476097e08904fd4065dc95a99))
+
+
+
 ## [1.4.0-next.13](https://github.com/municipio-se/gatsby-packages/compare/v1.4.0-next.12...v1.4.0-next.13) (2023-05-30)
 
 
