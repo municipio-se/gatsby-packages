@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0-next.12](https://github.com/municipio-se/gatsby-packages/compare/v1.4.0-next.11...v1.4.0-next.12) (2023-05-23)
+
+
+### Features
+
+* Add support for archive link ([68ec1a4](https://github.com/municipio-se/gatsby-packages/commit/68ec1a432f2737da93e70c54c4855ddb920bf941))
+
+
+### Bug Fixes
+
+* Missing post module item description ([f41925e](https://github.com/municipio-se/gatsby-packages/commit/f41925e9c67ab533cf80872ca5afde36cbfc70cd))
+
+
+
 ## [1.4.0-next.11](https://github.com/municipio-se/gatsby-packages/compare/v1.4.0-next.10...v1.4.0-next.11) (2023-05-17)
 
 

@@ -76,7 +76,7 @@ function defaultNormalizePostsModuleItems(
                 getMostRelevantDate(item.archiveDatesGmt)) ||
               item.dateGmt,
             url: item.uri,
-            excerpt: item.description ? item.description : excerpt,
+            description: item.description ? item.description : excerpt,
             image: item.featuredImage?.node,
             content: processedContent,
             taxonomies: useTaxonomies(
