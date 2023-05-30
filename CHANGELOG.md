@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0-next.13](https://github.com/municipio-se/gatsby-packages/compare/v1.4.0-next.12...v1.4.0-next.13) (2023-05-30)
+
+
+### Features
+
+* Implement item color in posts module ([6a7c84e](https://github.com/municipio-se/gatsby-packages/commit/6a7c84ee2fbb3655958769fac81e68628a4d99f9))
+
+
+
 ## [1.4.0-next.12](https://github.com/municipio-se/gatsby-packages/compare/v1.4.0-next.11...v1.4.0-next.12) (2023-05-23)
 
 
