@@ -192,8 +192,8 @@ export default function PostsModule({
       items={items}
       itemColor={itemColor}
       headingPosition={headingPosition}
-      visibleFields={visibleFields}
       description={description}
+      visibleFields={visibleFields}
       displayMode={displayMode}
       headingVariant={headingVariant}
       archiveLink={
