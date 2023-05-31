@@ -1,4 +1,5 @@
 import {
+  Html,
   Image,
   TextContent,
 } from "@whitespace/gatsby-theme-wordpress-basic/src/wsui/components";
@@ -30,7 +31,11 @@ export default function ImageModule({ module = {}, title, ...restProps }) {
       <Image
         alt={alt}
         base64={base64}
-        caption={<TextContent>{caption}</TextContent>}
+        caption={
+          <TextContent>
+            <Html>{caption}</Html>
+          </TextContent>
+        }
         credit={credit}
         height={height}
         linkTo={linkTo}
