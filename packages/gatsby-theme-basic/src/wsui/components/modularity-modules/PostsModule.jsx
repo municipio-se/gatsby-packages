@@ -6,7 +6,9 @@ import React, { useContext } from "react";
 
 // import PostsModuleFilterProvider from "../../../components/modularity-modules/PostsModuleFilterProvider";
 import useTaxonomies from "../../../hooks/useTaxonomies";
+import modularityAreaContext from "../../../modularityAreaContext";
 import modularityModuleContext from "../../../modularityModuleContext";
+import modularityRowContext from "../../../modularityRowContext.js";
 import getMostRelevantDate from "../../../utils/getMostRelevantDate";
 
 const excerpted = (text) => {
@@ -108,6 +110,9 @@ export default function PostsModule({
   normalizePostsModuleItems = defaultNormalizePostsModuleItems,
   ...restProps
 }) {
+  const { modules } = useContext(modularityRowContext);
+  const { centerLonelyModules } = useContext(modularityAreaContext);
+
   // let isFilteringEnabled =
   //   !!module?.modPostsDataFiltering?.frontEndTaxFiltering &&
   //   module?.modPostsDataSource?.postsDataSource === "posttype";
@@ -142,6 +147,9 @@ export default function PostsModule({
 
   const itemColor = module?.modPostsDataDisplay?.theme || undefined;
 
+  const headingPosition =
+    module?.modPostsDataDisplay?.headingPosition || undefined;
+
   const { stripHTML } = useHTMLProcessor();
 
   const items = normalizePostsModuleItems(module, {
@@ -166,9 +174,11 @@ export default function PostsModule({
 
   return (
     <WsuiPostsModule
+      align={centerLonelyModules && modules.length === 1 ? "center" : undefined}
       title={title}
       items={items}
       itemColor={itemColor}
+      headingPosition={headingPosition}
       visibleFields={visibleFields}
       displayMode={displayMode}
       headingVariant={headingVariant}
