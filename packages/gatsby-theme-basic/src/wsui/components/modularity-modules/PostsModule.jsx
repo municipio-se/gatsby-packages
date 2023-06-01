@@ -27,6 +27,7 @@ function defaultNormalizePostsModuleItems(
     case "input":
       return (modPostsDataSource.data || []).map(
         ({ postContentMedia, postContentModularityModules, ...item }) => {
+          let permalink = "/" + item?.permalink?.split("/").slice(3).join("/");
           let processedContent = (
             <HTML
               contentMedia={postContentMedia}
@@ -40,6 +41,7 @@ function defaultNormalizePostsModuleItems(
             ...item,
             title: item.postTitle,
             link: item?.link,
+            url: permalink,
             description: stripHTML(item.postContent),
             content: processedContent,
           };
