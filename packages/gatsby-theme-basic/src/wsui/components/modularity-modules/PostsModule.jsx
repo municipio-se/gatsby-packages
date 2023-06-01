@@ -26,8 +26,13 @@ function defaultNormalizePostsModuleItems(
   switch (modPostsDataSource.postsDataSource) {
     case "input":
       return (modPostsDataSource.data || []).map(
-        ({ postContentMedia, postContentModularityModules, ...item }) => {
-          let permalink = "/" + item?.permalink?.split("/").slice(3).join("/");
+        ({
+          postContentMedia,
+          postContentModularityModules,
+          permalink,
+          link,
+          ...item
+        }) => {
           let processedContent = (
             <HTML
               contentMedia={postContentMedia}
@@ -37,11 +42,16 @@ function defaultNormalizePostsModuleItems(
             </HTML>
           );
 
+          // Use the link field but also consider the deprecated permalink field
+          link = { ...link, url: link?.url || permalink };
+          if (!link.url) {
+            link = null;
+          }
+
           return {
             ...item,
             title: item.postTitle,
-            link: item?.link,
-            url: permalink,
+            link,
             description: stripHTML(item.postContent),
             content: processedContent,
           };
