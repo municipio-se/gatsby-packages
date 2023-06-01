@@ -14,9 +14,13 @@ function fromContentTypeToComponentName(contentTypeName) {
 export default function ModuleController({ module }) {
   const moduleType = module?.contentType?.node?.name;
   const { processPageContent } = useHTMLProcessor();
-  let { content } = processPageContent(module?.modDescription?.description, {
-    leavePreamble: true,
-  });
+  let { content, headingContent: heading } = processPageContent(
+    module?.modDescription?.description,
+    {
+      extractHeading: true,
+      leavePreamble: true,
+    },
+  );
   let description = <Fragment>{content}</Fragment>;
   switch (moduleType) {
     default: {
@@ -29,7 +33,7 @@ export default function ModuleController({ module }) {
       return (
         <Component
           module={module}
-          title={!module.hideTitle && module.title}
+          title={heading || (!module.hideTitle && module.title)}
           description={description}
         />
       );
