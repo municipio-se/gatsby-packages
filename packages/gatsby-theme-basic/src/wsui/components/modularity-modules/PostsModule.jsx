@@ -118,6 +118,7 @@ function defaultNormalizePostsModuleItems(
 
 export default function PostsModule({
   title,
+  description,
   module = {},
   normalizePostsModuleItems = defaultNormalizePostsModuleItems,
   ...restProps
@@ -129,7 +130,6 @@ export default function PostsModule({
   //   !!module?.modPostsDataFiltering?.frontEndTaxFiltering &&
   //   module?.modPostsDataSource?.postsDataSource === "posttype";
   let displayMode = module?.modPostsDataDisplay?.postsDisplayAs;
-  let description = module?.modDescription?.description;
 
   let visibleFields =
     displayMode === "expandable-list"

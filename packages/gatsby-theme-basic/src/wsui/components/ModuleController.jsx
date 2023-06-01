@@ -1,5 +1,6 @@
+import { useHTMLProcessor } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/html-processor";
 import { camelCase, upperFirst } from "lodash/fp";
-import React from "react";
+import React, { Fragment } from "react";
 
 import * as moduleComponents from "./modularity-modules";
 
@@ -12,6 +13,11 @@ function fromContentTypeToComponentName(contentTypeName) {
 
 export default function ModuleController({ module }) {
   const moduleType = module?.contentType?.node?.name;
+  const { processPageContent } = useHTMLProcessor();
+  let { content } = processPageContent(module?.modDescription?.description, {
+    leavePreamble: true,
+  });
+  let description = <Fragment>{content}</Fragment>;
   switch (moduleType) {
     default: {
       let componentName = fromContentTypeToComponentName(moduleType);
@@ -21,7 +27,11 @@ export default function ModuleController({ module }) {
         // eslint-disable-next-line import/namespace
         moduleComponents.FallbackModule;
       return (
-        <Component module={module} title={!module.hideTitle && module.title} />
+        <Component
+          module={module}
+          title={!module.hideTitle && module.title}
+          description={description}
+        />
       );
     }
   }
