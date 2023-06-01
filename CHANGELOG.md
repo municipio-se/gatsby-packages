@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0-next.15](https://github.com/municipio-se/gatsby-packages/compare/v1.4.0-next.14...v1.4.0-next.15) (2023-06-01)
+
+
+### Features
+
+* Add support for centerLonelyModules and headingPosition to PostModule ([a6a92eb](https://github.com/municipio-se/gatsby-packages/commit/a6a92ebd87c791b2fc7841ee0d9bf936efa251f2))
+
+
+### Bug Fixes
+
+* Image module caption was not HTML processed ([f3d783b](https://github.com/municipio-se/gatsby-packages/commit/f3d783b2e25ac3395e5f1a7ef6c49ee3faf7f189))
+* Merge permalink into link when normalizing posts module items ([7dd68aa](https://github.com/municipio-se/gatsby-packages/commit/7dd68aa0ba152e1d06e48f8f48efd9669143e166))
+
+
+
 ## [1.4.0-next.14](https://github.com/municipio-se/gatsby-packages/compare/v1.4.0-next.13...v1.4.0-next.14) (2023-05-30)
 
 
