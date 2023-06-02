@@ -68,7 +68,7 @@ function defaultNormalizePostsModuleItems(
       let items = itemsArr
         .filter(Boolean)
         .slice(0, itemsToSlice)
-        .map(({ contentMedia, ...item }) => {
+        .map(({ contentMedia, uri, url, ...item }) => {
           let processedContent = (
             <Html contentMedia={contentMedia}>{item.content}</Html>
           );
@@ -80,6 +80,8 @@ function defaultNormalizePostsModuleItems(
             excerpt = stripHTML(splitContent[0]);
           }
 
+          let link = { url: url || uri };
+
           return {
             ...item,
             contentType: item.contentType?.node?.name,
@@ -89,7 +91,7 @@ function defaultNormalizePostsModuleItems(
               (item.archiveDatesGmt &&
                 getMostRelevantDate(item.archiveDatesGmt)) ||
               item.dateGmt,
-            url: item.uri,
+            link,
             description: item.description ? item.description : excerpt,
             image: item.featuredImage?.node,
             content: processedContent,
