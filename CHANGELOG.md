@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0-next.17](https://github.com/municipio-se/gatsby-packages/compare/v1.4.0-next.16...v1.4.0-next.17) (2023-06-02)
+
+
+### Features
+
+* Allow overriding visible module title via description field ([826d1f2](https://github.com/municipio-se/gatsby-packages/commit/826d1f217753c8084108b605499c953dc71140d3))
+
+
+### Bug Fixes
+
+* Url not handled properly in posts module items ([5b8b2cb](https://github.com/municipio-se/gatsby-packages/commit/5b8b2cb1ef8e1c0fc1053503db530df5c0b09c44))
+
+
+
 ## [1.4.0-next.16](https://github.com/municipio-se/gatsby-packages/compare/v1.4.0-next.15...v1.4.0-next.16) (2023-06-01)
 
 **Note:** Version bump only for package root

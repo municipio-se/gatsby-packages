@@ -1,6 +1,6 @@
 {
   "name": "@municipio/gatsby-theme-basic",
-  "version": "1.4.0-next.16",
+  "version": "1.4.0-next.17",
   "description": "Gatsby theme for Municipio",
   "license": "AGPL",
   "files": [
@@ -18,8 +18,8 @@
     "@nyans/parser": "^0.1.6",
     "@whitespace/components": "^0.13.24",
     "@whitespace/gatsby-hooks": "^0.5.0",
-    "@whitespace/gatsby-plugin-search": "^1.4.0-next.20",
-    "@whitespace/gatsby-theme-wordpress-basic": "^1.4.0-next.20",
+    "@whitespace/gatsby-plugin-search": "^1.4.0-next.21",
+    "@whitespace/gatsby-theme-wordpress-basic": "^1.4.0-next.21",
     "autoprefixer": "^10.3.7",
     "axios": "^0.23.0",
     "chroma-js": "^2.1.2",
@@ -42,8 +42,8 @@
     "@emotion/css": "^11.11.0",
     "@emotion/react": "^11.11.0",
     "@emotion/styled": "^11.11.0",
-    "@wsui/base": "^0.5.10",
-    "@wsui/municipio": "^0.5.10",
+    "@wsui/base": "^0.5.11",
+    "@wsui/municipio": "^0.5.11",
     "gatsby": "^3.14.3",
     "react": "^17.0.0 || ^18.0.0",
     "react-dom": "^17.0.0 || ^18.0.0"
@@ -52,8 +52,8 @@
     "@emotion/css": "^11.11.0",
     "@emotion/react": "^11.11.0",
     "@emotion/styled": "^11.11.0",
-    "@wsui/base": "^0.5.10",
-    "@wsui/municipio": "^0.5.10",
+    "@wsui/base": "^0.5.11",
+    "@wsui/municipio": "^0.5.11",
     "gatsby": "^3.14.3",
     "react": "^17.0.0",
     "react-dom": "^17.0.0"
