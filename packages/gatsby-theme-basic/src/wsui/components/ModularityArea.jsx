@@ -1,6 +1,11 @@
 /** @jsx jsx */
 import { css, jsx, useTheme } from "@emotion/react";
-import { PageGrid, PageGridItem, useThemeProps } from "@wsui/base";
+import {
+  PageGrid,
+  PageGridItem,
+  useThemeProps,
+  MaybeFragment,
+} from "@wsui/base";
 
 import modularityAreaContext from "../../modularityAreaContext";
 import modularityModuleContext from "../../modularityModuleContext";
@@ -36,10 +41,14 @@ export default function ModularityArea(props) {
     area = {},
     defaultColspan = 7,
     context = {},
-    gap = [4, 8],
+    gap = [8.75, 17.5],
     headingVariant,
+    maxColspan,
+    pageGridProps = {},
+    marginAfter = false,
     ...restProps
   } = props;
+
   const { modules } = area;
   if (!modules?.length) {
     return null;
@@ -52,42 +61,53 @@ export default function ModularityArea(props) {
         ...rest,
       })),
   );
+
   return (
-    <modularityAreaContext.Provider value={{ ...area, ...context }}>
-      {moduleRows.map(({ modules }, index) => {
-        return (
-          <modularityRowContext.Provider key={index} value={{ modules, index }}>
-            <PageGrid
+    <MaybeFragment {...restProps}>
+      <modularityAreaContext.Provider value={{ ...area, ...context }}>
+        {moduleRows.map(({ modules }, index) => {
+          return (
+            <modularityRowContext.Provider
               key={index}
-              as="div"
-              css={css`
-                margin-bottom: ${index < moduleRows.length - 1
-                  ? theme.getLength(gap)
-                  : null};
-              `}
-              {...restProps}
+              value={{ modules, index }}
             >
-              {modules.map(({ hidden, module, colspan, ...rest }, index) => {
-                return (
-                  <PageGridItem key={index} colspan={colspan || defaultColspan}>
-                    <modularityModuleContext.Provider
-                      value={{
-                        hidden,
-                        module,
-                        colspan,
-                        headingVariant,
-                        ...rest,
-                      }}
+              <PageGrid
+                key={index}
+                as="div"
+                rowGap={gap}
+                maxColspan={maxColspan}
+                css={css`
+                  margin-bottom: ${marginAfter || index < moduleRows.length - 1
+                    ? theme.getLength(gap)
+                    : null};
+                `}
+                {...pageGridProps}
+              >
+                {modules.map(({ hidden, module, colspan, ...rest }, index) => {
+                  return (
+                    <PageGridItem
+                      key={index}
+                      colspan={colspan || defaultColspan}
                     >
-                      <ModuleController module={module} />
-                    </modularityModuleContext.Provider>
-                  </PageGridItem>
-                );
-              })}
-            </PageGrid>
-          </modularityRowContext.Provider>
-        );
-      })}
-    </modularityAreaContext.Provider>
+                      <modularityModuleContext.Provider
+                        value={{
+                          hidden,
+                          module,
+                          colspan,
+                          headingVariant,
+                          ...rest,
+                        }}
+                      >
+                        <ModuleController module={module} />
+                      </modularityModuleContext.Provider>
+                    </PageGridItem>
+                  );
+                })}
+              </PageGrid>
+            </modularityRowContext.Provider>
+          );
+        })}
+      </modularityAreaContext.Provider>
+    </MaybeFragment>
   );
 }

@@ -8,7 +8,7 @@ export default function ModuleWrapper({
   components: { ModuleWrapperHeader = "div", ModuleWrapperTitle = H } = {
     ModuleWrapperHeader: "div",
     ModuleWrapperTitle: withDefaultProps(Heading, {
-      marginBefore: true,
+      marginBefore: false,
       marginAfter: true,
     }),
   },
