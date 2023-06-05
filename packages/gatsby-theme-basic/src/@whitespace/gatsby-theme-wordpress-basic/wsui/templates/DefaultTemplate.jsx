@@ -5,6 +5,7 @@ import {
   PageContent,
   PageHeading,
   PagePreamble,
+  PageBreadcrumbs,
   Seo,
 } from "@whitespace/gatsby-theme-wordpress-basic/src/wsui/components";
 import { Section, PageGrid, PageGridItem, useThemeProps } from "@wsui/base";
@@ -17,6 +18,7 @@ import {
 } from "../../../../wsui/components";
 
 export default function DefaultTemplate(props) {
+  // eslint-disable-next-line no-unused-vars
   const theme = useTheme();
   props = useThemeProps({ props, name: "DefaultTemplate" });
   let { spacing = [4, 8] } = props;
@@ -24,6 +26,17 @@ export default function DefaultTemplate(props) {
   return (
     <article>
       <Seo title={title} />
+
+      <PageGrid>
+        <PageGridItem colspan={12}>
+          <PageBreadcrumbs
+            css={css`
+              margin-top: ${theme.getLength(-4)};
+              margin-bottom: ${theme.getLength(8)};
+            `}
+          />
+        </PageGridItem>
+      </PageGrid>
 
       {/* Featured image */}
       {/* <PageFeaturedImage /> */}
