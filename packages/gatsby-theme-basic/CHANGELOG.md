@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0-next.19](https://github.com/municipio-se/gatsby-packages/compare/v1.4.0-next.18...v1.4.0-next.19) (2023-06-07)
+
+
+### Features
+
+* Add breadcrumbs ([05389cc](https://github.com/municipio-se/gatsby-packages/commit/05389ccafc9852e3cf696ce57a0de8c9a4d74e6f))
+* Implement text module with WSUI ([dfaf2f7](https://github.com/municipio-se/gatsby-packages/commit/dfaf2f760896f2b9b2ec60ba4894b962bb7d0964))
+
+
+### Bug Fixes
+
+* Module area spacing ([fcdb8a8](https://github.com/municipio-se/gatsby-packages/commit/fcdb8a81490ce2fa17d01d0280a9fbea361d5a2d))
+
+
+
 ## [1.4.0-next.18](https://github.com/municipio-se/gatsby-packages/compare/v1.4.0-next.17...v1.4.0-next.18) (2023-06-02)
 
 
