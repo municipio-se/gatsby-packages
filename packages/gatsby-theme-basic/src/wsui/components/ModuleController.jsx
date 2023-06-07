@@ -21,22 +21,18 @@ export default function ModuleController({ module }) {
       leavePreamble: true,
     },
   );
-  let description = <Fragment>{content}</Fragment>;
-  switch (moduleType) {
-    default: {
-      let componentName = fromContentTypeToComponentName(moduleType);
-      let Component =
-        // eslint-disable-next-line import/namespace
-        (componentName && moduleComponents[componentName]) ||
-        // eslint-disable-next-line import/namespace
-        moduleComponents.FallbackModule;
-      return (
-        <Component
-          module={module}
-          title={heading || (!module.hideTitle && module.title)}
-          description={description}
-        />
-      );
-    }
-  }
+  let description = content;
+  let componentName = fromContentTypeToComponentName(moduleType);
+  let Component =
+    // eslint-disable-next-line import/namespace
+    (componentName && moduleComponents[componentName]) ||
+    // eslint-disable-next-line import/namespace
+    moduleComponents.FallbackModule;
+  return (
+    <Component
+      module={module}
+      title={heading || (!module.hideTitle && module.title)}
+      description={description}
+    />
+  );
 }
