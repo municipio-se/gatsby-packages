@@ -133,6 +133,11 @@ export default function PostsModule({
   //   module?.modPostsDataSource?.postsDataSource === "posttype";
   let displayMode = module?.modPostsDataDisplay?.postsDisplayAs;
 
+  let gridMaxColumns =
+    displayMode === "grid"
+      ? Number(module?.modPostsDataDisplay?.gridMaxColumns)
+      : undefined;
+
   let visibleFields =
     displayMode === "expandable-list"
       ? ["title", "description"]
@@ -204,6 +209,7 @@ export default function PostsModule({
           uri: archiveLinkUri,
         }
       }
+      gridMaxColumns={gridMaxColumns}
       {...restProps}
     />
   );
