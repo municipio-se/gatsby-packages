@@ -1,6 +1,6 @@
 import { useHTMLProcessor } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/html-processor";
 import { camelCase, upperFirst } from "lodash/fp";
-import React, { Fragment } from "react";
+import React from "react";
 
 import * as moduleComponents from "./modularity-modules";
 

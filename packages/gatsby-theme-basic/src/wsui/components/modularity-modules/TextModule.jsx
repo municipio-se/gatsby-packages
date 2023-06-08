@@ -4,6 +4,7 @@ import { TextModule as WsuiTextModule } from "@wsui/municipio";
 import React, { useContext } from "react";
 
 import modularityAreaContext from "../../../modularityAreaContext";
+import modularityModuleContext from "../../../modularityModuleContext";
 import modularityRowContext from "../../../modularityRowContext";
 
 export default function TextModule(props) {
@@ -16,6 +17,7 @@ export default function TextModule(props) {
         link,
         icon,
         displayMode,
+        backgroundImage,
       },
       content,
       contentMedia,
@@ -27,9 +29,12 @@ export default function TextModule(props) {
 
   const { centerLonelyModules } = useContext(modularityAreaContext);
   const { modules } = useContext(modularityRowContext);
+  let { align } = useContext(modularityModuleContext);
 
-  let align =
-    centerLonelyModules && modules.length === 1 ? "center" : undefined;
+  align =
+    align || (centerLonelyModules && modules.length === 1)
+      ? "center"
+      : undefined;
 
   const textContent = (
     <Html
@@ -54,6 +59,7 @@ export default function TextModule(props) {
       icon={icon}
       displayMode={displayMode}
       align={align}
+      backgroundImage={backgroundImage}
       {...restProps}
     />
   );
