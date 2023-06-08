@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0-next.20](https://github.com/municipio-se/gatsby-packages/compare/v1.4.0-next.19...v1.4.0-next.20) (2023-06-08)
+
+
+### Features
+
+* Allow setting bg image of promo text modules and align them manually ([b062429](https://github.com/municipio-se/gatsby-packages/commit/b062429254976dd3b6b01b7f12952172288ad86b))
+
+
+
 ## [1.4.0-next.19](https://github.com/municipio-se/gatsby-packages/compare/v1.4.0-next.18...v1.4.0-next.19) (2023-06-07)
 
 
