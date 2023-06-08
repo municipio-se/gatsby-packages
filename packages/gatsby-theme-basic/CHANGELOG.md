@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0-next.21](https://github.com/municipio-se/gatsby-packages/compare/v1.4.0-next.20...v1.4.0-next.21) (2023-06-08)
+
+
+### Features
+
+* Implement posts module grid layout column count option ([826c80d](https://github.com/municipio-se/gatsby-packages/commit/826c80df8df463ce16ffd8fc3f4d8cc446f4e525))
+
+
+
 ## [1.4.0-next.20](https://github.com/municipio-se/gatsby-packages/compare/v1.4.0-next.19...v1.4.0-next.20) (2023-06-08)
 
 
