@@ -1,4 +1,4 @@
-// export { default as ContactsModule } from "./ContactsModule";
+export { default as ContactsModule } from "./ContactsModule.jsx";
 export { default as FallbackModule } from "./FallbackModule.jsx";
 // export { default as FeedbackModule } from "./FeedbackModule";
 // export { default as FileslistModule } from "./FileslistModule";
