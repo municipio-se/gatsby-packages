@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0-next.22](https://github.com/municipio-se/gatsby-packages/compare/v1.4.0-next.21...v1.4.0-next.22) (2023-06-13)
+
+
+### Features
+
+* Implement WSUI verison of Contacts module ([e6c3163](https://github.com/municipio-se/gatsby-packages/commit/e6c3163710867f8716d383ff0d908a8e28c747b3))
+
+
+
 ## [1.4.0-next.21](https://github.com/municipio-se/gatsby-packages/compare/v1.4.0-next.20...v1.4.0-next.21) (2023-06-08)
 
 
