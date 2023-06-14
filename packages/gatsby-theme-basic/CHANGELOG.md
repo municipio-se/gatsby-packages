@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0-next.23](https://github.com/municipio-se/gatsby-packages/compare/v1.4.0-next.22...v1.4.0-next.23) (2023-06-14)
+
+
+### Features
+
+* Implement WSUI verison of Table module ([6ad5f43](https://github.com/municipio-se/gatsby-packages/commit/6ad5f437292b97cd59a6cb6d59bb4b86643715d9))
+
+
+
 ## [1.4.0-next.22](https://github.com/municipio-se/gatsby-packages/compare/v1.4.0-next.21...v1.4.0-next.22) (2023-06-13)
 
 
