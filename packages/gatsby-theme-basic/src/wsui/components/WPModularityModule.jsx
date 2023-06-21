@@ -11,8 +11,8 @@ import modularityModuleContext from "../../modularityModuleContext";
 
 import ModuleController from "./ModuleController.jsx";
 
-export default function WPModularityModule(props) {
-  props = useThemeProps({ props, name: "WPModularityModule" });
+export default function WpModularityModule(props) {
+  props = useThemeProps({ props, name: "WpModularityModule" });
   let { id: moduleDatabaseId, ...restProps } = props;
   let { contentModularityModules } = useContext(htmlStringifierContext);
   let module = contentModularityModules?.nodes?.find(
