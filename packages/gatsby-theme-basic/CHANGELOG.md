@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0-next.24](https://github.com/municipio-se/gatsby-packages/compare/v1.4.0-next.23...v1.4.0-next.24) (2023-06-21)
+
+
+### Features
+
+* Add `defaultColspan` prop and update margins inside page templates ([3c71e18](https://github.com/municipio-se/gatsby-packages/commit/3c71e18fbdf67b077a98155d72f3964f361ae4fd))
+
+
+
 ## [1.4.0-next.23](https://github.com/municipio-se/gatsby-packages/compare/v1.4.0-next.22...v1.4.0-next.23) (2023-06-14)
 
 
