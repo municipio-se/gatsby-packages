@@ -21,7 +21,7 @@ export default function DefaultTemplate(props) {
   // eslint-disable-next-line no-unused-vars
   const theme = useTheme();
   props = useThemeProps({ props, name: "DefaultTemplate" });
-  let { spacing } = props;
+  let { spacing = [8.75, 17.5], defaultColspan = 7 } = props;
   const { title } = usePageContext();
   return (
     <article>
@@ -41,8 +41,14 @@ export default function DefaultTemplate(props) {
       {/* Featured image */}
       {/* <PageFeaturedImage /> */}
 
-      <PageGrid>
-        <PageGridItem maxColspan={7}>
+      <PageGrid
+        css={css`
+          ${theme.styleUtils.negateMarginBefore}
+          ${theme.styleUtils.negateMarginAfter}
+          margin-bottom: ${theme.getLength(spacing)};
+        `}
+      >
+        <PageGridItem maxColspan={defaultColspan}>
           <PageHeading marginAfter />
           <Section>
             {/* <PageChildNavigation /> */}
@@ -52,7 +58,11 @@ export default function DefaultTemplate(props) {
         </PageGridItem>
       </PageGrid>
       <Section>
-        <PageContentAreaModules maxColspan={7} spacing={spacing} marginAfter />
+        <PageContentAreaModules
+          maxColspan={defaultColspan}
+          spacing={spacing}
+          marginAfter
+        />
         {/* <footer className={styles.footer}>
           <PageMeta />
           <PageGrid>

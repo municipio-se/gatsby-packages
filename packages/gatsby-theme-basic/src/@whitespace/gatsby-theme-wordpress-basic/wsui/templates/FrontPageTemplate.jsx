@@ -19,23 +19,34 @@ import {
 export default function FrontPageTemplate(props) {
   const theme = useTheme();
   props = useThemeProps({ props, name: "FrontPageTemplate" });
-  let { spacing = [4, 8] } = props;
+  let { spacing = [8.75, 17.5], defaultColspan = 7 } = props;
   const { title } = usePageContext();
   return (
     <article>
       <Seo title={title} isFrontPage />
-      <PageGrid>
-        <PageGridItem maxColspan={7}>
-          <PageHeading hideTitle marginAfter />
-          <Section>
-            <PagePreamble marginAfter />
-            <PageContent marginAfter />
-          </Section>
+      <PageGrid
+        css={css`
+          margin-bottom: ${theme.getLength(spacing)};
+        `}
+      >
+        <PageGridItem maxColspan={defaultColspan}>
+          <div
+            css={css`
+              ${theme.styleUtils.negateMarginStart}
+              ${theme.styleUtils.negateMarginEnd}
+            `}
+          >
+            <PageHeading hideTitle marginAfter />
+            <Section>
+              <PagePreamble marginAfter />
+              <PageContent />
+            </Section>
+          </div>
         </PageGridItem>
       </PageGrid>
       <Section>
         <PageContentAreaModules
-          maxColspan={7}
+          maxColspan={defaultColspan}
           css={css`
             margin-bottom: ${theme.getLength(spacing)};
           `}

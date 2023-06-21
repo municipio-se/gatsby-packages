@@ -19,13 +19,13 @@ import {
 export default function LandingPageTemplate(props) {
   const theme = useTheme();
   props = useThemeProps({ props, name: "LandingPageTemplate" });
-  let { spacing = [4, 8] } = props;
+  let { spacing = [4, 8], defaultColspan = 7 } = props;
   const { title } = usePageContext();
   return (
     <article>
       <Seo title={title} />
       <PageGrid>
-        <PageGridItem maxColspan={7}>
+        <PageGridItem maxColspan={defaultColspan}>
           <PageHeading marginAfter />
           <Section>
             <PagePreamble marginAfter />
@@ -35,7 +35,7 @@ export default function LandingPageTemplate(props) {
       </PageGrid>
       <Section>
         <PageContentAreaModules
-          maxColspan={7}
+          maxColspan={defaultColspan}
           css={css`
             margin-bottom: ${theme.getLength(spacing)};
           `}
