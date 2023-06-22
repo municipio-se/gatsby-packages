@@ -28,8 +28,9 @@ export default function FrontPageTemplate(props) {
         css={css`
           margin-bottom: ${theme.getLength(spacing)};
         `}
+        maxColspan={defaultColspan}
       >
-        <PageGridItem maxColspan={defaultColspan}>
+        <PageGridItem>
           <div
             css={css`
               ${theme.styleUtils.negateMarginStart}

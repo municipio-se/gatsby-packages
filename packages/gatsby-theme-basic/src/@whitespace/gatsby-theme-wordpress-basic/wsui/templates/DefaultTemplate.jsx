@@ -47,8 +47,9 @@ export default function DefaultTemplate(props) {
           ${theme.styleUtils.negateMarginAfter}
           margin-bottom: ${theme.getLength(spacing)};
         `}
+        maxColspan={defaultColspan}
       >
-        <PageGridItem maxColspan={defaultColspan}>
+        <PageGridItem>
           <PageHeading marginAfter />
           <Section>
             {/* <PageChildNavigation /> */}

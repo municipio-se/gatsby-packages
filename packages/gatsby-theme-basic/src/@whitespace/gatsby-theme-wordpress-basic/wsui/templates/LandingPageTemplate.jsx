@@ -24,8 +24,8 @@ export default function LandingPageTemplate(props) {
   return (
     <article>
       <Seo title={title} />
-      <PageGrid>
-        <PageGridItem maxColspan={defaultColspan}>
+      <PageGrid maxColspan={defaultColspan}>
+        <PageGridItem>
           <PageHeading marginAfter />
           <Section>
             <PagePreamble marginAfter />
