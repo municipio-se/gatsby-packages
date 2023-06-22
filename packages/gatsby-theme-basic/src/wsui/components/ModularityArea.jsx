@@ -50,9 +50,6 @@ export default function ModularityArea(props) {
   } = props;
 
   const { modules } = area;
-  if (!modules?.length) {
-    return null;
-  }
   let moduleRows = makeRows(
     modules
       .filter(({ module, hidden }) => module && !hidden)
@@ -61,6 +58,9 @@ export default function ModularityArea(props) {
         ...rest,
       })),
   );
+  if (!moduleRows?.length) {
+    return null;
+  }
 
   return (
     <MaybeFragment {...restProps}>
