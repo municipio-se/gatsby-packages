@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0-next.25](https://github.com/municipio-se/gatsby-packages/compare/v1.4.0-next.24...v1.4.0-next.25) (2023-06-26)
+
+
+### Bug Fixes
+
+* `defaultColspan` had no effect ([cf5a867](https://github.com/municipio-se/gatsby-packages/commit/cf5a86709f4a8d6dd300c2c87c383a30e2a9f8ae))
+* Border radius in image module was not applied ([eda911a](https://github.com/municipio-se/gatsby-packages/commit/eda911a68c1c1ff454b24bde8ffa309fe9ef0933))
+* Modularity areas with only hidden modules were rendered ([ef5d22c](https://github.com/municipio-se/gatsby-packages/commit/ef5d22cdc1e9c7e617fee67c019620840717ce28))
+
+
+
 ## [1.4.0-next.24](https://github.com/municipio-se/gatsby-packages/compare/v1.4.0-next.23...v1.4.0-next.24) (2023-06-21)
 
 
