@@ -3,11 +3,14 @@ import {
   Image,
   TextContent,
 } from "@whitespace/gatsby-theme-wordpress-basic/src/wsui/components";
+import { useThemeProps } from "@wsui/base";
 import React from "react";
 
 import ModuleWrapper from "../ModuleWrapper.jsx";
 
-export default function ImageModule({ module = {}, title, ...restProps }) {
+export default function ImageModule(props) {
+  props = useThemeProps({ name: "MunicipioImageModule", props });
+  let { module = {}, title, imageProps, ...restProps } = props;
   let modImageOptions = module?.modImageOptions;
   let modImageImage = modImageOptions?.modImageImage;
 
@@ -44,6 +47,7 @@ export default function ImageModule({ module = {}, title, ...restProps }) {
         srcSetWebp={srcSetWebp}
         srcWebp={src}
         width={width}
+        {...imageProps}
       />
     </ModuleWrapper>
   );
