@@ -50,6 +50,9 @@ export default function ModularityArea(props) {
   } = props;
 
   const { modules } = area;
+  if (!modules?.length) {
+    return null;
+  }
   let moduleRows = makeRows(
     modules
       .filter(({ module, hidden }) => module && !hidden)
