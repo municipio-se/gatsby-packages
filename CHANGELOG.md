@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0-next.26](https://github.com/municipio-se/gatsby-packages/compare/v1.4.0-next.25...v1.4.0-next.26) (2023-06-26)
+
+
+### Bug Fixes
+
+* Avoid error if there are no modules in area ([52d5e6f](https://github.com/municipio-se/gatsby-packages/commit/52d5e6f4a40ca44633df1f329f96f1bd0dc56bf0))
+
+
+
 ## [1.4.0-next.25](https://github.com/municipio-se/gatsby-packages/compare/v1.4.0-next.24...v1.4.0-next.25) (2023-06-26)
 
 
