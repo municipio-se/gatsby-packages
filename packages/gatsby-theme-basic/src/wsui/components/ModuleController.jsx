@@ -14,13 +14,21 @@ function fromContentTypeToComponentName(contentTypeName) {
 export default function ModuleController({ module }) {
   const moduleType = module?.contentType?.node?.name;
   const { processPageContent } = useHTMLProcessor();
-  let { content, headingContent: heading } = processPageContent(
-    module?.modDescription?.description,
-    {
-      extractHeading: true,
-      leavePreamble: true,
-    },
-  );
+  // TODO: Deprecate `modDescription` in favor of `content`
+  let { content, headingContent: heading } = module?.modDescription?.description
+    ? processPageContent(module.modDescription.description, {
+        extractHeading: true,
+        leavePreamble: true,
+      })
+    : module?.content
+    ? processPageContent(module.content, {
+        extractHeading: true,
+        leavePreamble: true,
+        contentMedia: module.contentMedia,
+        contentModularityModules: module.contentModularityModules,
+        semanticHeadings: true,
+      })
+    : {};
   let description = content;
   let componentName = fromContentTypeToComponentName(moduleType);
   let Component =

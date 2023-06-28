@@ -1,5 +1,11 @@
 import { useTheme } from "@emotion/react";
-import { H, Heading, Section, withDefaultProps } from "@wsui/base";
+import {
+  H,
+  Heading,
+  Section,
+  TypographyBlock,
+  withDefaultProps,
+} from "@wsui/base";
 import React from "react";
 
 export default function ModuleWrapper({
@@ -13,6 +19,7 @@ export default function ModuleWrapper({
     }),
   },
   title,
+  description,
   headingVariant,
   ...restProps
 }) {
@@ -33,7 +40,12 @@ export default function ModuleWrapper({
           )}
         </ModuleWrapperHeader>
       )}
-      <MaybeSection>{children}</MaybeSection>
+      <MaybeSection>
+        {description && (
+          <TypographyBlock marginAfter>{description}</TypographyBlock>
+        )}
+        {children}
+      </MaybeSection>
     </Component>
   );
 }

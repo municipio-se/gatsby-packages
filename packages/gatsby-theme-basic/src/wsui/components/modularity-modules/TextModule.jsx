@@ -1,4 +1,3 @@
-import { Html } from "@whitespace/gatsby-theme-wordpress-basic/src/wsui/components";
 import { useThemeProps } from "@wsui/base";
 import { TextModule as WsuiTextModule } from "@wsui/municipio";
 import React, { useContext } from "react";
@@ -10,6 +9,8 @@ import modularityRowContext from "../../../modularityRowContext";
 export default function TextModule(props) {
   props = useThemeProps({ props, name: "MunicipioTextModule" });
   let {
+    title,
+    description,
     module: {
       modTextOptions: {
         hideBoxFrame = false,
@@ -19,10 +20,6 @@ export default function TextModule(props) {
         displayMode,
         backgroundImage,
       },
-      content,
-      contentMedia,
-      contentModularityModules,
-      title,
     },
     ...restProps
   } = props;
@@ -36,16 +33,6 @@ export default function TextModule(props) {
       ? "center"
       : undefined;
 
-  const textContent = (
-    <Html
-      contentMedia={contentMedia}
-      contentModularityModules={contentModularityModules}
-      semanticHeadings
-    >
-      {content}
-    </Html>
-  );
-
   // if (!theme?.includes(".")) {
   //   theme = [theme, 100];
   // }
@@ -54,7 +41,7 @@ export default function TextModule(props) {
     <WsuiTextModule
       color={(!hideBoxFrame && color && [100, color]) || undefined}
       title={title}
-      content={textContent}
+      content={description}
       link={link}
       icon={icon}
       displayMode={displayMode}
