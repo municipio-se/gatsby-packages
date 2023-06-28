@@ -33,13 +33,9 @@ export default function TextModule(props) {
       ? "center"
       : undefined;
 
-  // if (!theme?.includes(".")) {
-  //   theme = [theme, 100];
-  // }
-
   return (
     <WsuiTextModule
-      color={(!hideBoxFrame && color && [100, color]) || undefined}
+      color={(!hideBoxFrame && color) || undefined}
       title={title}
       content={description}
       link={link}
