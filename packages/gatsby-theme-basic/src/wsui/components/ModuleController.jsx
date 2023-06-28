@@ -17,12 +17,12 @@ export default function ModuleController({ module }) {
   // TODO: Deprecate `modDescription` in favor of `content`
   let { content, headingContent: heading } = module?.modDescription?.description
     ? processPageContent(module.modDescription.description, {
-        extractHeading: true,
+        extractHeading: !!module.hideTitle,
         leavePreamble: true,
       })
     : module?.content
     ? processPageContent(module.content, {
-        extractHeading: true,
+        extractHeading: !!module.hideTitle,
         leavePreamble: true,
         contentMedia: module.contentMedia,
         contentModularityModules: module.contentModularityModules,
@@ -39,7 +39,7 @@ export default function ModuleController({ module }) {
   return (
     <Component
       module={module}
-      title={heading || (!module.hideTitle && module.title)}
+      title={module.hideTitle ? heading : module.title}
       description={description}
     />
   );
