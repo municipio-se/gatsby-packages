@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0-next.28](https://github.com/municipio-se/gatsby-packages/compare/v1.4.0-next.27...v1.4.0-next.28) (2023-06-28)
+
+
+### Bug Fixes
+
+* Remove text module color default shade ([2c38f47](https://github.com/municipio-se/gatsby-packages/commit/2c38f4742e9af119ea0ce7d9b65ee0bf90732c20))
+
+
+
 ## [1.4.0-next.27](https://github.com/municipio-se/gatsby-packages/compare/v1.4.0-next.26...v1.4.0-next.27) (2023-06-28)
 
 **Note:** Version bump only for package @municipio/gatsby-theme-basic
