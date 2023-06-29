@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0-next.30](https://github.com/municipio-se/gatsby-packages/compare/v1.4.0-next.29...v1.4.0-next.30) (2023-06-29)
+
+
+### Bug Fixes
+
+* Text module title and content was not handled properly ([94b1839](https://github.com/municipio-se/gatsby-packages/commit/94b1839cf2326b02261695e5ced96eea63a6b0e1))
+
+
+
 ## [1.4.0-next.29](https://github.com/municipio-se/gatsby-packages/compare/v1.4.0-next.28...v1.4.0-next.29) (2023-06-28)
 
 
