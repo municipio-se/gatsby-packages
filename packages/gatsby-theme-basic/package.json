@@ -41,8 +41,8 @@
   "peerDependencies": {
     "@emotion/react": "^11.11.0",
     "@emotion/styled": "^11.11.0",
-    "@wsui/base": "^0.5.30",
-    "@wsui/municipio": "^0.5.30",
+    "@wsui/base": "^0.5.31",
+    "@wsui/municipio": "^0.5.31",
     "gatsby": "^3.14.3",
     "react": "^17.0.0 || ^18.0.0",
     "react-dom": "^17.0.0 || ^18.0.0"
@@ -50,8 +50,8 @@
   "devDependencies": {
     "@emotion/react": "^11.11.0",
     "@emotion/styled": "^11.11.0",
-    "@wsui/base": "^0.5.30",
-    "@wsui/municipio": "^0.5.30",
+    "@wsui/base": "^0.5.31",
+    "@wsui/municipio": "^0.5.31",
     "gatsby": "^3.14.3",
     "react": "^17.0.0",
     "react-dom": "^17.0.0"

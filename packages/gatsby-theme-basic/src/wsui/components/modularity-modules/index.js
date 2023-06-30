@@ -1,3 +1,4 @@
+export { default as BillboardModule } from "./BillboardModule.jsx";
 export { default as ContactsModule } from "./ContactsModule.jsx";
 export { default as FallbackModule } from "./FallbackModule.jsx";
 // export { default as FeedbackModule } from "./FeedbackModule";
