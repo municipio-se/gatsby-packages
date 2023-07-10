@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0-next.33](https://github.com/municipio-se/gatsby-packages/compare/v1.4.0-next.32...v1.4.0-next.33) (2023-07-10)
+
+
+### ⚠ BREAKING CHANGES
+
+* Add module background support and fix layout issues
+
+### Features
+
+* Add image placement and aspect ratio support to billboard module ([55ccf13](https://github.com/municipio-se/gatsby-packages/commit/55ccf13037668f1c972e6e0ada1457baa1d4cfb0))
+* Add module background support and fix layout issues ([7a59ae7](https://github.com/municipio-se/gatsby-packages/commit/7a59ae71a6ba640fdb82d14d2d56ac1b9fef9599))
+
+
+
 ## [1.4.0-next.32](https://github.com/municipio-se/gatsby-packages/compare/v1.4.0-next.31...v1.4.0-next.32) (2023-07-06)
 
 **Note:** Version bump only for package root
