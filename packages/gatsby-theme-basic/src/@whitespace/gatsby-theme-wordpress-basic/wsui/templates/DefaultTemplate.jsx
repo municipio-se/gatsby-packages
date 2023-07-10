@@ -6,72 +6,162 @@ import {
   PageHeading,
   PagePreamble,
   PageBreadcrumbs,
+  PageFeaturedImage,
   Seo,
 } from "@whitespace/gatsby-theme-wordpress-basic/src/wsui/components";
-import { Section, PageGrid, PageGridItem, useThemeProps } from "@wsui/base";
-
 import {
-  // PageChildNavigation,
-  PageContentAreaModules,
-  // PageFeaturedImage,
-  // PageSiblingNavigation,
-} from "../../../../wsui/components";
+  Section,
+  PageGrid,
+  PageGridItem,
+  useThemeProps,
+  PageSection,
+} from "@wsui/base";
+import { omit } from "lodash/fp";
+import { Fragment } from "react";
+
+import PageBottomSidebarModules from "../../../../wsui/components/PageBottomSidebarModules.jsx";
+import PageContentAreaBottomModules from "../../../../wsui/components/PageContentAreaBottomModules.jsx";
+import PageContentAreaModules from "../../../../wsui/components/PageContentAreaModules.jsx";
+import PageRightSidebarModules from "../../../../wsui/components/PageRightSidebarModules.jsx";
+import PageTopSidebarModules from "../../../../wsui/components/PageTopSidebarModules.jsx";
+import usePageModules from "../../../../wsui/usePageModules.js";
 
 export default function DefaultTemplate(props) {
-  // eslint-disable-next-line no-unused-vars
   const theme = useTheme();
   props = useThemeProps({ props, name: "DefaultTemplate" });
-  let { spacing = [8.75, 17.5], defaultColspan = 7 } = props;
-  const { title } = usePageContext();
+  props = useThemeProps({ props, name: "PageTemplate" });
+  let { defaultColspan = 7, hideTitle = false } = omit(["spacing"], props);
+  const { title, content, isFrontPage } = usePageContext();
+
+  let hasSidebar =
+    usePageModules("rightSidebar", { ignoreBackgrounds: true })?.length > 0;
+  let hasTopSidebarModules =
+    usePageModules("topSidebar", { ignoreBackgrounds: true })?.length > 0;
+  let hasContentAreaModules =
+    usePageModules("contentArea", { ignoreBackgrounds: true })?.length > 0;
+  let hasContentAreaBottomModules =
+    usePageModules("contentAreaBottom", { ignoreBackgrounds: true })?.length >
+    0;
+
   return (
     <article>
-      <Seo title={title} />
+      <Seo title={title} isFrontPage={isFrontPage} />
 
-      <PageGrid>
-        <PageGridItem colspan={12}>
-          <PageBreadcrumbs
-            css={css`
-              margin-top: ${theme.getLength(-4)};
-              margin-bottom: ${theme.getLength(8)};
-            `}
-          />
-        </PageGridItem>
-      </PageGrid>
+      {hasTopSidebarModules ? (
+        <Section>
+          <PageTopSidebarModules />
+        </Section>
+      ) : (
+        <PageBreadcrumbs />
+      )}
 
-      {/* Featured image */}
-      {/* <PageFeaturedImage /> */}
+      {hasSidebar
+        ? !!(
+            content ||
+            hasContentAreaModules ||
+            hasContentAreaBottomModules
+          ) && (
+            <PageSection background="transparent">
+              <PageGrid>
+                <PageGridItem colspan={defaultColspan}>
+                  <div
+                    css={css`
+                      ${theme.styleUtils.negateMarginStart}
+                      ${theme.styleUtils.negateMarginEnd}
+                    `}
+                  >
+                    {!!content && (
+                      <PageSection background="transparent" spacing={[5, 10]}>
+                        <PageHeading marginAfter hideTitle={hideTitle} />
+                        {/* <PageChildNavigation /> */}
+                        <PageFeaturedImage />
+                        <Section>
+                          {/* <PageChildNavigation /> */}
+                          <PageFeaturedImage />
+                          <PagePreamble marginAfter />
+                          <PageContent marginAfter />
+                        </Section>
+                      </PageSection>
+                    )}
+                    <Section>
+                      <PageContentAreaModules
+                        ignoreBackgrounds
+                        maxColspan={defaultColspan}
+                        gap={[5, 10]}
+                      />
+                      {/* <footer className={styles.footer}>
+                        <PageMeta />
+                        <PageGrid css={css``}>
+                          <PageGridItem>
+                            <PageSiblingNavigation />
+                          </PageGridItem>
+                        </PageGrid>
+                      </footer> */}
+                      <PageContentAreaBottomModules
+                        ignoreBackgrounds
+                        gap={[5, 10]}
+                      />
+                    </Section>
+                  </div>
+                </PageGridItem>
+                <PageGridItem colspan={5}>
+                  <Section>
+                    <PageRightSidebarModules
+                      ignoreBackgrounds
+                      spacing={[5, 10]}
+                      css={css`
+                        ${theme.styleUtils.negateMarginStart}
+                        ${theme.styleUtils.negateMarginEnd}
+                      `}
+                    />
+                  </Section>
+                </PageGridItem>
+              </PageGrid>
+            </PageSection>
+          )
+        : !!(
+            content ||
+            hasContentAreaModules ||
+            hasContentAreaBottomModules
+          ) && (
+            <Fragment>
+              {!!content && (
+                <PageSection background="transparent">
+                  <PageGrid>
+                    <PageGridItem colspan={defaultColspan}>
+                      <PageHeading marginAfter hideTitle={hideTitle} />
+                      {/* <PageChildNavigation /> */}
+                      <PageFeaturedImage />
+                      <Section>
+                        {/* <PageChildNavigation /> */}
+                        <PageFeaturedImage />
+                        <PagePreamble marginAfter />
+                        <PageContent marginAfter />
+                      </Section>
+                    </PageGridItem>
+                  </PageGrid>
+                </PageSection>
+              )}
+              <Section>
+                <PageContentAreaModules
+                  ignoreBackgrounds
+                  maxColspan={defaultColspan}
+                />
+                {/* <footer className={styles.footer}>
+                  <PageMeta />
+                  <PageGrid css={css``}>
+                    <PageGridItem>
+                      <PageSiblingNavigation />
+                    </PageGridItem>
+                  </PageGrid>
+                </footer> */}
+                <PageContentAreaBottomModules ignoreBackgrounds />
+              </Section>
+            </Fragment>
+          )}
 
-      <PageGrid
-        css={css`
-          ${theme.styleUtils.negateMarginBefore}
-          ${theme.styleUtils.negateMarginAfter}
-          margin-bottom: ${theme.getLength(spacing)};
-        `}
-        maxColspan={defaultColspan}
-      >
-        <PageGridItem>
-          <PageHeading marginAfter />
-          <Section>
-            {/* <PageChildNavigation /> */}
-            <PagePreamble marginAfter />
-            <PageContent marginAfter />
-          </Section>
-        </PageGridItem>
-      </PageGrid>
       <Section>
-        <PageContentAreaModules
-          maxColspan={defaultColspan}
-          spacing={spacing}
-          marginAfter
-        />
-        {/* <footer className={styles.footer}>
-          <PageMeta />
-          <PageGrid>
-            <PageGridItem>
-              <PageSiblingNavigation />
-            </PageGridItem>
-          </PageGrid>
-        </footer> */}
+        <PageBottomSidebarModules />
       </Section>
     </article>
   );

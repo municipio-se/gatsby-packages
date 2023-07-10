@@ -3,9 +3,7 @@ import { useThemeProps } from "@wsui/base";
 import { TextModule as WsuiTextModule } from "@wsui/municipio";
 import React, { useContext } from "react";
 
-import modularityAreaContext from "../../../modularityAreaContext";
 import modularityModuleContext from "../../../modularityModuleContext";
-import modularityRowContext from "../../../modularityRowContext";
 
 export default function TextModule(props) {
   props = useThemeProps({ props, name: "MunicipioTextModule" });
@@ -41,14 +39,7 @@ export default function TextModule(props) {
     semanticHeadings: true,
   });
 
-  const { centerLonelyModules } = useContext(modularityAreaContext);
-  const { modules } = useContext(modularityRowContext);
   let { align } = useContext(modularityModuleContext);
-
-  align =
-    align || (centerLonelyModules && modules.length === 1)
-      ? "center"
-      : undefined;
 
   return (
     <WsuiTextModule

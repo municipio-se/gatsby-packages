@@ -36,14 +36,7 @@ export default function BillboardModule(props) {
     semanticHeadings: true,
   });
 
-  // const { centerLonelyModules } = useContext(modularityAreaContext);
-  // const { modules } = useContext(modularityRowContext);
   let { align } = useContext(modularityModuleContext);
-
-  // align =
-  //   align || (centerLonelyModules && modules.length === 1)
-  //     ? "center"
-  //     : undefined;
 
   return (
     <WsuiBillboardModule

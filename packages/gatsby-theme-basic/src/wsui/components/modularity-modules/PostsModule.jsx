@@ -125,9 +125,6 @@ export default function PostsModule({
   normalizePostsModuleItems = defaultNormalizePostsModuleItems,
   ...restProps
 }) {
-  const { modules } = useContext(modularityRowContext);
-  const { centerLonelyModules } = useContext(modularityAreaContext);
-
   // let isFilteringEnabled =
   //   !!module?.modPostsDataFiltering?.frontEndTaxFiltering &&
   //   module?.modPostsDataSource?.postsDataSource === "posttype";
@@ -194,7 +191,6 @@ export default function PostsModule({
 
   return (
     <WsuiPostsModule
-      align={centerLonelyModules && modules.length === 1 ? "center" : undefined}
       title={title}
       items={items}
       itemColor={itemColor}
