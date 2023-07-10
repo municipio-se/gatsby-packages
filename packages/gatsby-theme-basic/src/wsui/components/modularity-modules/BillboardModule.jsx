@@ -23,7 +23,14 @@ export default function BillboardModule(props) {
   let {
     title,
     hideTitle,
-    modBillboard: { format, image, links, color },
+    modBillboard: {
+      format,
+      image,
+      imageAspectRatio,
+      imagePlacement,
+      links,
+      color,
+    },
   } = module;
 
   const { processPageContent } = useHTMLProcessor();
@@ -47,6 +54,8 @@ export default function BillboardModule(props) {
       format={format}
       align={align}
       image={image}
+      imageAspectRatio={imageAspectRatio}
+      imagePlacement={imagePlacement}
       {...restProps}
     />
   );
