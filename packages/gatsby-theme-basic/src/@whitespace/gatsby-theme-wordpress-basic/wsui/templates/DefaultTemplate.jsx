@@ -143,10 +143,7 @@ export default function DefaultTemplate(props) {
                 </PageSection>
               )}
               <Section>
-                <PageContentAreaModules
-                  ignoreBackgrounds
-                  maxColspan={defaultColspan}
-                />
+                <PageContentAreaModules maxColspan={defaultColspan} />
                 {/* <footer className={styles.footer}>
                   <PageMeta />
                   <PageGrid css={css``}>
@@ -155,7 +152,7 @@ export default function DefaultTemplate(props) {
                     </PageGridItem>
                   </PageGrid>
                 </footer> */}
-                <PageContentAreaBottomModules ignoreBackgrounds />
+                <PageContentAreaBottomModules />
               </Section>
             </Fragment>
           )}
