@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0-next.34](https://github.com/municipio-se/gatsby-packages/compare/v1.4.0-next.33...v1.4.0-next.34) (2023-07-11)
+
+
+### Bug Fixes
+
+* Module backgrounds were not applied on pages without sidebar ([6c86c06](https://github.com/municipio-se/gatsby-packages/commit/6c86c066cce2eac6089b64b5ee787681bd9f6ac1))
+
+
+
 ## [1.4.0-next.33](https://github.com/municipio-se/gatsby-packages/compare/v1.4.0-next.32...v1.4.0-next.33) (2023-07-10)
 
 

@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0-next.34](https://github.com/municipio-se/gatsby-packages/compare/v1.4.0-next.33...v1.4.0-next.34) (2023-07-11)
+
+**Note:** Version bump only for package @municipio/gatsby-theme-intranet
+
+
+
+
+
 ## [1.4.0-next.33](https://github.com/municipio-se/gatsby-packages/compare/v1.4.0-next.32...v1.4.0-next.33) (2023-07-10)
 
 **Note:** Version bump only for package @municipio/gatsby-theme-intranet
