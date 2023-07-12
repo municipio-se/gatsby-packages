@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0-next.35](https://github.com/municipio-se/gatsby-packages/compare/v1.4.0-next.34...v1.4.0-next.35) (2023-07-12)
+
+
+### Bug Fixes
+
+* Harmonize billboard module formats ([bab39e4](https://github.com/municipio-se/gatsby-packages/commit/bab39e49f623ce7c7404aece02ab87ef917cd25b))
+
+
+
 ## [1.4.0-next.34](https://github.com/municipio-se/gatsby-packages/compare/v1.4.0-next.33...v1.4.0-next.34) (2023-07-11)
 
 
