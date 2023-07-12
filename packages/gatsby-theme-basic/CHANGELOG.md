@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0-next.36](https://github.com/municipio-se/gatsby-packages/compare/v1.4.0-next.35...v1.4.0-next.36) (2023-07-12)
+
+
+### Bug Fixes
+
+* Posts module align ([e0889a0](https://github.com/municipio-se/gatsby-packages/commit/e0889a004243dcd9ec319f3f19cce842b9e9ac1e))
+
+
+
 ## [1.4.0-next.35](https://github.com/municipio-se/gatsby-packages/compare/v1.4.0-next.34...v1.4.0-next.35) (2023-07-12)
 
 
