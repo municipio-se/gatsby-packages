@@ -1,28 +1,38 @@
 import { useHTMLProcessor } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/html-processor";
-import { useThemeProps } from "@wsui/base";
-import { BillboardModule as WsuiBillboardModule } from "@wsui/municipio";
+import { handleComponentsProp, useThemeProps } from "@wsui/base";
+import { CardBillboardModule, FeatureBillboardModule } from "@wsui/municipio";
+import { camelCase, upperFirst } from "lodash/fp";
 import React, { useContext } from "react";
 
-// import modularityAreaContext from "../../../modularityAreaContext";
 import modularityModuleContext from "../../../modularityModuleContext";
-// import modularityRowContext from "../../../modularityRowContext";
-import useModularityModule from "../../../useModularityModule";
 
-export default function BillboardModule(props) {
-  props = useThemeProps({ props, name: "MunicipioBillboardModule" });
-  props = useModularityModule({ props, parseContent: false });
+function defaultComponentMapping({ format, components }) {
+  let inferredComponentName = upperFirst(camelCase(format)) + "BillboardModule";
+  let Component = components[inferredComponentName];
+  return Component;
+}
+
+BillboardModuleController.wsuiConfig = {
+  leaveHeading: true,
+};
+
+export default function BillboardModuleController(props) {
+  const { processPageContent } = useHTMLProcessor();
+  props = useThemeProps({ props, name: "MunicipioBillboardModuleController" });
   let {
-    // eslint-disable-next-line no-unused-vars
-    title: ignoredTitle,
-    // eslint-disable-next-line no-unused-vars
-    description,
+    title,
     module,
+    componentMapping = defaultComponentMapping,
+    components,
     ...restProps
   } = props;
 
+  components = handleComponentsProp(components, {
+    CardBillboardModule,
+    FeatureBillboardModule,
+  });
+
   let {
-    title,
-    hideTitle,
     modBillboard: {
       format,
       image,
@@ -33,29 +43,47 @@ export default function BillboardModule(props) {
     },
   } = module;
 
-  const { processPageContent } = useHTMLProcessor();
-  // TODO: Deprecate `modDescription` in favor of `content`
-  let { content } = processPageContent(module.content, {
-    extractHeading: false,
-    leavePreamble: true,
-    contentMedia: module.contentMedia,
-    contentModularityModules: module.contentModularityModules,
-    semanticHeadings: true,
-  });
-
   let { align } = useContext(modularityModuleContext);
 
+  const ownerState = {
+    format,
+    componentMapping,
+    components,
+    color,
+    links,
+    align,
+    image,
+    ...restProps,
+  };
+
+  const Component =
+    (typeof componentMapping === "function"
+      ? componentMapping(ownerState, defaultComponentMapping)
+      : componentMapping[format]) || defaultComponentMapping(ownerState);
+
+  let { headingContent, headingLevel, content } = processPageContent(
+    module.content,
+    {
+      extractHeading: !Component.wsuiConfig?.hasCaption && !title,
+      leavePreamble: true,
+      contentMedia: module.contentMedia,
+      contentModularityModules: module.contentModularityModules,
+      semanticHeadings: true,
+    },
+  );
+
   return (
-    <WsuiBillboardModule
-      color={color || undefined}
-      title={hideTitle ? undefined : title}
-      content={content}
-      links={links}
+    <Component
       format={format}
+      title={headingContent || title}
+      titleVariant={headingLevel ? `h${headingLevel}` : undefined}
+      content={content}
       align={align}
       image={image}
       imageAspectRatio={imageAspectRatio}
       imagePlacement={imagePlacement}
+      links={links}
+      color={color || undefined}
       {...restProps}
     />
   );
