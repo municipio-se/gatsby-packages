@@ -189,6 +189,8 @@ export default function PostsModule({
   //   );
   // }
 
+  let { align } = useContext(modularityModuleContext);
+
   return (
     <WsuiPostsModule
       title={title}
@@ -206,6 +208,7 @@ export default function PostsModule({
         }
       }
       gridMaxColumns={gridMaxColumns}
+      align={align}
       {...restProps}
     />
   );
