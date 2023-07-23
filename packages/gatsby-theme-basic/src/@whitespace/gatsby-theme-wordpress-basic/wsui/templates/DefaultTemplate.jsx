@@ -29,7 +29,7 @@ import usePageModules from "../../../../wsui/usePageModules.js";
 export default function DefaultTemplate(props) {
   const theme = useTheme();
   props = useThemeProps({ props, name: "DefaultTemplate" });
-  props = useThemeProps({ props, name: "PageTemplate" });
+  props = useThemeProps({ props, name: "Template" });
   let { defaultColspan = 7, hideTitle = false } = omit(["spacing"], props);
   const { title, content, isFrontPage } = usePageContext();
 
