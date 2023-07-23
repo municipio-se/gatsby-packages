@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.0-next.0](https://github.com/municipio-se/gatsby-packages/compare/v1.4.0...v1.5.0-next.0) (2023-07-23)
+
+
+### Features
+
+* Update deps ([dc04e73](https://github.com/municipio-se/gatsby-packages/commit/dc04e73b8901acc89923d6615d0dd271cc295209))
+
+
+### Bug Fixes
+
+* Change template extendee name ([1466168](https://github.com/municipio-se/gatsby-packages/commit/146616869f9d2273ac5c947bb84c7c9aa6575467))
+
+
+
 ## [1.4.0](https://github.com/municipio-se/gatsby-packages/compare/v1.4.0-next.36...v1.4.0) (2023-07-19)
 
 **Note:** Version bump only for package @municipio/gatsby-theme-basic
