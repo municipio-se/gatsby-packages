@@ -72,15 +72,22 @@ export default function DefaultTemplate(props) {
                   >
                     {!!content && (
                       <PageSection background="transparent" spacing={[5, 10]}>
-                        <PageHeading marginAfter hideTitle={hideTitle} />
-                        {/* <PageChildNavigation /> */}
-                        <PageFeaturedImage />
-                        <Section>
+                        <div
+                          css={css`
+                            ${theme.styleUtils.negateMarginStart}
+                            ${theme.styleUtils.negateMarginEnd}
+                          `}
+                        >
+                          <PageHeading marginAfter hideTitle={hideTitle} />
                           {/* <PageChildNavigation /> */}
                           <PageFeaturedImage />
-                          <PagePreamble marginAfter />
-                          <PageContent marginAfter />
-                        </Section>
+                          <Section>
+                            {/* <PageChildNavigation /> */}
+                            <PageFeaturedImage />
+                            <PagePreamble marginAfter />
+                            <PageContent marginAfter />
+                          </Section>
+                        </div>
                       </PageSection>
                     )}
                     <Section>
@@ -129,15 +136,22 @@ export default function DefaultTemplate(props) {
                 <PageSection background="transparent">
                   <PageGrid>
                     <PageGridItem colspan={defaultColspan}>
-                      <PageHeading marginAfter hideTitle={hideTitle} />
-                      {/* <PageChildNavigation /> */}
-                      <PageFeaturedImage />
-                      <Section>
+                      <div
+                        css={css`
+                          ${theme.styleUtils.negateMarginStart}
+                          ${theme.styleUtils.negateMarginEnd}
+                        `}
+                      >
+                        <PageHeading marginAfter hideTitle={hideTitle} />
                         {/* <PageChildNavigation /> */}
                         <PageFeaturedImage />
-                        <PagePreamble marginAfter />
-                        <PageContent marginAfter />
-                      </Section>
+                        <Section>
+                          {/* <PageChildNavigation /> */}
+                          <PageFeaturedImage />
+                          <PagePreamble marginAfter />
+                          <PageContent marginAfter />
+                        </Section>
+                      </div>
                     </PageGridItem>
                   </PageGrid>
                 </PageSection>
