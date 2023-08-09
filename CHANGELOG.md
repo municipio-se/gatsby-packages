@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.0-next.2](https://github.com/municipio-se/gatsby-packages/compare/v1.5.0-next.1...v1.5.0-next.2) (2023-08-09)
+
+
+### Bug Fixes
+
+* Negate page content margin ([b2b7cc2](https://github.com/municipio-se/gatsby-packages/commit/b2b7cc2033d1cd047cea5b5ae7c046a1911ca3da))
+
+
+
 ## [1.5.0-next.1](https://github.com/municipio-se/gatsby-packages/compare/v1.5.0-next.0...v1.5.0-next.1) (2023-07-25)
 
 **Note:** Version bump only for package root
