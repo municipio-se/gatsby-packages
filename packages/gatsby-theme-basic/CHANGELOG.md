@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.0-next.3](https://github.com/municipio-se/gatsby-packages/compare/v1.5.0-next.2...v1.5.0-next.3) (2023-08-11)
+
+
+### Features
+
+* Add `contentSpacing` prop to DefaultTemplate ([ef68f37](https://github.com/municipio-se/gatsby-packages/commit/ef68f37b98718637fbef42891821b3e705e7f2c0))
+
+
+
 ## [1.5.0-next.2](https://github.com/municipio-se/gatsby-packages/compare/v1.5.0-next.1...v1.5.0-next.2) (2023-08-09)
 
 
