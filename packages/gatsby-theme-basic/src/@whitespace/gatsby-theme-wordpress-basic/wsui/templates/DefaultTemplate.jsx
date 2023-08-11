@@ -30,7 +30,11 @@ export default function DefaultTemplate(props) {
   const theme = useTheme();
   props = useThemeProps({ props, name: "DefaultTemplate" });
   props = useThemeProps({ props, name: "Template" });
-  let { defaultColspan = 7, hideTitle = false } = omit(["spacing"], props);
+  let {
+    defaultColspan = 7,
+    hideTitle = false,
+    contentSpacing = [5, 10],
+  } = omit(["spacing"], props);
   const { title, content, isFrontPage } = usePageContext();
 
   let hasSidebar =
@@ -71,30 +75,26 @@ export default function DefaultTemplate(props) {
                     `}
                   >
                     {!!content && (
-                      <PageSection background="transparent" spacing={[5, 10]}>
-                        <div
-                          css={css`
-                            ${theme.styleUtils.negateMarginStart}
-                            ${theme.styleUtils.negateMarginEnd}
-                          `}
-                        >
-                          <PageHeading marginAfter hideTitle={hideTitle} />
+                      <PageSection
+                        background="transparent"
+                        spacing={contentSpacing}
+                      >
+                        <PageHeading marginAfter hideTitle={hideTitle} />
+                        {/* <PageChildNavigation /> */}
+                        <PageFeaturedImage />
+                        <Section>
                           {/* <PageChildNavigation /> */}
                           <PageFeaturedImage />
-                          <Section>
-                            {/* <PageChildNavigation /> */}
-                            <PageFeaturedImage />
-                            <PagePreamble marginAfter />
-                            <PageContent marginAfter />
-                          </Section>
-                        </div>
+                          <PagePreamble marginAfter />
+                          <PageContent />
+                        </Section>
                       </PageSection>
                     )}
                     <Section>
                       <PageContentAreaModules
                         ignoreBackgrounds
                         maxColspan={defaultColspan}
-                        gap={[5, 10]}
+                        gap={contentSpacing}
                       />
                       {/* <footer className={styles.footer}>
                         <PageMeta />
@@ -106,7 +106,7 @@ export default function DefaultTemplate(props) {
                       </footer> */}
                       <PageContentAreaBottomModules
                         ignoreBackgrounds
-                        gap={[5, 10]}
+                        gap={contentSpacing}
                       />
                     </Section>
                   </div>
@@ -115,7 +115,7 @@ export default function DefaultTemplate(props) {
                   <Section>
                     <PageRightSidebarModules
                       ignoreBackgrounds
-                      spacing={[5, 10]}
+                      gap={contentSpacing}
                       css={css`
                         ${theme.styleUtils.negateMarginStart}
                         ${theme.styleUtils.negateMarginEnd}
@@ -136,22 +136,15 @@ export default function DefaultTemplate(props) {
                 <PageSection background="transparent">
                   <PageGrid>
                     <PageGridItem colspan={defaultColspan}>
-                      <div
-                        css={css`
-                          ${theme.styleUtils.negateMarginStart}
-                          ${theme.styleUtils.negateMarginEnd}
-                        `}
-                      >
-                        <PageHeading marginAfter hideTitle={hideTitle} />
+                      <PageHeading marginAfter hideTitle={hideTitle} />
+                      {/* <PageChildNavigation /> */}
+                      <PageFeaturedImage />
+                      <Section>
                         {/* <PageChildNavigation /> */}
                         <PageFeaturedImage />
-                        <Section>
-                          {/* <PageChildNavigation /> */}
-                          <PageFeaturedImage />
-                          <PagePreamble marginAfter />
-                          <PageContent marginAfter />
-                        </Section>
-                      </div>
+                        <PagePreamble marginAfter />
+                        <PageContent />
+                      </Section>
                     </PageGridItem>
                   </PageGrid>
                 </PageSection>
