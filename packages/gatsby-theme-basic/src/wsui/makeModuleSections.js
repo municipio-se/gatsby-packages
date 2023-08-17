@@ -1,7 +1,16 @@
+import { parseColumnWidth } from "../utils";
+
 export default function makeModuleSections(
   modules,
   { ignoreBackgrounds = false } = {},
 ) {
+  if (!modules?.length) return [];
+  modules = modules
+    .map(({ columnWidth, ...module }) => ({
+      colspan: parseColumnWidth(columnWidth),
+      ...module,
+    }))
+    .filter(({ module, hidden }) => module && !hidden);
   if (!modules?.length) return [];
   let rows = [];
   let currentSection = {
