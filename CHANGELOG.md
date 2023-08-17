@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.0-next.5](https://github.com/municipio-se/gatsby-packages/compare/v1.5.0-next.4...v1.5.0-next.5) (2023-08-17)
+
+
+### Features
+
+* Allow modules on content type archive pages ([fb7be62](https://github.com/municipio-se/gatsby-packages/commit/fb7be622b5ec885d4888c48a8ded45433948bd2e))
+
+
+
 ## [1.5.0-next.4](https://github.com/municipio-se/gatsby-packages/compare/v1.5.0-next.3...v1.5.0-next.4) (2023-08-15)
 
 **Note:** Version bump only for package root
