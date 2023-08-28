@@ -87,10 +87,8 @@ function defaultNormalizePostsModuleItems(
             contentType: item.contentType?.node?.name,
             title: item.title,
             dateGmt: item.dateGmt,
-            date:
-              (item.archiveDatesGmt &&
-                getMostRelevantDate(item.archiveDatesGmt)) ||
-              item.dateGmt,
+            date: item.dateGmt,
+            dates: item.eventDates || [item.dateGmt],
             link,
             description: item.description ? item.description : excerpt,
             image: item.featuredImage?.node,
@@ -173,6 +171,8 @@ export default function PostsModule({
     Html,
     stripHTML,
   });
+
+  console.log(module, items);
 
   const { headingVariant } = useContext(modularityModuleContext);
 
