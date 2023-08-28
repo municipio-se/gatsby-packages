@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.0-next.6](https://github.com/municipio-se/gatsby-packages/compare/v1.5.0-next.5...v1.5.0-next.6) (2023-08-28)
+
+
+### Features
+
+* Handle event dates in posts module ([baf8cf5](https://github.com/municipio-se/gatsby-packages/commit/baf8cf585509f2dc6f39b88b59db15f45beff9d5))
+
+
+
 ## [1.5.0-next.5](https://github.com/municipio-se/gatsby-packages/compare/v1.5.0-next.4...v1.5.0-next.5) (2023-08-17)
 
 
