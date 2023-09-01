@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.0-next.7](https://github.com/municipio-se/gatsby-packages/compare/v1.5.0-next.6...v1.5.0-next.7) (2023-09-01)
+
+
+### Bug Fixes
+
+* Lint errors ([41ff88d](https://github.com/municipio-se/gatsby-packages/commit/41ff88dddb27229f4c49cba2b763adcd55d30a73))
+* Page title was hidden when there was no content ([585e565](https://github.com/municipio-se/gatsby-packages/commit/585e565ea745eaf906eb94bf2561fe2eda97a56c))
+
+
+
 ## [1.5.0-next.6](https://github.com/municipio-se/gatsby-packages/compare/v1.5.0-next.5...v1.5.0-next.6) (2023-08-28)
 
 
