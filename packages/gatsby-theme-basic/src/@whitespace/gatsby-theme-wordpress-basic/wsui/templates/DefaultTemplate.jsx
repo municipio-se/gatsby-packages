@@ -32,10 +32,12 @@ export default function DefaultTemplate(props) {
   props = useThemeProps({ props, name: "Template" });
   let {
     defaultColspan = 7,
-    hideTitle = false,
+    hideTitle = null,
     contentSpacing = [5, 10],
   } = omit(["spacing"], props);
-  const { title, content, isFrontPage } = usePageContext();
+  const { title, content, isFrontPage, pageAppearance } = usePageContext();
+
+  hideTitle ??= pageAppearance?.hideTitle ?? false;
 
   let hasSidebar =
     usePageModules("rightSidebar", { ignoreBackgrounds: true })?.length > 0;
@@ -62,6 +64,7 @@ export default function DefaultTemplate(props) {
       {hasSidebar
         ? !!(
             content ||
+            !hideTitle ||
             hasContentAreaModules ||
             hasContentAreaBottomModules
           ) && (
@@ -74,7 +77,7 @@ export default function DefaultTemplate(props) {
                       ${theme.styleUtils.negateMarginEnd}
                     `}
                   >
-                    {!!content && (
+                    {!!(content || !hideTitle) && (
                       <PageSection
                         background="transparent"
                         spacing={contentSpacing}
@@ -128,11 +131,12 @@ export default function DefaultTemplate(props) {
           )
         : !!(
             content ||
+            !hideTitle ||
             hasContentAreaModules ||
             hasContentAreaBottomModules
           ) && (
             <Fragment>
-              {!!content && (
+              {!!(content || !hideTitle) && (
                 <PageSection background="transparent">
                   <PageGrid>
                     <PageGridItem colspan={defaultColspan}>
