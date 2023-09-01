@@ -6,10 +6,7 @@ import React, { useContext } from "react";
 
 // import PostsModuleFilterProvider from "../../../components/modularity-modules/PostsModuleFilterProvider";
 import useTaxonomies from "../../../hooks/useTaxonomies";
-import modularityAreaContext from "../../../modularityAreaContext";
 import modularityModuleContext from "../../../modularityModuleContext";
-import modularityRowContext from "../../../modularityRowContext.js";
-import getMostRelevantDate from "../../../utils/getMostRelevantDate";
 
 const excerpted = (text) => {
   return text.length > 153 ? text.slice(0, 150) + "…" : text;
@@ -171,8 +168,6 @@ export default function PostsModule({
     Html,
     stripHTML,
   });
-
-  console.log(module, items);
 
   const { headingVariant } = useContext(modularityModuleContext);
 
