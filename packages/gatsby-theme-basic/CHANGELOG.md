@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.0-next.8](https://github.com/municipio-se/gatsby-packages/compare/v1.5.0-next.7...v1.5.0-next.8) (2023-09-04)
+
+
+### Features
+
+* Meld breadcrumbs with first top sidebar module background and fix heading level on first module when title is hidden ([0dec91f](https://github.com/municipio-se/gatsby-packages/commit/0dec91f4bb34747cc6889f6e1693baf08e199de8))
+
+
+
 ## [1.5.0-next.7](https://github.com/municipio-se/gatsby-packages/compare/v1.5.0-next.6...v1.5.0-next.7) (2023-09-01)
 
 
