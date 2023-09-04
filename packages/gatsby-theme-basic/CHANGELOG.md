@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.0-next.9](https://github.com/municipio-se/gatsby-packages/compare/v1.5.0-next.8...v1.5.0-next.9) (2023-09-04)
+
+
+### Bug Fixes
+
+* Potential runtime error in billboard module ([260f4a2](https://github.com/municipio-se/gatsby-packages/commit/260f4a272b7aade85d981fbdef636602ebf5a81f))
+
+
+
 ## [1.5.0-next.8](https://github.com/municipio-se/gatsby-packages/compare/v1.5.0-next.7...v1.5.0-next.8) (2023-09-04)
 
 
