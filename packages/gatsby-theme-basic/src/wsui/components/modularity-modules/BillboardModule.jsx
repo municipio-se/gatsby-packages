@@ -1,5 +1,5 @@
 import { useHTMLProcessor } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/html-processor";
-import { handleComponentsProp, useThemeProps } from "@wsui/base";
+import { DevNotice, handleComponentsProp, useThemeProps } from "@wsui/base";
 import { CardBillboardModule, FeatureBillboardModule } from "@wsui/municipio";
 import { camelCase, upperFirst } from "lodash/fp";
 import React, { useContext } from "react";
@@ -60,6 +60,15 @@ export default function BillboardModuleController(props) {
     (typeof componentMapping === "function"
       ? componentMapping(ownerState, defaultComponentMapping)
       : componentMapping[format]) || defaultComponentMapping(ownerState);
+
+  if (!Component) {
+    return (
+      <DevNotice>
+        No component found for billboard module with{" "}
+        <code>format={JSON.stringify(format)}</code>
+      </DevNotice>
+    );
+  }
 
   let { headingContent, headingLevel, content } = processPageContent(
     module.content,
