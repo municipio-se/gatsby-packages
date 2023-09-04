@@ -37,29 +37,27 @@ export default function DefaultTemplate(props) {
   } = omit(["spacing"], props);
   const { title, content, isFrontPage, pageAppearance } = usePageContext();
 
-  hideTitle ??= pageAppearance?.hideTitle ?? false;
-
   let hasSidebar =
     usePageModules("rightSidebar", { ignoreBackgrounds: true })?.length > 0;
-  let hasTopSidebarModules =
-    usePageModules("topSidebar", { ignoreBackgrounds: true })?.length > 0;
+  let topSidebarModules = usePageModules("topSidebar");
+  let hasTopSidebarModules = topSidebarModules?.length > 0;
   let hasContentAreaModules =
     usePageModules("contentArea", { ignoreBackgrounds: true })?.length > 0;
   let hasContentAreaBottomModules =
     usePageModules("contentAreaBottom", { ignoreBackgrounds: true })?.length >
     0;
 
+  hideTitle ??= pageAppearance?.hideTitle ?? hasTopSidebarModules;
+
   return (
     <article>
       <Seo title={title} isFrontPage={isFrontPage} />
 
-      {hasTopSidebarModules ? (
-        <Section>
-          <PageTopSidebarModules />
-        </Section>
-      ) : (
-        <PageBreadcrumbs />
-      )}
+      <PageBreadcrumbs background={topSidebarModules?.[0]?.background} />
+
+      <Section>
+        <PageTopSidebarModules promoteFirstHeading={hideTitle} />
+      </Section>
 
       {hasSidebar
         ? !!(

@@ -7,6 +7,7 @@ import {
   PageGridItem,
   useThemeProps,
   handleComponentsProp,
+  Section,
 } from "@wsui/base";
 import clsx from "clsx";
 import { omit } from "lodash/fp";
@@ -31,6 +32,7 @@ export default function ModularityArea(props) {
     pageGridProps = {},
     sectionPadding = gap,
     components,
+    promoteFirstHeading = false,
     ...restProps
   } = omit(["marginAfter", "marginBefore"], props);
 
@@ -76,17 +78,27 @@ export default function ModularityArea(props) {
                           key={index}
                           colspan={colspan || defaultColspan}
                         >
-                          <modularityModuleContext.Provider
-                            value={{
-                              hidden,
-                              module,
-                              colspan,
-                              headingVariant,
-                              ...rest,
-                            }}
+                          <Section
+                            adjustLevel={
+                              promoteFirstHeading &&
+                              rowIndex === 0 &&
+                              index === 0
+                                ? -1
+                                : 0
+                            }
                           >
-                            <ModuleController module={module} />
-                          </modularityModuleContext.Provider>
+                            <modularityModuleContext.Provider
+                              value={{
+                                hidden,
+                                module,
+                                colspan,
+                                headingVariant,
+                                ...rest,
+                              }}
+                            >
+                              <ModuleController module={module} />
+                            </modularityModuleContext.Provider>
+                          </Section>
                         </PageGridItem>
                       );
                     },

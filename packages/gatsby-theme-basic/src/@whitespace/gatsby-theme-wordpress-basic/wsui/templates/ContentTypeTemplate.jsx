@@ -27,7 +27,7 @@ export default function ContentTypeTemplate(props) {
   props = useThemeProps({ props, name: "Template" });
   let {
     defaultColspan = 7,
-    hideTitle = false,
+    hideTitle = null,
     contentSpacing = [5, 10],
     data,
   } = omit(["spacing"], props);
@@ -57,6 +57,8 @@ export default function ContentTypeTemplate(props) {
   );
 
   let hasTopSidebarModules = topSidebarModules?.length > 0;
+
+  hideTitle ??= hasTopSidebarModules;
   // let hasContentAreaModules = contentAreaModules?.length > 0;
   // let hasContentAreaBottomModules = contentAreaBottomModules?.length > 0;
 
@@ -64,13 +66,14 @@ export default function ContentTypeTemplate(props) {
     <article>
       <Seo title={title} isFrontPage={false} />
 
-      {hasTopSidebarModules ? (
-        <Section>
-          <ModularityArea moduleRows={topSidebarModules} />
-        </Section>
-      ) : (
-        <PageBreadcrumbs />
-      )}
+      <PageBreadcrumbs background={topSidebarModules?.[0]?.background} />
+
+      <Section>
+        <ModularityArea
+          moduleRows={topSidebarModules}
+          promoteFirstHeading={hideTitle}
+        />
+      </Section>
 
       {hasSidebar ? (
         <PageSection background="transparent">
