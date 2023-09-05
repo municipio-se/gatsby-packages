@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.0-next.10](https://github.com/municipio-se/gatsby-packages/compare/v1.5.0-next.9...v1.5.0-next.10) (2023-09-05)
+
+
+### Bug Fixes
+
+* Heading variant was not applied on module titles ([9c6aa21](https://github.com/municipio-se/gatsby-packages/commit/9c6aa21b72b382045b442f4efafe492a41a97e83))
+
+
+
 ## [1.5.0-next.9](https://github.com/municipio-se/gatsby-packages/compare/v1.5.0-next.8...v1.5.0-next.9) (2023-09-04)
 
 
