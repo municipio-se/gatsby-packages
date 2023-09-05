@@ -22,7 +22,11 @@ export default function ModuleController({ module }) {
     moduleComponents.FallbackModule;
 
   // TODO: Deprecate `modDescription` in favor of `content`
-  let { content, headingContent: heading } = module?.modDescription?.description
+  let {
+    content,
+    headingContent: heading,
+    headingLevel,
+  } = module?.modDescription?.description
     ? processPageContent(module.modDescription.description, {
         extractHeading:
           !!module.hideTitle && !Component.wsuiConfig?.leaveHeading,
@@ -44,6 +48,7 @@ export default function ModuleController({ module }) {
     <Component
       module={module}
       title={module.hideTitle ? heading : module.title}
+      headingVariant={headingLevel ? `h${headingLevel}` : undefined}
       description={description}
     />
   );
