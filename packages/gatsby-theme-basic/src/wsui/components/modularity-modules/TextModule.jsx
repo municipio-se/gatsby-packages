@@ -22,10 +22,11 @@ export default function TextModule(props) {
     modTextOptions: {
       hideBoxFrame = false,
       theme: color,
-      link,
+      link, // TODO: Remove this since it's no longer used
       icon,
-      displayMode,
-      backgroundImage,
+      displayMode, // TODO: Remove this since it's no longer used
+      backgroundImage, // TODO: Remove this since it's no longer used
+      links,
     },
   } = module;
 
@@ -51,6 +52,7 @@ export default function TextModule(props) {
       displayMode={displayMode}
       align={align}
       backgroundImage={backgroundImage}
+      links={links}
       {...restProps}
     />
   );
