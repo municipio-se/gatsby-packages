@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.0-next.11](https://github.com/municipio-se/gatsby-packages/compare/v1.5.0-next.10...v1.5.0-next.11) (2023-09-06)
+
+
+### Features
+
+* Support links field in text module ([18350ea](https://github.com/municipio-se/gatsby-packages/commit/18350eaf166693478da83f656e8638f54fd7e339))
+
+
+
 ## [1.5.0-next.10](https://github.com/municipio-se/gatsby-packages/compare/v1.5.0-next.9...v1.5.0-next.10) (2023-09-05)
 
 
