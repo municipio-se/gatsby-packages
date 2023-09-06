@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.0-next.12](https://github.com/municipio-se/gatsby-packages/compare/v1.5.0-next.11...v1.5.0-next.12) (2023-09-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* Adapt to wsui text module changes
+
+### Code Refactoring
+
+* Adapt to wsui text module changes ([238bc2a](https://github.com/municipio-se/gatsby-packages/commit/238bc2a46d08894a3f9cc2f09f56e9fbb3ca183d))
+
+
+
 ## [1.5.0-next.11](https://github.com/municipio-se/gatsby-packages/compare/v1.5.0-next.10...v1.5.0-next.11) (2023-09-06)
 
 
