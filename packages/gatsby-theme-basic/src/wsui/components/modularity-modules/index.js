@@ -3,6 +3,7 @@ export { default as ContactsModule } from "./ContactsModule.jsx";
 export { default as FallbackModule } from "./FallbackModule.jsx";
 // export { default as FeedbackModule } from "./FeedbackModule";
 // export { default as FileslistModule } from "./FileslistModule";
+export { default as FormModule } from "./FormModule.jsx";
 // export { default as GalleryModule } from "./GalleryModule";
 // export { default as IframeModule } from "./IframeModule";
 export { default as ImageModule } from "./ImageModule.jsx";
