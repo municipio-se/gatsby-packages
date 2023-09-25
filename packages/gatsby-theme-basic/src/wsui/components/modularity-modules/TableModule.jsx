@@ -1,10 +1,18 @@
 import Html from "@whitespace/gatsby-theme-wordpress-basic/src/wsui/components/Html.jsx";
-import { Box, Table } from "@wsui/base";
+import {
+  Table as DefaultTable,
+  useThemeProps,
+  handleComponentsProp,
+} from "@wsui/base";
 import React from "react";
 
 import ModuleWrapper from "../ModuleWrapper.jsx";
 
-export default function TableModule({ module = {}, title, ...restProps }) {
+export default function TableModule(props) {
+  props = useThemeProps({ props, name: "TableModule" });
+  let { module = {}, title, components, ...restProps } = props;
+  components = handleComponentsProp(components, { Table: DefaultTable });
+  const { Table } = components;
   const { modTableOptions: { modTable } = {} } = module;
   let rows;
 
@@ -37,9 +45,7 @@ export default function TableModule({ module = {}, title, ...restProps }) {
 
   return (
     <ModuleWrapper title={title} {...restProps}>
-      <Box color="transparent">
-        <Table fields={fields} items={items} />
-      </Box>
+      <Table fields={fields} items={items} />
     </ModuleWrapper>
   );
 }
