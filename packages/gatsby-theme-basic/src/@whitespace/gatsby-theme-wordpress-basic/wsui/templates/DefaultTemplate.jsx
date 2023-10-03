@@ -7,6 +7,7 @@ import {
   PagePreamble,
   PageBreadcrumbs,
   PageFeaturedImage,
+  PageFooter as DefaultPageFooter,
   Seo,
 } from "@whitespace/gatsby-theme-wordpress-basic/src/wsui/components";
 import {
@@ -15,6 +16,7 @@ import {
   PageGridItem,
   useThemeProps,
   PageSection,
+  handleComponentsProp,
 } from "@wsui/base";
 import { omit } from "lodash/fp";
 import { Fragment } from "react";
@@ -34,7 +36,12 @@ export default function DefaultTemplate(props) {
     defaultColspan = 7,
     hideTitle = null,
     contentSpacing = [5, 10],
+    components,
   } = omit(["spacing"], props);
+  components = handleComponentsProp(components, {
+    PageFooter: DefaultPageFooter,
+  });
+  let { PageFooter } = components;
   const { title, content, isFrontPage, pageAppearance } = usePageContext();
 
   let hasSidebar =
@@ -46,6 +53,7 @@ export default function DefaultTemplate(props) {
   let hasContentAreaBottomModules =
     usePageModules("contentAreaBottom", { ignoreBackgrounds: true })?.length >
     0;
+  let hasMainContent = !!content || !!hasSidebar || !!hasContentAreaModules;
 
   hideTitle ??= pageAppearance?.hideTitle ?? hasTopSidebarModules;
 
@@ -81,10 +89,8 @@ export default function DefaultTemplate(props) {
                         spacing={contentSpacing}
                       >
                         <PageHeading marginAfter hideTitle={hideTitle} />
-                        {/* <PageChildNavigation /> */}
                         <PageFeaturedImage />
                         <Section>
-                          {/* <PageChildNavigation /> */}
                           <PageFeaturedImage />
                           <PagePreamble marginAfter />
                           <PageContent />
@@ -97,14 +103,14 @@ export default function DefaultTemplate(props) {
                         maxColspan={defaultColspan}
                         gap={contentSpacing}
                       />
-                      {/* <footer className={styles.footer}>
-                        <PageMeta />
-                        <PageGrid css={css``}>
-                          <PageGridItem>
-                            <PageSiblingNavigation />
-                          </PageGridItem>
-                        </PageGrid>
-                      </footer> */}
+                      {hasMainContent && (
+                        <PageSection
+                          background="transparent"
+                          spacing={contentSpacing}
+                        >
+                          <PageFooter />
+                        </PageSection>
+                      )}
                       <PageContentAreaBottomModules
                         ignoreBackgrounds
                         gap={contentSpacing}
@@ -139,10 +145,8 @@ export default function DefaultTemplate(props) {
                   <PageGrid>
                     <PageGridItem colspan={defaultColspan}>
                       <PageHeading marginAfter hideTitle={hideTitle} />
-                      {/* <PageChildNavigation /> */}
                       <PageFeaturedImage />
                       <Section>
-                        {/* <PageChildNavigation /> */}
                         <PageFeaturedImage />
                         <PagePreamble marginAfter />
                         <PageContent />
@@ -153,14 +157,11 @@ export default function DefaultTemplate(props) {
               )}
               <Section>
                 <PageContentAreaModules maxColspan={defaultColspan} />
-                {/* <footer className={styles.footer}>
-                  <PageMeta />
-                  <PageGrid css={css``}>
-                    <PageGridItem>
-                      <PageSiblingNavigation />
-                    </PageGridItem>
-                  </PageGrid>
-                </footer> */}
+                {hasMainContent && (
+                  <PageSection background="transparent">
+                    <PageFooter />
+                  </PageSection>
+                )}
                 <PageContentAreaBottomModules />
               </Section>
             </Fragment>
