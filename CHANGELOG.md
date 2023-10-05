@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.0-next.16](https://github.com/municipio-se/gatsby-packages/compare/v1.5.0-next.15...v1.5.0-next.16) (2023-10-05)
+
+
+### Bug Fixes
+
+* Page footer layout ([9a8b548](https://github.com/municipio-se/gatsby-packages/commit/9a8b5488ad90fd9b61b95ced4c9b849940d421f3))
+
+
+
 ## [1.5.0-next.15](https://github.com/municipio-se/gatsby-packages/compare/v1.5.0-next.14...v1.5.0-next.15) (2023-10-03)
 
 **Note:** Version bump only for package root
