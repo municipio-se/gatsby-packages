@@ -159,7 +159,11 @@ export default function DefaultTemplate(props) {
                 <PageContentAreaModules maxColspan={defaultColspan} />
                 {hasMainContent && (
                   <PageSection background="transparent">
-                    <PageFooter />
+                    <PageGrid>
+                      <PageGridItem colspan={defaultColspan}>
+                        <PageFooter />
+                      </PageGridItem>
+                    </PageGrid>
                   </PageSection>
                 )}
                 <PageContentAreaBottomModules />
