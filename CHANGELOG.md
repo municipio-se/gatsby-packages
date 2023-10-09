@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.0-next.17](https://github.com/municipio-se/gatsby-packages/compare/v1.5.0-next.16...v1.5.0-next.17) (2023-10-09)
+
+
+### Features
+
+* Remove page footer in favor of page bottom component ([e0fcd9a](https://github.com/municipio-se/gatsby-packages/commit/e0fcd9ad99fb50c61de103f54446356ced324db6))
+
+
+
 ## [1.5.0-next.16](https://github.com/municipio-se/gatsby-packages/compare/v1.5.0-next.15...v1.5.0-next.16) (2023-10-05)
 
 
