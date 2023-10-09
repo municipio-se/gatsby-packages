@@ -8,6 +8,7 @@ import {
   PageBreadcrumbs,
   PageFeaturedImage,
   PageFooter as DefaultPageFooter,
+  PageBottom as DefaultPageBottom,
   Seo,
 } from "@whitespace/gatsby-theme-wordpress-basic/src/wsui/components";
 import {
@@ -39,15 +40,21 @@ export default function DefaultTemplate(props) {
     components,
   } = omit(["spacing"], props);
   components = handleComponentsProp(components, {
+    PageBottom: DefaultPageBottom,
     PageFooter: DefaultPageFooter,
   });
-  let { PageFooter } = components;
+  let {
+    PageBottom,
+    // PageFooter,
+  } = components;
   const { title, content, isFrontPage, pageAppearance } = usePageContext();
 
   let hasSidebar =
     usePageModules("rightSidebar", { ignoreBackgrounds: true })?.length > 0;
   let topSidebarModules = usePageModules("topSidebar");
+  let bottomSidebarModules = usePageModules("bottomSidebar");
   let hasTopSidebarModules = topSidebarModules?.length > 0;
+  let hasBottomSidebarModules = bottomSidebarModules?.length > 0;
   let hasContentAreaModules =
     usePageModules("contentArea", { ignoreBackgrounds: true })?.length > 0;
   let hasContentAreaBottomModules =
@@ -56,6 +63,17 @@ export default function DefaultTemplate(props) {
   let hasMainContent = !!content || !!hasSidebar || !!hasContentAreaModules;
 
   hideTitle ??= pageAppearance?.hideTitle ?? hasTopSidebarModules;
+
+  const ownerState = {
+    hasSidebar,
+    hasTopSidebarModules,
+    hasContentAreaModules,
+    hasContentAreaBottomModules,
+    hasBottomSidebarModules,
+    hasMainContent,
+    hideTitle,
+    defaultColspan,
+  };
 
   return (
     <article>
@@ -103,14 +121,14 @@ export default function DefaultTemplate(props) {
                         maxColspan={defaultColspan}
                         gap={contentSpacing}
                       />
-                      {hasMainContent && (
+                      {/* {hasMainContent && (
                         <PageSection
                           background="transparent"
                           spacing={contentSpacing}
                         >
                           <PageFooter />
                         </PageSection>
-                      )}
+                      )} */}
                       <PageContentAreaBottomModules
                         ignoreBackgrounds
                         gap={contentSpacing}
@@ -157,7 +175,7 @@ export default function DefaultTemplate(props) {
               )}
               <Section>
                 <PageContentAreaModules maxColspan={defaultColspan} />
-                {hasMainContent && (
+                {/* {hasMainContent && (
                   <PageSection background="transparent">
                     <PageGrid>
                       <PageGridItem colspan={defaultColspan}>
@@ -165,7 +183,7 @@ export default function DefaultTemplate(props) {
                       </PageGridItem>
                     </PageGrid>
                   </PageSection>
-                )}
+                )} */}
                 <PageContentAreaBottomModules />
               </Section>
             </Fragment>
@@ -173,6 +191,7 @@ export default function DefaultTemplate(props) {
 
       <Section>
         <PageBottomSidebarModules />
+        <PageBottom ownerState={ownerState} />
       </Section>
     </article>
   );
