@@ -65,7 +65,7 @@ export default function GalleryModule({
 }) {
   const { t } = useTranslation();
 
-  let images = module?.modGalleryOptions?.modGalleryImages?.images;
+  let images = module?.modGalleryOptions?.modGalleryImages;
   let displaySettings = module?.settings?.display;
   let pauseOnHover = module?.settings?.pauseOnHover;
 
