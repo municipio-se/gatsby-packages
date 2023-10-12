@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.0-next.18](https://github.com/municipio-se/gatsby-packages/compare/v1.5.0-next.17...v1.5.0-next.18) (2023-10-12)
+
+
+### Features
+
+* Make form module more customizable ([d295cdf](https://github.com/municipio-se/gatsby-packages/commit/d295cdf88ce531b5a4a0895ba6256d75c333d28a))
+
+
+
 ## [1.5.0-next.17](https://github.com/municipio-se/gatsby-packages/compare/v1.5.0-next.16...v1.5.0-next.17) (2023-10-09)
 
 
