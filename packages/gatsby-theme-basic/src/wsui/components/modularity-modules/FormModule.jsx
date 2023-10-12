@@ -19,7 +19,7 @@ const axios = Axios.create({
 });
 
 export default function FormModule(props) {
-  props = useThemeProps({ props, name: "MunicipioFormModule" });
+  props = useThemeProps({ props, name: "MunicipioFormModuleController" });
   let { module, components, ...restProps } = props;
   let {
     databaseId,
@@ -35,13 +35,15 @@ export default function FormModule(props) {
       gdprComplienceNoticeContent,
     },
   } = module;
-  components = handleComponentsProp(components, { Box: DefaultBox });
-  const { Box } = components;
+  components = handleComponentsProp(components, {
+    DisclaimerWrapper: DefaultBox,
+  });
+  const { DisclaimerWrapper } = components;
 
   let disclaimer =
     (submissionPublicAct && submissionPublicActContent) ||
     (gdprComplienceNotice && gdprComplienceNoticeContent) ? (
-      <Box>
+      <DisclaimerWrapper>
         <TypographyBlock>
           {submissionPublicAct && submissionPublicActContent ? (
             <p>{submissionPublicActContent}</p>
@@ -50,7 +52,7 @@ export default function FormModule(props) {
             <Html>{gdprComplienceNoticeContent}</Html>
           ) : null}
         </TypographyBlock>
-      </Box>
+      </DisclaimerWrapper>
     ) : null;
 
   return (
