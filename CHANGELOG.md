@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [1.4.1](https://github.com/municipio-se/gatsby-packages/compare/v1.4.0...v1.4.1) (2023-10-16)
+
+
+### Bug Fixes
+
+* Use correct param when getting gallery images ([6742c35](https://github.com/municipio-se/gatsby-packages/commit/6742c359ac2c01612f63e83594993ed5440ef8cb))
+
+
+
 ## [1.4.0](https://github.com/municipio-se/gatsby-packages/compare/v1.4.0-next.36...v1.4.0) (2023-07-19)
 
 **Note:** Version bump only for package root
