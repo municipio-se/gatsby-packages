@@ -1,6 +1,7 @@
 import { getMainArchivePagePathFromPageContext } from "@whitespace/gatsby-theme-wordpress-basic/src/contentType";
 import { useHTMLProcessor } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/html-processor";
 import { Html } from "@whitespace/gatsby-theme-wordpress-basic/src/wsui/components";
+import { useThemeProps } from "@wsui/base";
 import { PostsModule as WsuiPostsModule } from "@wsui/municipio";
 import React, { useContext } from "react";
 
@@ -113,13 +114,16 @@ function defaultNormalizePostsModuleItems(
 //     };
 //   };
 
-export default function PostsModule({
-  title,
-  description,
-  module = {},
-  normalizePostsModuleItems = defaultNormalizePostsModuleItems,
-  ...restProps
-}) {
+export default function PostsModule(props) {
+  props = useThemeProps({ props, name: "PostModule" });
+  let {
+    title,
+    description,
+    module = {},
+    normalizePostsModuleItems = defaultNormalizePostsModuleItems,
+    ...restProps
+  } = props;
+  console.log(normalizePostsModuleItems === defaultNormalizePostsModuleItems);
   // let isFilteringEnabled =
   //   !!module?.modPostsDataFiltering?.frontEndTaxFiltering &&
   //   module?.modPostsDataSource?.postsDataSource === "posttype";
@@ -164,10 +168,14 @@ export default function PostsModule({
 
   const { stripHTML } = useHTMLProcessor();
 
-  const items = normalizePostsModuleItems(module, {
-    Html,
-    stripHTML,
-  });
+  const items = normalizePostsModuleItems(
+    module,
+    {
+      Html,
+      stripHTML,
+    },
+    defaultNormalizePostsModuleItems,
+  );
 
   const { headingVariant } = useContext(modularityModuleContext);
 
