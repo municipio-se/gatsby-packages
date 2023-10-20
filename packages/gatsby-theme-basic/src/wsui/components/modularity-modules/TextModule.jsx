@@ -13,10 +13,9 @@ export default function TextModule(props) {
       expandable,
       hideBoxFrame = false,
       theme: color,
-      link, // TODO: Remove this since it's no longer used
+      link,
       icon,
-      displayMode, // TODO: Remove this since it's no longer used
-      backgroundImage, // TODO: Remove this since it's no longer used
+      displayMode,
       links,
     },
   } = module;
@@ -30,7 +29,6 @@ export default function TextModule(props) {
       icon={icon}
       displayMode={displayMode}
       align={align}
-      backgroundImage={backgroundImage}
       links={links}
       expandable={expandable}
       {...restProps}
