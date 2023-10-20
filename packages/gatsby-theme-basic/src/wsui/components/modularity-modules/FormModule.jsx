@@ -37,21 +37,22 @@ export default function FormModule(props) {
   } = module;
   components = handleComponentsProp(components, {
     DisclaimerWrapper: DefaultBox,
+    DisclaimerTypographyBlock: TypographyBlock,
   });
-  const { DisclaimerWrapper } = components;
+  const { DisclaimerWrapper, DisclaimerTypographyBlock } = components;
 
   let disclaimer =
     (submissionPublicAct && submissionPublicActContent) ||
     (gdprComplienceNotice && gdprComplienceNoticeContent) ? (
       <DisclaimerWrapper>
-        <TypographyBlock>
+        <DisclaimerTypographyBlock>
           {submissionPublicAct && submissionPublicActContent ? (
             <p>{submissionPublicActContent}</p>
           ) : null}
           {gdprComplienceNotice && gdprComplienceNoticeContent ? (
             <Html>{gdprComplienceNoticeContent}</Html>
           ) : null}
-        </TypographyBlock>
+        </DisclaimerTypographyBlock>
       </DisclaimerWrapper>
     ) : null;
 
