@@ -12,4 +12,4 @@ export { default as ImageModule } from "./ImageModule.jsx";
 export { default as PostsModule } from "./PostsModule.jsx";
 export { default as TableModule } from "./TableModule.jsx";
 export { default as TextModule } from "./TextModule.jsx";
-// export { default as VideoModule } from "./VideoModule";
+export { default as VideoModule } from "./VideoModule.jsx";
