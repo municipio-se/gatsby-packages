@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.0-next.21](https://github.com/municipio-se/gatsby-packages/compare/v1.5.0-next.20...v1.5.0-next.21) (2023-10-20)
+
+
+### Features
+
+* Add VideoModule ([bd30daa](https://github.com/municipio-se/gatsby-packages/commit/bd30daa22aed6c2b7ee1dcf9702f5e40d6285fab))
+
+
+
 ## [1.5.0-next.20](https://github.com/municipio-se/gatsby-packages/compare/v1.5.0-next.19...v1.5.0-next.20) (2023-10-20)
 
 
