@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.0-next.20](https://github.com/municipio-se/gatsby-packages/compare/v1.5.0-next.19...v1.5.0-next.20) (2023-10-20)
+
+
+### Features
+
+* Allow overriding DisclaimerTypographyBlock ([d67f489](https://github.com/municipio-se/gatsby-packages/commit/d67f4899a199732379a0d2c723dd5ac7d79c6e6b))
+
+
+### Bug Fixes
+
+* Remove console.log ([744ace3](https://github.com/municipio-se/gatsby-packages/commit/744ace3baf6e053f1b059a9ef696f39fbc826e07))
+
+
+
 ## [1.5.0-next.19](https://github.com/municipio-se/gatsby-packages/compare/v1.5.0-next.18...v1.5.0-next.19) (2023-10-16)
 
 
