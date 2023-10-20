@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.0-next.22](https://github.com/municipio-se/gatsby-packages/compare/v1.5.0-next.21...v1.5.0-next.22) (2023-10-20)
+
+
+### Bug Fixes
+
+* Clean up text module props ([f4117f5](https://github.com/municipio-se/gatsby-packages/commit/f4117f564793d01101a0d589c13dbf9bd3e8e795))
+
+
+
 ## [1.5.0-next.21](https://github.com/municipio-se/gatsby-packages/compare/v1.5.0-next.20...v1.5.0-next.21) (2023-10-20)
 
 
