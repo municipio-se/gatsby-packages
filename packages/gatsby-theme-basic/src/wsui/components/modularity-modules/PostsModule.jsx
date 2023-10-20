@@ -123,7 +123,6 @@ export default function PostsModule(props) {
     normalizePostsModuleItems = defaultNormalizePostsModuleItems,
     ...restProps
   } = props;
-  console.log(normalizePostsModuleItems === defaultNormalizePostsModuleItems);
   // let isFilteringEnabled =
   //   !!module?.modPostsDataFiltering?.frontEndTaxFiltering &&
   //   module?.modPostsDataSource?.postsDataSource === "posttype";
