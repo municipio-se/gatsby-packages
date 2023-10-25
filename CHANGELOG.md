@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.0-next.23](https://github.com/municipio-se/gatsby-packages/compare/v1.5.0-next.22...v1.5.0-next.23) (2023-10-25)
+
+
+### Features
+
+* Add optional outline nav to default page template ([83455ef](https://github.com/municipio-se/gatsby-packages/commit/83455ef76a2c9ea2371cd007da57cc954d3a6b20))
+
+
+
 ## [1.5.0-next.22](https://github.com/municipio-se/gatsby-packages/compare/v1.5.0-next.21...v1.5.0-next.22) (2023-10-20)
 
 
