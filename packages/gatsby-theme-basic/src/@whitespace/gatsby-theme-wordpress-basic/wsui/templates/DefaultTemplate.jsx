@@ -18,9 +18,10 @@ import {
   useThemeProps,
   PageSection,
   handleComponentsProp,
+  OutlineNav,
 } from "@wsui/base";
 import { omit } from "lodash/fp";
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 
 import PageBottomSidebarModules from "../../../../wsui/components/PageBottomSidebarModules.jsx";
 import PageContentAreaBottomModules from "../../../../wsui/components/PageContentAreaBottomModules.jsx";
@@ -31,13 +32,20 @@ import usePageModules from "../../../../wsui/usePageModules.js";
 
 export default function DefaultTemplate(props) {
   const theme = useTheme();
-  props = useThemeProps({ props, name: "DefaultTemplate" });
-  props = useThemeProps({ props, name: "Template" });
+  const pageContext = usePageContext();
+  const { title, content, isFrontPage, pageAppearance } = pageContext;
+  props = useThemeProps({
+    props,
+    name: "DefaultTemplate",
+    context: { pageContext },
+  });
+  props = useThemeProps({ props, name: "Template", context: { pageContext } });
   let {
     defaultColspan = 7,
     hideTitle = null,
     contentSpacing = [5, 10],
     components,
+    showOutlineNav = false,
   } = omit(["spacing"], props);
   components = handleComponentsProp(components, {
     PageBottom: DefaultPageBottom,
@@ -47,7 +55,8 @@ export default function DefaultTemplate(props) {
     PageBottom,
     // PageFooter,
   } = components;
-  const { title, content, isFrontPage, pageAppearance } = usePageContext();
+  showOutlineNav = pageContext.pageAppearance?.showOutlineNav ?? showOutlineNav;
+  const [mainElement, setMainElement] = useState(null);
 
   let hasSidebar =
     usePageModules("rightSidebar", { ignoreBackgrounds: true })?.length > 0;
@@ -76,10 +85,41 @@ export default function DefaultTemplate(props) {
   };
 
   return (
-    <article>
+    <article
+      ref={(el) => setMainElement(el)}
+      css={css`
+        /* [id]:is(h1, h2, h3, h4, h5, h6) {
+          scroll-margin-top: 6rem;
+        } */
+      `}
+    >
       <Seo title={title} isFrontPage={isFrontPage} />
 
       <PageBreadcrumbs background={topSidebarModules?.[0]?.background} />
+
+      {showOutlineNav && (
+        <PageSection
+          background="transparent"
+          css={css`
+            position: sticky;
+            top: 0.5rem;
+            z-index: 1;
+          `}
+        >
+          <PageGrid>
+            <PageGridItem colspan={defaultColspan}>
+              <Section>
+                <OutlineNav
+                  source={mainElement}
+                  css={css`
+                    margin-block-end: 2rem;
+                  `}
+                />
+              </Section>
+            </PageGridItem>
+          </PageGrid>
+        </PageSection>
+      )}
 
       <Section>
         <PageTopSidebarModules promoteFirstHeading={hideTitle} />

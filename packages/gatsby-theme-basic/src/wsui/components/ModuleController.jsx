@@ -40,6 +40,7 @@ export default function ModuleController({ module }) {
         contentMedia: module.contentMedia,
         contentModularityModules: module.contentModularityModules,
         semanticHeadings: true,
+        ensureHeadingIds: `module-${module.databaseId}-heading`,
       })
     : {};
   let description = content;
