@@ -40,6 +40,7 @@ export default function BillboardModuleController(props) {
       imagePlacement,
       links,
       color,
+      ...restBillboard
     },
   } = module;
 
@@ -93,6 +94,7 @@ export default function BillboardModuleController(props) {
       imagePlacement={imagePlacement}
       links={links}
       color={color || undefined}
+      {...restBillboard}
       {...restProps}
     />
   );
