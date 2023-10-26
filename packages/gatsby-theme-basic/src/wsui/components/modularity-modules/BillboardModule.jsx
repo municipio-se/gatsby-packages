@@ -2,6 +2,7 @@ import { useHTMLProcessor } from "@whitespace/gatsby-theme-wordpress-basic/src/h
 import { DevNotice, handleComponentsProp, useThemeProps } from "@wsui/base";
 import { CardBillboardModule, FeatureBillboardModule } from "@wsui/municipio";
 import { camelCase, upperFirst } from "lodash/fp";
+import omit from "lodash/fp/omit";
 import React, { useContext } from "react";
 
 import modularityModuleContext from "../../../modularityModuleContext";
@@ -79,6 +80,7 @@ export default function BillboardModuleController(props) {
       contentMedia: module.contentMedia,
       contentModularityModules: module.contentModularityModules,
       semanticHeadings: true,
+      ensureHeadingIds: `module-${module.databaseId}-heading`,
     },
   );
 
@@ -89,7 +91,7 @@ export default function BillboardModuleController(props) {
       titleVariant={headingLevel ? `h${headingLevel}` : undefined}
       content={content}
       align={align}
-      image={image}
+      image={image && omit(["databaseId"], image)}
       imageAspectRatio={imageAspectRatio}
       imagePlacement={imagePlacement}
       links={links}
