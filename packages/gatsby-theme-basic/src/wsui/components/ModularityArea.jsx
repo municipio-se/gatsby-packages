@@ -18,6 +18,20 @@ import modularityRowContext from "../../modularityRowContext";
 
 import ModuleController from "./ModuleController.jsx";
 
+function defaultShouldMakePageSection({ moduleRow }) {
+  if (moduleRow.modules.length > 1) {
+    return true;
+  }
+  let module = moduleRow.modules[0];
+  if (module.colspan !== 12) {
+    return true;
+  }
+  if (module.module.modBillboard?.format === "hero") {
+    return false;
+  }
+  return true;
+}
+
 export default function ModularityArea(props) {
   // eslint-disable-next-line no-unused-vars
   const theme = useTheme();
@@ -33,6 +47,7 @@ export default function ModularityArea(props) {
     sectionPadding = gap,
     components,
     promoteFirstHeading = false,
+    shouldMakePageSection = defaultShouldMakePageSection,
     ...restProps
   } = omit(["marginAfter", "marginBefore"], props);
 
@@ -49,10 +64,14 @@ export default function ModularityArea(props) {
   return (
     <MaybeFragment {...restProps}>
       <modularityAreaContext.Provider value={{ ...context }}>
-        {moduleRows.map(({ modules, background }, rowIndex) => {
+        {moduleRows.map((moduleRow, rowIndex) => {
+          let { modules, background } = moduleRow;
           // let isFirstSection = rowIndex === 0;
           // let isLastSection = rowIndex === moduleRows.length - 1;
-          return (
+          return shouldMakePageSection(
+            { moduleRow },
+            defaultShouldMakePageSection,
+          ) ? (
             <modularityRowContext.Provider
               key={rowIndex}
               value={{ modules, index: rowIndex }}
@@ -106,6 +125,33 @@ export default function ModularityArea(props) {
                 </PageGrid>
               </PageSection>
             </modularityRowContext.Provider>
+          ) : (
+            <div>
+              {modules.map(({ hidden, module, colspan, ...rest }, index) => {
+                return (
+                  <Section
+                    key={index}
+                    adjustLevel={
+                      promoteFirstHeading && rowIndex === 0 && index === 0
+                        ? -1
+                        : 0
+                    }
+                  >
+                    <modularityModuleContext.Provider
+                      value={{
+                        hidden,
+                        module,
+                        colspan,
+                        headingVariant,
+                        ...rest,
+                      }}
+                    >
+                      <ModuleController module={module} />
+                    </modularityModuleContext.Provider>
+                  </Section>
+                );
+              })}
+            </div>
           );
         })}
       </modularityAreaContext.Provider>
