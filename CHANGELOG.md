@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.0-next.24](https://github.com/municipio-se/gatsby-packages/compare/v1.5.0-next.23...v1.5.0-next.24) (2023-10-26)
+
+
+### Features
+
+* Add `shouldMakePageSection` prop to ModularityArea ([9aaa72e](https://github.com/municipio-se/gatsby-packages/commit/9aaa72e569af39de84e68a0e75a3c5008e0fa8e5))
+
+
+### Bug Fixes
+
+* Add heading IDs to billboard module content ([1aef353](https://github.com/municipio-se/gatsby-packages/commit/1aef35375cb17e9c3deb59e3541b6b49b7c3bc4d))
+
+
+
 ## [1.5.0-next.23](https://github.com/municipio-se/gatsby-packages/compare/v1.5.0-next.22...v1.5.0-next.23) (2023-10-25)
 
 
