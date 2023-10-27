@@ -26,10 +26,6 @@ function defaultShouldMakePageSection({ moduleRow }) {
   if (module.colspan !== 12) {
     return true;
   }
-  if (module.module.modBillboard?.format === "hero") {
-    return false;
-  }
-  return true;
 }
 
 export default function ModularityArea(props) {
@@ -71,7 +67,7 @@ export default function ModularityArea(props) {
           return shouldMakePageSection(
             { moduleRow },
             defaultShouldMakePageSection,
-          ) ? (
+          ) ?? true ? (
             <modularityRowContext.Provider
               key={rowIndex}
               value={{ modules, index: rowIndex }}
