@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.0-next.25](https://github.com/municipio-se/gatsby-packages/compare/v1.5.0-next.24...v1.5.0-next.25) (2023-10-27)
+
+
+### Bug Fixes
+
+* Don't skip page section for hero billboards by default ([f920747](https://github.com/municipio-se/gatsby-packages/commit/f9207474e93130e5edecb153b888481991cf6500))
+
+
+
 ## [1.5.0-next.24](https://github.com/municipio-se/gatsby-packages/compare/v1.5.0-next.23...v1.5.0-next.24) (2023-10-26)
 
 
