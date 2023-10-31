@@ -46,6 +46,7 @@ export default function DefaultTemplate(props) {
     contentSpacing = [5, 10],
     components,
     showOutlineNav = false,
+    footerMargin = 0,
   } = omit(["spacing"], props);
   components = handleComponentsProp(components, {
     PageBottom: DefaultPageBottom,
@@ -88,9 +89,9 @@ export default function DefaultTemplate(props) {
     <article
       ref={(el) => setMainElement(el)}
       css={css`
-        /* [id]:is(h1, h2, h3, h4, h5, h6) {
-          scroll-margin-top: 6rem;
-        } */
+        padding-bottom: ${!hasBottomSidebarModules && footerMargin
+          ? theme.getLength(footerMargin)
+          : null};
       `}
     >
       <Seo title={title} isFrontPage={isFrontPage} />

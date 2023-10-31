@@ -30,6 +30,7 @@ export default function ContentTypeTemplate(props) {
     hideTitle = null,
     contentSpacing = [5, 10],
     data,
+    footerMargin = 0,
   } = omit(["spacing"], props);
   const { title, contentType } = usePageContext();
 
@@ -47,6 +48,7 @@ export default function ContentTypeTemplate(props) {
   let topSidebarModules = makeModuleSections(topSidebar?.modules);
 
   let bottomSidebarModules = makeModuleSections(bottomSidebar?.modules);
+  let hasBottomSidebarModules = bottomSidebarModules?.length > 0;
 
   let contentAreaModules = makeModuleSections(contentArea?.modules, {
     ignoreBackgrounds: hasSidebar,
@@ -63,7 +65,13 @@ export default function ContentTypeTemplate(props) {
   // let hasContentAreaBottomModules = contentAreaBottomModules?.length > 0;
 
   return (
-    <article>
+    <article
+      css={css`
+        padding-bottom: ${!hasBottomSidebarModules && footerMargin
+          ? theme.getLength(footerMargin)
+          : null};
+      `}
+    >
       <Seo title={title} isFrontPage={false} />
 
       <PageBreadcrumbs background={topSidebarModules?.[0]?.background} />
