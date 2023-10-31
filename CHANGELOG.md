@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.0-next.26](https://github.com/municipio-se/gatsby-packages/compare/v1.5.0-next.25...v1.5.0-next.26) (2023-10-31)
+
+
+### Features
+
+* Add footerMargin prop to template components ([1d5aab4](https://github.com/municipio-se/gatsby-packages/commit/1d5aab4014a9a931deab2de22690fdb1eb951cf4))
+
+
+
 ## [1.5.0-next.25](https://github.com/municipio-se/gatsby-packages/compare/v1.5.0-next.24...v1.5.0-next.25) (2023-10-27)
 
 
