@@ -1,5 +1,8 @@
-import { useTheme } from "@emotion/react";
+/** @jsx jsx */
+
+import { useTheme, css, jsx } from "@emotion/react";
 import {
+  Icon,
   H,
   Heading,
   Section,
@@ -20,6 +23,8 @@ export default function ModuleWrapper({
     }),
   },
   title,
+  titleIcon,
+  titleIconProps = { size: 8 },
   description,
   headingVariant,
   headingId,
@@ -41,7 +46,26 @@ export default function ModuleWrapper({
           {typeof title === "function" ? (
             title({ H, Heading, variant: headingVariant, id: headingId })
           ) : (
-            <ModuleWrapperTitle variant={headingVariant} id={headingId}>
+            <ModuleWrapperTitle
+              variant={headingVariant}
+              marginAfter
+              id={headingId}
+              css={css`
+                display: flex;
+                gap: 0.5em;
+                align-items: start;
+              `}
+            >
+              {titleIcon && (
+                <Icon
+                  name={titleIcon}
+                  css={css`
+                    align-self: center;
+                    flex: none;
+                  `}
+                  {...titleIconProps}
+                />
+              )}
               {title}
             </ModuleWrapperTitle>
           )}

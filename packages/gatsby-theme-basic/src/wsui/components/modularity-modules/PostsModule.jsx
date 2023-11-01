@@ -192,7 +192,6 @@ export default function PostsModule(props) {
   // }
 
   let { align } = useContext(modularityModuleContext);
-
   return (
     <WsuiPostsModule
       title={title}
