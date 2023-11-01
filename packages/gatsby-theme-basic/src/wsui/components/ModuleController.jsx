@@ -44,10 +44,10 @@ export default function ModuleController({ module }) {
       })
     : {};
   let description = content;
-
   return (
     <Component
       module={module}
+      titleIcon={module.commonModuleSettings?.titleIcon}
       title={module.hideTitle ? heading : module.title}
       headingVariant={headingLevel ? `h${headingLevel}` : undefined}
       description={description}

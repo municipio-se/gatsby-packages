@@ -9,6 +9,7 @@ export default function ContactsModule({
   module = {},
   title,
   description,
+  titleIcon,
   ...restProps
 }) {
   const { modContactsOptions } = module;
@@ -56,7 +57,11 @@ export default function ContactsModule({
   });
 
   return (
-    <ModuleWrapper title={title} description={description}>
+    <ModuleWrapper
+      title={title}
+      description={description}
+      titleIcon={titleIcon}
+    >
       <WSUIContactsModule
         contacts={modifiedContacts}
         color="gray.50"
