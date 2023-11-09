@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.0](https://github.com/municipio-se/gatsby-packages/compare/v1.5.0-next.27...v1.5.0) (2023-11-09)
+
+**Note:** Version bump only for package root
+
+
+
+
+
 ## [1.5.0-next.27](https://github.com/municipio-se/gatsby-packages/compare/v1.5.0-next.26...v1.5.0-next.27) (2023-11-01)
 
 **Note:** Version bump only for package root
