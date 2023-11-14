@@ -99,27 +99,30 @@ export default function DefaultTemplate(props) {
       <PageBreadcrumbs background={topSidebarModules?.[0]?.background} />
 
       {showOutlineNav && (
-        <PageSection
-          background="transparent"
+        <OutlineNav
+          source={mainElement}
           css={css`
-            position: sticky;
-            top: 0.5rem;
-            z-index: 1;
+            margin-block-end: 2rem;
           `}
-        >
-          <PageGrid>
-            <PageGridItem colspan={defaultColspan}>
-              <Section>
-                <OutlineNav
-                  source={mainElement}
-                  css={css`
-                    margin-block-end: 2rem;
-                  `}
-                />
-              </Section>
-            </PageGridItem>
-          </PageGrid>
-        </PageSection>
+          components={{
+            Wrapper: ({ children }) => (
+              <PageSection
+                background="transparent"
+                css={css`
+                  position: sticky;
+                  top: 0.5rem;
+                  z-index: 1;
+                `}
+              >
+                <PageGrid>
+                  <PageGridItem colspan={defaultColspan}>
+                    <Section>{children}</Section>
+                  </PageGridItem>
+                </PageGrid>
+              </PageSection>
+            ),
+          }}
+        />
       )}
 
       <Section>
