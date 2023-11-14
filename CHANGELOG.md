@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [1.5.1](https://github.com/municipio-se/gatsby-packages/compare/v1.5.0...v1.5.1) (2023-11-14)
+
+
+### Bug Fixes
+
+* Page section was generated when outline nav was empty ([8421009](https://github.com/municipio-se/gatsby-packages/commit/842100932832ce820302fe7482bd81889ff1d3af))
+
+
+
 ## [1.5.0](https://github.com/municipio-se/gatsby-packages/compare/v1.5.0-next.27...v1.5.0) (2023-11-09)
 
 **Note:** Version bump only for package root
