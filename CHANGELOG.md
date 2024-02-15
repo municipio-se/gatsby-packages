@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [1.6.1](https://github.com/municipio-se/gatsby-packages/compare/v1.6.0...v1.6.1) (2024-02-15)
+
+
+### Features
+
+* Add IDs to Modularity forms ([5bda65a](https://github.com/municipio-se/gatsby-packages/commit/5bda65a1c1e2ea86f6e29784d0058c089ee79251))
+
+
+
 ## [1.6.0](https://github.com/municipio-se/gatsby-packages/compare/v1.6.0-next.0...v1.6.0) (2024-02-14)
 
 **Note:** Version bump only for package root
