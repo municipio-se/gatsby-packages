@@ -103,6 +103,7 @@ export default function FormModule(props) {
             });
           }
         }}
+        formProps={{ id: `modularity-form-${databaseId}` }}
         {...restProps}
       />
     </ModuleWrapper>
