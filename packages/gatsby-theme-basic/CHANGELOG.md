@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [1.6.2](https://github.com/municipio-se/gatsby-packages/compare/v1.6.1...v1.6.2) (2024-09-24)
+
+
+### Bug Fixes
+
+* Honor module width in page grid ([fe928e1](https://github.com/municipio-se/gatsby-packages/commit/fe928e1254da425ab2e77aa55bc29c99f1bf2afb))
+
+
+
 ### [1.6.1](https://github.com/municipio-se/gatsby-packages/compare/v1.6.0...v1.6.1) (2024-02-15)
 
 
