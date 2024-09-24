@@ -91,7 +91,7 @@ export default function ModularityArea(props) {
                       return (
                         <PageGridItem
                           key={index}
-                          colspan={colspan || defaultColspan}
+                          colspan={colspan ? [3, colspan, colspan] : defaultColspan}
                         >
                           <Section
                             adjustLevel={
