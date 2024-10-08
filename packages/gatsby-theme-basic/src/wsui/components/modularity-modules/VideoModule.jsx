@@ -29,8 +29,8 @@ function VideoIframe(props) {
 export default function VideoModule({ module = {}, title, ...restProps }) {
   const { modVideoOptions: { embedLink } = {} } = module;
   const url =
-    typeof embedLink === "string" && /\bplay\.mediaflowpro\b/.test(embedLink)
-      ? embedLink.match(/"([^"]+\bplay\.mediaflowpro\b[^"]+)"/)?.[1]
+    typeof embedLink === "string" && /\bplay\.(?:mediaflowpro|mediaflow)\b/.test(embedLink)
+      ? embedLink.match(/(?:^|")([^"]+\bplay\.(?:mediaflowpro|mediaflow)\b[^"]+)(?:$|")/)?.[1]
       : urlParser.create({
           videoInfo: urlParser.parse(embedLink),
           format: "embed",
