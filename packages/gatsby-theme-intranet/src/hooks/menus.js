@@ -45,7 +45,7 @@ export default function useMenus() {
         type,
         url,
         icon: cssClasses[0],
-        target: connectedObject && connectedObject.id ? target : "_blank",
+        target,
         ...content,
         label,
         description: description || (content && content.description),
