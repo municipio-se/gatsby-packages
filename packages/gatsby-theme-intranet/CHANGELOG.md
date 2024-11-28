@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.19.12](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-intranet@0.19.11...@municipio/gatsby-theme-intranet@0.19.12) (2024-11-28)
+
+
+### Bug Fixes
+
+* Custom menu links got `target="_blank"` ([bf4cd82](https://github.com/municipio-se/gatsby-packages/commit/bf4cd828a042c7bb855bf56b3b81d570578d691a))
+
+
+
 ### [0.19.11](https://github.com/municipio-se/gatsby-packages/compare/@municipio/gatsby-theme-intranet@0.19.10...@municipio/gatsby-theme-intranet@0.19.11) (2021-11-09)
 
 **Note:** Version bump only for package @municipio/gatsby-theme-intranet
